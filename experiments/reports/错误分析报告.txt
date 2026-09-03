@@ -1,0 +1,153 @@
+已加载：方案A 323 题 / 方案B 323 题 / 块级对照 323 题，A/B 共有 323 题
+
+======================================================================
+【1】三口径总览（全部全量 qrels 不截断；块级对照为 Top-50 块映射文档）
+======================================================================
+  指标                  方案A 全文        方案B 池化     块级对照(50块)
+  Recall@1            0.0513        0.0504        0.0527
+  Recall@5            0.1129        0.1131        0.1183
+  Recall@10           0.1384        0.1398        0.1488
+  Recall@20           0.1646        0.1705        0.1797
+  Recall@50           0.2145        0.2132        0.2049
+  Recall@100          0.2602        0.2676        0.2049
+  NDCG@10             0.3867        0.3810        0.4352
+  零召回题数                   61            59            72   （共 323 题）
+
+======================================================================
+【2】A/B 对比结论：池化是否可行？
+======================================================================
+  方案A（全文向量化）NDCG@10 = 0.3867
+  方案B（块向量池化）NDCG@10 = 0.3810
+  差距 A−B = +0.0058（相对 +1.5%）
+  逐题胜负：A 胜 105 题 / B 胜 100 题 / 平 118 题
+  A/B 命中文档平均重叠度（以A为分母）：64.4%
+  结论：A≈B（差距<0.01），块向量平均池化可行——
+        无需重新向量化，直接复用现有块向量即可构建文档级索引，零成本。
+
+  对标 BEIR 官方基线（以方案 A 为准）：
+    BGE-large-v1.5   0.380
+    SPLADE++         0.347
+    BM25 (Lucene)    0.325
+    TAS-B / GenQ     0.319
+    SBERT (msmarco)  0.272
+    本实验方案A      0.3867
+
+======================================================================
+【3】零召回题复查（Top-100 一个相关文档都没召回的题）
+======================================================================
+方案A 零召回 61 题（另有方案B 独有零召回 10 题）
+（评分1/2 与全部相关文档的标题列表如下，判断属模型弱还是题难）
+
+  [PLAIN-457] How can you believe in any scientific study?
+    相关文档 5 篇（等级降序）：
+      评分2：Cannabis and the lung.
+      评分1：CANNABIS USE AND RISK OF LUNG CANCER: A CASE-CONTROL STUDY
+      评分1：Antioxidant, antimutagenic, and antitumor effects of pine needles (Pinus densifl
+      评分1：Dietary intakes of flavonols and flavones and coronary heart disease in US women
+      评分1：Antimutagenic effect of broccoli flower head by the ames salmonella reverse muta
+
+  [PLAIN-478] accidents
+    相关文档 1 篇（等级降序）：
+      评分1：Growth Hormone Receptor Deficiency is Associated With a Major Reduction in Pro-a
+
+  [PLAIN-520] Alli
+    相关文档 1 篇（等级降序）：
+      评分1：Effect of a Daily Supplement of Soy Protein on Body Composition and Insulin Secr
+
+  [PLAIN-583] antinutrients
+    相关文档 44 篇（等级降序）：
+      评分1：The effect of inositol hexaphosphate on the expression of selected metalloprotei
+      评分1：High Dry Bean Intake and Reduced Risk of Advanced Colorectal Adenoma Recurrence 
+      评分1：Efficacy of IP6 + inositol in the treatment of breast cancer patients receiving 
+      评分1：Effect of inositol hexaphosphate (IP(6)) on human normal and leukaemic haematopo
+      评分1：Protection against cancer by dietary IP6 and inositol.
+      ... 其余 39 篇略
+
+  [PLAIN-751] BRCA genes
+    相关文档 7 篇（等级降序）：
+      评分1：Influence of frequent and long-term bean consumption on colonic function and fer
+      评分1：The DietCompLyf study: a prospective cohort study of breast cancer survival and 
+      评分1：Perceptions of flatulence from bean consumption among adults in 3 feeding studie
+      评分1：Gastrointestinal symptoms in 3181 volunteers ingesting snack foods containing ol
+      评分1：Americans Do Not Meet Federal Dietary Recommendations
+      ... 其余 2 篇略
+
+  [PLAIN-782] Bush administration
+    相关文档 2 篇（等级降序）：
+      评分1：Bean consumption is associated with greater nutrient intake, reduced systolic bl
+      评分1：Determination of bisphenol a and bisphenol B residues in canned peeled tomatoes 
+
+  [PLAIN-817] canker sores
+    相关文档 1 篇（等级降序）：
+      评分1：Humoral immunity to cow's milk proteins and gliadin within the etiology of recur
+
+  [PLAIN-872] chanterelle mushrooms
+    相关文档 1 篇（等级降序）：
+      评分1：Phytochemicals for breast cancer prevention by targeting aromatase.
+
+  [PLAIN-966] cortisol
+    相关文档 3 篇（等级降序）：
+      评分1：A pilot study of potassium supplementation in the treatment of hypokalemic patie
+      评分1：Changes in nutrient intake and dietary quality among participants with type 2 di
+      评分1：Effects of a very low-fat, vegan diet in subjects with rheumatoid arthritis.
+
+  [PLAIN-997] Czechoslovakia
+    相关文档 2 篇（等级降序）：
+      评分1：High concentrations of polybrominated diphenylethers (PBDEs) in breast adipose t
+      评分1：The effect of meat consumption on body odor attractiveness.
+
+  [PLAIN-1008] deafness
+    相关文档 5 篇（等级降序）：
+      评分1：Cytotoxic response of breast cancer cell lines, MCF 7 and T 47 D to triphala and
+      评分1：Heavy metal content of ayurvedic herbal medicine products.
+      评分1：Triphala, Ayurvedic formulation for treating and preventing cancer: a review.
+      评分1：Detection of toxic heavy metals and pesticide residue in herbal plants which are
+      评分1：Potential of traditional ayurvedic formulation, Triphala, as a novel anticancer 
+
+  [PLAIN-1028] dietary scoring
+    相关文档 1 篇（等级降序）：
+      评分1：Proposal for a dietary "phytochemical index".
+
+  [PLAIN-1119] energy drinks
+    相关文档 11 篇（等级降序）：
+      评分1：Intestinal microbiota metabolism of L-carnitine, a nutrient in red meat, promote
+      评分1：Gut flora metabolism of phosphatidylcholine promotes cardiovascular disease
+      评分1：Detection of increased choline compounds with proton nuclear magnetic resonance 
+      评分1：Egg, red meat, and poultry intake and risk of lethal prostate cancer in the pros
+      评分1：Fish odour syndrome
+      ... 其余 6 篇略
+
+  [PLAIN-1161] fava beans
+    相关文档 1 篇（等级降序）：
+      评分1：Beneficial effects of L-arginine on reducing obesity: potential mechanisms and i
+
+  [PLAIN-1236] galactosemia
+    相关文档 5 篇（等级降序）：
+      评分1：Milk intake and risk of hip fracture in men and women: a meta-analysis of prospe
+      评分1：Milk intake and risk of mortality and fractures in women and men: cohort studies
+      评分1：Calcium supplementation and bone mineral density in females from childhood to yo
+      评分1：Milk Consumption During Teenage Years and Risk of Hip Fractures in Older Adults
+      评分1：Skeletal health in adult patients with classic galactosemia.
+
+  （其余 46 题题号：PLAIN-1249, PLAIN-1262, PLAIN-1309, PLAIN-1331, PLAIN-1353, PLAIN-1429, PLAIN-1496, PLAIN-1506, PLAIN-1516, PLAIN-1547, PLAIN-1579, PLAIN-1611, PLAIN-1621, PLAIN-1679, PLAIN-1690, PLAIN-1700, PLAIN-1752, PLAIN-1784, PLAIN-1827, PLAIN-1887, PLAIN-1962, PLAIN-2019, PLAIN-2030, PLAIN-2113, PLAIN-2134, PLAIN-2167, PLAIN-2187, PLAIN-2230, PLAIN-2250, PLAIN-2281, PLAIN-2311, PLAIN-2321, PLAIN-2343, PLAIN-2364, PLAIN-2408, PLAIN-2440, PLAIN-2820, PLAIN-2840, PLAIN-2880, PLAIN-2920, PLAIN-2940, PLAIN-2991, PLAIN-3014, PLAIN-3116, PLAIN-3211, PLAIN-3442）
+
+======================================================================
+【4】A/B 差异归因：相关文档长度（块数）分桶
+======================================================================
+若池化损失全局语义，长文档（块多、均值更"稀释"）在方案B下的劣势应更明显。
+  相关文档平均块数分桶                  题数    A的NDCG    B的NDCG    差(A−B)
+  2.5 ~ 4.5 块                 80    0.4071    0.3884   +0.0187
+  4.5 ~ 4.7 块                 80    0.4504    0.4480   +0.0024
+  4.7 ~ 4.9 块                 80    0.3666    0.3541   +0.0125
+  4.9 ~ 6.0 块                 80    0.3338    0.3294   +0.0044
+  相关文档平均块数 与 A−B差的相关系数 = -0.119
+  → 无明显相关：A/B 差距与文档长度关系不大，差距更可能来自其他因素。
+
+======================================================================
+【5】文档级 vs 块级口径差异（实验方案表0 四维对照的实测数字）
+======================================================================
+  索引单位：块级 17071 个块 → 文档级 3633 篇文档（方案A/B 均为文档级）
+  检索返回：块级 Top-50 块（去重后约覆盖 10 篇左右文档）→ 文档级 Top-100 篇文档
+  评测分母：块级旧口径按截断后的相关块映射文档 → 本次全量 qrels （12334 条，不截断）
+  可比对象：本次数字可直接对照 BEIR 论文官方基线；块级旧口径无法直接对照
+  实例[PLAIN-2]：块级 Top-50 块命中 10 篇相关文档；方案A Top-100 文档召回率 54.2%
