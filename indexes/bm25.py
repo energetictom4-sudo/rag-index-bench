@@ -30,6 +30,7 @@ BM25 原理（面试常考，详见各函数注释）：
 """
 
 import json
+import math
 import os
 import re
 import sys
@@ -50,7 +51,7 @@ _CJK_RANGE = ("一", "鿿")
 _cache = {}
 
 
-def tokenize(text):
+def tokenize(text: str) -> list[str]:
     """把文本切成词列表：英文按连续字母数字切词并小写，中文逐字切分"""
     tokens = []
     for ch in text.lower():
@@ -60,12 +61,12 @@ def tokenize(text):
     return tokens
 
 
-def _store_dir(config):
+def _store_dir(config: dict) -> str:
     """本方案的存储目录（config["storage_path"] 下的子目录）"""
     return os.path.join(config["storage_path"], STORE_DIR_NAME)
 
 
-def build_index(chunks, config):
+def build_index(chunks: list, config: dict) -> None:
     """构建倒排索引：统计每个词的文档频率与词频，连同全部文本落盘
 
     复杂度：一趟扫描所有文档，O(总词数)；不调用嵌入模型，建库极快。
@@ -101,7 +102,7 @@ def build_index(chunks, config):
           f"平均文档长度 {avgdl:.1f}，落盘到 {store_dir}")
 
 
-def _load_store(config):
+def _load_store(config: dict) -> dict:
     """加载倒排索引（带缓存，避免每次检索都读盘）"""
     store_dir = _store_dir(config)
     if store_dir not in _cache:
@@ -110,13 +111,12 @@ def _load_store(config):
     return _cache[store_dir]
 
 
-def _idf(df, n):
+def _idf(df: int, n: int) -> float:
     """逆文档频率：词越稀有（df 越小）权重越高"""
-    import math
     return math.log(1 + (n - df + 0.5) / (df + 0.5))
 
 
-def _doc_lens(index):
+def _doc_lens(index: dict) -> list[int]:
     """全部文档的长度列表（各词频之和），计算一次后挂在索引字典上复用"""
     if "doc_lens" not in index:
         lens = [0] * index["N"]
@@ -127,7 +127,7 @@ def _doc_lens(index):
     return index["doc_lens"]
 
 
-def search(question, config):
+def search(question: str, config: dict) -> list[str]:
     """检索：问题分词 → 查倒排 → BM25 打分 → 返回得分最高的原文片段
 
     只计算包含问题词的文档（倒排索引的价值），

@@ -2,10 +2,9 @@ import os
 import sys
 import json
 import importlib
+from types import ModuleType
 from openai import OpenAI, OpenAIError
-from langchain_community.document_loaders import PyPDFLoader
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_core.documents import Document   # BEIR模式包装块文本用
+from langchain_core.documents import Document   # 包装块文本用
 
 # ================ 参数配置区（以后只需要改这里） ================
 
@@ -49,14 +48,10 @@ SEPARATORS = ["\n\n", "\n", "。", "，", " ", ""]
 N_RESULTS = 3                 # 召回片段数量(Top-3)
 
 # --- 数据源参数 ---
-DATA_MODE = "beir"        # "pdf" = 加载PDF_FILE指定的本地PDF文档
-                          # "beir" = 加载 prepare_beir.py 生成的BEIR块文件（无需PDF）
-                          # 注意：评测对比索引用 eval_retrieval.py，本主程序用于运行问答示例
-BEIR_CHUNKS_FILE = os.path.join(_DATA_ROOT, "beir_chunks.json")   # BEIR模式下的块文件
+BEIR_CHUNKS_FILE = os.path.join(_DATA_ROOT, "beir_chunks.json")   # BEIR块文件（prepare_beir.py 生成）
 
 # --- 运行示例参数 ---
-PDF_FILE = "your_document.pdf"   # 你的本地PDF文件路径（仅 DATA_MODE="pdf" 时使用）
-USER_QUESTION = "Do Cholesterol Statin Drugs Cause Breast Cancer?"   # 要问的问题（BEIR模式下可填 beir_题库.json 里的任意题）
+USER_QUESTION = "Do Cholesterol Statin Drugs Cause Breast Cancer?"   # 要问的问题（可填 beir_题库.json 里的任意题）
 
 # ======================== 以下为代码逻辑（一般不用改） ========================
 
@@ -80,7 +75,7 @@ INDEX_CONFIG = {
 }
 
 
-def load_index_module():
+def load_index_module() -> ModuleType:
     """动态加载索引方案脚本（由 INDEX_METHOD 决定加载哪一个）"""
     # 把本脚本所在目录加入模块搜索路径，保证无论从哪里运行都能找到 indexes 包
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -114,25 +109,8 @@ def load_index_module():
     return module
 
 
-def load_and_split_pdf(pdf_path):
-    """加载PDF并切分成文本片段（所有索引方案共用的数据准备步骤）"""
-    print("正在加载PDF...")
-    loader = PyPDFLoader(pdf_path)
-    pages = loader.load()
-
-    # 文本切分器：将长文档切成有重叠的小块
-    text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=CHUNK_SIZE,
-        chunk_overlap=CHUNK_OVERLAP,
-        separators=SEPARATORS
-    )
-    chunks = text_splitter.split_documents(pages)
-    print(f"已将文档切分为 {len(chunks)} 个片段")
-    return chunks
-
-
-def load_beir_chunks():
-    """加载 prepare_beir.py 生成的BEIR块文件，包装成Document列表（BEIR模式的数据准备）"""
+def load_beir_chunks() -> list[Document]:
+    """加载 prepare_beir.py 生成的BEIR块文件，包装成Document列表（数据准备步骤）"""
     with open(BEIR_CHUNKS_FILE, encoding="utf-8") as f:
         items = json.load(f)
     docs = [Document(page_content=item["text"], metadata={"chunk": item["id"]})
@@ -141,7 +119,7 @@ def load_beir_chunks():
     return docs
 
 
-def generate_answer(question, retrieved_chunks):
+def generate_answer(question: str, retrieved_chunks: list[str]) -> str:
     """把检索到的片段拼成提示词，调用DeepSeek生成回答（与索引方案无关）"""
     if deepseek_client is None:
         raise RuntimeError(
@@ -172,11 +150,8 @@ if __name__ == "__main__":
     index_module = load_index_module()
     print(f"当前索引方案：{INDEX_METHOD}")
 
-    # 2. 数据准备：按数据源模式加载（PDF模式加载并切分PDF；BEIR模式加载块文件）
-    if DATA_MODE == "beir":
-        chunks = load_beir_chunks()
-    else:
-        chunks = load_and_split_pdf(PDF_FILE)
+    # 2. 数据准备：加载 prepare_beir.py 生成的BEIR块文件
+    chunks = load_beir_chunks()
 
     # 3. 构建索引（具体逻辑由索引方案脚本实现）
     #    加 --skip-build 可跳过建库：评测脚本建过库后直接复用，不用再等向量化

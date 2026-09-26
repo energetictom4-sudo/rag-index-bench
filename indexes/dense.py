@@ -28,12 +28,12 @@ STORE_DIR_NAME = "faiss_dense"
 _cache = {}
 
 
-def _store_dir(config):
+def _store_dir(config: dict) -> str:
     """本方案的存储目录（config["storage_path"] 下的子目录）"""
     return os.path.join(config["storage_path"], STORE_DIR_NAME)
 
 
-def build_index(chunks, config):
+def build_index(chunks: list, config: dict) -> None:
     """构建索引：分批向量化所有片段，存入FAISS索引并落盘"""
     texts = [chunk.page_content for chunk in chunks]
     print(f"[dense] 正在生成向量并存入FAISS索引...")
@@ -67,7 +67,7 @@ def build_index(chunks, config):
     print(f"[dense] 已存入 {len(texts)} 个片段到 {store_dir}")
 
 
-def _load_store(config):
+def _load_store(config: dict) -> tuple:
     """加载FAISS索引与文本（带缓存，避免每次检索都读盘）"""
     store_dir = _store_dir(config)
     if store_dir not in _cache:
@@ -78,7 +78,7 @@ def _load_store(config):
     return _cache[store_dir]
 
 
-def search(question, config):
+def search(question: str, config: dict) -> list[str]:
     """检索：把问题向量化后，在FAISS索引中找最相似的片段"""
     # 1. 问题向量化 + 归一化
     response = config["ollama_client"].embeddings.create(

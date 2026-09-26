@@ -6,8 +6,8 @@ BEIR 数据集准备脚本：下载并转换为评测脚本可用的块级数据
   1. 下载 BEIR 数据集（zip 包，托管在 UKP 官方服务器）
   2. 读取语料库(corpus)、查询(queries)、相关标注(qrels)
   3. 用与主程序完全一致的切分参数把语料文档切成块，记录"文档→块编号"映射
-  4. 把文档级标注(qrels)转换为块级标注，生成与《测试题库.json》同格式的题库
-  5. 输出两个文件，供 eval_retrieval.py 的 DATA_MODE="beir" 模式使用：
+  4. 把文档级标注(qrels)转换为块级标注，生成评测题库
+  5. 输出两个文件，供 eval_retrieval.py 使用：
      - beir_chunks.json    所有块的文本
      - beir_题库.json      块级标注题库
 
@@ -74,7 +74,7 @@ except ImportError:
     pass   # certifi未安装则保持系统默认行为
 
 
-def download_dataset(force=False):
+def download_dataset(force: bool = False) -> str:
     """下载并解压 BEIR 数据集，返回解压后的目录"""
     os.makedirs(DATA_DIR, exist_ok=True)
     zip_path = os.path.join(DATA_DIR, f"{DATASET}.zip")
@@ -93,7 +93,7 @@ def download_dataset(force=False):
     return extract_dir
 
 
-def load_jsonl(path):
+def load_jsonl(path: str) -> list[dict]:
     """按行读取 jsonl 文件，返回列表"""
     items = []
     with open(path, encoding="utf-8") as f:
@@ -104,7 +104,7 @@ def load_jsonl(path):
     return items
 
 
-def main():
+def main() -> None:
     force = "--force" in sys.argv
     skip_download = "--skip-download" in sys.argv
 
@@ -208,8 +208,7 @@ def main():
     print(f"块文件已保存到 {OUT_CHUNKS}")
     print(f"题库已保存到 {OUT_QUESTIONS}")
     print("\n下一步：")
-    print('  1. eval_retrieval.py 配置区把 DATA_MODE 改为 "beir"，')
-    print("     并把 QUERY_TOP_K / TOP_K_LIST 按上面平均相关块数调整")
+    print("  1. eval_retrieval.py 配置区按上面平均相关块数调整 QUERY_TOP_K / TOP_K_LIST")
     print("  2. rag_demo.py 配置区设置要评测的 INDEX_METHOD")
     print("  3. 运行 python eval_retrieval.py")
 

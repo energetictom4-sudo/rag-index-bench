@@ -12,7 +12,7 @@
 1. **可插拔索引方案**：每个索引方案是 [indexes/](indexes/) 目录下的一个独立脚本，只需实现 `build_index(chunks, config)` 和 `search(question, config)` 两个函数；主程序通过配置区 `INDEX_METHOD` 一键切换，主程序零改动（接口约定见 [indexes/README.md](indexes/README.md)）。
 2. **完整的评测闭环**：逐题检索并自动比对标注，输出多档位（Top-1/5/10/20/50）召回率、精确率、F1、题目命中率，以及建库耗时、查询延迟、内存/磁盘占用。
 3. **评测与运行同配置**：评测脚本直接复用主程序的配置与索引方案加载逻辑，不存在"评测一套、运行一套"的配置不一致问题。
-4. **两种数据源模式**：BEIR 模式（`prepare_beir.py` 自动下载数据集并生成块级题库）与 PDF 模式（本地 PDF + 手工标注题库）。
+4. **BEIR 基准数据源**：`prepare_beir.py` 自动下载数据集并生成块级题库，评测与问答共用同一份数据。
 
 ## 架构图
 
@@ -88,7 +88,7 @@ flowchart LR
 
 ```bash
 # 1. 安装 Python 依赖
-pip install openai langchain-community langchain-text-splitters langchain-core faiss-cpu numpy certifi
+pip install openai langchain-text-splitters langchain-core faiss-cpu numpy certifi
 # 可选：评测内存占用需要 psutil
 pip install psutil
 

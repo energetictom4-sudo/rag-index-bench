@@ -1,24 +1,20 @@
 # -*- coding: utf-8 -*-
 """
-实验第 4 步的预备实现：文档级索引 + "先搜文档再取块"（暂放 experiments/，不动正式代码）
+索引方案：文档级索引 + "先搜文档再取块"（doc_dense）
 
-实验结论（详见 README.md / 实验总结报告.txt）：
+思路：先对文档级向量建索引，检索时命中 Top-K 文档后，把该文档的全部块
+按原顺序拼成上下文返回——解决"小块精确召回"与"大块上下文完整"的矛盾。
+
+实现说明（方案来源见 experiments/ 的块向量池化实验）：
   方案 B（块向量平均池化）与方案 A（整文档向量化）效果相当（NDCG@10 差距 <0.01），
-  且零向量化成本 —— 推荐正式方案采用池化，故本文件默认 MODE="pool"。
-
-接口与 indexes/dense.py 完全一致（build_index / search），确认方案后：
-  1. 把本文件复制为 indexes/doc_dense.py（复制后文件名即方案名）；
-  2. 主程序 rag_demo.py 配置区把 INDEX_METHOD 改为 "doc_dense"、N_RESULTS 改为 10；
-  3. "先搜文档再取块"的取块逻辑已实现在 search() 中：
-     文档级检索命中 Top-K 文档后，把该文档的全部块按原顺序拼成上下文返回，
-     直接喂给 rag_demo.py 的 generate_answer（无需改主程序）。
+  且零向量化成本 —— 故本文件默认 MODE="pool"。
 
 MODE 可选：
-  "pool"  默认：复用现有块向量按 doc_id 平均池化（零向量化成本，实验推荐）
+  "pool"  默认：复用现有块向量按 doc_id 平均池化（零向量化成本）
   "full"  整文档重新向量化（复用 experiments/cache 的全文向量缓存）
 
 本文件只读现有数据（块向量、块文件、实验缓存），构建的索引落盘在独立子目录
-faiss_doc_pool/（或 faiss_doc_full/），与现有 faiss_dense/ 互不影响。
+faiss_doc_pool/（或 faiss_doc_full/），与 faiss_dense/ 互不影响。
 """
 
 import json
@@ -46,7 +42,7 @@ STORE_DIR_NAME = "faiss_doc_pool" if MODE == "pool" else "faiss_doc_full"
 _doc_chunks_cache = None
 
 
-def _load_doc_chunks():
+def _load_doc_chunks() -> dict:
     """加载"文档→块"映射：{doc_id: [块文本列表（按原顺序）]}，进程内只读一次"""
     global _doc_chunks_cache
     if _doc_chunks_cache is not None:
@@ -60,12 +56,12 @@ def _load_doc_chunks():
     return mapping
 
 
-def _store_dir(config):
+def _store_dir(config: dict) -> str:
     """本方案的存储目录（config["storage_path"] 下的子目录）"""
     return os.path.join(config["storage_path"], STORE_DIR_NAME)
 
 
-def build_index(chunks, config):
+def build_index(chunks: list, config: dict) -> None:
     """构建文档级索引：池化（或全文向量化）→ 归一化 → IndexFlatIP → 落盘
 
     chunks 参数为接口兼容保留（与 indexes/dense.py 一致），文档级建库不依赖它。
@@ -102,7 +98,7 @@ def build_index(chunks, config):
     print(f"[doc_dense] 已存入 {len(doc_ids)} 篇文档到 {store_dir}")
 
 
-def _load_store(config):
+def _load_store(config: dict) -> tuple:
     """加载文档级索引与文档 id 列表"""
     store_dir = _store_dir(config)
     index = faiss.read_index(os.path.join(store_dir, "index.faiss"))
@@ -111,7 +107,7 @@ def _load_store(config):
     return index, doc_ids
 
 
-def search(question, config):
+def search(question: str, config: dict) -> list[str]:
     """检索：问题向量化 → Top-K 文档 → 取块拼上下文（"先搜文档再取块"）
 
     返回每篇命中文档的完整上下文（该文档全部块按原顺序拼接），
