@@ -9,11 +9,12 @@ from langchain_core.documents import Document   # 包装块文本用
 # ================ 参数配置区（以后只需要改这里） ================
 
 # --- 索引方案参数 ---
-INDEX_METHOD = "bm25"    # 索引方案名称 = indexes/ 目录下的脚本文件名（不含.py后缀）
+INDEX_METHOD = "hybrid"  # 索引方案名称 = indexes/ 目录下的脚本文件名（不含.py后缀）
                           # 想测试对比哪个方案，就把这里改成对应文件名，例如：
                           #   "dense"       稠密向量索引（语义检索，见 indexes/dense.py）
                           #   "bm25"        稀疏关键词检索（倒排索引，见 indexes/bm25.py）
                           #   "doc_dense"   文档级索引+先搜文档再取块（见 indexes/doc_dense.py）
+                          #   "hybrid"      BM25+dense 的 RRF 混合检索（见 indexes/hybrid.py）
                           #   "parent_doc"  父文档索引（你以后自己写，放 indexes/parent_doc.py）
                           # 接口约定见 indexes/README.md，写新方案不用改主程序
 RETRIEVE_ONLY = False     # True = 只打印检索到的片段（快速对比不同索引方案的召回效果），不调用大模型
