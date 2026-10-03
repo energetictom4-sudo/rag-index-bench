@@ -165,7 +165,7 @@ def main() -> None:
                 qid, doc_id, score = parts[0], parts[1], parts[2]
             else:
                 continue
-            if int(score) > 0:   # 相关度>0即算相关（1=弱相关、2=强相关都算）
+            if int(score) == 2:   # BEIR官方口径：nfcorpus只把强相关(score=2)算相关
                 qrels.setdefault(qid, []).append(doc_id)
 
     questions = []
