@@ -2,7 +2,7 @@
 """
 ANN 召回率-延迟曲线生成器（阶段三核心实验工具）
 
-对每个索引档位（dense 暴力参照 + ivf 各 nprobe），同时测量两个维度：
+对每个索引档位（dense 暴力参照 + ivf 各 nprobe + hnsw 各 ef_search），同时测量两个维度：
   1. 召回率：119 道题的真实查询向量（Ollama 向量化一次后缓存，不重复向量化），
      Top-50 检索 → 文档级判分（与 eval_retrieval.py 官方口径完全一致）
   2. 纯检索延迟：随机查询向量逐个 search 计时（与 bench_retrieval.py 同口径，不含向量化）
@@ -13,7 +13,7 @@ ANN 召回率-延迟曲线生成器（阶段三核心实验工具）
 
 用法：
   python experiments/ann_curve.py
-前置：faiss_dense/ 与 faiss_ivf/ 索引均已建好，题库为官方口径（119 题）
+前置：faiss_dense/、faiss_ivf/、faiss_hnsw/ 索引均已建好，题库为官方口径（119 题）
 """
 
 import csv
@@ -37,12 +37,14 @@ CHUNKS_FILE = os.path.join(DATA_ROOT, "beir_chunks.json")
 QUESTIONS_FILE = os.path.join(DATA_ROOT, "beir_题库.json")
 DENSE_INDEX_FILE = os.path.join(DATA_ROOT, "vector_store", "faiss_dense", "index.faiss")
 IVF_INDEX_FILE = os.path.join(DATA_ROOT, "vector_store", "faiss_ivf", "index.faiss")
+HNSW_INDEX_FILE = os.path.join(DATA_ROOT, "vector_store", "faiss_hnsw", "index.faiss")
 CACHE_DIR = os.path.join(PROJECT_DIR, "experiments", "cache")
 RESULTS_DIR = os.path.join(PROJECT_DIR, "experiments", "results")
 
 TOPK = 50            # 检索返回片段数（与 eval_retrieval.py 的 QUERY_TOP_K 一致）
 RECALL_KS = (5, 10, 20, 50)   # 召回率统计档位
 NPROBE_LIST = (1, 4, 8, 16, 32, 64, 128, 256)   # ivf 扫描的 nprobe 档位
+EF_SEARCH_LIST = (4, 8, 16, 32, 64, 128, 256)   # hnsw 扫描的 ef_search 档位（与 nprobe 对齐）
 N_LATENCY_QUERIES = 1000   # 延迟测量的随机查询数
 WARMUP = 10                # 延迟测量预热次数
 SEED = 42                  # 随机查询向量种子
@@ -122,13 +124,15 @@ def main() -> None:
     query_vecs = load_query_vectors(questions)
     dense_index = faiss.read_index(DENSE_INDEX_FILE)
     ivf_index = faiss.read_index(IVF_INDEX_FILE)
+    hnsw_index = faiss.read_index(HNSW_INDEX_FILE)
     rng = np.random.default_rng(SEED)
     rand_queries = rng.standard_normal((N_LATENCY_QUERIES, dense_index.d)).astype(np.float32)
     faiss.normalize_L2(rand_queries)
 
-    # 档位列表：(名称, 索引, 是否 ivf 档位, nprobe)
-    runs = [("dense (IndexFlatIP)", dense_index, None)]
-    runs += [(f"ivf (nprobe={nprobe})", ivf_index, nprobe) for nprobe in NPROBE_LIST]
+    # 档位列表：(名称, 索引, 参数种类, 参数值)；种类 None=nprobe=ef 对应三种检索方式
+    runs = [("dense (IndexFlatIP)", dense_index, None, None)]
+    runs += [(f"ivf (nprobe={nprobe})", ivf_index, "nprobe", nprobe) for nprobe in NPROBE_LIST]
+    runs += [(f"hnsw (ef={ef})", hnsw_index, "ef", ef) for ef in EF_SEARCH_LIST]
 
     rows = []
     print("=" * 78)
@@ -136,9 +140,11 @@ def main() -> None:
           f"{'延迟ms':>9}{'加速比':>8}")
     print("=" * 78)
     dense_avg_ms = None
-    for name, index, nprobe in runs:
-        if nprobe is not None:
-            index.nprobe = nprobe
+    for name, index, kind, value in runs:
+        if kind == "nprobe":
+            index.nprobe = value
+        elif kind == "ef":
+            index.hnsw.efSearch = value
         rec = evaluate_recall(index, query_vecs, questions, chunk_doc_ids, TOPK)
         lat = bench_latency(index, rand_queries, TOPK)
         if dense_avg_ms is None:
@@ -174,7 +180,7 @@ def main() -> None:
         ax.set_xscale("log")
         ax.set_xlabel("纯检索延迟（毫秒，对数轴，不含向量化）")
         ax.set_ylabel("召回率（%）")
-        ax.set_title("dense 暴力检索 vs ivf 各 nprobe：召回率-延迟曲线（nfcorpus 17071 块）")
+        ax.set_title("暴力检索 vs IVF(nprobe) vs HNSW(ef_search)：召回率-延迟曲线（nfcorpus 17071 块）")
         ax.legend()
         ax.grid(True, which="both", alpha=0.3)
         for i, r in enumerate(rows):
