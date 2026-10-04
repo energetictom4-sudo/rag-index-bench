@@ -30,6 +30,8 @@ graph TB
         BM25["bm25.py<br/>BM25 稀疏检索（倒排索引）✔"]
         HYB["hybrid.py<br/>BM25 + dense 混合检索（RRF）✔"]
         PAR["parent_doc.py<br/>父文档索引（小块检索、大块返回）✔"]
+        IVF["ivf.py<br/>IVF 近似检索（阶段三）✔"]
+        HNSW["hnsw.py<br/>HNSW 图索引近似检索（阶段三）✔"]
     end
 
     subgraph 外部服务
@@ -51,17 +53,23 @@ graph TB
     RAG --> BM25
     RAG --> HYB
     RAG --> PAR
+    RAG --> IVF
+    RAG --> HNSW
     EVAL -->|"复用 rag_demo 配置与加载逻辑"| RAG
     EVAL -->|"动态加载 INDEX_METHOD"| IDX
     EVAL --> DOC
     EVAL --> BM25
     EVAL --> HYB
     EVAL --> PAR
+    EVAL --> IVF
+    EVAL --> HNSW
     IDX -->|"向量化"| OLLAMA
     DOC -.->|"复用块向量池化"| IDX
     PAR -.->|"复用块向量，映射父文档"| IDX
     HYB -->|"RRF 融合"| IDX
     HYB --> BM25
+    IVF -.->|"复用块向量，聚类倒排"| IDX
+    HNSW -.->|"复用块向量，建近邻图"| IDX
     RAG -->|"生成回答"| DS
     IDX --> STORE
     CHUNKS --> RAG
@@ -139,36 +147,45 @@ python rag_demo.py
 | doc_dense（文档级索引，块向量池化） | 32.12% | 38.54% | 44.56% | 52.24% | 4.28 秒 | 243.6 毫秒 | 15 MB |
 | dense（稠密向量，基线） | 27.30% | 32.11% | 41.23% | 50.28% | 220.27 秒 | 1948.8 毫秒 | 73 MB |
 | ivf（IVF 近似检索，nprobe=32） | 26.48% | 31.82% | 39.00% | 48.68% | 0.65 秒 | 196.2 毫秒 | 74 MB |
+| hnsw（HNSW 图索引近似检索，ef_search=64） | 26.32% | 32.17% | 40.55% | 50.14% | 2.37 秒 | 208.0 毫秒 | 77 MB |
 | bm25（稀疏倒排） | 21.87% | 27.94% | 34.28% | 44.80% | 3.24 秒 | 2.6 毫秒 | 15 MB |
 
 > **口径说明**（对比前必读）：
 >
-> - **建库耗时**：dense 含 17071 块全量向量化（本地 CPU 跑 bge-m3，占总耗时绝大部分）；doc_dense 与 parent_doc 复用已有块向量（分别做池化/直接复用），零向量化成本（从零建库须先有块向量，即 dense 的建库耗时为其前置成本）；bm25 纯 CPU 构建倒排索引，无需向量化；hybrid 的 3.43 秒是复用已有 dense 子索引（跳过向量化）后的耗时，从零建库 = 3.24 + 220.27 秒。
+> - **建库耗时**：dense 含 17071 块全量向量化（本地 CPU 跑 bge-m3，占总耗时绝大部分）；doc_dense 与 parent_doc 复用已有块向量（分别做池化/直接复用），零向量化成本（从零建库须先有块向量，即 dense 的建库耗时为其前置成本）；bm25 纯 CPU 构建倒排索引，无需向量化；hybrid 的 3.43 秒是复用已有 dense 子索引（跳过向量化）后的耗时，从零建库 = 3.24 + 220.27 秒；ivf 与 hnsw 同样复用 dense 的块向量（分别做 k-means 训练/建图），零向量化成本。
 > - **查询延迟**：dense / doc_dense / hybrid / parent_doc 为端到端延迟（含问题向量化，预热后 3 次取平均）；bm25 无需向量化问题，2.6 毫秒即纯检索耗时。dense 旧报告的平均值混入一次 Ollama 服务卡顿离群值（单题最慢 55.0 万毫秒，该题重测最快 166.2 毫秒），剔除后其余 322 题平均约 246.7 毫秒；hybrid 与 parent_doc 本次评测均无离群值（最慢单题分别 381.8 / 317.0 毫秒），与"dense 剔除离群值后约 246.7 毫秒"基本吻合，可作交叉印证。
 > - **索引文件大小**：`vector_store/<方案目录>/` 实际磁盘占用（2026-09-26 实测）；hybrid 复用 bm25 与 dense 两个子索引（15 + 73 MB），parent_doc 复用 dense 块向量索引、自身仅落盘 0.04 MB 元信息。
-> - 完整档位数据（含精确率、F1、题目命中率）见各方案报告：[评测报告_parent_doc_beir.txt](评测报告_parent_doc_beir.txt)（2026-10-03）、[评测报告_hybrid_beir.txt](评测报告_hybrid_beir.txt)（2026-10-03）、[评测报告_doc_dense_beir.txt](评测报告_doc_dense_beir.txt)（2026-10-03）、[评测报告_dense_beir.txt](评测报告_dense_beir.txt)（2026-10-03）、[评测报告_bm25_beir.txt](评测报告_bm25_beir.txt)（2026-10-03）、[评测报告_ivf_beir.txt](评测报告_ivf_beir.txt)（2026-10-03）。
+> - 完整档位数据（含精确率、F1、题目命中率）见各方案报告：[评测报告_parent_doc_beir.txt](评测报告_parent_doc_beir.txt)（2026-10-03）、[评测报告_hybrid_beir.txt](评测报告_hybrid_beir.txt)（2026-10-03）、[评测报告_doc_dense_beir.txt](评测报告_doc_dense_beir.txt)（2026-10-03）、[评测报告_dense_beir.txt](评测报告_dense_beir.txt)（2026-10-03）、[评测报告_bm25_beir.txt](评测报告_bm25_beir.txt)（2026-10-03）、[评测报告_ivf_beir.txt](评测报告_ivf_beir.txt)（2026-10-03）、[评测报告_hnsw_beir.txt](评测报告_hnsw_beir.txt)（2026-10-04）。
 
 **研究结论**（官方口径下已获数据验证）：
 
 1. **RRF 融合在深档位有效、浅档位稀释**：hybrid 全档位超过 bm25（高 4.7~8.8 个百分点）；但与 dense 相比呈"深档位反超"——Recall@5 低 0.75、@10 低 0.26、@20 高 0.09、@50 高 3.29 个百分点。即关键词信号在浅档位引入噪声（bm25 的高分词法匹配挤占名额），在深档位才发挥互补长尾价值，验证了 RRF 融合"深召回"的定位。
 2. **检索粒度与档位存在交互：浅档位文档级更准、深档位块级更全**：doc_dense（文档级池化）在 Recall@5/10 比 parent_doc（块级）高 2.77/2.48 个百分点，Recall@20 持平（差 0.05），Recall@50 被反超 1.55 个百分点。原因：文档级每个返回名额必来自不同文档（浅档位覆盖文档数最大化），而块级在块间有 50 字符重叠、Top-K 块易扎堆于少数文档；但块级能精确定位相关文档中"真正相关的块"，长尾召回更强。
 
-**综合结论**：官方口径下各方案召回率整体翻倍以上（对照旧口径含弱相关的数字见 git 历史 commit `0055336` 及 2026-09-26 报告），parent_doc 为深档位召回冠军（Recall@50 = 53.79%）、doc_dense 为浅档位精准冠军（Recall@5 = 32.12%）。parent_doc 建库零成本、返回文档级完整上下文，对下游问答最友好。后续阶段三的 IVF/HNSW 与 PQ 量化将在 dense 的块向量索引上压缩"全量扫描 + 浮点存储"的代价，直接惠及 dense、hybrid、parent_doc 三个依赖块向量的方案。
+**综合结论**：官方口径下各方案召回率整体翻倍以上（对照旧口径含弱相关的数字见 git 历史 commit `0055336` 及 2026-09-26 报告），parent_doc 为深档位召回冠军（Recall@50 = 53.79%）、doc_dense 为浅档位精准冠军（Recall@5 = 32.12%）。parent_doc 建库零成本、返回文档级完整上下文，对下游问答最友好。阶段三的 IVF/HNSW 已在 dense 的块向量索引上压缩"全量扫描"的代价（22~37 倍查询加速换不到 2 个百分点召回损失，见下节），PQ 量化将压缩"浮点存储"的代价，直接惠及 dense、hybrid、parent_doc 三个依赖块向量的方案。
 
-### 阶段三首个成果：IVF 近似检索（召回率-延迟曲线）
+### 阶段三：IVF 与 HNSW 近似检索（召回率-延迟曲线）
 
-以 dense 为基线的 **IVF 全档位扫描**（[experiments/ann_curve.py](experiments/ann_curve.py)，nprobe 越大越接近暴力检索）：
+以 dense 为基线的 **全档位扫描**（[experiments/ann_curve.py](experiments/ann_curve.py)）：IVF 的旋钮是 nprobe（搜索的簇数），HNSW 的旋钮是 ef_search（图导航搜索宽度），两者档位越大越接近暴力检索：
 
 | 档位 | Recall@10 | Recall@50 | 纯检索延迟 | 加速比 |
 |---|---:|---:|---:|---:|
 | dense（暴力，参照） | 31.83% | 50.28% | 8.07 ms | 1.00x |
 | ivf nprobe=1 | 19.21% | 26.76% | 0.063 ms | 127x |
-| ivf nprobe=8 | 29.52% | 41.91% | 0.136 ms | 59x |
 | **ivf nprobe=32（甜蜜点）** | 31.54% | 48.68% | 0.45 ms | 18x |
-| ivf nprobe=64 | 30.60% | 49.88% | 0.89 ms | 9x |
 | ivf nprobe=256（=nlist） | 31.83% | 50.28% | 3.53 ms | 2.3x |
+| hnsw ef=4 | 25.34% | 38.39% | 0.060 ms | 135x |
+| hnsw ef=16 | 30.93% | 46.12% | 0.136 ms | 59x |
+| **hnsw ef=32（甜蜜点）** | 32.69% | 50.44% | 0.217 ms | 37x |
+| hnsw ef=64 | 31.89% | 50.14% | 0.364 ms | 22x |
+| hnsw ef=256 | 31.83% | 50.28% | 1.071 ms | 7.5x |
 
-**研究结论（阶段三第一条）**：nprobe 是"召回 ↔ 延迟"的连续旋钮——nprobe=32~64 是甜蜜点区间，以 **9~18 倍查询加速换取不到 2 个百分点的召回损失**；nprobe=256（扫全部簇）时召回与暴力检索**逐位一致**，验证了 IVF 的近似误差完全来自"跳过未搜索的簇"。完整数据与曲线图见 `experiments/results/ann_curve.csv`（运行脚本可再生）。
+**研究结论（阶段三，两条 ANN 路线对比）**：
+
+1. **两条路线的高档位均收敛到暴力检索、逐位一致**（ivf nprobe=256 与 hnsw ef=256 的四个召回档位与 dense 完全相同），交叉验证了两种近似算法的误差都只来自"减少搜索范围"，算法本身没有其他信息损失。
+2. **低延迟档位 HNSW 全面优于 IVF**：同为 0.06 ms 量级，hnsw ef=4 的 Recall@50（38.39%）比 ivf nprobe=1（26.76%）**高 11.6 个百分点**；同为 0.14 ms 量级，ef=16 比 nprobe=8 高 4.2 个百分点。原因：IVF 的 nprobe 是"整簇粒度的粗闸门"（每个簇平均含 67 块，nprobe=1 只覆盖 67 块），而 HNSW 图的导航天然按"到查询的距离"分配搜索预算，同样预算下能摸到更远的真近邻。
+3. **甜蜜点区间**：HNSW 的 ef_search=32~64 以 **22~37 倍查询加速换取不到 2 个百分点的召回损失**（Recall@50 = 50.44/50.14% vs 暴力 50.28%），性价比优于 IVF 的 18 倍；IVF 的优势则在工程侧——索引更小（74 vs 77 MB）、实现更简单、增量插入友好。
+4. 完整数据与曲线图见 `experiments/results/ann_curve.csv` 与 `ann_curve.png`（运行 [experiments/ann_curve.py](experiments/ann_curve.py) 可再生；延迟为纯检索微基准 [experiments/bench_retrieval.py](experiments/bench_retrieval.py) 同口径，不含问题向量化）。
 
 ### 基线明细（dense，完整档位 + 资源）
 
@@ -209,8 +226,10 @@ RAG/
 │   ├── doc_dense.py         # 文档级索引（块向量池化，先搜文档再取块）
 │   ├── bm25.py              # BM25 稀疏倒排索引（纯标准库）
 │   ├── hybrid.py            # BM25 + dense 混合检索（RRF 分数融合）
-│   └── parent_doc.py        # 父文档索引（小块检索、大块返回）
-├── experiments/             # 块向量池化实验（doc_dense 方案来源）
+│   ├── parent_doc.py        # 父文档索引（小块检索、大块返回）
+│   ├── ivf.py               # IVF 近似检索（阶段三，k-means 聚类倒排）
+│   └── hnsw.py              # HNSW 图索引近似检索（阶段三）
+├── experiments/             # 实验工具（池化实验、纯检索微基准、召回-延迟曲线）
 ├── vector_store/            # 向量索引存储根目录（各方案独立子目录）
 ├── beir_data/               # BEIR 数据集缓存
 ├── beir_chunks.json         # 块文件（prepare_beir.py 生成）
@@ -219,7 +238,9 @@ RAG/
 ├── 评测报告_doc_dense_beir.txt
 ├── 评测报告_bm25_beir.txt
 ├── 评测报告_hybrid_beir.txt
-└── 评测报告_parent_doc_beir.txt
+├── 评测报告_parent_doc_beir.txt
+├── 评测报告_ivf_beir.txt
+└── 评测报告_hnsw_beir.txt
 ```
 
 ## Roadmap
@@ -231,7 +252,8 @@ RAG/
 - [x] 混合检索方案（hybrid：BM25 + 稠密向量，RRF 分数融合）
 - [x] 父文档索引方案（parent_doc：小块检索、大块返回，零向量化成本）
 - [x] 近似最近邻检索 IVF 部分（ivf：k-means 聚类倒排，nprobe 召回-延迟曲线已出）
-- [ ] 近似最近邻检索 HNSW 部分（图索引）与规模扫描
+- [x] 近似最近邻检索 HNSW 部分（hnsw：图索引，ef_search 召回-延迟曲线已出，与 IVF 合并对比）
+- [ ] 规模扫描（向量复制放大到 10 万~100 万块，寻找暴力检索的交叉点）
 - [ ] 向量量化压缩（PQ / 标量量化）与内存-磁盘占用对比
 
 ## 许可证
