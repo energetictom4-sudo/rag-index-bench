@@ -18,6 +18,7 @@ INDEX_METHOD = "parent_doc"  # 索引方案名称 = indexes/ 目录下的脚本�
                           #   "parent_doc"  父文档索引（小块检索大块返回，见 indexes/parent_doc.py）
                           #   "ivf"         IVF 近似检索（阶段三，见 indexes/ivf.py）
                           #   "hnsw"        HNSW 图索引近似检索（阶段三，见 indexes/hnsw.py）
+                          #   "pq"          IVF+PQ 乘积量化压缩（阶段三，见 indexes/pq.py）
                           # 接口约定见 indexes/README.md，写新方案不用改主程序
 RETRIEVE_ONLY = False     # True = 只打印检索到的片段（快速对比不同索引方案的召回效果），不调用大模型
 
