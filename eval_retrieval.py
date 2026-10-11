@@ -7,7 +7,8 @@
   2. 查询延迟：每道题预热1次后重复检索取平均（毫秒，含问题向量化的耗时）
   3. 内存占用：建库前后评测进程的内存增量（需安装 psutil，可选）
   4. 磁盘占用：建库前后存储根目录（vector_store/）的大小增量
-  5. 建库耗时：构建索引的总时间
+  5. 索引文件大小：扫描存储根目录，列出本次建库新增/修改的文件及各自大小
+  6. 建库耗时：构建索引的总时间
 
 设计说明：
   - 完全复用主程序 rag_demo.py 的配置与索引方案加载逻辑：主程序里改 INDEX_METHOD
@@ -89,6 +90,28 @@ def dir_size_mb(path: str) -> float:
             except OSError:
                 pass
     return total / (1024 * 1024)
+
+
+def scan_dir_files(path: str) -> dict[str, tuple[int, int]]:
+    """扫描目录下所有文件，返回 相对路径→(字节数, 修改时间纳秒) 映射；
+    目录不存在时返回空字典。修改时间用于识别"内容不变但被覆盖重写"的文件"""
+    result = {}
+    for root, _, files in os.walk(path):
+        for f in files:
+            full = os.path.join(root, f)
+            try:
+                st = os.stat(full)
+                result[os.path.relpath(full, path)] = (st.st_size, st.st_mtime_ns)
+            except OSError:
+                pass
+    return result
+
+
+def format_size(n_bytes: int) -> str:
+    """字节数格式化为易读文本（不足1MB显示KB，否则显示MB）"""
+    if n_bytes < 1024 * 1024:
+        return f"{n_bytes / 1024:.0f} KB"
+    return f"{n_bytes / (1024 * 1024):.2f} MB"
 
 
 def find_block_ids(retrieved_text: str, chunk_texts: list[str]) -> set[int]:
@@ -258,7 +281,7 @@ def summarize_latency(latency_records: list[tuple]) -> None:
 
 def summarize_resources(build_time: float, rss_before: float | None,
                         rss_after: float | None, disk_before: float,
-                        disk_after: float) -> None:
+                        disk_after: float, written_files: list[tuple] | None = None) -> None:
     log("")
     log("=" * 70)
     log("【资源占用】")
@@ -271,8 +294,17 @@ def summarize_resources(build_time: float, rss_before: float | None,
         log(f"            本次建库内存增量约 {rss_after - rss_before:.1f} MB")
     log(f"  磁盘占用：存储目录 建库前 {disk_before:.2f} MB → 建库后 {disk_after:.2f} MB，")
     log(f"            本方案本次写入约 {disk_after - disk_before:.2f} MB")
+    if written_files is not None:
+        if written_files:
+            total = sum(n for _, n in written_files)
+            details = " + ".join(f"{rel}({format_size(n)})" for rel, n in written_files)
+            log(f"  索引文件大小：本次建库写入 {len(written_files)} 个文件，共 {format_size(total)}，"
+                f"明细：{details}")
+        else:
+            log("  索引文件大小：本次建库未检测到新写入的文件")
     log("  说明：内存仅统计评测进程（不含Ollama嵌入服务进程）；磁盘增量为本次建库")
-    log("        写入量，多方案并存时目录总量会累加。")
+    log("        写入量，多方案并存时目录总量会累加；索引文件大小为本次建库新增或")
+    log("        发生变化的文件（同一方案重建时覆盖旧文件也计入）。")
 
 
 def main() -> None:
@@ -313,12 +345,19 @@ def main() -> None:
         log("【建库阶段】")
         rss_before = get_rss_mb()
         disk_before = dir_size_mb(rag_demo.STORAGE_PATH)
+        files_before = scan_dir_files(rag_demo.STORAGE_PATH)
         t0 = time.perf_counter()
         index_module.build_index(chunks, config)
         build_time = time.perf_counter() - t0
         rss_after = get_rss_mb()
         disk_after = dir_size_mb(rag_demo.STORAGE_PATH)
-        summarize_resources(build_time, rss_before, rss_after, disk_before, disk_after)
+        files_after = scan_dir_files(rag_demo.STORAGE_PATH)
+        # 本次建库写入的文件：新增的，或大小/修改时间发生变化的（按大小降序）
+        written_files = sorted(
+            ((rel, st[0]) for rel, st in files_after.items() if files_before.get(rel) != st),
+            key=lambda item: -item[1])
+        summarize_resources(build_time, rss_before, rss_after, disk_before, disk_after,
+                            written_files)
 
     # 4. 加载题库并逐题评测
     with open(BEIR_QUESTION_FILE, encoding="utf-8") as f:
