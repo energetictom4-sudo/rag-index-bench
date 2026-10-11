@@ -246,7 +246,7 @@ def summarize(records: list[dict], title: str) -> None:
 
 
 def summarize_recall(records: list[dict], title: str) -> None:
-    """把 Recall@5/10/20/50 集中在一行输出，跨方案对比时直接对照这一行即可"""
+    """把 Recall@5/10/20/50 与题目命中率各集中在一行输出，跨方案对比时直接对照即可"""
     log("")
     log("=" * 70)
     log(title)
@@ -255,13 +255,19 @@ def summarize_recall(records: list[dict], title: str) -> None:
         log("  （无数据）")
         return
     parts = []
+    hit_parts = []
     for k in TOP_K_LIST:
         if k == 1:   # 摘要只输出 5/10/20/50 四个档位（@1 命中率低、波动大，不作对比重点）
             continue
         sub = [r for r in records if r["k"] == k]
         avg = sum(r["recall"] for r in sub) / len(sub)
         parts.append(f"Recall@{k}={avg:.2%}")
+        hit_rate = sum(1 for r in sub if r["hit"] > 0) / len(sub)
+        hit_parts.append(f"Hit@{k}={hit_rate:.2%}")
     log("  " + "   ".join(parts))
+    log("  " + "   ".join(hit_parts))
+    log("  说明：Hit（题目命中率）= 至少召回一个相关文档的题目占比，衡量检索的兜底能力；")
+    log("        它不依赖每题相关文档数量与标注密度，口径比 Recall 更稳健。")
 
 
 def summarize_latency(latency_records: list[tuple]) -> None:
