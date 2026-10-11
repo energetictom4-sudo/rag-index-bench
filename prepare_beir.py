@@ -7,12 +7,12 @@ BEIR 数据集准备脚本：下载并转换为评测脚本可用的块级数据
   2. 读取语料库(corpus)、查询(queries)、相关标注(qrels)
   3. 用与主程序完全一致的切分参数把语料文档切成块，记录"文档→块编号"映射
   4. 把文档级标注(qrels)转换为块级标注，生成评测题库
-  5. 输出两个文件，供 eval_retrieval.py 使用：
-     - beir_chunks.json    所有块的文本
-     - beir_题库.json      块级标注题库
+  5. 输出两个文件，供 eval_retrieval.py 使用（nfcorpus 为 beir_chunks.json / beir_题库.json，
+     其他数据集为 beir_chunks_{DATASET}.json / beir_题库_{DATASET}.json，互不覆盖）
 
 用法：
   python prepare_beir.py                 # 按配置区 DATASET 下载并转换
+  python prepare_beir.py --dataset=scifact  # 准备其他数据集（文件名带数据集名后缀）
   python prepare_beir.py --skip-download # 数据集已下载过则跳过下载
   python prepare_beir.py --force         # 强制重新下载（覆盖旧数据）
 
@@ -51,11 +51,13 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 # ================ 参数配置区 ================
 
-DATASET = "nfcorpus"        # 数据集名（见上方建议清单）
+DATASET = "nfcorpus"        # 数据集名（见上方建议清单）；命令行 --dataset=scifact 可切换
 BEIR_BASE_URL = "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets"
 DATA_DIR = "./beir_data"    # 数据集存放目录（zip与解压后的数据）
-OUT_CHUNKS = "beir_chunks.json"     # 输出的块文件
-OUT_QUESTIONS = "beir_题库.json"    # 输出的块级题库
+# 输出文件名按数据集命名：nfcorpus 保持既有文件名（评测脚本与仓库报告的约定），
+# 其他数据集加数据集名后缀，避免不同数据集的数据文件相互覆盖
+OUT_CHUNKS = "beir_chunks.json" if DATASET == "nfcorpus" else f"beir_chunks_{DATASET}.json"
+OUT_QUESTIONS = "beir_题库.json" if DATASET == "nfcorpus" else f"beir_题库_{DATASET}.json"
 MAX_DOCS = 0                # 最多加载多少篇语料文档（0=全部；语料太大时可先取子集快速实验，
                             #   注意：被截断的文档对应的题会变成无相关块的"拒答题"）
 MAX_QUERIES = 0             # 最多输出多少道题（0=全部；查询太多时可先取子集）
@@ -72,6 +74,15 @@ try:
     os.environ["SSL_CERT_FILE"] = certifi.where()
 except ImportError:
     pass   # certifi未安装则保持系统默认行为
+
+
+def _cli_arg(name: str, default: str) -> str:
+    """读取 --name=value 形式的命令行参数，未指定时返回 default"""
+    prefix = f"--{name}="
+    for a in sys.argv:
+        if a.startswith(prefix):
+            return a[len(prefix):]
+    return default
 
 
 def download_dataset(force: bool = False) -> str:
@@ -105,6 +116,12 @@ def load_jsonl(path: str) -> list[dict]:
 
 
 def main() -> None:
+    global DATASET, OUT_CHUNKS, OUT_QUESTIONS
+    DATASET = _cli_arg("dataset", DATASET)
+    # 数据集经命令行切换后，输出文件名按数据集重新命名
+    OUT_CHUNKS = "beir_chunks.json" if DATASET == "nfcorpus" else f"beir_chunks_{DATASET}.json"
+    OUT_QUESTIONS = "beir_题库.json" if DATASET == "nfcorpus" else f"beir_题库_{DATASET}.json"
+
     force = "--force" in sys.argv
     skip_download = "--skip-download" in sys.argv
 
@@ -165,7 +182,11 @@ def main() -> None:
                 qid, doc_id, score = parts[0], parts[1], parts[2]
             else:
                 continue
-            if int(score) == 2:   # BEIR官方口径：nfcorpus只把强相关(score=2)算相关
+            # BEIR官方口径：不同数据集的相关判定阈值不同——
+            #   nfcorpus 是分级标注(0/1/2)，官方只把强相关(score=2)算相关；
+            #   scifact/fiqa 等是二值标注(score=1 即相关)
+            threshold = 2 if DATASET == "nfcorpus" else 1
+            if int(score) >= threshold:
                 qrels.setdefault(qid, []).append(doc_id)
 
     questions = []
@@ -210,7 +231,8 @@ def main() -> None:
     print("\n下一步：")
     print("  1. eval_retrieval.py 配置区按上面平均相关块数调整 QUERY_TOP_K / TOP_K_LIST")
     print("  2. rag_demo.py 配置区设置要评测的 INDEX_METHOD")
-    print("  3. 运行 python eval_retrieval.py")
+    print(f"  3. 运行 python eval_retrieval.py"
+          f"{'' if DATASET == 'nfcorpus' else ' --dataset=' + DATASET}")
 
 
 if __name__ == "__main__":

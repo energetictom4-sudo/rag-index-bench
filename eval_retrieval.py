@@ -21,6 +21,7 @@
 用法：
   python eval_retrieval.py              # 重建索引后评测（推荐）
   python eval_retrieval.py --skip-build # 跳过建库，直接评测现有索引
+  python eval_retrieval.py --dataset=scifact   # 评测其他数据集（先 prepare_beir.py --dataset=scifact）
 
 指标说明（对每道有标注的题）：
   召回率 = 检索结果中命中标注块的数量 / 该题标注块总数
@@ -54,8 +55,25 @@ from langchain_core.documents import Document   # 包装块文本用
 # BEIR数据在项目目录的上一级（与 rag_demo._DATA_ROOT / experiments/common.py 的 DATA_ROOT
 # 一致），用绝对路径保证从任何目录运行本脚本都能找到数据
 _DATA_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BEIR_CHUNKS_FILE = os.path.join(_DATA_ROOT, "beir_chunks.json")   # 块文件
-BEIR_QUESTION_FILE = os.path.join(_DATA_ROOT, "beir_题库.json")   # 题库文件
+
+
+def _cli_arg(name: str, default: str) -> str:
+    """读取 --name=value 形式的命令行参数，未指定时返回 default"""
+    prefix = f"--{name}="
+    for a in sys.argv:
+        if a.startswith(prefix):
+            return a[len(prefix):]
+    return default
+
+
+# 评测数据集：--dataset=scifact 切换（nfcorpus 用既有文件名，其他数据集文件带数据集名后缀）
+DATASET = _cli_arg("dataset", "nfcorpus")
+if DATASET == "nfcorpus":
+    BEIR_CHUNKS_FILE = os.path.join(_DATA_ROOT, "beir_chunks.json")   # 块文件（既有约定）
+    BEIR_QUESTION_FILE = os.path.join(_DATA_ROOT, "beir_题库.json")   # 题库文件（既有约定）
+else:
+    BEIR_CHUNKS_FILE = os.path.join(_DATA_ROOT, f"beir_chunks_{DATASET}.json")
+    BEIR_QUESTION_FILE = os.path.join(_DATA_ROOT, f"beir_题库_{DATASET}.json")
 
 QUERY_TOP_K = 50                    # 检索返回片段数，必须 ≥ TOP_K_LIST 的最大档位
 QUERY_REPEAT = 3                   # 每道题重复检索次数（取平均延迟，首次预热不计入）
@@ -325,10 +343,14 @@ def main() -> None:
     config = dict(rag_demo.INDEX_CONFIG)   # 复制主程序公共配置，避免互相影响
     config["n_results"] = QUERY_TOP_K      # 评测统一取前QUERY_TOP_K个片段
 
-    report_file = f"评测报告_{rag_demo.INDEX_METHOD}_beir.txt"   # 每个方案一份报告
+    # 每个方案一份报告；nfcorpus 用既有文件名（仓库已有 8 份），其他数据集报告带数据集名后缀
+    if DATASET == "nfcorpus":
+        report_file = f"评测报告_{rag_demo.INDEX_METHOD}_beir.txt"
+    else:
+        report_file = f"评测报告_{rag_demo.INDEX_METHOD}_{DATASET}_beir.txt"
 
     log("=" * 70)
-    log(f"检索评测报告 —— 索引方案：{rag_demo.INDEX_METHOD}   数据源：beir    "
+    log(f"检索评测报告 —— 索引方案：{rag_demo.INDEX_METHOD}   数据源：beir/{DATASET}    "
         f"时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     log(f"Top-K：{QUERY_TOP_K}   统计档位：{list(TOP_K_LIST)}")
     log("=" * 70)
