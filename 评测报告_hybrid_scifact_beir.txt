@@ -1,0 +1,2462 @@
+======================================================================
+检索评测报告 —— 索引方案：hybrid   数据源：beir/scifact    时间：2026-10-12 11:18:45
+Top-K：50   统计档位：[1, 5, 10, 20, 50]
+======================================================================
+BEIR模式：已加载 23329 个块（来自 D:\file\RAG\beir_chunks_scifact.json）
+
+【建库阶段】
+
+======================================================================
+【资源占用】
+======================================================================
+  建库耗时：4.15 秒
+  内存占用：建库前 124.3 MB → 建库后 165.4 MB，
+            本次建库内存增量约 41.2 MB
+  磁盘占用：存储目录 建库前 298.18 MB → 建库后 298.18 MB，
+            本方案本次写入约 0.00 MB
+  索引文件大小：本次建库写入 1 个文件，共 19.03 MB，明细：bm25\index.json(19.03 MB)
+  说明：内存仅统计评测进程（不含Ollama嵌入服务进程）；磁盘增量为本次建库
+        写入量，多方案并存时目录总量会累加；索引文件大小为本次建库新增或
+        发生变化的文件（同一方案重建时覆盖旧文件也计入）。
+======================================================================
+【评测阶段】逐题检索并与题库标注比对
+======================================================================
+
+[1] 0-dimensional biomaterials show inductive properties.
+  类别：scifact  标注块：[19171, 19172, 19173]
+    第1名：匹配块[2977, 12475]  
+    第2名：匹配块[8333, 12475]  
+    第3名：匹配块[12475, 16576]  
+  召回率@50 = 0/1 = 0.00%
+
+[3] 1,000 genomes project enables mapping of genetic sequence variation consisting of rare variants with larger penetrance effects than common variants.
+  类别：scifact  标注块：[10942, 10943, 10944, 10945, 10946, 10947]
+    第1名：匹配块[3606, 12475]  
+    第2名：匹配块[12475, 15486]  
+    第3名：匹配块[12475, 15485]  
+  召回率@50 = 1/1 = 100.00%
+
+[5] 1/2000 in UK have abnormal PrP positivity.
+  类别：scifact  标注块：[10070, 10071, 10072, 10073, 10074, 10075]
+    第1名：匹配块[10072, 12475]  √命中
+    第2名：匹配块[10073, 12475]  √命中
+    第3名：匹配块[10074, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[13] 5% of perinatal mortality is due to low birth weight.
+  类别：scifact  标注块：[1297, 1298, 1299, 1300, 1301, 1302, 1303]
+    第1名：匹配块[1005, 12475]  
+    第2名：匹配块[6244, 12475]  
+    第3名：匹配块[6241, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[36] A deficiency of vitamin B12 increases blood levels of homocysteine.
+  类别：scifact  标注块：[4380, 4381, 4382, 4383, 4384, 8755, 8756, 8757, 8758, 8759]
+    第1名：匹配块[12475, 20594]  
+    第2名：匹配块[12475, 19576]  
+    第3名：匹配块[12475, 12898]  
+  召回率@50 = 2/2 = 100.00%
+
+[42] A high microerythrocyte count raises vulnerability to severe anemia in homozygous alpha (+)- thalassemia trait subjects.
+  类别：scifact  标注块：[12705, 12706, 12707, 12708, 12709, 12710, 12711]
+    第1名：匹配块[12475, 12705]  √命中
+    第2名：匹配块[12475, 12706]  √命中
+    第3名：匹配块[12475, 12709]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[48] A total of 1,000 people in the UK are asymptomatic carriers of vCJD infection.
+  类别：scifact  标注块：[10070, 10071, 10072, 10073, 10074, 10075]
+    第1名：匹配块[10074, 12475]  √命中
+    第2名：匹配块[12475, 12926]  
+    第3名：匹配块[12475, 12800]  
+  召回率@50 = 1/1 = 100.00%
+
+[49] ADAR1 binds to Dicer to cleave pre-miRNA.
+  类别：scifact  标注块：[4932, 4933, 4934, 4935]
+    第1名：匹配块[4932, 12475]  √命中
+    第2名：匹配块[4934, 12475]  √命中
+    第3名：匹配块[4933, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[50] AIRE is expressed in some skin tumors.
+  类别：scifact  标注块：[9280, 9281, 9282, 9283]
+    第1名：匹配块[9281, 12475]  √命中
+    第2名：匹配块[9280, 12475]  √命中
+    第3名：匹配块[12475, 12873]  
+  召回率@50 = 1/1 = 100.00%
+
+[51] ALDH1 expression is associated with better breast cancer outcomes.
+  类别：scifact  标注块：[22399, 22400, 22401, 22402]
+    第1名：匹配块[7065, 12475]  
+    第2名：匹配块[12475, 22401]  √命中
+    第3名：匹配块[12475, 15754]  
+  召回率@50 = 1/1 = 100.00%
+
+[53] ALDH1 expression is associated with poorer prognosis in breast cancer.
+  类别：scifact  标注块：[22399, 22400, 22401, 22402]
+    第1名：匹配块[12475, 22401]  √命中
+    第2名：匹配块[11147, 12475]  
+    第3名：匹配块[7769, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[54] AMP-activated protein kinase (AMPK) activation increases inflammation-related fibrosis in the lungs.
+  类别：scifact  标注块：[22594, 22595, 22596, 22597]
+    第1名：匹配块[3176, 12475]  
+    第2名：匹配块[12475, 16423]  
+    第3名：匹配块[2671, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[56] APOE4 expression in iPSC-derived neurons increases AlphaBeta production and tau phosphorylation causing GABA neuron degeneration.
+  类别：scifact  标注块：[4084, 4085, 4086, 4087]
+    第1名：匹配块[4086, 12475]  √命中
+    第2名：匹配块[4085, 12475]  √命中
+    第3名：匹配块[12475, 14802]  
+  召回率@50 = 1/1 = 100.00%
+
+[57] APOE4 expression in iPSC-derived neurons increases AlphaBeta production and tau phosphorylation, delaying GABA neuron degeneration.
+  类别：scifact  标注块：[4084, 4085, 4086, 4087]
+    第1名：匹配块[4086, 12475]  √命中
+    第2名：匹配块[4085, 12475]  √命中
+    第3名：匹配块[12475, 14802]  
+  召回率@50 = 1/1 = 100.00%
+
+[70] Activation of PPM1D suppresses p53 function.
+  类别：scifact  标注块：[3605, 3606, 3607, 3608, 3609, 4940, 4941, 4942, 4943]
+    第1名：匹配块[4942, 12475]  √命中
+    第2名：匹配块[4421, 12475]  
+    第3名：匹配块[2110, 12475]  
+  召回率@50 = 2/2 = 100.00%
+
+[72] Activator-inhibitor pairs are provided dorsally by Admpchordin.
+  类别：scifact  标注块：[4995, 4996, 4997, 4998]
+    第1名：匹配块[4997, 12475]  √命中
+    第2名：匹配块[7553, 12475]  
+    第3名：匹配块[1405, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[75] Active H. pylori urease has a polymeric structure that compromises two subunits, UreA and UreB.
+  类别：scifact  标注块：[3474, 3475, 3476, 3477, 3478]
+    第1名：匹配块[10422, 12475]  
+    第2名：匹配块[3475, 12475]  √命中
+    第3名：匹配块[3474]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[94] Albendazole is used to treat lymphatic filariasis.
+  类别：scifact  标注块：[954, 955, 956, 957]
+    第1名：匹配块[12475, 13160]  
+    第2名：匹配块[955, 12475]  √命中
+    第3名：匹配块[7482, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[99] Alizarin forms hydrogen bonds with residues involved in PGAM1 substrate binding.
+  类别：scifact  标注块：[12988, 12989, 12990, 12991]
+    第1名：匹配块[12475, 12990]  √命中
+    第2名：匹配块[12475, 17350]  
+    第3名：匹配块[12475, 20112]  
+  召回率@50 = 1/1 = 100.00%
+
+[100] All hematopoietic stem cells segregate their chromosomes randomly.
+  类别：scifact  标注块：[3456, 3457, 3458, 3459, 3460]
+    第1名：匹配块[3456, 12475]  √命中
+    第2名：匹配块[12475, 17016]  
+    第3名：匹配块[65, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[113] Angiotensin converting enzyme inhibitors are associated with increased risk for functional renal insufficiency.
+  类别：scifact  标注块：[5089, 5090, 5091, 5092, 5093, 5094]
+    第1名：匹配块[1419, 12475]  
+    第2名：匹配块[1418, 12475]  
+    第3名：匹配块[10842, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[115] Anthrax spores can be disposed of easily after they are dispersed.
+  类别：scifact  标注块：[19681, 19682, 19683, 19684, 19685]
+    第1名：匹配块[12475, 19682]  √命中
+    第2名：匹配块[1318, 12475]  
+    第3名：匹配块[12475, 19681]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[118] Antibiotic induced alterations in the gut microbiome reduce resistance against Clostridium difficile
+  类别：scifact  标注块：[5274, 5275, 5276, 5277]
+    第1名：匹配块[5274, 12475]  √命中
+    第2名：匹配块[3876]  
+    第3名：匹配块[5275, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[124] Antiretroviral therapy reduces rates of tuberculosis across a broad range of CD4 strata.
+  类别：scifact  标注块：[4175, 4176, 4177, 4178, 4179, 4180]
+    第1名：匹配块[4179, 12475]  √命中
+    第2名：匹配块[735, 4180, 9922, 10538, 12475]  √命中
+    第3名：匹配块[4178, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[127] Arginine 90 in p150n is important for interaction with EB1.
+  类别：scifact  标注块：[14486, 14487, 14488, 14489]
+    第1名：匹配块[12475, 14489]  √命中
+    第2名：匹配块[12475, 14488]  √命中
+    第3名：匹配块[14486]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[128] Arterioles have a larger lumen diameter than venules.
+  类别：scifact  标注块：[6606, 6607, 6608, 6609, 6610]
+    第1名：匹配块[51, 12475]  
+    第2名：匹配块[4194, 12475]  
+    第3名：匹配块[12475, 20819]  
+  召回率@50 = 1/1 = 100.00%
+
+[129] Articles published in open access format are less likely to be cited than traditional journals.
+  类别：scifact  标注块：[18160, 18161, 18162, 18163, 18164, 18165, 18166, 18167, 18168, 18169]...
+    第1名：匹配块[12475, 18165]  √命中
+    第2名：匹配块[12475, 18162]  √命中
+    第3名：匹配块[12475, 18164]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[130] Articles published in open access format are more likely to be cited than traditional journals.
+  类别：scifact  标注块：[18160, 18161, 18162, 18163, 18164, 18165, 18166, 18167, 18168, 18169]...
+    第1名：匹配块[12475, 18162]  √命中
+    第2名：匹配块[18161]  √命中
+    第3名：匹配块[12475, 18166]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[132] Aspirin inhibits the production of PGE2.
+  类别：scifact  标注块：[6420, 6421, 6422, 6423]
+    第1名：匹配块[3080, 12475]  
+    第2名：匹配块[12475, 14158]  
+    第3名：匹配块[12475, 18119]  
+  召回率@50 = 0/1 = 0.00%
+
+[133] Assembly of invadopodia is triggered by focal generation of phosphatidylinositol-3,4-biphosphate and the activation of the nonreceptor tyrosine kinase Src.
+  类别：scifact  标注块：[5734, 5735, 5736, 5737, 5738, 5739, 9314, 9315, 9316, 9317]...
+    第1名：匹配块[12475, 20137]  
+    第2名：匹配块[9315, 12475]  √命中
+    第3名：匹配块[11803, 12475]  √命中
+  召回率@50 = 4/5 = 80.00%
+
+[137] Asymptomatic visual impairment screening in elderly populations does not lead to improved vision.
+  类别：scifact  标注块：[17427, 17428, 17429, 17430, 17431]
+    第1名：匹配块[12475, 17430]  √命中
+    第2名：匹配块[12475, 17428]  √命中
+    第3名：匹配块[12475, 17429]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[141] Auditory entrainment is strengthened when people see congruent visual and auditory information.
+  类别：scifact  标注块：[5719, 5720, 5721, 5722, 10743, 10744, 10745, 10746, 10747, 10748]...
+    第1名：匹配块[10743, 12475]  √命中
+    第2名：匹配块[10744, 12475]  √命中
+    第3名：匹配块[10749, 12475]  √命中
+  召回率@50 = 2/2 = 100.00%
+
+[142] Autologous transplantation of mesenchymal stem cells causes a higher rate of opportunistic infections than induction therapy with anti-interleukin-2 receptor antibodies.
+  类别：scifact  标注块：[8096, 8097, 8098, 8099, 8100, 8101, 8102]
+    第1名：匹配块[8102, 12475]  √命中
+    第2名：匹配块[8096, 12475]  √命中
+    第3名：匹配块[8097, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[143] Autologous transplantation of mesenchymal stem cells causes fewer opportunistic infections than induction therapy with anti-interleukin-2 receptor antibodies.
+  类别：scifact  标注块：[8096, 8097, 8098, 8099, 8100, 8101, 8102]
+    第1名：匹配块[8102, 12475]  √命中
+    第2名：匹配块[8096, 12475]  √命中
+    第3名：匹配块[8097, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[146] Autologous transplantation of mesenchymal stem cells has lower rates of rejection than induction therapy with anti-interleukin-2 receptor antibodies.
+  类别：scifact  标注块：[8096, 8097, 8098, 8099, 8100, 8101, 8102]
+    第1名：匹配块[8096, 12475]  √命中
+    第2名：匹配块[8097, 12475]  √命中
+    第3名：匹配块[8102, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[148] Autophagy declines in aged organisms.
+  类别：scifact  标注块：[878, 879, 880, 881]
+    第1名：匹配块[7760, 12475]  
+    第2名：匹配块[879, 12475]  √命中
+    第3名：匹配块[880, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[163] Bariatric surgery has a positive impact on mental health.
+  类别：scifact  标注块：[13021, 13022, 13023, 13024, 13025, 13026, 13027]
+    第1名：匹配块[12475, 13021]  √命中
+    第2名：匹配块[12475, 13022]  √命中
+    第3名：匹配块[12475, 22002]  
+  召回率@50 = 1/1 = 100.00%
+
+[171] Basophils counteract disease development in patients with systemic lupus erythematosus (SLE).
+  类别：scifact  标注块：[9355, 9356, 9357, 9358]
+    第1名：匹配块[9356, 12475]  √命中
+    第2名：匹配块[12475, 18253]  
+    第3名：匹配块[9358, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[179] Birth-weight is positively associated with breast cancer.
+  类别：scifact  标注块：[11816, 11817, 11818, 11819, 11820, 11821, 11822, 12342, 12343, 12344]...
+    第1名：匹配块[11818, 12475]  √命中
+    第2名：匹配块[12475, 20622]  
+    第3名：匹配块[12344, 12475]  √命中
+  召回率@50 = 4/4 = 100.00%
+
+[180] Blocking the interaction between TDP-43 and respiratory complex I proteins ND3 and ND6 leads to increased TDP-43-induced neuronal loss.
+  类别：scifact  标注块：[12123, 12124, 12125, 12126]
+    第1名：匹配块[12125, 12475]  √命中
+    第2名：匹配块[12123]  √命中
+    第3名：匹配块[12126, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[183] Bone marrow cells contribute to adult macrophage compartments.
+  类别：scifact  标注块：[9457, 9458, 9459, 9460]
+    第1名：匹配块[7809, 12475]  
+    第2名：匹配块[12475, 22454]  
+    第3名：匹配块[7812, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[185] Breast cancer development is determined exclusively by genetic factors.
+  类别：scifact  标注块：[12792, 12793, 12794, 12795, 12796, 12797]
+    第1名：匹配块[12475, 14609]  
+    第2名：匹配块[1636]  
+    第3名：匹配块[12475, 12793]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[198] CCL19 is absent within dLNs.
+  类别：scifact  标注块：[1787, 1788, 1789, 1790]
+    第1名：匹配块[10138, 12475]  
+    第2名：匹配块[1789, 12475]  √命中
+    第3名：匹配块[12475, 13588]  
+  召回率@50 = 1/1 = 100.00%
+
+[208] CHEK2 is not associated with breast cancer.
+  类别：scifact  标注块：[9966, 9967, 9968, 9969, 9970]
+    第1名：匹配块[9966, 12475]  √命中
+    第2名：匹配块[9967, 12475]  √命中
+    第3名：匹配块[9969, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[212] CR is associated with higher methylation age.
+  类别：scifact  标注块：[14725, 14726, 14727, 14728]
+    第1名：匹配块[3747, 12475]  
+    第2名：匹配块[14725]  √命中
+    第3名：匹配块[3749, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[213] CRP is not predictive of postoperative mortality following Coronary Artery Bypass Graft (CABG) surgery.
+  类别：scifact  标注块：[10027, 10028, 10029, 10030, 10031, 10032, 10033, 10034]
+    第1名：匹配块[12475, 17864]  
+    第2名：匹配块[12475, 17863]  
+    第3名：匹配块[12475, 17865]  
+  召回率@50 = 1/1 = 100.00%
+
+[216] CX3CR1 on the Th2 cells impairs T cell survival
+  类别：scifact  标注块：[14297, 14298, 14299, 14300]
+    第1名：匹配块[12475, 14299]  √命中
+    第2名：匹配块[12475, 14297]  √命中
+    第3名：匹配块[12475, 14300]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[217] CX3CR1 on the Th2 cells promotes T cell survival
+  类别：scifact  标注块：[14297, 14298, 14299, 14300]
+    第1名：匹配块[12475, 14299]  √命中
+    第2名：匹配块[12475, 14297]  √命中
+    第3名：匹配块[12475, 14300]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[218] CX3CR1 on the Th2 cells promotes airway inflammation.
+  类别：scifact  标注块：[14297, 14298, 14299, 14300]
+    第1名：匹配块[12475, 14300]  √命中
+    第2名：匹配块[12475, 14297]  √命中
+    第3名：匹配块[12475, 14299]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[219] CX3CR1 on the Th2 cells suppresses airway inflammation.
+  类别：scifact  标注块：[14297, 14298, 14299, 14300]
+    第1名：匹配块[12475, 14300]  √命中
+    第2名：匹配块[12475, 14297]  √命中
+    第3名：匹配块[12475, 14299]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[230] Carriers of the alcohol aldehyde dehydrogenase deficiency mutation drink less that non-carries.
+  类别：scifact  标注块：[2432, 2433, 2434, 2435, 2436]
+    第1名：匹配块[2434, 12475]  √命中
+    第2名：匹配块[2433, 12475]  √命中
+    第3名：匹配块[6783, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[232] Cataract and trachoma are the primary cause of blindness in Southern Sudan.
+  类别：scifact  标注块：[8047]
+    第1名：匹配块[8047, 12475]  √命中
+    第2名：匹配块[6233, 12475]  
+    第3名：匹配块[12475, 18521]  
+  召回率@50 = 1/1 = 100.00%
+
+[233] Cell autonomous sex determination in somatic cells does not occur in Galliformes.
+  类别：scifact  标注块：[3484, 3485, 3486, 3487]
+    第1名：匹配块[3484, 12475]  √命中
+    第2名：匹配块[3487, 12475]  √命中
+    第3名：匹配块[3486, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[236] Cell autonomous sex determination in somatic cells occurs in Passeriformes.
+  类别：scifact  标注块：[3484, 3485, 3486, 3487]
+    第1名：匹配块[3484, 12475]  √命中
+    第2名：匹配块[3487, 12475]  √命中
+    第3名：匹配块[3486, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[237] Cells lacking clpC have a defect in sporulation efficiency in Bacillus subtilis.
+  类别：scifact  标注块：[4241, 4242, 4243, 4244, 4245, 4246]
+    第1名：匹配块[19866]  
+    第2名：匹配块[9483, 12475]  
+    第3名：匹配块[12475, 19867]  
+  召回率@50 = 1/1 = 100.00%
+
+[238] Cells undergoing methionine restriction may activate miRNAs.
+  类别：scifact  标注块：[1829, 1830]
+    第1名：匹配块[12475, 15260]  
+    第2名：匹配块[3865, 12475]  
+    第3名：匹配块[803, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[239] Cellular aging closely links to an older appearance.
+  类别：scifact  标注块：[10467, 10468, 10469, 10470, 10471]
+    第1名：匹配块[462, 12475]  
+    第2名：匹配块[7278, 12475]  
+    第3名：匹配块[2586, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[248] Chenodeosycholic acid treatment increases whole-body energy expenditure.
+  类别：scifact  标注块：[1260, 1261, 1262]
+    第1名：匹配块[1262, 12475]  √命中
+    第2名：匹配块[12475, 17819]  
+    第3名：匹配块[12475, 16558]  
+  召回率@50 = 1/1 = 100.00%
+
+[249] Chenodeosycholic acid treatment reduces whole-body energy expenditure.
+  类别：scifact  标注块：[1260, 1261, 1262]
+    第1名：匹配块[1262, 12475]  √命中
+    第2名：匹配块[12475, 16681]  
+    第3名：匹配块[12475, 16558]  
+  召回率@50 = 1/1 = 100.00%
+
+[261] Chronic aerobic exercise alters endothelial function, improving vasodilating mechanisms mediated by NO.
+  类别：scifact  标注块：[894, 895, 896, 897, 898, 899, 8197, 8198, 8199, 8200]...
+    第1名：匹配块[12475, 22551]  
+    第2名：匹配块[12475, 19297]  
+    第3名：匹配块[12475, 19294]  
+  召回率@50 = 2/2 = 100.00%
+
+[268] Cold exposure increases BAT recruitment.
+  类别：scifact  标注块：[784, 785, 786, 787]
+    第1名：匹配块[786, 12475]  √命中
+    第2名：匹配块[784]  √命中
+    第3名：匹配块[1261, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[269] Cold exposure reduces BAT recruitment.
+  类别：scifact  标注块：[784, 785, 786, 787]
+    第1名：匹配块[786, 12475]  √命中
+    第2名：匹配块[784]  √命中
+    第3名：匹配块[9557, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[274] Combination nicotine replacement therapies with varenicline or bupropion lead to significantly higher long-term abstinence rates at 52 weeks than varenicline monotherapy.
+  类别：scifact  标注块：[8709, 8710, 8711, 8712, 8713, 8714, 8715]
+    第1名：匹配块[8710, 12475]  √命中
+    第2名：匹配块[8714, 12475]  √命中
+    第3名：匹配块[8712, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[275] Combining phosphatidylinositide 3-kinase and MEK 1/2 inhibitors is effective at treating KRAS mutant tumors.
+  类别：scifact  标注块：[4256, 4257, 4258, 4259, 4260, 10586, 10587, 10588, 10589, 10590]...
+    第1名：匹配块[4216, 12475]  
+    第2名：匹配块[4256, 12475]  √命中
+    第3名：匹配块[4260, 12475]  √命中
+  召回率@50 = 3/3 = 100.00%
+
+[279] Commelina yellow mottle virus' (ComYMV) genome consists of 7489 baise pairs.
+  类别：scifact  标注块：[10687, 10688, 10689, 10690, 10691]
+    第1名：匹配块[10687, 12475]  √命中
+    第2名：匹配块[10688, 12475]  √命中
+    第3名：匹配块[12475, 22994]  
+  召回率@50 = 1/1 = 100.00%
+
+[294] Crossover hot spots are not found within gene promoters in Saccharomyces cerevisiae.
+  类别：scifact  标注块：[8306, 8307, 8308, 8309, 8310]
+    第1名：匹配块[7553, 12475]  
+    第2名：匹配块[7352, 12475]  
+    第3名：匹配块[12475, 20195]  
+  召回率@50 = 1/1 = 100.00%
+
+[295] Crosstalk between dendritic cells (DCs) and innate lymphoid cells (ILCs) is important in the regulation of intestinal homeostasis.
+  类别：scifact  标注块：[13669, 13670, 13671, 13672]
+    第1名：匹配块[12475, 15912]  
+    第2名：匹配块[12475, 13672]  √命中
+    第3名：匹配块[12475, 13671]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[298] Cytochrome c is released from the mitochondrial intermembrane space to cytosol during apoptosis.
+  类别：scifact  标注块：[21090, 21091, 21092]
+    第1名：匹配块[12475, 15503]  
+    第2名：匹配块[12475, 21091]  √命中
+    第3名：匹配块[12475, 15802]  
+  召回率@50 = 1/1 = 100.00%
+
+[300] Cytosolic proteins bind to iron-responsive elements on mRNAs coding for DMT1. Cytosolic proteins bind to iron-responsive elements on mRNAs coding for proteins involved in iron uptake.
+  类别：scifact  标注块：[2777, 2778, 2779, 2780, 2781]
+    第1名：匹配块[11724, 12475]  
+    第2名：匹配块[11373, 12475]  
+    第3名：匹配块[9335, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[303] DMRT1 is a sex-determining gene that is epigenetically regulated by the MHM region.
+  类别：scifact  标注块：[3484, 3485, 3486, 3487]
+    第1名：匹配块[3223, 12475]  
+    第2名：匹配块[3225, 12475]  
+    第3名：匹配块[3224, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[312] De novo assembly of sequence data has more specific contigs than unassembled sequence data.
+  类别：scifact  标注块：[5110, 5111, 5112, 5113, 5114, 5115]
+    第1名：匹配块[10762, 12475]  
+    第2名：匹配块[10765, 12475]  
+    第3名：匹配块[10763, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[314] Deamination of cytidine to uridine on the minus strand of viral DNA results in catastrophic G-to-A mutations in the viral genome.
+  类别：scifact  标注块：[3395, 3396, 3397, 3398]
+    第1名：匹配块[2171, 12475]  
+    第2名：匹配块[12475, 16545]  
+    第3名：匹配块[474, 12475]  
+  召回率@50 = 0/1 = 0.00%
+
+[324] Deleting Raptor reduces G-CSF levels.
+  类别：scifact  标注块：[1632, 1633, 1634, 1635]
+    第1名：匹配块[4015, 12475]  
+    第2名：匹配块[4430, 12475]  
+    第3名：匹配块[4432, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[327] Deletion of αvβ8 does not result in a spontaneous inflammatory phenotype.
+  类别：scifact  标注块：[12622, 12623, 12624, 12625]
+    第1名：匹配块[12475, 12623]  √命中
+    第2名：匹配块[12475, 12624]  √命中
+    第3名：匹配块[12475, 15229]  
+  召回率@50 = 1/1 = 100.00%
+
+[338] Dexamethasone decreases risk of postoperative bleeding.
+  类别：scifact  标注块：[15459, 15460, 15461, 15462, 15463, 15464]
+    第1名：匹配块[12475, 15459]  √命中
+    第2名：匹配块[12475, 15463]  √命中
+    第3名：匹配块[12475, 15464]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[343] Diabetic patients with acute coronary syndrome experience increased short-term and long-term risk for bleeding events.
+  类别：scifact  标注块：[4888, 4889, 4890, 4891, 4892, 4893, 6371, 6372, 6373, 6374]...
+    第1名：匹配块[5096, 12475]  
+    第2名：匹配块[4892, 12475]  √命中
+    第3名：匹配块[4889, 11402, 12475]  √命中
+  召回率@50 = 2/2 = 100.00%
+
+[350] Discrimination between the initiator and elongation tRNAs depends on the translation initiation factor IF3.
+  类别：scifact  标注块：[12099, 12100, 12101]
+    第1名：匹配块[12099, 12475]  √命中
+    第2名：匹配块[12100, 12475]  √命中
+    第3名：匹配块[12475, 16237]  
+  召回率@50 = 1/1 = 100.00%
+
+[354] Downregulation and mislocalization of Scribble prevents cell transformation and mammary tumorigenesis.
+  类别：scifact  标注块：[6982, 6983, 6984, 6985]
+    第1名：匹配块[6984, 12475]  √命中
+    第2名：匹配块[6982, 12475]  √命中
+    第3名：匹配块[6983, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[362] During the primary early antibody response activated B cells migrate toward the inner-and outer paracortical areas where oxysterol accumulation is generated by stromal cells.
+  类别：scifact  标注块：[20867, 20868, 20869, 20870]
+    第1名：匹配块[4286, 12475]  
+    第2名：匹配块[12475, 20868]  √命中
+    第3名：匹配块[12475, 20869]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[380] Enhanced early production of inflammatory chemokines improves viral control in the lung.
+  类别：scifact  标注块：[13094, 13095, 13096, 13097]
+    第1名：匹配块[12475, 13095]  √命中
+    第2名：匹配块[12475, 13096]  √命中
+    第3名：匹配块[8997, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[384] Epidemiological disease burden from noncommunicable diseases is more prevalent in low economic settings.
+  类别：scifact  标注块：[10105, 10106, 10107, 10108, 10109, 10110, 10111, 10112, 10113, 10114]...
+    第1名：匹配块[12475, 22631]  
+    第2名：匹配块[12475, 22633]  
+    第3名：匹配块[12475, 22630]  
+  召回率@50 = 1/1 = 100.00%
+
+[385] Epigenetic modulating agents (EMAs) modulate antitumor immune response in a cancer model system.
+  类别：scifact  标注块：[7608, 7609, 7610, 7611, 7612, 7702, 7703, 7704, 7705]
+    第1名：匹配块[840, 12475]  
+    第2名：匹配块[842, 12475]  
+    第3名：匹配块[841, 12475]  
+  召回率@50 = 2/2 = 100.00%
+
+[386] Errors in peripheral IV drug administration are most common during bolus administration and multiple-step medicine preparations.
+  类别：scifact  标注块：[11888, 11889, 11890, 11891]
+    第1名：匹配块[11890, 12475]  √命中
+    第2名：匹配块[12475, 21869]  
+    第3名：匹配块[12475, 21870]  
+  召回率@50 = 1/1 = 100.00%
+
+[388] Ethanol stress decreases the expression of IBP in bacteria.
+  类别：scifact  标注块：[908, 909, 910, 911]
+    第1名：匹配块[3156]  
+    第2名：匹配块[12475, 14498]  
+    第3名：匹配块[911, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[399] Exposure to fine particulate air pollution is relate to anxiety prevalence.
+  类别：scifact  标注块：[653, 654, 655, 656, 657, 658]
+    第1名：匹配块[653, 12475]  √命中
+    第2名：匹配块[654, 12475]  √命中
+    第3名：匹配块[658, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[410] Febrile seizures increase the threshold for development of epilepsy.
+  类别：scifact  标注块：[11088, 11089, 11090]
+    第1名：匹配块[11089, 12475]  √命中
+    第2名：匹配块[11088, 12475]  √命中
+    第3名：匹配块[11090, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[411] Febrile seizures reduce the threshold for development of epilepsy.
+  类别：scifact  标注块：[11088, 11089, 11090]
+    第1名：匹配块[11089, 12475]  √命中
+    第2名：匹配块[11088, 12475]  √命中
+    第3名：匹配块[11569, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[415] Female carriers of the Apolipoprotein E4 (APOE4) allele have increased risk for dementia.
+  类别：scifact  标注块：[5219, 5220, 5221, 5222, 5223, 5224, 5225]
+    第1名：匹配块[12475, 14038]  
+    第2名：匹配块[4085, 12475]  
+    第3名：匹配块[5224, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[421] Flexible molecules experience greater steric hindrance in the tumor microenviroment than rigid molecules.
+  类别：scifact  标注块：[8451, 8452, 8453, 8454]
+    第1名：匹配块[12475, 21197]  
+    第2名：匹配块[4857, 12475]  
+    第3名：匹配块[5699, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[431] FoxO3a activation in neuronal death is mediated by reactive oxygen species (ROS).
+  类别：scifact  标注块：[18492, 18493, 18494, 18495]
+    第1名：匹配块[12475, 16798]  
+    第2名：匹配块[3540, 12475]  
+    第3名：匹配块[2081, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[436] Free histones are degraded by a Rad53-dependent mechanism once DNA has been replicated.
+  类别：scifact  标注块：[10868, 10869, 10870, 10871]
+    第1名：匹配块[10869, 12475]  √命中
+    第2名：匹配块[6653, 12475]  
+    第3名：匹配块[10870, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[437] Functional consequences of genomic alterations due to Myelodysplastic syndrome (MDS) are poorly understood due to the lack of an animal model.
+  类别：scifact  标注块：[12832, 12833, 12834, 12835]
+    第1名：匹配块[4786, 12475]  
+    第2名：匹配块[12475, 21218]  
+    第3名：匹配块[1913, 12475]  
+  召回率@50 = 0/1 = 0.00%
+
+[439] Fz/PCP-dependent Pk localizes to the anterior membrane of neuroectoderm cells during zebrafish neuralation
+  类别：scifact  标注块：[3697, 3698, 3699, 3700]
+    第1名：匹配块[3699, 12475]  √命中
+    第2名：匹配块[3698, 12475]  √命中
+    第3名：匹配块[4531, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[440] Fz/PCP-dependent Pk localizes to the anterior membrane of notochord cells during zebrafish neuralation.
+  类别：scifact  标注块：[3697, 3698, 3699, 3700]
+    第1名：匹配块[3699, 12475]  √命中
+    第2名：匹配块[3698, 12475]  √命中
+    第3名：匹配块[12475, 12908]  
+  召回率@50 = 1/1 = 100.00%
+
+[443] GATA-3 is important for hematopoietic stem cell (HSC) function.
+  类别：scifact  标注块：[7833, 7834, 7835, 7836]
+    第1名：匹配块[7833, 12475]  √命中
+    第2名：匹配块[7834, 12475]  √命中
+    第3名：匹配块[7835, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[452] Gene expression does not vary appreciably across genetically identical cells.
+  类别：scifact  标注块：[404, 405, 406, 407, 9435, 9436, 9437]
+    第1名：匹配块[11776, 12475]  
+    第2名：匹配块[405, 12475]  √命中
+    第3名：匹配块[2290]  
+  召回率@50 = 2/2 = 100.00%
+
+[475] Glycolysis is one of the primary glycometabolic pathways in cells.
+  类别：scifact  标注块：[12945, 12946, 12947, 12948]
+    第1名：匹配块[2372, 12475]  
+    第2名：匹配块[12475, 23312]  
+    第3名：匹配块[12475, 15584]  
+  召回率@50 = 1/1 = 100.00%
+
+[478] Golli-deficient T-cells prefer to differentiate into an anergic phenotype in the adaptive immune response when there are increased levels of Ca2+ in the cytosol.
+  类别：scifact  标注块：[10974, 10975, 10976]
+    第1名：匹配块[8078, 12475]  
+    第2名：匹配块[10976, 12475]  √命中
+    第3名：匹配块[10975, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[491] HNF4A mutations can cause diabetes in mutant carriers by the age of 14 years
+  类别：scifact  标注块：[22790, 22791, 22792]
+    第1名：匹配块[12475, 22792]  √命中
+    第2名：匹配块[12475, 22790]  √命中
+    第3名：匹配块[694, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[501] Headaches are not correlated with cognitive impairment.
+  类别：scifact  标注块：[12574, 12575, 12576, 12577, 12578, 12579]
+    第1名：匹配块[12475, 16521]  
+    第2名：匹配块[12475, 12579]  √命中
+    第3名：匹配块[9348, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[502] Healthcare delivery efficiency in crowded delivery centers is impaired by improving structural, logistical, and interpersonal elements.
+  类别：scifact  标注块：[9626, 9627, 9628, 9629, 9630, 9631, 9632, 9633, 9634]
+    第1名：匹配块[12475, 22870]  
+    第2名：匹配块[12475, 13802]  
+    第3名：匹配块[12475, 16101]  
+  召回率@50 = 0/1 = 0.00%
+
+[507] Helminths interfere with immune system control of macrophages activated by IL-4 favor Mycobacterium tuberculosis replication.
+  类别：scifact  标注块：[18946, 18947, 18948, 18949]
+    第1名：匹配块[6025, 12475]  
+    第2名：匹配块[12475, 18948]  √命中
+    第3名：匹配块[12475, 18946]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[508] Hematopoietic Stem Cell purification reaches purity rate of up to 50%.
+  类别：scifact  标注块：[10434, 10435, 10436, 10437]
+    第1名：匹配块[12475, 17016]  
+    第2名：匹配块[9671]  
+    第3名：匹配块[8037, 12475]  
+  召回率@50 = 0/1 = 0.00%
+
+[513] High cardiopulmonary fitness causes increased mortality rate.
+  类别：scifact  标注块：[9726, 9727, 9728, 9729, 9730, 9731, 9732]
+    第1名：匹配块[9399, 12475]  
+    第2名：匹配块[9398, 12475]  
+    第3名：匹配块[9403, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[514] High dietary calcium intakes are unnecessary for prevention of secondary hyperparathyroidism in subjects with 25(OH)D levels above 75 nmol/liter.
+  类别：scifact  标注块：[11788, 11789, 11790, 11791, 11792, 11793]
+    第1名：匹配块[12475, 18940]  
+    第2名：匹配块[12475, 18941]  
+    第3名：匹配块[2514, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[516] High levels of CRP reduces the risk of exacerbations in chronic obstructive pulmonary disease (COPD).
+  类别：scifact  标注块：[18678, 18679, 18680, 18681, 18682, 18683, 18684, 18685]
+    第1名：匹配块[12475, 18679]  √命中
+    第2名：匹配块[12475, 18685]  √命中
+    第3名：匹配块[12475, 13077]  
+  召回率@50 = 1/1 = 100.00%
+
+[517] High levels of copeptin decrease risk of diabetes.
+  类别：scifact  标注块：[11460, 11461, 11462, 11463, 11464, 11465]
+    第1名：匹配块[6140, 12475]  
+    第2名：匹配块[8418, 12475]  
+    第3名：匹配块[12475, 17941]  
+  召回率@50 = 0/1 = 0.00%
+
+[521] High-sensitivity cardiac troponin T (HSCT-T) dosage may not be diagnostic if the onset of symptoms occurs less than 3 hours before acute myocardial injury (AMI).
+  类别：scifact  标注块：[19975, 19976, 19977, 19978, 19979, 19980, 19981, 19982]
+    第1名：匹配块[12475, 19981]  √命中
+    第2名：匹配块[12475, 18673]  
+    第3名：匹配块[2430, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[525] Histone demethylase recruitment and a transient decrease in histone methylation is necessary for ligand-dependent induction of transcription by nuclear receptors.
+  类别：scifact  标注块：[10038, 10039, 10040, 10041]
+    第1名：匹配块[10038]  √命中
+    第2名：匹配块[10040, 12475]  √命中
+    第3名：匹配块[10039, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[527] Homozygous deletion of murine Sbds gene from osterix-expressing mesenchymal stem and progenitor cells (MPCs) prevents oxidative stress.
+  类别：scifact  标注块：[3075, 3076, 3077, 3078]
+    第1名：匹配块[3077, 12475]  √命中
+    第2名：匹配块[3076, 12475]  √命中
+    第3名：匹配块[6101, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[528] Human T-lymphotropic virus type-I-associated myelopathy / tropical spastic paraparesis (HAM/TSP) patients produce Immunoglobulin G (IgG) antibodies which cross-react with an immunodominant epitope in Tax.
+  类别：scifact  标注块：[4587, 4588, 4589, 4590, 4591]
+    第1名：匹配块[4589, 12475]  √命中
+    第2名：匹配块[4590, 12475]  √命中
+    第3名：匹配块[12475, 18887]  
+  召回率@50 = 1/1 = 100.00%
+
+[532] Hyperfibrinogenemia decreases rates of femoropopliteal bypass thrombosis.
+  类别：scifact  标注块：[9546, 9547, 9548, 9549, 9550, 9551]
+    第1名：匹配块[9547, 12475]  √命中
+    第2名：匹配块[7302, 12475]  
+    第3名：匹配块[9546, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[533] Hyperfibrinogenemia increases rates of femoropopliteal bypass thrombosis.
+  类别：scifact  标注块：[9546, 9547, 9548, 9549, 9550, 9551]
+    第1名：匹配块[1127]  
+    第2名：匹配块[9546, 12475]  √命中
+    第3名：匹配块[9547, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[535] Hypertension is frequently observed in type 1 diabetes patients.
+  类别：scifact  标注块：[21082, 21083, 21084, 21085, 21086, 21087, 21088, 21089]
+    第1名：匹配块[1751, 12475]  
+    第2名：匹配块[4659]  
+    第3名：匹配块[9776, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[536] Hypocretin neurones induce panicprone state in rats.
+  类别：scifact  标注块：[11681, 11682, 11683, 11684, 11685]
+    第1名：匹配块[11683, 12475]  √命中
+    第2名：匹配块[12475, 17852]  
+    第3名：匹配块[9510, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[539] Hypoglycemia increases the risk of dementia.
+  类别：scifact  标注块：[9775, 9776, 9777, 9778, 9779, 9780, 9781, 9782]
+    第1名：匹配块[9782, 12475]  √命中
+    第2名：匹配块[9776, 12475]  √命中
+    第3名：匹配块[9779, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[540] Hypothalamic glutamate neurotransmission is crucial to energy balance.
+  类别：scifact  标注块：[8870, 8871, 8872, 8873, 16638, 16639, 16640, 16641]
+    第1名：匹配块[10986, 12475]  
+    第2名：匹配块[8870]  √命中
+    第3名：匹配块[12211, 12475]  
+  召回率@50 = 1/2 = 50.00%
+
+[544] IFIT1 restricts viral replication by sequestrating mis-capped viral RNAs.
+  类别：scifact  标注块：[16022, 16023, 16024, 16025]
+    第1名：匹配块[8811, 12475]  
+    第2名：匹配块[8074, 12475]  
+    第3名：匹配块[3396, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[549] IRG1 has antiviral effects against neurotropic viruses.
+  类别：scifact  标注块：[7341, 7342, 7343, 7344]
+    第1名：匹配块[7343, 12475]  √命中
+    第2名：匹配块[12475, 22159]  
+    第3名：匹配块[6328, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[551] ITAM phosphorylation prevents the transfer of the T cell receptor (TCR) signal from the echo-domain to the cytoplasmic tail of the T cell receptor (TCR).
+  类别：scifact  标注块：[19589, 19590, 19591, 19592]
+    第1名：匹配块[7047, 12475]  
+    第2名：匹配块[7048, 12475]  
+    第3名：匹配块[7049, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[552] IgA plasma cells that are specific for transglutaminase 2 accumulate in the duodenal mucosa on commencement of a gluten-free diet.
+  类别：scifact  标注块：[1200, 1201, 1202, 1203]
+    第1名：匹配块[1200, 12475]  √命中
+    第2名：匹配块[1201, 12475]  √命中
+    第3名：匹配块[1202, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[554] Immune complex triggered cell death leads to extracellular release of neutrophil protein HMGB1.
+  类别：scifact  标注块：[851, 852, 853, 854]
+    第1名：匹配块[12475, 22723]  
+    第2名：匹配块[12475, 22722]  
+    第3名：匹配块[852, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[560] Immune responses result in the development of inflammatory Th17 cells and anti-inflammatory iTregs.
+  类别：scifact  标注块：[21284, 21285, 21286, 21287]
+    第1名：匹配块[12475, 18599]  
+    第2名：匹配块[8479, 12475]  
+    第3名：匹配块[12475, 13095]  
+  召回率@50 = 0/1 = 0.00%
+
+[569] In adult tissue, most T cells are memory T cells.
+  类别：scifact  标注块：[15533, 15534, 15535, 15536]
+    第1名：匹配块[12475, 15535]  √命中
+    第2名：匹配块[2533, 12475]  
+    第3名：匹配块[2532, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[575] In domesticated populations of Saccharomyces cerevisiae, whole chromosome aneuploidy is very uncommon.
+  类别：scifact  标注块：[7912, 7913, 7914, 7915]
+    第1名：匹配块[6596, 12475]  
+    第2名：匹配块[7553, 12475]  
+    第3名：匹配块[7912]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[577] In mice, P. chabaudi parasites are able to proliferate faster early in infection when inoculated at lower numbers than when inoculated at high numbers.
+  类别：scifact  标注块：[4467, 4468, 4469]
+    第1名：匹配块[12475, 15724]  
+    第2名：匹配块[12475, 21493]  
+    第3名：匹配块[12475, 14348]  
+  召回率@50 = 1/1 = 100.00%
+
+[578] In mouse models, the loss of CSF1R facilitates MOZ-TIF2-induced leuekmogenesis.
+  类别：scifact  标注块：[6973, 6974, 6975, 6976, 6977]
+    第1名：匹配块[6973, 12475]  √命中
+    第2名：匹配块[6976, 12475]  √命中
+    第3名：匹配块[6975, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[587] In transgenic mice harboring green florescent protein under the control of the Sox2 promoter, less than ten percent of the cells with green florescent colocalize with cell proliferation markers.
+  类别：scifact  标注块：[12138, 12139, 12140, 12141]
+    第1名：匹配块[4297, 12475]  
+    第2名：匹配块[12139, 12475]  √命中
+    第3名：匹配块[12475, 21392]  
+  召回率@50 = 1/1 = 100.00%
+
+[589] In young and middle-aged adults, current or remote uses of ADHD medications do not increase the risk of serious cardiovascular events.
+  类别：scifact  标注块：[8363, 8364, 8365, 8366, 8367, 8368, 8369]
+    第1名：匹配块[8363, 12475]  √命中
+    第2名：匹配块[8369, 12475]  √命中
+    第3名：匹配块[8364, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[593] Incidence of heart failure decreased by 10% in women since 1979.
+  类别：scifact  标注块：[13357, 13358, 13359, 13360, 13361]
+    第1名：匹配块[12475, 13361]  √命中
+    第2名：匹配块[12475, 13359]  √命中
+    第3名：匹配块[12475, 13357]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[597] Incidence rates of cervical cancer have decreased.
+  类别：scifact  标注块：[9404, 9405, 9406, 17182, 17183, 17184, 17185, 17186, 20310, 20311]...
+    第1名：匹配块[12475, 20313]  √命中
+    第2名：匹配块[12475, 17958]  
+    第3名：匹配块[9405, 12475]  √命中
+  召回率@50 = 3/3 = 100.00%
+
+[598] Incidence rates of cervical cancer have increased due to nationwide screening programs based primarily on cytology to detect uterine cervical cancer.
+  类别：scifact  标注块：[17182, 17183, 17184, 17185, 17186]
+    第1名：匹配块[12475, 22543]  
+    第2名：匹配块[12475, 18052]  
+    第3名：匹配块[12475, 18048]  
+  召回率@50 = 1/1 = 100.00%
+
+[613] Increased microtubule acetylation repairs LRRK2 Roc-COR domain mutation induced locomotor deficits.
+  类别：scifact  标注块：[7506, 7507, 7508, 7509]
+    第1名：匹配块[7506, 12475]  √命中
+    第2名：匹配块[7508, 12475]  √命中
+    第3名：匹配块[7507, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[619] Increased vessel density along with a reduction in fibrosis decreases the efficacy of chemotherapy treatments.
+  类别：scifact  标注块：[2093, 2094, 2095, 2096, 2097, 14022, 14023, 14024]
+    第1名：匹配块[12475, 16948]  
+    第2名：匹配块[12475, 17059]  
+    第3名：匹配块[12475, 19943]  
+  召回率@50 = 0/2 = 0.00%
+
+[623] Individuals with low serum vitamin D concentrations have increased risk of multiple sclerosis.
+  类别：scifact  标注块：[12142, 12143, 12144, 12145]
+    第1名：匹配块[12475, 17064]  
+    第2名：匹配块[12475, 15140]  
+    第3名：匹配块[1971, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[628] Infection of human T-cell lymphotropic virus type 1 is most frequent in individuals of African origin.
+  类别：scifact  标注块：[16228, 16229, 16230, 16231]
+    第1名：匹配块[12475, 14064]  
+    第2名：匹配块[12475, 16229]  √命中
+    第3名：匹配块[4589, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[636] Inositol lipid 3-phosphatase PTEN converts Ptdlns(3,4)P 2 into phosphatidylinositol 4-phosphate.
+  类别：scifact  标注块：[16083, 16084, 16085, 16086]
+    第1名：匹配块[12475, 16084]  √命中
+    第2名：匹配块[12475, 16085]  √命中
+    第3名：匹配块[12475, 13387]  
+  召回率@50 = 1/1 = 100.00%
+
+[637] Input from  mental and physical health care professionals is effective at decreasing homelessness.
+  类别：scifact  标注块：[17107, 17108, 17109, 17110]
+    第1名：匹配块[19022]  
+    第2名：匹配块[12475, 19023]  
+    第3名：匹配块[12475, 19149]  
+  召回率@50 = 1/1 = 100.00%
+
+[641] Insomnia can be effectively treated with cognitive behavioral therapy.
+  类别：scifact  标注块：[4897, 4898, 4899, 4900, 4901, 4902, 19125, 19126, 19127, 19128]
+    第1名：匹配块[4897, 12475]  √命中
+    第2名：匹配块[4898, 12475]  √命中
+    第3名：匹配块[4899, 12475]  √命中
+  召回率@50 = 2/2 = 100.00%
+
+[644] Insulin increases risk of severe kidney failure.
+  类别：scifact  标注块：[10010, 10011, 10012, 10013, 10014, 10015, 10016, 10017, 10018]
+    第1名：匹配块[10014, 12475]  √命中
+    第2名：匹配块[10010, 12475]  √命中
+    第3名：匹配块[99, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[649] Integrating classroom-based collaborative learning with Web-based collaborative learning leads to subpar class performance
+  类别：scifact  标注块：[9415, 9416, 9417, 9418, 9419, 9420]
+    第1名：匹配块[9417, 12475]  √命中
+    第2名：匹配块[12475, 15985]  
+    第3名：匹配块[7255, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[659] Ivermectin is used to treat lymphatic filariasis.
+  类别：scifact  标注块：[954, 955, 956, 957]
+    第1名：匹配块[955, 12475]  √命中
+    第2名：匹配块[7482, 12475]  
+    第3名：匹配块[877, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[660] Ivermectin is used to treat onchocerciasis.
+  类别：scifact  标注块：[954, 955, 956, 957]
+    第1名：匹配块[12475, 17583]  
+    第2名：匹配块[877, 12475]  
+    第3名：匹配块[7482, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[674] LDL cholesterol has no involvement in the development of cardiovascular disease.
+  类别：scifact  标注块：[1714, 1715, 1716, 1717, 1718, 1719]
+    第1名：匹配块[1715, 12475]  √命中
+    第2名：匹配块[6239, 12475]  
+    第3名：匹配块[7643, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[684] Lack of clpC does not affect sporulation efficiency in Bacillus subtilis cells.
+  类别：scifact  标注块：[4241, 4242, 4243, 4244, 4245, 4246]
+    第1名：匹配块[9483, 12475]  
+    第2名：匹配块[12475, 19867]  
+    第3名：匹配块[19866]  
+  召回率@50 = 1/1 = 100.00%
+
+[690] Less than 10% of the gabonese children with Schimmelpenning-Feuerstein-Mims syndrome (SFM) had a plasma lactate of more than 5mmol/L.
+  类别：scifact  标注块：[12974, 12975, 12976, 12977, 12978]
+    第1名：匹配块[12475, 12709]  
+    第2名：匹配块[12475, 16656]  
+    第3名：匹配块[3783, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[691] Leukemia associated Rho guanine nucleotide-exchange factor represses RhoA in response to SRC activation.
+  类别：scifact  标注块：[8370, 8371, 8372, 8373]
+    第1名：匹配块[12475, 19530]  
+    第2名：匹配块[8372, 12475]  √命中
+    第3名：匹配块[12475, 16540]  
+  召回率@50 = 1/1 = 100.00%
+
+[692] Leuko-increased blood increases infectious complications in red blood cell transfusion.
+  类别：scifact  标注块：[15936, 15937, 15938, 15939, 15940, 15941]
+    第1名：匹配块[2910]  
+    第2名：匹配块[15361]  
+    第3名：匹配块[12475, 15362]  
+  召回率@50 = 1/1 = 100.00%
+
+[693] Leuko-reduced blood reduces infectious complications in red blood cell transfusion.
+  类别：scifact  标注块：[15936, 15937, 15938, 15939, 15940, 15941]
+    第1名：匹配块[12475, 15936]  √命中
+    第2名：匹配块[12475, 15941]  √命中
+    第3名：匹配块[12475, 17861]  
+  召回率@50 = 1/1 = 100.00%
+
+[700] Localization of PIN1 in the Arabidopsis embryo does not require VPS9a
+  类别：scifact  标注块：[3399, 3400, 3401, 3402, 3403]
+    第1名：匹配块[11925, 12475]  
+    第2名：匹配块[3402, 12475]  √命中
+    第3名：匹配块[365, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[702] Localization of PIN1 in the roots of Arabidopsis does not require VPS9a
+  类别：scifact  标注块：[3399, 3400, 3401, 3402, 3403]
+    第1名：匹配块[11925, 12475]  
+    第2名：匹配块[12475, 20890]  
+    第3名：匹配块[3402, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[715] Low expression of miR7a does represses target genes and exerts a biological function in ovaries.
+  类别：scifact  标注块：[12841, 12842, 12843, 12844]
+    第1名：匹配块[743]  
+    第2名：匹配块[11920, 12475]  
+    第3名：匹配块[5643, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[716] Low expression of miR7a exerts a biological function in testis.
+  类别：scifact  标注块：[12841, 12842, 12843, 12844]
+    第1名：匹配块[12475, 15603]  
+    第2名：匹配块[12475, 15602]  
+    第3名：匹配块[1116, 12475]  
+  召回率@50 = 0/1 = 0.00%
+
+[718] Low nucleosome occupancy correlates with low methylation levels across species.
+  类别：scifact  标注块：[12400, 12401, 12402, 12403]
+    第1名：匹配块[12402, 12475]  √命中
+    第2名：匹配块[3511, 12475]  
+    第3名：匹配块[12400, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[721] Lupus-prone mice infected with curliproducing bacteria have higher autoantibody titers compared to controls.
+  类别：scifact  标注块：[1478, 1479, 1480, 1481]
+    第1名：匹配块[1480, 12475]  √命中
+    第2名：匹配块[9358, 12475]  
+    第3名：匹配块[9357, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[723] Ly49Q directs the organization of neutrophil migration to inflammation sites by regulating membrane raft functions.
+  类别：scifact  标注块：[4629, 4630, 4631, 4632]
+    第1名：匹配块[4631, 12475]  √命中
+    第2名：匹配块[4629, 12475]  √命中
+    第3名：匹配块[4630, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[727] Ly6C hi monocytes have a lower inflammatory capacity compared to their Ly6C lo counterparts.
+  类别：scifact  标注块：[6109, 6110, 6111, 6112]
+    第1名：匹配块[12475, 14905]  
+    第2名：匹配块[6112]  √命中
+    第3名：匹配块[12475, 20343]  
+  召回率@50 = 1/1 = 100.00%
+
+[728] Ly6C hi monocytes have a lower inflammatory capacity than Ly6C lo monocytes.
+  类别：scifact  标注块：[6109, 6110, 6111, 6112, 20339, 20340, 20341, 20342, 20343]
+    第1名：匹配块[12475, 14905]  
+    第2名：匹配块[6112]  √命中
+    第3名：匹配块[12475, 20343]  √命中
+  召回率@50 = 2/2 = 100.00%
+
+[729] Lymphadenopathy is observed in knockin mouse lacking the SHP-2 MAPK pathway.
+  类别：scifact  标注块：[17802, 17803, 17804]
+    第1名：匹配块[12475, 17803]  √命中
+    第2名：匹配块[12475, 12641]  
+    第3名：匹配块[10554, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[742] Macrolides have no protective effect against myocardial infarction.
+  类别：scifact  标注块：[19257, 19258, 19259, 19260, 19261]
+    第1名：匹配块[12475, 19260]  √命中
+    第2名：匹配块[12475, 22090]  
+    第3名：匹配块[12475, 19257]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[743] Macrolides protect against myocardial infarction.
+  类别：scifact  标注块：[19257, 19258, 19259, 19260, 19261]
+    第1名：匹配块[12475, 22152]  
+    第2名：匹配块[12475, 19257]  √命中
+    第3名：匹配块[12475, 22090]  
+  召回率@50 = 1/1 = 100.00%
+
+[744] Macropinocytosis contributes to a cell's supply of amino acids via the intracellular uptake of protein.
+  类别：scifact  标注块：[6737, 6738, 6739, 6740]
+    第1名：匹配块[3227, 12475]  
+    第2名：匹配块[6738, 12475]  √命中
+    第3名：匹配块[3228, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[756] Many proteins in human cells can be post-translationally modified at lysine residues via acetylation.
+  类别：scifact  标注块：[2299, 2300, 2301, 2302]
+    第1名：匹配块[12475, 17916]  
+    第2名：匹配块[12475, 12568]  
+    第3名：匹配块[9062, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[759] Mathematical models predict that using Artemisinin-based combination therapy over nongametocytocidal drugs have a dramatic impact in reducing malaria transmission.
+  类别：scifact  标注块：[1461, 1462, 1463, 1464, 1465, 1466, 1467, 1468]
+    第1名：匹配块[1462, 12475]  √命中
+    第2名：匹配块[1461, 12475]  √命中
+    第3名：匹配块[9176, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[768] Mercaptopurine is anabolized into the inactive methylmercaptopurine by thiopurine methyltrasnferase (TPMT).
+  类别：scifact  标注块：[5323, 5324, 5325, 5326]
+    第1名：匹配块[12475, 13279]  
+    第2名：匹配块[1105, 12475]  
+    第3名：匹配块[5325, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[770] Metastatic colorectal cancer treated with a single agent fluoropyrimidines resulted in reduced efficacy and lower quality of life when compared with oxaliplatin-based chemotherapy in elderly patients.
+  类别：scifact  标注块：[11306, 11307, 11308, 11309, 11310, 11311, 11312, 11313]
+    第1名：匹配块[11312, 12475]  √命中
+    第2名：匹配块[11306, 12475]  √命中
+    第3名：匹配块[11307, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[775] Mice defective for deoxyribonucleic acid (DNA) polymerase I (polI) reveal increased sensitivity to ionizing radiation (IR).
+  类别：scifact  标注块：[19289, 19290, 19291, 19292]
+    第1名：匹配块[12475, 18123]  
+    第2名：匹配块[8690, 12475]  
+    第3名：匹配块[8692, 12475]  
+  召回率@50 = 0/1 = 0.00%
+
+[781] Mice that lack Interferon-γ or its receptor exhibit high resistance to experimental autoimmune myocarditis.
+  类别：scifact  标注块：[16122, 16123, 16124, 16125]
+    第1名：匹配块[12475, 16122]  √命中
+    第2名：匹配块[11402, 12475, 16123]  √命中
+    第3名：匹配块[6580, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[783] Mice without IFN-γ or its receptor are resistant to EAM induced with α-MyHC/CFA.
+  类别：scifact  标注块：[21413, 21414, 21415, 21416]
+    第1名：匹配块[12475, 21012]  
+    第2名：匹配块[6582, 12475]  
+    第3名：匹配块[12475, 21011]  
+  召回率@50 = 1/1 = 100.00%
+
+[784] MicroRNA is involved in the regulation of Neural Stem Cell (NSC) differentiation and proliferation dynamic homeostasis
+  类别：scifact  标注块：[1908, 1909, 1910, 1911]
+    第1名：匹配块[15698]  
+    第2名：匹配块[12475, 15568]  
+    第3名：匹配块[1908]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[785] Microarray results from culture-amplified mixtures of serotypes correlate poorly with microarray results from uncultured mixtures.
+  类别：scifact  标注块：[9238, 9239, 9240, 9241, 9242, 9243]
+    第1名：匹配块[9243, 12475]  √命中
+    第2名：匹配块[35, 12475]  
+    第3名：匹配块[36, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[793] Mitochondria are uninvolved in apoptosis.
+  类别：scifact  标注块：[6807, 6808, 6809]
+    第1名：匹配块[6808, 12475]  √命中
+    第2名：匹配块[4300, 12475]  
+    第3名：匹配块[6807, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[800] Modifying the epigenome in the brain affects the normal human aging process by affecting certain genes related to neurogenesis.
+  类别：scifact  标注块：[15018, 15019, 15020]
+    第1名：匹配块[12475, 14846]  
+    第2名：匹配块[4970, 4971, 12475]  
+    第3名：匹配块[7281, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[805] Monoclonal antibody targeting of N-cadherin inhibits metastasis.
+  类别：scifact  标注块：[14795, 14796, 14797, 14798]
+    第1名：匹配块[12475, 14795]  √命中
+    第2名：匹配块[12475, 14798]  √命中
+    第3名：匹配块[12475, 14797]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[808] Most termination events in Okazaki fragments are sequence specific.
+  类别：scifact  标注块：[20377, 20378, 20379, 20380]
+    第1名：匹配块[12475, 20378]  √命中
+    第2名：匹配块[12475, 17213]  
+    第3名：匹配块[10544, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[811] Mutant mice lacking SVCT2 have greatly increased ascorbic acid levels in both brain and adrenals.
+  类别：scifact  标注块：[13401, 13402, 13403, 13404, 13405]
+    第1名：匹配块[12475, 13402]  √命中
+    第2名：匹配块[12475, 13403]  √命中
+    第3名：匹配块[12475, 13404]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[814] Mutations in G-Beta protein GNB2 are present in many cancers, resulting in loss of interaction with G-alpha subunits and concomitant activation of AKT pathway.
+  类别：scifact  标注块：[19560, 19561, 19562, 19563, 19564]
+    第1名：匹配块[12475, 19561]  √命中
+    第2名：匹配块[12475, 19560]  √命中
+    第3名：匹配块[12475, 19562]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[820] N-terminal cleavage increases success identifying transcription start sites.
+  类别：scifact  标注块：[6881, 6882, 6883, 6884, 6885]
+    第1名：匹配块[12475, 16766]  
+    第2名：匹配块[4341, 12475]  
+    第3名：匹配块[12475, 21199]  
+  召回率@50 = 1/1 = 100.00%
+
+[821] N-terminal cleavage reduces success identifying transcription start sites.
+  类别：scifact  标注块：[6881, 6882, 6883, 6884, 6885]
+    第1名：匹配块[12475, 16766]  
+    第2名：匹配块[4341, 12475]  
+    第3名：匹配块[12475, 21199]  
+  召回率@50 = 1/1 = 100.00%
+
+[823] N348I mutations cause resistance to zidovudine (AZT).
+  类别：scifact  标注块：[11220, 11221, 11222, 11223, 11224, 11225, 11226, 11227]
+    第1名：匹配块[11227, 12475]  √命中
+    第2名：匹配块[11224, 12475]  √命中
+    第3名：匹配块[11220, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[830] NF2 (Merlin) causes phosphorylation and subsequent cytoplasmic sequestration of YAP in Drosophila by activating LATS1/2 kinases.
+  类别：scifact  标注块：[1526, 1527, 1528, 1529]
+    第1名：匹配块[3779, 12475]  
+    第2名：匹配块[12475, 22700]  
+    第3名：匹配块[6690, 12475]  
+  召回率@50 = 0/1 = 0.00%
+
+[831] NF2 (Merlin) prevents phosphorylation and subsequent cytoplasmic sequestration of YAP in Drosophila.
+  类别：scifact  标注块：[1526, 1527, 1528, 1529]
+    第1名：匹配块[6690, 12475]  
+    第2名：匹配块[12475, 19886]  
+    第3名：匹配块[616, 12475]  
+  召回率@50 = 0/1 = 0.00%
+
+[832] NFAT4 activation requires IP3R-mediated Ca2+ mobilization.
+  类别：scifact  标注块：[18846, 18847, 18848, 18849]
+    第1名：匹配块[12475, 18848]  √命中
+    第2名：匹配块[12475, 18849]  √命中
+    第3名：匹配块[12475, 18847]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[834] NOX2-independent pathways can generate peroxynitrite by reacting with nitrogen intermediates.
+  类别：scifact  标注块：[4592, 4593, 4594, 4595]
+    第1名：匹配块[12475, 15311]  
+    第2名：匹配块[12475, 15296]  
+    第3名：匹配块[12475, 15299]  
+  召回率@50 = 0/1 = 0.00%
+
+[837] NR5A2 is important in development of endometrial tissues.
+  类别：scifact  标注块：[11594, 11595, 11596, 11597]
+    第1名：匹配块[11597, 12475]  √命中
+    第2名：匹配块[1428, 12475]  
+    第3名：匹配块[11826, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[839] Nanoparticles can be targeted against specific cell types by incorporating aptamers into lipid nanoparticles.
+  类别：scifact  标注块：[1196, 1197, 1198, 1199]
+    第1名：匹配块[1196, 12475]  √命中
+    第2名：匹配块[12280, 12475]  
+    第3名：匹配块[5160, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[845] Neutrophil extracellular traps (NETs) are released by ANCA-stimulated neutrophils.
+  类别：scifact  标注块：[12497, 12498, 12499]
+    第1名：匹配块[12475, 18628]  
+    第2名：匹配块[7672, 12475]  
+    第3名：匹配块[1818, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[847] New drugs for tuberculosis often do not penetrate the necrotic portion of a tuberculosis lesion in high concentrations.
+  类别：scifact  标注块：[12048, 12049, 12050, 12051]
+    第1名：匹配块[3701]  
+    第2名：匹配块[3702, 12475]  
+    第3名：匹配块[12050, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[852] Non-invasive ventilation use should be decreased if there is inadequate response to conventional treatment.
+  类别：scifact  标注块：[10202, 10203, 10204, 10205, 10206]
+    第1名：匹配块[10206, 12475]  √命中
+    第2名：匹配块[426, 12475]  
+    第3名：匹配块[427, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[859] Normal expression of RUNX1 has tumor-promoting effects.
+  类别：scifact  标注块：[1610, 1611, 1612, 1613]
+    第1名：匹配块[1610, 12475]  √命中
+    第2名：匹配块[12475, 14733]  
+    第3名：匹配块[1613, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[870] Obesity decreases life quality.
+  类别：scifact  标注块：[23303, 23304, 23305, 23306, 23307, 23308, 23309]
+    第1名：匹配块[19793]  
+    第2名：匹配块[12475, 20487]  
+    第3名：匹配块[13841]  
+  召回率@50 = 0/1 = 0.00%
+
+[873] Obesity is determined solely by environmental factors.
+  类别：scifact  标注块：[931, 932, 933, 934, 2615, 2616, 2617, 13181, 13182, 13183]...
+    第1名：匹配块[12475, 14529]  
+    第2名：匹配块[9839, 12475]  
+    第3名：匹配块[9645, 12475]  
+  召回率@50 = 5/5 = 100.00%
+
+[879] Occupancy of ribosomes by IncRNAs do not make functional peptides.
+  类别：scifact  标注块：[6697, 6698, 6699, 6700]
+    第1名：匹配块[6698, 12475]  √命中
+    第2名：匹配块[6699, 12475]  √命中
+    第3名：匹配块[12475, 16006]  
+  召回率@50 = 1/1 = 100.00%
+
+[880] Occupancy of ribosomes by IncRNAs mirror 5 0-UTRs
+  类别：scifact  标注块：[6697, 6698, 6699, 6700]
+    第1名：匹配块[6698, 12475]  √命中
+    第2名：匹配块[6699, 12475]  √命中
+    第3名：匹配块[12475, 12864]  
+  召回率@50 = 1/1 = 100.00%
+
+[882] Omnivores produce less trimethylamine N-oxide from dietary I-carnitine than vegetarians.
+  类别：scifact  标注块：[10992, 10993, 10994, 10995, 10996]
+    第1名：匹配块[10993, 12475]  √命中
+    第2名：匹配块[10995, 12475]  √命中
+    第3名：匹配块[9382, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[887] Only a minority of cells survive development after differentiation into stress-resistant spores.
+  类别：scifact  标注块：[13014, 13015, 13016, 13017, 13018, 13019, 13020]
+    第1名：匹配块[1766, 12475]  
+    第2名：匹配块[11958, 12475]  
+    第3名：匹配块[10461, 12475]  
+  召回率@50 = 0/1 = 0.00%
+
+[903] PD-1 triggering on monocytes reduces IL-10 production by monocytes.
+  类别：scifact  标注块：[8147, 8148, 8149, 8150]
+    第1名：匹配块[8150, 12475]  √命中
+    第2名：匹配块[8149, 12475]  √命中
+    第3名：匹配块[8147, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[904] PDPN promotes efficient motility along stromal surfaces by activating the C-type lectin receptor to rearrange the actin cytoskeleton in dendritic cells.
+  类别：scifact  标注块：[5981, 5982, 5983, 5984]
+    第1名：匹配块[5984, 12475]  √命中
+    第2名：匹配块[5982, 12475]  √命中
+    第3名：匹配块[5981, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[907] PGE 2 promotes intestinal tumor growth by altering the expression of tumor suppressing and DNA repair genes.
+  类别：scifact  标注块：[5690, 5691, 5692]
+    第1名：匹配块[5691, 12475]  √命中
+    第2名：匹配块[5690, 12475]  √命中
+    第3名：匹配块[5692, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[911] PKG-la plays an essential role in expression of pain hypersensitivity in PGK-la knockout mice.
+  类别：scifact  标注块：[8513, 8514, 8515, 8516, 8517, 8518]
+    第1名：匹配块[8518, 12475]  √命中
+    第2名：匹配块[8515, 12475]  √命中
+    第3名：匹配块[10556, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[913] PPAR-RXRs are inhibited by PPAR ligands.
+  类别：scifact  标注块：[2554, 2555, 2556, 2557]
+    第1名：匹配块[7709, 12475]  
+    第2名：匹配块[7710, 12475]  
+    第3名：匹配块[7708, 12475]  
+  召回率@50 = 0/1 = 0.00%
+
+[914] PPAR-RXRs can be activated by PPAR ligands.
+  类别：scifact  标注块：[2554, 2555, 2556, 2557]
+    第1名：匹配块[7710, 12475]  
+    第2名：匹配块[7709, 12475]  
+    第3名：匹配块[12072]  
+  召回率@50 = 0/1 = 0.00%
+
+[921] Participating in six months of physical activity improves cognitive functioning.
+  类别：scifact  标注块：[1329, 1330, 1331, 1332, 1333, 1334, 1335]
+    第1名：匹配块[1330, 12475]  √命中
+    第2名：匹配块[1329, 12475]  √命中
+    第3名：匹配块[12475, 20514]  
+  召回率@50 = 1/1 = 100.00%
+
+[922] Patients in stable partnerships have a faster progression from HIV to AIDS.
+  类别：scifact  标注块：[12171, 12172, 12173, 12174, 12175]
+    第1名：匹配块[12171, 12475]  √命中
+    第2名：匹配块[12175, 12475]  √命中
+    第3名：匹配块[12174, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[936] Peroxynitrite is required for nitration of TCR/CD8.
+  类别：scifact  标注块：[4592, 4593, 4594, 4595]
+    第1名：匹配块[4594, 12475]  √命中
+    第2名：匹配块[12475, 12982]  
+    第3名：匹配块[12475, 15311]  
+  召回率@50 = 1/1 = 100.00%
+
+[956] Pleiotropic coupling of GLP-1R to intracellular effectors promotes distinct profiles of cellular signaling.
+  类别：scifact  标注块：[9539, 9540, 9541, 9542]
+    第1名：匹配块[12475, 19032]  
+    第2名：匹配块[2504, 12475]  
+    第3名：匹配块[12475, 21202]  
+  召回率@50 = 1/1 = 100.00%
+
+[957] Podocytes are motile and migrate in the presence of injury.
+  类别：scifact  标注块：[101, 102, 103, 104]
+    第1名：匹配块[102, 12475]  √命中
+    第2名：匹配块[9924, 12475]  
+    第3名：匹配块[5217, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[960] Polymeal nutrition reduces cardiovascular mortality.
+  类别：scifact  标注块：[6986, 6987, 6988, 6989]
+    第1名：匹配块[6986]  √命中
+    第2名：匹配块[6989, 12475]  √命中
+    第3名：匹配块[6988, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[967] Pretreatment with the Arp2/3 inhibitor CK-666 affects lamelliopodia formation.
+  类别：scifact  标注块：[1729, 1730, 1731, 1732, 7085, 7086, 7087, 7088]
+    第1名：匹配块[1731, 12475]  √命中
+    第2名：匹配块[1732, 12475]  √命中
+    第3名：匹配块[7085, 12475]  √命中
+  召回率@50 = 2/2 = 100.00%
+
+[971] Primary cervical cancer screening with HPV detection has higher longitudinal sensitivity than conventional cytology to detect cervical intraepithelial neoplasia grade 2.
+  类别：scifact  标注块：[7598, 7599, 7600, 7601, 7602, 7603, 7604, 7605, 7606, 7607]...
+    第1名：匹配块[7599, 12475]  √命中
+    第2名：匹配块[12475, 22543]  √命中
+    第3名：匹配块[12475, 18212]  √命中
+  召回率@50 = 4/4 = 100.00%
+
+[975] Primary pro-inflammatory cytokines induce secondary pro- and anti-inflammatory mediators.
+  类别：scifact  标注块：[4474, 4475, 4476, 4477, 4478]
+    第1名：匹配块[5295, 12475]  
+    第2名：匹配块[12475, 18667]  
+    第3名：匹配块[3794, 12475]  
+  召回率@50 = 0/1 = 0.00%
+
+[982] Proteins synthesized at the growth cone are ubiquitinated at a higher rate than proteins from the cell body.
+  类别：scifact  标注块：[2393, 2394, 2395, 2396]
+    第1名：匹配块[2394, 12475]  √命中
+    第2名：匹配块[2396, 12475]  √命中
+    第3名：匹配块[2395, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[985] Pseudogene PTENP1 regulates the expression of PTEN by functioning as an miRNA decoy.
+  类别：scifact  标注块：[5640, 5641, 5642, 5643]
+    第1名：匹配块[5642, 12475]  √命中
+    第2名：匹配块[12475, 16083]  
+    第3名：匹配块[12475, 16084]  
+  召回率@50 = 1/1 = 100.00%
+
+[993] Pyridostatin destabilizes the G - quadruplex in the telomeric region.
+  类别：scifact  标注块：[11877, 11878, 11879, 11880]
+    第1名：匹配块[12475, 17580]  
+    第2名：匹配块[12475, 17582]  
+    第3名：匹配块[12475, 17579]  
+  召回率@50 = 1/1 = 100.00%
+
+[1012] Radioiodine treatment of non-toxic multinodular goitre reduces thyroid volume.
+  类别：scifact  标注块：[7573, 7574, 7575, 7576, 7577, 7578]
+    第1名：匹配块[7573, 12475]  √命中
+    第2名：匹配块[7574, 12475]  √命中
+    第3名：匹配块[7578, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1014] Rapamycin decreases the concentration of triacylglycerols in fruit flies.
+  类别：scifact  标注块：[5195, 5196, 5197, 5198]
+    第1名：匹配块[5195, 12475]  √命中
+    第2名：匹配块[5197, 12475]  √命中
+    第3名：匹配块[12475, 21660]  
+  召回率@50 = 1/1 = 100.00%
+
+[1019] Rapid phosphotransfer rates govern fidelity in two component systems
+  类别：scifact  标注块：[8704, 8705, 8706, 8707, 8708]
+    第1名：匹配块[967, 12475]  
+    第2名：匹配块[8704, 12475]  √命中
+    第3名：匹配块[962, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[1020] Rapid up-regulation and higher basal expression of interferon-induced genes increase survival of granule cell neurons that are infected by West Nile virus.
+  类别：scifact  标注块：[7341, 7342, 7343, 7344]
+    第1名：匹配块[8072, 12475]  
+    第2名：匹配块[7343, 12475]  √命中
+    第3名：匹配块[12475, 19844]  
+  召回率@50 = 1/1 = 100.00%
+
+[1021] Rapid up-regulation and higher basal expression of interferon-induced genes reduce survival of granule cell neurons that are infected by West Nile virus.
+  类别：scifact  标注块：[7341, 7342, 7343, 7344]
+    第1名：匹配块[8072, 12475]  
+    第2名：匹配块[7343, 12475]  √命中
+    第3名：匹配块[12475, 17782]  
+  召回率@50 = 1/1 = 100.00%
+
+[1024] Recurrent mutations occur frequently within CTCF anchor sites adjacent to oncogenes.
+  类别：scifact  标注块：[4501, 4502, 4503, 4504]
+    第1名：匹配块[4503, 12475]  √命中
+    第2名：匹配块[108, 12475]  
+    第3名：匹配块[6752, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[1029] Reduced responsiveness to interleukin-2 in regulatory T cells is associated with greater resistance to autoimmune diseases such as Type 1 Diabetes.
+  类别：scifact  标注块：[8877, 8878, 8879, 8880, 8881, 10345, 10346, 10347, 10372, 10373]...
+    第1名：匹配块[8878, 12475]  √命中
+    第2名：匹配块[8877, 12475]  √命中
+    第3名：匹配块[1931]  
+  召回率@50 = 2/3 = 66.67%
+
+[1041] Replacement of histone H2A with H2A.Z slows gene activation in yeasts by stabilizing +1 nucleosomes.
+  类别：scifact  标注块：[11945, 11946, 11947, 11948, 16800, 16801, 16802, 16803]
+    第1名：匹配块[7352, 12475]  
+    第2名：匹配块[11513, 12475]  
+    第3名：匹配块[7353, 12475]  
+  召回率@50 = 2/2 = 100.00%
+
+[1049] Ribosomopathies have a low degree of cell and tissue specific pathology.
+  类别：scifact  标注块：[9244, 9245, 9246, 9247]
+    第1名：匹配块[16459]  
+    第2名：匹配块[7061, 12475]  
+    第3名：匹配块[12475, 16460]  
+  召回率@50 = 1/1 = 100.00%
+
+[1062] S-nitrosylated GAPDH physiologically transnitrosylates histone deacetylases.
+  类别：scifact  标注块：[13730, 13731, 13732, 13733, 13734]
+    第1名：匹配块[12475, 13733]  √命中
+    第2名：匹配块[12475, 13732]  √命中
+    第3名：匹配块[12475, 17198]  
+  召回率@50 = 1/1 = 100.00%
+
+[1086] Sildenafil improves erectile function in men who experience sexual dysfunction as a result of the use of SSRI antidepressants.
+  类别：scifact  标注块：[21043, 21044, 21045, 21046, 21047, 21048]
+    第1名：匹配块[12475, 21048]  √命中
+    第2名：匹配块[12475, 21044]  √命中
+    第3名：匹配块[21043]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1088] Silencing of Bcl2 is important for the maintenance and progression of tumors.
+  类别：scifact  标注块：[20628, 20629, 20630]
+    第1名：匹配块[12475, 20628]  √命中
+    第2名：匹配块[11050, 12475]  
+    第3名：匹配块[12475, 21924]  
+  召回率@50 = 1/1 = 100.00%
+
+[1089] Smc5/6 engagment drives the activation of SUMO E3 ligase Mms21 by ATP-dependent remolding.
+  类别：scifact  标注块：[12423, 12424, 12425, 12426, 12427]
+    第1名：匹配块[12425, 12475]  √命中
+    第2名：匹配块[12426, 12475]  √命中
+    第3名：匹配块[12424, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1099] Statins decrease blood cholesterol.
+  类别：scifact  标注块：[6238, 6239, 6240]
+    第1名：匹配块[12475, 14913]  
+    第2名：匹配块[12475, 14454]  
+    第3名：匹配块[6048, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[1100] Statins increase blood cholesterol.
+  类别：scifact  标注块：[6238, 6239, 6240]
+    第1名：匹配块[12475, 14454]  
+    第2名：匹配块[12475, 14913]  
+    第3名：匹配块[6238, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1104] Stroke patients with prior use of direct oral anticoagulants have a lower risk of in-hospital mortality than stroke patients with prior use of warfarin.
+  类别：scifact  标注块：[3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125]
+    第1名：匹配块[3125, 12475]  √命中
+    第2名：匹配块[3123, 12475]  √命中
+    第3名：匹配块[3122, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1107] Subcutaneous fat depots undergo extensive browning processes after cold exposure.
+  类别：scifact  标注块：[13816, 13817, 13818]
+    第1名：匹配块[12475, 13817]  √命中
+    第2名：匹配块[12475, 13818]  √命中
+    第3名：匹配块[12475, 18614]  
+  召回率@50 = 1/1 = 100.00%
+
+[1110] Suboptimal nutrition is not predictive of chronic disease
+  类别：scifact  标注块：[10105, 10106, 10107, 10108, 10109, 10110, 10111, 10112, 10113, 10114]...
+    第1名：匹配块[12475, 21988]  
+    第2名：匹配块[646, 12475]  
+    第3名：匹配块[12475, 16174]  
+  召回率@50 = 0/1 = 0.00%
+
+[1121] Synaptic activity enhances local release of brain derived neurotrophic factor from postsynaptic dendrites.
+  类别：scifact  标注块：[3802, 3803, 3804, 3805, 3806]
+    第1名：匹配块[12475, 15286]  
+    第2名：匹配块[12475, 13321]  
+    第3名：匹配块[8267, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[1130] T regulatory cells (tTregs) lacking αvβ8 are more adept at suppressing pathogenic T-cell responses during active inflammation.
+  类别：scifact  标注块：[12622, 12623, 12624, 12625]
+    第1名：匹配块[12475, 12624]  √命中
+    第2名：匹配块[12475, 12623]  √命中
+    第3名：匹配块[12475, 12622]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1132] TCR/CD3 microdomains are a required to induce the immunologic synapse to activate T cells.
+  类别：scifact  标注块：[7258, 7259, 7260, 7261, 19589, 19590, 19591, 19592]
+    第1名：匹配块[12475, 19989]  
+    第2名：匹配块[2222, 12475]  
+    第3名：匹配块[4906, 12475]  
+  召回率@50 = 2/2 = 100.00%
+
+[1137] TNFAIP3 is a tumor suppressor in glioblastoma.
+  类别：scifact  标注块：[24, 25, 26, 27, 28, 29]
+    第1名：匹配块[412, 12475]  
+    第2名：匹配块[25, 12475]  √命中
+    第3名：匹配块[6384, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[1140] Taking 400mg of α-tocopheryl acetate helps to prevent prostate cancer.
+  类别：scifact  标注块：[8962, 8963, 8964, 8965, 8966, 8967, 8968]
+    第1名：匹配块[8965, 12475]  √命中
+    第2名：匹配块[235, 12475]  
+    第3名：匹配块[12475, 21234]  
+  召回率@50 = 1/1 = 100.00%
+
+[1144] Taxation of sugar-sweetened beverages had no effect on the incidence rate of type II diabetes in India.
+  类别：scifact  标注块：[7789, 7790, 7791, 7792, 7793, 7794, 7795]
+    第1名：匹配块[7789, 12475]  √命中
+    第2名：匹配块[7647, 12475]  
+    第3名：匹配块[7790, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1146] Teaching hospitals do not provide better care than non-teaching hospitals.
+  类别：scifact  标注块：[10282, 10283, 10284, 10285, 10286, 10287]
+    第1名：匹配块[10287, 12475]  √命中
+    第2名：匹配块[10283, 12475]  √命中
+    第3名：匹配块[10282, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1150] Tetraspanin-3 is a causative factor in the development of acute myelogenous leukemia
+  类别：scifact  标注块：[8590, 8591, 8592, 8593]
+    第1名：匹配块[8590, 12475]  √命中
+    第2名：匹配块[8591, 12475]  √命中
+    第3名：匹配块[12475, 17269]  
+  召回率@50 = 1/1 = 100.00%
+
+[1163] The DdrB protein from Deinococcus radiodurans is an alternative SSB.
+  类别：scifact  标注块：[11216, 11217, 11218, 11219]
+    第1名：匹配块[11216, 12475]  √命中
+    第2名：匹配块[11217, 12475]  √命中
+    第3名：匹配块[11219, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1175] The PPR MDA5 has two N-terminal CARD domains.
+  类别：scifact  标注块：[19064, 19065, 19066]
+    第1名：匹配块[12475, 16269]  
+    第2名：匹配块[12475, 14814]  
+    第3名：匹配块[12302, 12475]  
+  召回率@50 = 0/1 = 0.00%
+
+[1179] The PRR MDA5 has a central DExD/H RNA helices domain.
+  类别：scifact  标注块：[19064, 19065, 19066]
+    第1名：匹配块[8132, 12475]  
+    第2名：匹配块[2098, 12475]  
+    第3名：匹配块[12475, 18227]  
+  召回率@50 = 1/1 = 100.00%
+
+[1180] The PRR MDA5 is a sensor of RNA virus infection.
+  类别：scifact  标注块：[19064, 19065, 19066]
+    第1名：匹配块[2098, 12475]  
+    第2名：匹配块[2100, 12475]  
+    第3名：匹配块[12475, 19065]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1185] The US health care system can save up to $750 million if 7% of patients waiting for kidney transplants participate in the optimized national kidney paired donation program.
+  类别：scifact  标注块：[12031, 12032, 12033, 12034, 12035, 12036]
+    第1名：匹配块[12035, 12475]  √命中
+    第2名：匹配块[12475, 14594]  
+    第3名：匹配块[12475, 21717]  
+  召回率@50 = 1/1 = 100.00%
+
+[1187] The YAP1 and TEAD complex tanslocates into the nucleus where it interacts with transcription factors and DNA-binding proteins that modulate target gene transcription.
+  类别：scifact  标注块：[22699, 22700, 22701, 22702]
+    第1名：匹配块[12475, 22701]  √命中
+    第2名：匹配块[9385, 12475]  
+    第3名：匹配块[3882, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[1191] The amount of publicly available DNA data doubles every 10 years.
+  类别：scifact  标注块：[18923, 18924, 18925]
+    第1名：匹配块[12475, 18164]  
+    第2名：匹配块[2945, 4724, 5971, 7309, 12475, 12791]  
+    第3名：匹配块[10325, 12475]  
+  召回率@50 = 0/1 = 0.00%
+
+[1194] The arm density of TatAd complexes is due to structural rearrangements within Class1 TatAd complexes such as the 'charge zipper mechanism'.
+  类别：scifact  标注块：[8616, 8617, 8618, 8619]
+    第1名：匹配块[8616, 12475]  √命中
+    第2名：匹配块[12475, 16402]  
+    第3名：匹配块[12475, 15340]  
+  召回率@50 = 1/1 = 100.00%
+
+[1196] The availability of safe places to study is effective at decreasing homelessness.
+  类别：scifact  标注块：[17107, 17108, 17109, 17110]
+    第1名：匹配块[19541]  
+    第2名：匹配块[19022]  
+    第3名：匹配块[12475, 23250]  
+  召回率@50 = 1/1 = 100.00%
+
+[1197] The availability of safe places to study is not effective at decreasing homelessness.
+  类别：scifact  标注块：[17107, 17108, 17109, 17110]
+    第1名：匹配块[12475, 23250]  
+    第2名：匹配块[19541]  
+    第3名：匹配块[19022]  
+  召回率@50 = 1/1 = 100.00%
+
+[1199] The benefits of colchicine were achieved with effective widespread use of secondary prevention strategies such as high-dose statins.
+  类别：scifact  标注块：[12041, 12042, 12043, 12044, 12045, 12046, 12047]
+    第1名：匹配块[6050, 12475]  
+    第2名：匹配块[6049, 12475]  
+    第3名：匹配块[12475, 14454]  
+  召回率@50 = 0/1 = 0.00%
+
+[1200] The binding orientation of the ML-SA1 activator at hTRPML2 is different from the binding orientation of the ML-SA1 activator at hTRPML1.
+  类别：scifact  标注块：[2689, 2690, 2691, 2692]
+    第1名：匹配块[7891, 12475]  
+    第2名：匹配块[2306, 12475]  
+    第3名：匹配块[12475, 14181]  
+  召回率@50 = 1/1 = 100.00%
+
+[1202] The center of the granuloma in an immune cell induces a pro-inflammatory immune response.
+  类别：scifact  标注块：[2722, 2723, 2724, 2725]
+    第1名：匹配块[12475, 19935]  
+    第2名：匹配块[12475, 13097]  
+    第3名：匹配块[12475, 18667]  
+  召回率@50 = 1/1 = 100.00%
+
+[1204] The combination of H3K4me3 and H3K79me2 is found in quiescent hair follicle stem cells.
+  类别：scifact  标注块：[19033, 19034, 19035, 19036]
+    第1名：匹配块[12475, 19034]  √命中
+    第2名：匹配块[12269, 12475]  
+    第3名：匹配块[12475, 17060]  
+  召回率@50 = 1/1 = 100.00%
+
+[1207] The composition of myosin-II isoform switches from the polarizable B isoform to the more homogenous A isoform during hematopoietic differentiation.
+  类别：scifact  标注块：[13040, 13041, 13042, 13043]
+    第1名：匹配块[12475, 13041]  √命中
+    第2名：匹配块[9430, 12475]  
+    第3名：匹配块[4749, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[1213] The deregulated and prolonged activation of monocytes has deleterious effects in inflammatory diseases.
+  类别：scifact  标注块：[10722, 10723, 10724, 10725, 10726, 10727]
+    第1名：匹配块[12475, 18665]  
+    第2名：匹配块[1792, 12475]  
+    第3名：匹配块[12475, 20339]  
+  召回率@50 = 0/1 = 0.00%
+
+[1216] The extracellular domain of TMEM27 is cleaved in human beta cells.
+  类别：scifact  标注块：[15953, 15954, 15955, 15956]
+    第1名：匹配块[12475, 15954]  √命中
+    第2名：匹配块[12475, 15953]  √命中
+    第3名：匹配块[12475, 15955]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1221] The genomic aberrations found in matasteses are very similar to those found in the primary tumor.
+  类别：scifact  标注块：[13383, 13384, 13385, 13386]
+    第1名：匹配块[12012, 12475]  
+    第2名：匹配块[12475, 14399]  
+    第3名：匹配块[12475, 14397]  
+  召回率@50 = 1/1 = 100.00%
+
+[1225] The locus rs647161 is associated with colorectal carcinoma.
+  类别：scifact  标注块：[7522, 7523, 7524, 7525]
+    第1名：匹配块[10630, 12475]  
+    第2名：匹配块[1718, 12475]  
+    第3名：匹配块[12475, 22034]  
+  召回率@50 = 1/1 = 100.00%
+
+[1226] The loss of the TET protein functions may have dire biological consequences, such as myeloid cancers.
+  类别：scifact  标注块：[10127, 10128, 10129, 10130]
+    第1名：匹配块[8939, 12475]  
+    第2名：匹配块[8942, 12475]  
+    第3名：匹配块[5700, 12475]  
+  召回率@50 = 0/1 = 0.00%
+
+[1232] The minor G allele of FOXO3 is related to more severe symptoms of Crohn's Disease.
+  类别：scifact  标注块：[10278, 10279, 10280, 10281]
+    第1名：匹配块[10280, 12475]  √命中
+    第2名：匹配块[10279, 12475]  √命中
+    第3名：匹配块[9221, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[1241] The myocardial lineage develops from cardiac progenitors of mesodermal origin.
+  类别：scifact  标注块：[3715, 3716, 3717, 3718, 3719, 3720]
+    第1名：匹配块[3206, 12475]  
+    第2名：匹配块[12475, 17658]  
+    第3名：匹配块[12475, 12581]  
+  召回率@50 = 1/1 = 100.00%
+
+[1245] The one-child policy has been successful in lowering population growth.
+  类别：scifact  标注块：[6241, 6242, 6243, 6244, 6245]
+    第1名：匹配块[6245, 12475]  √命中
+    第2名：匹配块[4107, 12475]  
+    第3名：匹配块[12475, 22585]  
+  召回率@50 = 1/1 = 100.00%
+
+[1259] The relationship between a breast cancer patient's capacity to metabolize tamoxifen and treatment outcome is dependent on the patient's genetic make-up.
+  类别：scifact  标注块：[16126, 16127, 16128, 16129, 16130, 16131, 16132]
+    第1名：匹配块[9616, 12475]  
+    第2名：匹配块[19166]  
+    第3名：匹配块[9202, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[1262] The repair of Cas9-induced double strand breaks in human DNA is error-prone.
+  类别：scifact  标注块：[22146, 22147, 22148, 22149]
+    第1名：匹配块[12475, 22146]  √命中
+    第2名：匹配块[9271, 12475]  
+    第3名：匹配块[12475, 22147]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1266] The risk of breast cancer among parous women increases with placental weight of pregnancies, and this association is strongest for premenopausal breast cancer.
+  类别：scifact  标注块：[20617, 20618, 20619, 20620, 20621, 20622, 20623]
+    第1名：匹配块[12475, 20622]  √命中
+    第2名：匹配块[10201, 12475]  
+    第3名：匹配块[12475, 17379]  
+  召回率@50 = 1/1 = 100.00%
+
+[1270] The risk of male prisoners harming themselves is ten times that of female prisoners.
+  类别：scifact  标注块：[10255, 10256, 10257, 10258, 10259, 10260, 10261]
+    第1名：匹配块[10258, 12475]  √命中
+    第2名：匹配块[10256, 12475]  √命中
+    第3名：匹配块[11037, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[1271] The severity of cardiac involvement in amyloidosis can be described by the degree of transmurality of late gadolinium enhancement in MRI.
+  类别：scifact  标注块：[10099, 10100, 10101, 10102, 10103, 10104]
+    第1名：匹配块[10100, 11402, 12475]  √命中
+    第2名：匹配块[10099, 12475]  √命中
+    第3名：匹配块[10104, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1272] The single flash-evoked ERG b-wave is generated by activity of ON-bipolar cells.
+  类别：scifact  标注块：[12176, 12177, 12178]
+    第1名：匹配块[11481, 12475]  
+    第2名：匹配块[11480, 12475]  
+    第3名：匹配块[12475, 16471]  
+  召回率@50 = 1/1 = 100.00%
+
+[1273] The sliding activity of kinesin-8 protein Kip3 promotes bipolar spindle assembly.
+  类别：scifact  标注块：[8404, 8405, 8406, 8407]
+    第1名：匹配块[8406, 12475]  √命中
+    第2名：匹配块[8404, 12475]  √命中
+    第3名：匹配块[8407, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1274] The tip of the inner tube of the toxic type VI secretion system (T6SS) antibacterial effector in Escherichia coli (E. coli) carries toxic effector proteins.
+  类别：scifact  标注块：[3560, 3561, 3562, 3563, 3564, 9196, 9197, 9198, 9199, 18156]...
+    第1名：匹配块[6063, 12475]  
+    第2名：匹配块[3561, 12475]  √命中
+    第3名：匹配块[12475, 15061]  
+  召回率@50 = 3/3 = 100.00%
+
+[1278] The treatment of cancer patients with co-IR blockade does not cause any adverse autoimmune events.
+  类别：scifact  标注块：[8556, 8557, 8558, 8559]
+    第1名：匹配块[6423, 12475]  
+    第2名：匹配块[4746, 12475]  
+    第3名：匹配块[11444, 12475]  
+  召回率@50 = 0/1 = 0.00%
+
+[1279] The treatment of cancer patients with co-IR blockade precipitates adverse autoimmune events.
+  类别：scifact  标注块：[8556, 8557, 8558, 8559]
+    第1名：匹配块[8508]  
+    第2名：匹配块[6423, 12475]  
+    第3名：匹配块[12475, 17179]  
+  召回率@50 = 1/1 = 100.00%
+
+[1280] The ureABIEFGH gene cluster encodes urease maturation proteins : UreD/UreH, UreE, UreF, and UreG.
+  类别：scifact  标注块：[3474, 3475, 3476, 3477, 3478]
+    第1名：匹配块[12475, 20710]  
+    第2名：匹配块[12475, 18566]  
+    第3名：匹配块[12475, 20709]  
+  召回率@50 = 0/1 = 0.00%
+
+[1281] The ureABIEFGH gene cluster is induced by nickel (II) ion.
+  类别：scifact  标注块：[3474, 3475, 3476, 3477, 3478]
+    第1名：匹配块[12475, 18566]  
+    第2名：匹配块[12475, 20281]  
+    第3名：匹配块[12475, 14490]  
+  召回率@50 = 0/1 = 0.00%
+
+[1282] Therapeutic use of the drug Dapsone to treat pyoderma gangrenous is based on anecdotal evidence.
+  类别：scifact  标注块：[15650, 15651, 15652, 15653, 15654]
+    第1名：匹配块[12475, 15650]  √命中
+    第2名：匹配块[12475, 15651]  √命中
+    第3名：匹配块[12475, 14955]  
+  召回率@50 = 1/1 = 100.00%
+
+[1290] There is an inverse relationship between hip fractures and statin use.
+  类别：scifact  标注块：[4041, 4042, 4043, 4044, 4045, 4046, 4047]
+    第1名：匹配块[4045, 12475]  √命中
+    第2名：匹配块[4046, 12475]  √命中
+    第3名：匹配块[4042, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1292] There is no association between HNF4A mutations and diabetes risks.
+  类别：scifact  标注块：[22790, 22791, 22792]
+    第1名：匹配块[12475, 22792]  √命中
+    第2名：匹配块[12475, 22790]  √命中
+    第3名：匹配块[4045, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[1298] Thigh-length graduated compression stockings (GCS) did not reduce deep vein thrombosis in patients admitted to hospital who are immobile because of acute stroke.
+  类别：scifact  标注块：[8768, 8769, 8770, 8771, 8772, 8773]
+    第1名：匹配块[8768, 12475]  √命中
+    第2名：匹配块[8769, 12475]  √命中
+    第3名：匹配块[8772, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1303] Tirasemtiv has no effect on fast-twitch muscle.
+  类别：scifact  标注块：[9310, 9311, 9312, 9313]
+    第1名：匹配块[12475, 19854]  
+    第2名：匹配块[9312, 12475]  √命中
+    第3名：匹配块[9310, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1316] Transferred UCB T cells acquire a memory-like phenotype in recipients.
+  类别：scifact  标注块：[18232, 18233, 18234, 18235]
+    第1名：匹配块[12475, 17967]  
+    第2名：匹配块[12475, 17966]  
+    第3名：匹配块[12475, 14278]  
+  召回率@50 = 0/1 = 0.00%
+
+[1319] Transplanted human glial cells can differentiate within the host animal.
+  类别：scifact  标注块：[11805, 11806, 11807, 11808]
+    第1名：匹配块[10563, 12475]  
+    第2名：匹配块[11805, 12475]  √命中
+    第3名：匹配块[11806, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1320] Transplanted human glial progenitor cells are incapable of forming a neural network with host animals' neurons.
+  类别：scifact  标注块：[11805, 11806, 11807, 11808]
+    第1名：匹配块[11806, 12475]  √命中
+    第2名：匹配块[10563, 12475]  
+    第3名：匹配块[11805, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1332] Tumor necrosis factor alpha (TNF-α) and interleukin-1 (IL-1) are pro-inflammatory cytokines that inhibit IL-6 and IL-10.
+  类别：scifact  标注块：[4474, 4475, 4476, 4477, 4478]
+    第1名：匹配块[7661, 12475]  
+    第2名：匹配块[12475, 22279]  
+    第3名：匹配块[12475, 16175]  
+  召回率@50 = 0/1 = 0.00%
+
+[1335] UCB T cells maintain high TCR diversity after transplantation.
+  类别：scifact  标注块：[18232, 18233, 18234, 18235]
+    第1名：匹配块[12475, 17966]  
+    第2名：匹配块[12475, 22073]  
+    第3名：匹配块[12475, 18233]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1336] UCB T cells reduce TCR diversity after transplantation.
+  类别：scifact  标注块：[18232, 18233, 18234, 18235]
+    第1名：匹配块[12475, 18233]  √命中
+    第2名：匹配块[12475, 17966]  
+    第3名：匹配块[12475, 22073]  
+  召回率@50 = 1/1 = 100.00%
+
+[1337] Ubiquitin ligase UBC13 generates a K63-linked polyubiquitin moiety at PCNA K164.
+  类别：scifact  标注块：[13631, 13632, 13633, 13634]
+    第1名：匹配块[9104, 12475]  
+    第2名：匹配块[12475, 13633]  √命中
+    第3名：匹配块[12475, 19237]  
+  召回率@50 = 1/1 = 100.00%
+
+[1339] Ultrasound guidance significantly raises the number of traumatic procedures when attempting needle insertion.
+  类别：scifact  标注块：[11318, 11319, 11320, 11321, 11322, 11323]
+    第1名：匹配块[11322, 12475]  √命中
+    第2名：匹配块[11319, 12475]  √命中
+    第3名：匹配块[11323, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1344] Up-regulation of the p53 pathway and related molecular events casues cancer resistance and results in a significantly shortened lifespan marked by senescent cells and accelerated organismal aging.
+  类别：scifact  标注块：[7440, 7441, 7442]
+    第1名：匹配块[5670, 12475]  
+    第2名：匹配块[5669, 12475]  
+    第3名：匹配块[7442, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1352] Upregulation of mosGCTL-1 is induced upon infection with West Nile virus.
+  类别：scifact  标注块：[9487, 9488, 9489, 9490]
+    第1名：匹配块[9488, 12475]  √命中
+    第2名：匹配块[8072, 12475]  
+    第3名：匹配块[9487, 12475]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1359] Varenicline monotherapy is more effective after 12 weeks of treatment compared to combination nicotine replacement therapies with varenicline or bupropion.
+  类别：scifact  标注块：[8709, 8710, 8711, 8712, 8713, 8714, 8715]
+    第1名：匹配块[8710, 12475]  √命中
+    第2名：匹配块[8714, 12475]  √命中
+    第3名：匹配块[4332, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[1362] Venules have a larger lumen diameter than arterioles.
+  类别：scifact  标注块：[6606, 6607, 6608, 6609, 6610]
+    第1名：匹配块[4194, 12475]  
+    第2名：匹配块[12475, 16769]  
+    第3名：匹配块[51, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[1363] Venules have a thinner or absent smooth layer compared to arterioles.
+  类别：scifact  标注块：[6606, 6607, 6608, 6609, 6610]
+    第1名：匹配块[51, 12475]  
+    第2名：匹配块[6609, 12475]  √命中
+    第3名：匹配块[897, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[1368] Vitamin D deficiency effects the term of delivery.
+  类别：scifact  标注块：[1967, 1968, 1969, 1970, 1971]
+    第1名：匹配块[212, 12475]  
+    第2名：匹配块[7430, 12475]  
+    第3名：匹配块[12475, 15399]  
+  召回率@50 = 1/1 = 100.00%
+
+[1370] Vitamin D deficiency is unrelated to birth weight.
+  类别：scifact  标注块：[1967, 1968, 1969, 1970, 1971]
+    第1名：匹配块[7430, 12475]  
+    第2名：匹配块[12475, 14446]  
+    第3名：匹配块[12475, 15399]  
+  召回率@50 = 1/1 = 100.00%
+
+[1379] Women with a higher birth weight are more likely to develop breast cancer later in life.
+  类别：scifact  标注块：[11816, 11817, 11818, 11819, 11820, 11821, 11822, 12342, 12343, 12344]...
+    第1名：匹配块[12344, 12475]  √命中
+    第2名：匹配块[12475, 20622]  
+    第3名：匹配块[12475, 17379]  
+  召回率@50 = 4/4 = 100.00%
+
+[1382] aPKCz causes tumour enhancement by affecting glutamine metabolism.
+  类别：scifact  标注块：[12500, 12501, 12502]
+    第1名：匹配块[3038, 12475]  
+    第2名：匹配块[12475, 15186]  
+    第3名：匹配块[3037, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[1385] cSMAC formation enhances weak ligand signalling.
+  类别：scifact  标注块：[229, 230, 231]
+    第1名：匹配块[231, 12475]  √命中
+    第2名：匹配块[230, 12475]  √命中
+    第3名：匹配块[7259, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[1389] mTORC2 regulates intracellular cysteine levels through xCT inhibition.
+  类别：scifact  标注块：[15804, 15805, 15806]
+    第1名：匹配块[12475, 15804]  √命中
+    第2名：匹配块[12475, 15805]  √命中
+    第3名：匹配块[4075, 12475]  
+  召回率@50 = 1/1 = 100.00%
+
+[1395] p16INK4A accumulation is  linked to an abnormal wound response caused by the microinvasive step of advanced Oral Potentially Malignant Lesions (OPMLs).
+  类别：scifact  标注块：[12488, 12489, 12490, 12491]
+    第1名：匹配块[12475, 13212]  
+    第2名：匹配块[10341, 12475]  
+    第3名：匹配块[12475, 12733]  
+  召回率@50 = 1/1 = 100.00%
+
+======================================================================
+【查询延迟统计】（每道题预热1次后重复测3次取平均，单位毫秒）
+======================================================================
+  [1] 平均 124.6 毫秒（最小 73.0 / 最大 151.4）
+  [3] 平均 65.5 毫秒（最小 63.3 / 最大 68.6）
+  [5] 平均 52.1 毫秒（最小 50.5 / 最大 54.2）
+  [13] 平均 110.3 毫秒（最小 106.1 / 最大 114.8）
+  [36] 平均 135.2 毫秒（最小 105.6 / 最大 192.1）
+  [42] 平均 108.2 毫秒（最小 105.1 / 最大 112.4）
+  [48] 平均 93.7 毫秒（最小 89.8 / 最大 97.2）
+  [49] 平均 100.4 毫秒（最小 97.3 / 最大 106.1）
+  [50] 平均 91.5 毫秒（最小 89.8 / 最大 94.6）
+  [51] 平均 89.0 毫秒（最小 86.6 / 最大 92.4）
+  [53] 平均 102.3 毫秒（最小 99.8 / 最大 106.9）
+  [54] 平均 59.6 毫秒（最小 57.5 / 最大 62.2）
+  [56] 平均 113.2 毫秒（最小 109.5 / 最大 119.0）
+  [57] 平均 138.5 毫秒（最小 106.1 / 最大 201.3）
+  [70] 平均 91.9 毫秒（最小 89.4 / 最大 96.3）
+  [72] 平均 85.8 毫秒（最小 83.0 / 最大 91.2）
+  [75] 平均 76.0 毫秒（最小 57.8 / 最大 110.8）
+  [94] 平均 57.7 毫秒（最小 55.6 / 最大 61.0）
+  [99] 平均 67.1 毫秒（最小 64.4 / 最大 71.8）
+  [100] 平均 90.0 毫秒（最小 85.5 / 最大 94.4）
+  [113] 平均 98.6 毫秒（最小 95.4 / 最大 102.1）
+  [115] 平均 100.7 毫秒（最小 98.9 / 最大 103.7）
+  [118] 平均 109.2 毫秒（最小 108.3 / 最大 110.8）
+  [124] 平均 114.4 毫秒（最小 112.6 / 最大 116.6）
+  [127] 平均 106.7 毫秒（最小 103.5 / 最大 112.2）
+  [128] 平均 42.0 毫秒（最小 39.2 / 最大 46.2）
+  [129] 平均 108.1 毫秒（最小 103.6 / 最大 115.1）
+  [130] 平均 129.1 毫秒（最小 102.0 / 最大 182.2）
+  [132] 平均 100.7 毫秒（最小 98.3 / 最大 104.4）
+  [133] 平均 184.9 毫秒（最小 153.7 / 最大 246.8）
+  [137] 平均 128.7 毫秒（最小 99.0 / 最大 186.2）
+  [141] 平均 87.7 毫秒（最小 63.3 / 最大 103.7）
+  [142] 平均 82.6 毫秒（最小 80.0 / 最大 83.9）
+  [143] 平均 78.9 毫秒（最小 75.9 / 最大 82.3）
+  [146] 平均 125.6 毫秒（最小 122.2 / 最大 127.5）
+  [148] 平均 81.3 毫秒（最小 39.5 / 最大 164.2）
+  [163] 平均 45.3 毫秒（最小 44.8 / 最大 46.2）
+  [171] 平均 101.3 毫秒（最小 93.2 / 最大 105.6）
+  [179] 平均 87.0 毫秒（最小 84.8 / 最大 90.8）
+  [180] 平均 124.5 毫秒（最小 121.4 / 最大 128.9）
+  [183] 平均 90.5 毫秒（最小 87.1 / 最大 95.1）
+  [185] 平均 71.5 毫秒（最小 41.5 / 最大 88.3）
+  [198] 平均 31.9 毫秒（最小 30.6 / 最大 34.4）
+  [208] 平均 53.1 毫秒（最小 52.5 / 最大 54.0）
+  [212] 平均 92.6 毫秒（最小 90.7 / 最大 93.9）
+  [213] 平均 95.1 毫秒（最小 49.1 / 最大 185.4）
+  [216] 平均 56.8 毫秒（最小 54.7 / 最大 60.7）
+  [217] 平均 103.7 毫秒（最小 101.2 / 最大 107.7）
+  [218] 平均 97.3 毫秒（最小 94.8 / 最大 101.2）
+  [219] 平均 82.9 毫秒（最小 50.1 / 最大 101.0）
+  [230] 平均 65.4 毫秒（最小 63.0 / 最大 69.7）
+  [232] 平均 99.0 毫秒（最小 97.8 / 最大 100.0）
+  [233] 平均 114.7 毫秒（最小 109.6 / 最大 120.2）
+  [236] 平均 103.9 毫秒（最小 102.0 / 最大 105.2）
+  [237] 平均 112.0 毫秒（最小 108.2 / 最大 115.8）
+  [238] 平均 33.7 毫秒（最小 31.8 / 最大 37.4）
+  [239] 平均 68.5 毫秒（最小 54.7 / 最大 91.9）
+  [248] 平均 83.8 毫秒（最小 79.0 / 最大 91.6）
+  [249] 平均 76.3 毫秒（最小 75.8 / 最大 76.6）
+  [261] 平均 85.4 毫秒（最小 83.2 / 最大 88.8）
+  [268] 平均 26.7 毫秒（最小 24.6 / 最大 30.2）
+  [269] 平均 33.2 毫秒（最小 32.4 / 最大 34.0）
+  [274] 平均 112.4 毫秒（最小 108.2 / 最大 120.2）
+  [275] 平均 126.1 毫秒（最小 104.2 / 最大 168.3）
+  [279] 平均 95.5 毫秒（最小 92.7 / 最大 99.3）
+  [294] 平均 99.8 毫秒（最小 48.9 / 最大 152.4）
+  [295] 平均 106.8 毫秒（最小 89.7 / 最大 137.9）
+  [298] 平均 110.8 毫秒（最小 107.1 / 最大 114.9）
+  [300] 平均 125.8 毫秒（最小 124.2 / 最大 127.7）
+  [303] 平均 119.5 毫秒（最小 116.8 / 最大 124.0）
+  [312] 平均 100.8 毫秒（最小 98.6 / 最大 102.6）
+  [314] 平均 137.3 毫秒（最小 117.9 / 最大 169.7）
+  [324] 平均 42.1 毫秒（最小 39.8 / 最大 46.2）
+  [327] 平均 121.5 毫秒（最小 117.2 / 最大 126.9）
+  [338] 平均 98.5 毫秒（最小 94.7 / 最大 102.7）
+  [343] 平均 110.3 毫秒（最小 107.1 / 最大 115.2）
+  [350] 平均 147.2 毫秒（最小 113.5 / 最大 207.5）
+  [354] 平均 116.1 毫秒（最小 114.4 / 最大 119.3）
+  [362] 平均 99.3 毫秒（最小 80.4 / 最大 135.4）
+  [380] 平均 84.1 毫秒（最小 82.5 / 最大 86.0）
+  [384] 平均 70.5 毫秒（最小 69.0 / 最大 72.6）
+  [385] 平均 112.9 毫秒（最小 110.2 / 最大 118.1）
+  [386] 平均 138.6 毫秒（最小 107.0 / 最大 201.4）
+  [388] 平均 116.4 毫秒（最小 114.5 / 最大 117.4）
+  [399] 平均 100.9 毫秒（最小 96.7 / 最大 108.2）
+  [410] 平均 109.8 毫秒（最小 108.3 / 最大 111.5）
+  [411] 平均 106.6 毫秒（最小 105.3 / 最大 107.8）
+  [415] 平均 114.1 毫秒（最小 111.9 / 最大 118.3）
+  [421] 平均 105.6 毫秒（最小 103.5 / 最大 108.5）
+  [431] 平均 55.1 毫秒（最小 52.7 / 最大 56.9）
+  [436] 平均 106.3 毫秒（最小 103.6 / 最大 110.7）
+  [437] 平均 169.5 毫秒（最小 144.2 / 最大 211.5）
+  [439] 平均 118.1 毫秒（最小 113.9 / 最大 122.0）
+  [440] 平均 115.4 毫秒（最小 113.4 / 最大 117.1）
+  [443] 平均 95.1 毫秒（最小 93.1 / 最大 98.2）
+  [452] 平均 53.3 毫秒（最小 36.3 / 最大 87.1）
+  [475] 平均 79.5 毫秒（最小 75.1 / 最大 83.3）
+  [478] 平均 165.9 毫秒（最小 164.8 / 最大 168.1）
+  [491] 平均 155.4 毫秒（最小 126.5 / 最大 212.7）
+  [501] 平均 118.6 毫秒（最小 83.5 / 最大 161.2）
+  [502] 平均 95.0 毫秒（最小 64.6 / 最大 113.7）
+  [507] 平均 94.4 毫秒（最小 63.4 / 最大 109.9）
+  [508] 平均 106.5 毫秒（最小 104.8 / 最大 109.8）
+  [513] 平均 73.1 毫秒（最小 70.6 / 最大 76.9）
+  [514] 平均 81.8 毫秒（最小 80.5 / 最大 82.7）
+  [516] 平均 136.8 毫秒（最小 133.7 / 最大 140.3）
+  [517] 平均 121.6 毫秒（最小 97.4 / 最大 168.3）
+  [521] 平均 85.7 毫秒（最小 68.3 / 最大 119.9）
+  [525] 平均 148.9 毫秒（最小 141.3 / 最大 161.7）
+  [527] 平均 171.4 毫秒（最小 113.1 / 最大 207.4）
+  [528] 平均 97.6 毫秒（最小 63.9 / 最大 118.8）
+  [532] 平均 94.8 毫秒（最小 92.3 / 最大 99.8）
+  [533] 平均 90.5 毫秒（最小 89.6 / 最大 92.0）
+  [535] 平均 58.3 毫秒（最小 56.6 / 最大 60.9）
+  [536] 平均 97.7 毫秒（最小 91.7 / 最大 103.6）
+  [539] 平均 103.6 毫秒（最小 101.4 / 最大 107.4）
+  [540] 平均 92.6 毫秒（最小 89.2 / 最大 98.5）
+  [544] 平均 67.8 毫秒（最小 34.4 / 最大 87.0）
+  [549] 平均 43.1 毫秒（最小 40.8 / 最大 47.3）
+  [551] 平均 177.7 毫秒（最小 174.2 / 最大 181.6）
+  [552] 平均 178.8 毫秒（最小 145.7 / 最大 244.3）
+  [554] 平均 109.5 毫秒（最小 107.2 / 最大 114.0）
+  [560] 平均 130.0 毫秒（最小 126.9 / 最大 132.8）
+  [569] 平均 103.3 毫秒（最小 99.8 / 最大 107.9）
+  [575] 平均 136.9 毫秒（最小 106.1 / 最大 198.3）
+  [577] 平均 88.6 毫秒（最小 70.7 / 最大 122.7）
+  [578] 平均 85.7 毫秒（最小 83.2 / 最大 88.1）
+  [587] 平均 148.7 毫秒（最小 131.7 / 最大 177.0）
+  [589] 平均 97.5 毫秒（最小 95.3 / 最大 101.7）
+  [593] 平均 68.7 毫秒（最小 67.1 / 最大 70.8）
+  [597] 平均 96.6 毫秒（最小 92.6 / 最大 102.3）
+  [598] 平均 153.9 毫秒（最小 112.6 / 最大 188.9）
+  [613] 平均 48.5 毫秒（最小 30.4 / 最大 83.9）
+  [619] 平均 90.0 毫秒（最小 86.9 / 最大 91.9）
+  [623] 平均 73.8 毫秒（最小 71.2 / 最大 77.7）
+  [628] 平均 134.2 毫秒（最小 131.6 / 最大 137.7）
+  [636] 平均 86.8 毫秒（最小 85.5 / 最大 89.1）
+  [637] 平均 103.1 毫秒（最小 101.5 / 最大 106.2）
+  [641] 平均 62.4 毫秒（最小 37.8 / 最大 87.2）
+  [644] 平均 48.3 毫秒（最小 44.8 / 最大 51.9）
+  [649] 平均 102.0 毫秒（最小 98.0 / 最大 110.0）
+  [659] 平均 94.2 毫秒（最小 92.2 / 最大 98.2）
+  [660] 平均 91.4 毫秒（最小 89.5 / 最大 94.9）
+  [674] 平均 72.2 毫秒（最小 70.4 / 最大 75.7）
+  [684] 平均 77.8 毫秒（最小 75.5 / 最大 82.1）
+  [690] 平均 143.6 毫秒（最小 140.3 / 最大 149.3）
+  [691] 平均 104.4 毫秒（最小 54.5 / 最大 153.6）
+  [692] 平均 54.0 毫秒（最小 51.7 / 最大 58.2）
+  [693] 平均 63.9 毫秒（最小 63.1 / 最大 65.4）
+  [700] 平均 122.3 毫秒（最小 117.7 / 最大 130.2）
+  [702] 平均 136.2 毫秒（最小 120.7 / 最大 163.5）
+  [715] 平均 126.4 毫秒（最小 125.6 / 最大 127.2）
+  [716] 平均 114.7 毫秒（最小 113.7 / 最大 115.5）
+  [718] 平均 88.5 毫秒（最小 84.2 / 最大 95.4）
+  [721] 平均 99.8 毫秒（最小 96.4 / 最大 104.3）
+  [723] 平均 84.6 毫秒（最小 82.5 / 最大 88.3）
+  [727] 平均 70.3 毫秒（最小 69.3 / 最大 71.4）
+  [728] 平均 101.5 毫秒（最小 95.6 / 最大 106.8）
+  [729] 平均 113.6 毫秒（最小 111.4 / 最大 115.1）
+  [742] 平均 79.4 毫秒（最小 77.8 / 最大 81.8）
+  [743] 平均 28.3 毫秒（最小 25.7 / 最大 32.2）
+  [744] 平均 136.8 毫秒（最小 132.9 / 最大 144.5）
+  [756] 平均 143.3 毫秒（最小 98.0 / 最大 187.1）
+  [759] 平均 73.5 毫秒（最小 71.9 / 最大 74.3）
+  [768] 平均 86.6 毫秒（最小 72.7 / 最大 111.3）
+  [770] 平均 158.3 毫秒（最小 155.3 / 最大 163.1）
+  [775] 平均 72.2 毫秒（最小 47.4 / 最大 121.3）
+  [781] 平均 59.3 毫秒（最小 56.7 / 最大 61.4）
+  [783] 平均 109.8 毫秒（最小 105.3 / 最大 116.4）
+  [784] 平均 160.7 毫秒（最小 131.0 / 最大 219.5）
+  [785] 平均 109.7 毫秒（最小 107.4 / 最大 113.4）
+  [793] 平均 95.5 毫秒（最小 92.8 / 最大 99.9）
+  [800] 平均 134.0 毫秒（最小 131.2 / 最大 139.4）
+  [805] 平均 91.7 毫秒（最小 45.3 / 最大 183.6）
+  [808] 平均 48.5 毫秒（最小 45.2 / 最大 51.2）
+  [811] 平均 112.6 毫秒（最小 110.4 / 最大 115.5）
+  [814] 平均 157.2 毫秒（最小 155.0 / 最大 160.2）
+  [820] 平均 77.5 毫秒（最小 75.4 / 最大 81.3）
+  [821] 平均 26.7 毫秒（最小 26.5 / 最大 27.1）
+  [823] 平均 45.9 毫秒（最小 43.9 / 最大 49.4）
+  [830] 平均 136.2 毫秒（最小 130.8 / 最大 146.2）
+  [831] 平均 116.7 毫秒（最小 114.4 / 最大 119.1）
+  [832] 平均 77.3 毫秒（最小 74.1 / 最大 82.9）
+  [834] 平均 43.5 毫秒（最小 41.5 / 最大 47.2）
+  [837] 平均 75.1 毫秒（最小 73.0 / 最大 78.1）
+  [839] 平均 99.0 毫秒（最小 93.8 / 最大 105.4）
+  [845] 平均 87.9 毫秒（最小 83.6 / 最大 92.8）
+  [847] 平均 99.9 毫秒（最小 82.1 / 最大 132.6）
+  [852] 平均 103.0 毫秒（最小 97.6 / 最大 107.1）
+  [859] 平均 123.0 毫秒（最小 91.9 / 最大 169.2）
+  [870] 平均 70.6 毫秒（最小 69.1 / 最大 73.3）
+  [873] 平均 39.4 毫秒（最小 38.5 / 最大 41.2）
+  [879] 平均 66.0 毫秒（最小 63.3 / 最大 70.7）
+  [880] 平均 106.1 毫秒（最小 101.8 / 最大 113.9）
+  [882] 平均 84.6 毫秒（最小 81.4 / 最大 89.6）
+  [887] 平均 76.4 毫秒（最小 58.3 / 最大 110.8）
+  [903] 平均 53.1 毫秒（最小 51.2 / 最大 55.9）
+  [904] 平均 103.2 毫秒（最小 100.5 / 最大 106.4）
+  [907] 平均 133.0 毫秒（最小 128.2 / 最大 139.9）
+  [911] 平均 133.7 毫秒（最小 129.6 / 最大 139.0）
+  [913] 平均 112.6 毫秒（最小 83.2 / 最大 169.3）
+  [914] 平均 70.7 毫秒（最小 39.3 / 最大 90.1）
+  [921] 平均 62.9 毫秒（最小 60.7 / 最大 65.3）
+  [922] 平均 123.0 毫秒（最小 118.8 / 最大 128.4）
+  [936] 平均 103.1 毫秒（最小 101.9 / 最大 104.1）
+  [956] 平均 114.1 毫秒（最小 111.0 / 最大 116.8）
+  [957] 平均 126.9 毫秒（最小 124.6 / 最大 130.8）
+  [960] 平均 71.8 毫秒（最小 69.3 / 最大 76.7）
+  [967] 平均 98.9 毫秒（最小 95.3 / 最大 102.4）
+  [971] 平均 55.5 毫秒（最小 53.6 / 最大 59.0）
+  [975] 平均 102.2 毫秒（最小 98.7 / 最大 106.5）
+  [982] 平均 121.8 毫秒（最小 121.0 / 最大 122.3）
+  [985] 平均 143.9 毫秒（最小 115.1 / 最大 199.6）
+  [993] 平均 114.9 毫秒（最小 111.9 / 最大 120.3）
+  [1012] 平均 97.2 毫秒（最小 93.2 / 最大 99.9）
+  [1014] 平均 116.8 毫秒（最小 114.6 / 最大 120.2）
+  [1019] 平均 95.1 毫秒（最小 41.2 / 最大 158.3）
+  [1020] 平均 90.3 毫秒（最小 85.7 / 最大 92.8）
+  [1021] 平均 100.2 毫秒（最小 98.9 / 最大 101.4）
+  [1024] 平均 99.9 毫秒（最小 94.9 / 最大 104.0）
+  [1029] 平均 165.4 毫秒（最小 130.2 / 最大 220.8）
+  [1041] 平均 117.1 毫秒（最小 116.3 / 最大 118.1）
+  [1049] 平均 118.1 毫秒（最小 116.0 / 最大 120.6）
+  [1062] 平均 46.5 毫秒（最小 27.6 / 最大 83.7）
+  [1086] 平均 99.6 毫秒（最小 96.5 / 最大 102.1）
+  [1088] 平均 140.1 毫秒（最小 134.8 / 最大 144.4）
+  [1089] 平均 112.0 毫秒（最小 109.7 / 最大 115.8）
+  [1099] 平均 70.5 毫秒（最小 67.6 / 最大 74.5）
+  [1100] 平均 26.2 毫秒（最小 26.2 / 最大 26.3）
+  [1104] 平均 160.1 毫秒（最小 158.4 / 最大 163.2）
+  [1107] 平均 73.4 毫秒（最小 26.7 / 最大 166.0）
+  [1110] 平均 57.0 毫秒（最小 53.7 / 最大 62.3）
+  [1121] 平均 101.5 毫秒（最小 98.0 / 最大 106.5）
+  [1130] 平均 96.5 毫秒（最小 94.3 / 最大 100.9）
+  [1132] 平均 124.9 毫秒（最小 122.1 / 最大 129.0）
+  [1137] 平均 103.0 毫秒（最小 101.1 / 最大 105.8）
+  [1140] 平均 85.9 毫秒（最小 53.7 / 最大 104.6）
+  [1144] 平均 86.6 毫秒（最小 81.9 / 最大 91.8）
+  [1146] 平均 85.6 毫秒（最小 81.8 / 最大 92.4）
+  [1150] 平均 127.0 毫秒（最小 124.5 / 最大 131.1）
+  [1163] 平均 105.7 毫秒（最小 103.8 / 最大 108.8）
+  [1175] 平均 93.0 毫秒（最小 90.4 / 最大 95.9）
+  [1179] 平均 55.6 毫秒（最小 54.0 / 最大 58.1）
+  [1180] 平均 120.0 毫秒（最小 116.8 / 最大 125.7）
+  [1185] 平均 171.8 毫秒（最小 138.0 / 最大 233.0）
+  [1187] 平均 166.4 毫秒（最小 138.5 / 最大 220.7）
+  [1191] 平均 129.3 毫秒（最小 98.6 / 最大 186.4）
+  [1194] 平均 128.9 毫秒（最小 124.8 / 最大 133.1）
+  [1196] 平均 119.1 毫秒（最小 116.1 / 最大 122.7）
+  [1197] 平均 93.1 毫秒（最小 73.4 / 最大 127.4）
+  [1199] 平均 134.6 毫秒（最小 131.2 / 最大 139.2）
+  [1200] 平均 155.3 毫秒（最小 153.6 / 最大 156.9）
+  [1202] 平均 136.3 毫秒（最小 132.8 / 最大 141.3）
+  [1204] 平均 141.8 毫秒（最小 137.8 / 最大 146.1）
+  [1207] 平均 191.3 毫秒（最小 141.1 / 最大 233.5）
+  [1213] 平均 129.9 毫秒（最小 127.8 / 最大 133.9）
+  [1216] 平均 122.6 毫秒（最小 120.2 / 最大 125.2）
+  [1221] 平均 132.9 毫秒（最小 130.7 / 最大 135.2）
+  [1225] 平均 106.9 毫秒（最小 103.8 / 最大 109.2）
+  [1226] 平均 124.8 毫秒（最小 122.3 / 最大 127.6）
+  [1232] 平均 159.4 毫秒（最小 127.0 / 最大 215.2）
+  [1241] 平均 108.8 毫秒（最小 105.8 / 最大 113.3）
+  [1245] 平均 135.3 毫秒（最小 102.5 / 最大 197.8）
+  [1259] 平均 176.4 毫秒（最小 147.6 / 最大 232.2）
+  [1262] 平均 145.5 毫秒（最小 120.3 / 最大 191.9）
+  [1266] 平均 153.7 毫秒（最小 148.0 / 最大 164.2）
+  [1270] 平均 154.8 毫秒（最小 125.6 / 最大 212.3）
+  [1271] 平均 189.5 毫秒（最小 158.5 / 最大 250.0）
+  [1272] 平均 174.6 毫秒（最小 116.6 / 最大 208.3）
+  [1273] 平均 106.0 毫秒（最小 104.3 / 最大 109.0）
+  [1274] 平均 106.4 毫秒（最小 102.1 / 最大 110.3）
+  [1278] 平均 122.1 毫秒（最小 117.5 / 最大 130.5）
+  [1279] 平均 146.5 毫秒（最小 112.4 / 最大 191.7）
+  [1280] 平均 107.4 毫秒（最小 104.1 / 最大 110.2）
+  [1281] 平均 71.5 毫秒（最小 54.9 / 最大 101.6）
+  [1282] 平均 127.1 毫秒（最小 124.7 / 最大 131.8）
+  [1290] 平均 128.3 毫秒（最小 99.2 / 最大 186.3）
+  [1292] 平均 103.9 毫秒（最小 102.7 / 最大 106.0）
+  [1298] 平均 123.4 毫秒（最小 121.0 / 最大 128.1）
+  [1303] 平均 76.7 毫秒（最小 73.9 / 最大 82.0）
+  [1316] 平均 56.8 毫秒（最小 54.1 / 最大 61.4）
+  [1319] 平均 66.9 毫秒（最小 64.6 / 最大 70.8）
+  [1320] 平均 124.6 毫秒（最小 119.0 / 最大 132.2）
+  [1332] 平均 70.0 毫秒（最小 68.3 / 最大 71.7）
+  [1335] 平均 83.3 毫秒（最小 79.9 / 最大 86.2）
+  [1336] 平均 61.9 毫秒（最小 33.0 / 最大 79.2）
+  [1337] 平均 58.7 毫秒（最小 40.3 / 最大 87.7）
+  [1339] 平均 75.9 毫秒（最小 73.7 / 最大 79.1）
+  [1344] 平均 175.4 毫秒（最小 173.2 / 最大 179.0）
+  [1352] 平均 155.7 毫秒（最小 107.8 / 最大 245.8）
+  [1359] 平均 120.3 毫秒（最小 117.0 / 最大 126.0）
+  [1362] 平均 85.2 毫秒（最小 82.6 / 最大 87.8）
+  [1363] 平均 74.3 毫秒（最小 57.4 / 最大 100.8）
+  [1368] 平均 104.6 毫秒（最小 101.5 / 最大 110.3）
+  [1370] 平均 90.6 毫秒（最小 89.1 / 最大 93.3）
+  [1379] 平均 123.3 毫秒（最小 121.5 / 最大 125.6）
+  [1382] 平均 82.3 毫秒（最小 79.5 / 最大 87.1）
+  [1385] 平均 48.1 毫秒（最小 26.1 / 最大 75.2）
+  [1389] 平均 31.9 毫秒（最小 29.2 / 最大 36.6）
+  [1395] 平均 100.6 毫秒（最小 98.8 / 最大 103.9）
+  总体：平均 101.7 毫秒，最慢单题 191.3 毫秒
+  说明：延迟包含问题向量化的耗时，即端到端查询延迟；不含Ollama服务的进程启动时间（首次已预热）
+
+======================================================================
+全部有标注题汇总（300题，不含拒答题）
+======================================================================
+  Top-1（共300题）：平均召回率=50.14%  平均精确率=52.00%  F1=50.62%  题目命中率=52.00%
+  Top-5（共300题）：平均召回率=72.99%  平均精确率=35.67%  F1=45.08%  题目命中率=75.00%
+  Top-10（共300题）：平均召回率=79.20%  平均精确率=22.93%  F1=33.57%  题目命中率=81.00%
+  Top-20（共300题）：平均召回率=84.75%  平均精确率=13.97%  F1=22.96%  题目命中率=86.33%
+  Top-50（共300题）：平均召回率=89.66%  平均精确率=6.73%  F1=12.21%  题目命中率=90.00%
+
+======================================================================
+类别【scifact】汇总（300题）
+======================================================================
+  Top-1（共300题）：平均召回率=50.14%  平均精确率=52.00%  F1=50.62%  题目命中率=52.00%
+  Top-5（共300题）：平均召回率=72.99%  平均精确率=35.67%  F1=45.08%  题目命中率=75.00%
+  Top-10（共300题）：平均召回率=79.20%  平均精确率=22.93%  F1=33.57%  题目命中率=81.00%
+  Top-20（共300题）：平均召回率=84.75%  平均精确率=13.97%  F1=22.96%  题目命中率=86.33%
+  Top-50（共300题）：平均召回率=89.66%  平均精确率=6.73%  F1=12.21%  题目命中率=90.00%
+
+======================================================================
+召回率摘要（跨方案对比，全部有标注题）
+======================================================================
+  Recall@5=72.99%   Recall@10=79.20%   Recall@20=84.75%   Recall@50=89.66%
+  Hit@5=75.00%   Hit@10=81.00%   Hit@20=86.33%   Hit@50=90.00%
+  说明：Hit（题目命中率）= 至少召回一个相关文档的题目占比，衡量检索的兜底能力；
+        它不依赖每题相关文档数量与标注密度，口径比 Recall 更稳健。
+
+======================================================================
+拒答题说明
+======================================================================
+拒答题在数据集中本就没有相关块，不参与召回率/精确率统计。
+判断标准：若拒答题检索到的片段与标注块完全无关（匹配块编号与正常题重叠少），
+说明系统没有强行召回不相关内容，拒答表现良好；反之可能误导大模型编造答案。
