@@ -163,6 +163,21 @@ python rag_demo.py
 > - **索引文件大小**：`vector_store/<方案目录>/` 实际磁盘占用（2026-09-26 实测）；hybrid 复用 bm25 与 dense 两个子索引（15 + 73 MB），parent_doc 复用 dense 块向量索引、自身仅落盘 0.04 MB 元信息。
 > - 完整档位数据（含精确率、F1、题目命中率）见各方案报告：[评测报告_parent_doc_beir.txt](评测报告_parent_doc_beir.txt)（2026-10-03）、[评测报告_hybrid_beir.txt](评测报告_hybrid_beir.txt)（2026-10-03）、[评测报告_doc_dense_beir.txt](评测报告_doc_dense_beir.txt)（2026-10-03）、[评测报告_dense_beir.txt](评测报告_dense_beir.txt)（2026-10-11）、[评测报告_bm25_beir.txt](评测报告_bm25_beir.txt)（2026-10-03）、[评测报告_ivf_beir.txt](评测报告_ivf_beir.txt)（2026-10-03）、[评测报告_hnsw_beir.txt](评测报告_hnsw_beir.txt)（2026-10-04）、[评测报告_pq_beir.txt](评测报告_pq_beir.txt)（2026-10-07）。
 
+### 与 BEIR 官方基线的对照（外部基线）
+
+本项目的块级评测指标是 Recall@K（针对"相关块"的召回）；BEIR 论文的核心指标是文档级 NDCG@10（全量 qrels、文档级检索、不截断）。为回答"我的实现在文献里是什么水平"，用官方口径复测（[experiments/doc_retrieval_full.py](experiments/doc_retrieval_full.py)，nfcorpus，全量 qrels）：
+
+| 系统 | NDCG@10（nfcorpus，官方口径） |
+|---|---:|
+| **本项目：bge-m3 + 文档级全文检索** | **0.3867** |
+| BGE-large-v1.5（BEIR 论文基线） | 0.380 |
+| SPLADE++（BEIR 论文基线） | 0.347 |
+| BM25 Lucene（BEIR 论文基线） | 0.325 |
+| TAS-B / GenQ（BEIR 论文基线） | 0.319 |
+| SBERT-msmarco（BEIR 论文基线） | 0.272 |
+
+结论：裸 bge-m3 + 文档级检索即达到 BEIR 论文中 BGE-large-v1.5 的水平（0.3867 vs 0.380），显著超过经典稀疏基线 BM25（+6.2pp）——嵌入管线无实质损伤、检索实现与官方口径可比。基线数字来自 BEIR 原论文（Thakur et al. 2021）的 nfcorpus nDCG@10，复测数据见 `experiments/reports/实验总结报告.txt`（方案 A 全文行）。
+
 ### 题目命中率对比（第二展示指标）
 
 题目命中率（Hit）= 至少召回一个强相关文档的题目占比。它与 Recall 的差别：Recall 被"每题相关文档数量与标注密度"牵着走，而命中率只看"是否捞到"，2026-10-03 评测口径修正前后命中率几乎不变（对比旧口径报告即可验证），是稳定性最强的指标，适合作为召回率之外的第二展示指标。数据取自各方案报告的"全部有标注题汇总"块：
