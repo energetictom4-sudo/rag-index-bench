@@ -1,0 +1,5246 @@
+======================================================================
+检索评测报告 —— 索引方案：ivf   数据源：beir/fiqa    时间：2026-10-12 16:15:52
+Top-K：50   统计档位：[1, 5, 10, 20, 50]
+======================================================================
+BEIR模式：已加载 119657 个块（来自 D:\file\RAG\beir_chunks_fiqa.json）
+
+【建库阶段】
+
+======================================================================
+【资源占用】
+======================================================================
+  建库耗时：2.97 秒
+  内存占用：建库前 266.0 MB → 建库后 283.0 MB，
+            本次建库内存增量约 17.0 MB
+  磁盘占用：存储目录 建库前 1074.61 MB → 建库后 1489.07 MB，
+            本方案本次写入约 414.47 MB
+  索引文件大小：本次建库写入 2 个文件，共 514.84 MB，明细：faiss_ivf\index.faiss(469.33 MB) + faiss_ivf\texts.json(45.51 MB)
+  说明：内存仅统计评测进程（不含Ollama嵌入服务进程）；磁盘增量为本次建库
+        写入量，多方案并存时目录总量会累加；索引文件大小为本次建库新增或
+        发生变化的文件（同一方案重建时覆盖旧文件也计入）。
+======================================================================
+【评测阶段】逐题检索并与题库标注比对
+======================================================================
+
+[8] How to deposit a cheque issued to an associate in my business into my business account?
+  类别：fiqa  标注块：[13061, 13062, 113027]
+    第1名：匹配块[13061]  √命中
+    第2名：匹配块[16408]  
+    第3名：匹配块[62216]  
+  召回率@50 = 1/2 = 50.00%
+
+[15] Can I send a money order from USPS as a business?
+  类别：fiqa  标注块：[65570, 65571]
+    第1名：匹配块[65570]  √命中
+    第2名：匹配块[44852]  
+    第3名：匹配块[118249]  
+  召回率@50 = 1/1 = 100.00%
+
+[18] 1 EIN doing business under multiple business names
+  类别：fiqa  标注块：[17732, 17733]
+    第1名：匹配块[69883]  
+    第2名：匹配块[75624]  
+    第3名：匹配块[1661]  
+  召回率@50 = 1/1 = 100.00%
+
+[26] Applying for and receiving business credit
+  类别：fiqa  标注块：[57456, 57457, 57458, 57459, 70368, 70369]
+    第1名：匹配块[67708]  
+    第2名：匹配块[115678]  
+    第3名：匹配块[36225]  
+  召回率@50 = 1/2 = 50.00%
+
+[34] 401k Transfer After Business Closure
+  类别：fiqa  标注块：[119581]
+    第1名：匹配块[96886]  
+    第2名：匹配块[91838]  
+    第3名：匹配块[117958]  
+  召回率@50 = 0/1 = 0.00%
+
+[42] What are the ins/outs of writing equipment purchases off as business expenses in a home based business?
+  类别：fiqa  标注块：[54632, 54633, 65997, 65998, 65999, 66862]
+    第1名：匹配块[5728]  
+    第2名：匹配块[73511]  
+    第3名：匹配块[67229]  
+  召回率@50 = 2/3 = 66.67%
+
+[56] Can a entrepreneur hire a self-employed business owner?
+  类别：fiqa  标注块：[114194]
+    第1名：匹配块[112324]  
+    第2名：匹配块[36484]  
+    第3名：匹配块[114194]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[68] Intentions of Deductible Amount for Small Business
+  类别：fiqa  标注块：[3796, 3797]
+    第1名：匹配块[73711]  
+    第2名：匹配块[19710]  
+    第3名：匹配块[105123]  
+  召回率@50 = 0/1 = 0.00%
+
+[89] How can I deposit a check made out to my business into my personal account?
+  类别：fiqa  标注块：[12918, 12919, 49782, 53748, 53749, 53750, 82627, 102008, 102009, 117745]...
+    第1名：匹配块[16408]  
+    第2名：匹配块[37943]  
+    第3名：匹配块[62216]  
+  召回率@50 = 4/6 = 66.67%
+
+[90] Filing personal with 1099s versus business s-corp?
+  类别：fiqa  标注块：[6317, 6318]
+    第1名：匹配块[96623]  
+    第2名：匹配块[6317]  √命中
+    第3名：匹配块[90511]  
+  召回率@50 = 1/1 = 100.00%
+
+[94] Using credit card points to pay for tax deductible business expenses
+  类别：fiqa  标注块：[49144, 49145, 49146, 49147, 49148, 49149, 49150, 49151]
+    第1名：匹配块[71155]  
+    第2名：匹配块[71153]  
+    第3名：匹配块[49144]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[98] How can I make $250,000.00 from trading/investing/business within 5 years?
+  类别：fiqa  标注块：[105604, 114842]
+    第1名：匹配块[105604]  √命中
+    第2名：匹配块[72635]  
+    第3名：匹配块[65688]  
+  召回率@50 = 1/2 = 50.00%
+
+[104] Investing/business with other people's money: How does it work?
+  类别：fiqa  标注块：[104811, 104812, 104813, 114827, 114828]
+    第1名：匹配块[114827]  √命中
+    第2名：匹配块[46622]  
+    第3名：匹配块[74063]  
+  召回率@50 = 1/2 = 50.00%
+
+[106] What approaches are there for pricing a small business?
+  类别：fiqa  标注块：[15423, 15424, 15425, 15426, 15427]
+    第1名：匹配块[116738]  
+    第2名：匹配块[113645]  
+    第3名：匹配块[64416]  
+  召回率@50 = 1/1 = 100.00%
+
+[109] How to account for money earned and spent prior to establishing business bank accounts?
+  类别：fiqa  标注块：[14824, 14825, 14826, 14827]
+    第1名：匹配块[98653]  
+    第2名：匹配块[29194]  
+    第3名：匹配块[14824]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[475] Do I need a new EIN since I am hiring employees for my LLC?
+  类别：fiqa  标注块：[73500, 73501]
+    第1名：匹配块[73500]  √命中
+    第2名：匹配块[346]  
+    第3名：匹配块[11602]  
+  召回率@50 = 1/1 = 100.00%
+
+[503] Privacy preferences on creditworthiness data
+  类别：fiqa  标注块：[73706, 73707]
+    第1名：匹配块[48728]  
+    第2名：匹配块[86526]  
+    第3名：匹配块[98463]  
+  召回率@50 = 0/1 = 0.00%
+
+[504] Have plenty of cash flow but bad credit
+  类别：fiqa  标注块：[69102, 69103, 69104, 99979, 99980, 100419, 100420, 100421]
+    第1名：匹配块[55279]  
+    第2名：匹配块[66218]  
+    第3名：匹配块[18904]  
+  召回率@50 = 0/3 = 0.00%
+
+[515] financial institution wants share member break down for single member LLC
+  类别：fiqa  标注块：[74738, 74739]
+    第1名：匹配块[74738]  √命中
+    第2名：匹配块[67347]  
+    第3名：匹配块[108047]  
+  召回率@50 = 1/1 = 100.00%
+
+[529] Sole proprietorship or LLC?
+  类别：fiqa  标注块：[102411, 102412, 102413]
+    第1名：匹配块[32527]  
+    第2名：匹配块[7116]  
+    第3名：匹配块[116170]  
+  召回率@50 = 0/1 = 0.00%
+
+[547] What percentage of my company should I have if I only put money?
+  类别：fiqa  标注块：[1308, 1309, 56049]
+    第1名：匹配块[42706]  
+    第2名：匹配块[7153]  
+    第3名：匹配块[27403]  
+  召回率@50 = 0/2 = 0.00%
+
+[549] Where to request ACH Direct DEBIT of funds from MY OWN personal bank account?
+  类别：fiqa  标注块：[42837]
+    第1名：匹配块[82974]  
+    第2名：匹配块[75585]  
+    第3名：匹配块[118916]  
+  召回率@50 = 1/1 = 100.00%
+
+[559] Challenged an apparently bogus credit card charge, what happens now?
+  类别：fiqa  标注块：[49375, 49376]
+    第1名：匹配块[60738]  
+    第2名：匹配块[15137]  
+    第3名：匹配块[1679]  
+  召回率@50 = 0/1 = 0.00%
+
+[570] Employer options when setting up 401k for employees
+  类别：fiqa  标注块：[72872, 72873]
+    第1名：匹配块[81404]  
+    第2名：匹配块[77654]  
+    第3名：匹配块[48593]  
+  召回率@50 = 1/1 = 100.00%
+
+[585] Following an investment guru a good idea?
+  类别：fiqa  标注块：[28460, 110414]
+    第1名：匹配块[110414]  √命中
+    第2名：匹配块[47790]  
+    第3名：匹配块[94842]  
+  召回率@50 = 2/2 = 100.00%
+
+[588] Is there a reason to buy a 0% yield bond?
+  类别：fiqa  标注块：[40752, 113783]
+    第1名：匹配块[37139]  
+    第2名：匹配块[16755]  
+    第3名：匹配块[113783]  √命中
+  召回率@50 = 2/2 = 100.00%
+
+[594] Should a retail trader bother about reading SEC filings
+  类别：fiqa  标注块：[75655, 75656, 75657, 75658, 75659, 75660, 75661, 75662, 106768, 106769]...
+    第1名：匹配块[75659]  √命中
+    第2名：匹配块[19748]  
+    第3名：匹配块[12959]  
+  召回率@50 = 1/2 = 50.00%
+
+[603] Will one’s education loan application be rejected if one doesn't have a payslip providing collateral?
+  类别：fiqa  标注块：[91283]
+    第1名：匹配块[79845]  
+    第2名：匹配块[28147]  
+    第3名：匹配块[86588]  
+  召回率@50 = 0/1 = 0.00%
+
+[604] Is there a dollar amount that, when adding Massachusetts Sales Tax, precisely equals $200?
+  类别：fiqa  标注块：[46377, 46378, 52484, 90322]
+    第1名：匹配块[109492]  
+    第2名：匹配块[87149]  
+    第3名：匹配块[52484]  √命中
+  召回率@50 = 3/3 = 100.00%
+
+[620] Is it wise to have plenty of current accounts in different banks?
+  类别：fiqa  标注块：[36382, 36383, 36384, 38029, 66753, 83421, 83422, 97644]
+    第1名：匹配块[36382]  √命中
+    第2名：匹配块[114223]  
+    第3名：匹配块[28065]  
+  召回率@50 = 2/5 = 40.00%
+
+[622] Accidentally opened a year term CD account, then realized I need the money sooner. What to do?
+  类别：fiqa  标注块：[36155, 36156, 74081]
+    第1名：匹配块[42807]  
+    第2名：匹配块[84579]  
+    第3名：匹配块[55208]  
+  召回率@50 = 0/2 = 0.00%
+
+[659] Buying from an aggressive salesperson
+  类别：fiqa  标注块：[2571, 2572, 2573, 2574, 24317, 24318, 24319, 24320, 24321, 24322]...
+    第1名：匹配块[33927]  √命中
+    第2名：匹配块[2573]  √命中
+    第3名：匹配块[112948]  
+  召回率@50 = 6/10 = 60.00%
+
+[672] Credit and Debit
+  类别：fiqa  标注块：[8158, 8159, 8160, 112387, 112388]
+    第1名：匹配块[118422]  
+    第2名：匹配块[30800]  
+    第3名：匹配块[89241]  
+  召回率@50 = 0/2 = 0.00%
+
+[684] Beyond RRSP deductions, how does a high income earner save on taxes?
+  类别：fiqa  标注块：[88161]
+    第1名：匹配块[72771]  
+    第2名：匹配块[55048]  
+    第3名：匹配块[86529]  
+  召回率@50 = 0/1 = 0.00%
+
+[687] Online tool to connect to my bank account and tell me what I spend in different categories?
+  类别：fiqa  标注块：[29545, 29546, 53906]
+    第1名：匹配块[118078]  
+    第2名：匹配块[39372]  
+    第3名：匹配块[64971]  
+  召回率@50 = 1/2 = 50.00%
+
+[689] Receive credit card payment sending my customer details to a credit card processing company?
+  类别：fiqa  标注块：[82246]
+    第1名：匹配块[89391]  
+    第2名：匹配块[47233]  
+    第3名：匹配块[26640]  
+  召回率@50 = 0/1 = 0.00%
+
+[691] How to categorize credit card payments?
+  类别：fiqa  标注块：[79260, 79261]
+    第1名：匹配块[28498]  
+    第2名：匹配块[52147]  
+    第3名：匹配块[36918]  
+  召回率@50 = 1/1 = 100.00%
+
+[699] Prepaid Rent (Accrual Based Accounting)
+  类别：fiqa  标注块：[21615, 21616]
+    第1名：匹配块[69793]  
+    第2名：匹配块[102986]  
+    第3名：匹配块[75866]  
+  召回率@50 = 1/1 = 100.00%
+
+[701] What are the ins/outs of writing-off part of one's rent for working at home?
+  类别：fiqa  标注块：[58147, 68283, 68284, 77979]
+    第1名：匹配块[91225]  
+    第2名：匹配块[87195]  
+    第3名：匹配块[35661]  
+  召回率@50 = 1/3 = 33.33%
+
+[715] what would you do with $100K saving?
+  类别：fiqa  标注块：[37609, 109269, 115610, 115611, 115612]
+    第1名：匹配块[90771]  
+    第2名：匹配块[86125]  
+    第3名：匹配块[91633]  
+  召回率@50 = 0/3 = 0.00%
+
+[721] What are “upstream investments” and “downstream investments” in this context?
+  类别：fiqa  标注块：[99429, 99430, 99431, 99432]
+    第1名：匹配块[99429]  √命中
+    第2名：匹配块[42006]  
+    第3名：匹配块[24741]  
+  召回率@50 = 1/1 = 100.00%
+
+[744] What options are available for a home loan with poor credit but a good rental history?
+  类别：fiqa  标注块：[15697, 15698, 98333, 113055]
+    第1名：匹配块[98333]  √命中
+    第2名：匹配块[9473]  
+    第3名：匹配块[62583]  
+  召回率@50 = 1/3 = 33.33%
+
+[750] Paid part of my state refund back last year; now must declare the initial amount as income?
+  类别：fiqa  标注块：[6645, 83920, 83921]
+    第1名：匹配块[83920]  √命中
+    第2名：匹配块[59228]  
+    第3名：匹配块[1188]  
+  召回率@50 = 2/2 = 100.00%
+
+[753] Taxes due for hobbyist Group Buy
+  类别：fiqa  标注块：[48756, 93365, 93366, 93367, 93368]
+    第1名：匹配块[93368]  √命中
+    第2名：匹配块[42767]  
+    第3名：匹配块[87680]  
+  召回率@50 = 1/2 = 50.00%
+
+[766] Will the ex-homeowner still owe money after a foreclosure?
+  类别：fiqa  标注块：[595, 596, 77547, 77548, 109977, 109978]
+    第1名：匹配块[595]  √命中
+    第2名：匹配块[11110]  
+    第3名：匹配块[10702]  
+  召回率@50 = 1/3 = 33.33%
+
+[776] Can saving/investing 15% of your income starting age 25, likely make you a millionaire?
+  类别：fiqa  标注块：[2026, 2027, 2028, 25179, 25180, 25181, 25822, 25823, 44115, 44116]...
+    第1名：匹配块[25179]  √命中
+    第2名：匹配块[25180]  √命中
+    第3名：匹配块[27029]  
+  召回率@50 = 5/12 = 41.67%
+
+[810] Can I open a bank account in the US remotely? Will I pay taxes for the money on it?
+  类别：fiqa  标注块：[6075, 6076, 6077]
+    第1名：匹配块[107256]  
+    第2名：匹配块[62462]  
+    第3名：匹配块[14640]  
+  召回率@50 = 1/1 = 100.00%
+
+[813] Income Tax and Investments
+  类别：fiqa  标注块：[21490, 21491, 87230]
+    第1名：匹配块[64642]  
+    第2名：匹配块[110595]  
+    第3名：匹配块[52019]  
+  召回率@50 = 0/2 = 0.00%
+
+[849] Accounting for reimbursements that exceed actual expenses
+  类别：fiqa  标注块：[111311, 111312, 111313]
+    第1名：匹配块[20418]  
+    第2名：匹配块[5980]  
+    第3名：匹配块[66327]  
+  召回率@50 = 1/1 = 100.00%
+
+[852] Dalbar: How can the average investor lose money?
+  类别：fiqa  标注块：[49195, 49196, 86287, 86288, 86289, 106250, 106251, 106252]
+    第1名：匹配块[86289]  √命中
+    第2名：匹配块[114361]  
+    第3名：匹配块[47574]  
+  召回率@50 = 3/3 = 100.00%
+
+[853] What will my taxes be as self employed?
+  类别：fiqa  标注块：[29774, 29775, 29776, 29777, 29778, 52305, 52306, 52307]
+    第1名：匹配块[113648]  
+    第2名：匹配块[107345]  
+    第3名：匹配块[42343]  
+  召回率@50 = 2/2 = 100.00%
+
+[858] Is it bad practice to invest in stocks that fluctuate by single points throughout the day?
+  类别：fiqa  标注块：[9079, 9080, 24818, 24819, 24820, 24821, 24822, 24823, 24824, 24825]...
+    第1名：匹配块[59062]  
+    第2名：匹配块[41]  
+    第3名：匹配块[104097]  
+  召回率@50 = 2/4 = 50.00%
+
+[859] Any reason to keep around my account with my old, 'big' bank?
+  类别：fiqa  标注块：[3721, 3722, 89934, 89935, 89936, 89937]
+    第1名：匹配块[72525]  
+    第2名：匹配块[45721]  
+    第3名：匹配块[89934]  √命中
+  召回率@50 = 1/2 = 50.00%
+
+[864] Why use accounting software like Quickbooks instead of Excel spreadsheets?
+  类别：fiqa  标注块：[4963, 4964, 4965, 4966, 5925, 30814, 42313, 94585, 94586, 94587]...
+    第1名：匹配块[5925]  √命中
+    第2名：匹配块[4965]  √命中
+    第3名：匹配块[4966]  √命中
+  召回率@50 = 4/6 = 66.67%
+
+[879] Capital improvement and depreciation in restaurant LLC
+  类别：fiqa  标注块：[73509, 73510, 73511]
+    第1名：匹配块[6034]  
+    第2名：匹配块[103809]  
+    第3名：匹配块[73511]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[885] How long do credit cards keep working after you disappear?
+  类别：fiqa  标注块：[67860, 81890, 81891]
+    第1名：匹配块[103506]  
+    第2名：匹配块[84701]  
+    第3名：匹配块[60813]  
+  召回率@50 = 1/2 = 50.00%
+
+[895] California tells me I didn't file documents for an LLC that isn't mine. What do I do?
+  类别：fiqa  标注块：[83207, 83208, 83209, 83210]
+    第1名：匹配块[109235]  
+    第2名：匹配块[102137]  
+    第3名：匹配块[102138]  
+  召回率@50 = 1/1 = 100.00%
+
+[904] How do I set up Quickbooks for a small property rental company that holds its properties in separate LLC's?
+  类别：fiqa  标注块：[83059, 83060, 83061]
+    第1名：匹配块[83059]  √命中
+    第2名：匹配块[31879]  
+    第3名：匹配块[44534]  
+  召回率@50 = 1/1 = 100.00%
+
+[928] How can I determine if a FHA loan refinance offer is from a reputable lender
+  类别：fiqa  标注块：[2270, 2271, 2272, 2273, 70153, 70154, 70155]
+    第1名：匹配块[70154]  √命中
+    第2名：匹配块[91338]  
+    第3名：匹配块[55225]  
+  召回率@50 = 1/2 = 50.00%
+
+[929] Freelancer: Should I start a second bank account?
+  类别：fiqa  标注块：[73720, 73721, 73722, 73723]
+    第1名：匹配块[73720]  √命中
+    第2名：匹配块[82974]  
+    第3名：匹配块[12918]  
+  召回率@50 = 1/1 = 100.00%
+
+[932] Is freelance income earned by a U.S. citizen while living abroad subject to state income tax?
+  类别：fiqa  标注块：[9748, 9749, 77497, 77498, 77499]
+    第1名：匹配块[91488]  
+    第2名：匹配块[645]  
+    第3名：匹配块[76694]  
+  召回率@50 = 2/2 = 100.00%
+
+[939] How to correct a tax return filed electronically and already approved?
+  类别：fiqa  标注块：[78540]
+    第1名：匹配块[106518]  
+    第2名：匹配块[78540]  √命中
+    第3名：匹配块[36908]  
+  召回率@50 = 1/1 = 100.00%
+
+[945] Paid by an American company but working from France: where should I pay taxes?
+  类别：fiqa  标注块：[70657, 70658]
+    第1名：匹配块[36881]  
+    第2名：匹配块[55046]  
+    第3名：匹配块[77193]  
+  召回率@50 = 1/1 = 100.00%
+
+[957] How can I withdraw money from my LLC?
+  类别：fiqa  标注块：[64727, 64728, 89375, 89376, 89377, 108046, 108047, 108048, 108049]
+    第1名：匹配块[118010]  
+    第2名：匹配块[60561]  
+    第3名：匹配块[89376]  √命中
+  召回率@50 = 3/3 = 100.00%
+
+[988] Where should I invest my savings?
+  类别：fiqa  标注块：[21729, 21730, 45196, 45197, 45198, 45199, 45200, 45201, 45202]
+    第1名：匹配块[38971]  
+    第2名：匹配块[100550]  
+    第3名：匹配块[115631]  
+  召回率@50 = 0/2 = 0.00%
+
+[1074] How common is “pass-through” health insurance?
+  类别：fiqa  标注块：[88684, 88685, 88686, 88687, 88688, 88689, 88690, 88691, 88692, 88693]...
+    第1名：匹配块[88684]  √命中
+    第2名：匹配块[112866]  
+    第3名：匹配块[31143]  
+  召回率@50 = 1/1 = 100.00%
+
+[1085] How do disputed debts work on credit reports?
+  类别：fiqa  标注块：[78818, 93566]
+    第1名：匹配块[32606]  
+    第2名：匹配块[84457]  
+    第3名：匹配块[61257]  
+  召回率@50 = 0/2 = 0.00%
+
+[1090] Need a formula to determine monthly payments received at time t if I'm reinvesting my returns
+  类别：fiqa  标注块：[40648, 40649, 103946, 103947]
+    第1名：匹配块[89269]  
+    第2名：匹配块[40649]  √命中
+    第3名：匹配块[8464]  
+  召回率@50 = 1/2 = 50.00%
+
+[1150] How are the best way to make and save money at 22 years old
+  类别：fiqa  标注块：[3948, 3949, 8731, 8732, 70927, 70928, 70929, 70930, 106347, 106348]...
+    第1名：匹配块[2029]  
+    第2名：匹配块[86722]  
+    第3名：匹配块[95745]  
+  召回率@50 = 0/4 = 0.00%
+
+[1157] Personal taxes for Shopify / Paypal shop?
+  类别：fiqa  标注块：[54578, 54579, 81219, 81220, 81221, 81222]
+    第1名：匹配块[102595]  
+    第2名：匹配块[34697]  
+    第3名：匹配块[87735]  
+  召回率@50 = 2/2 = 100.00%
+
+[1159] what is the best way to do a freelancing job over the summer for a student
+  类别：fiqa  标注块：[99391, 99392, 99393, 99394]
+    第1名：匹配块[54447]  
+    第2名：匹配块[33091]  
+    第3名：匹配块[33092]  
+  召回率@50 = 0/1 = 0.00%
+
+[1198] What are the consequences of IRS “reclassification” on both employer and employee?
+  类别：fiqa  标注块：[11209, 11210, 11211, 11212]
+    第1名：匹配块[11211]  √命中
+    第2名：匹配块[11210]  √命中
+    第3名：匹配块[11212]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1230] How does Walmart account their expired food
+  类别：fiqa  标注块：[38439, 38440, 38441, 38442]
+    第1名：匹配块[53807]  
+    第2名：匹配块[102793]  
+    第3名：匹配块[16375]  
+  召回率@50 = 0/1 = 0.00%
+
+[1281] How FTB and IRS find mistakes in amended tax returns? Are their processes reliable?
+  类别：fiqa  标注块：[72436, 72437]
+    第1名：匹配块[103740]  
+    第2名：匹配块[64049]  
+    第3名：匹配块[47546]  
+  召回率@50 = 0/1 = 0.00%
+
+[1284] Tax consequences when foreign currency changes in value
+  类别：fiqa  标注块：[68790, 68791, 68792]
+    第1名：匹配块[50346]  
+    第2名：匹配块[106962]  
+    第3名：匹配块[68867]  
+  召回率@50 = 1/1 = 100.00%
+
+[1297] Why aren't there solutions for electronic itemized receipt for retail in-store purchases?
+  类别：fiqa  标注块：[34577, 34578]
+    第1名：匹配块[34577]  √命中
+    第2名：匹配块[61922]  
+    第3名：匹配块[61921]  
+  召回率@50 = 1/1 = 100.00%
+
+[1306] I made an investment with a company that contacted me, was it safe?
+  类别：fiqa  标注块：[33732, 33733, 33734, 40807, 97120, 118596, 118597]
+    第1名：匹配块[3107]  
+    第2名：匹配块[63559]  
+    第3名：匹配块[72123]  
+  召回率@50 = 1/4 = 25.00%
+
+[1309] Why does FlagStar Bank harass you about payments within grace period?
+  类别：fiqa  标注块：[31577, 87710, 87711, 94320, 94321, 94322, 98107]
+    第1名：匹配块[94320]  √命中
+    第2名：匹配块[53930]  
+    第3名：匹配块[33500]  
+  召回率@50 = 1/4 = 25.00%
+
+[1310] Is is possible to take a mortgage using Bitcoin as collateral?
+  类别：fiqa  标注块：[107072, 107073]
+    第1名：匹配块[107072]  √命中
+    第2名：匹配块[20366]  
+    第3名：匹配块[24279]  
+  召回率@50 = 1/1 = 100.00%
+
+[1321] Are social media accounts (e.g. YouTube, Twitter, Instagram, etc.) considered assets?
+  类别：fiqa  标注块：[43343, 58899]
+    第1名：匹配块[97850]  
+    第2名：匹配块[56021]  
+    第3名：匹配块[70558]  
+  召回率@50 = 0/2 = 0.00%
+
+[1322] Is this follow-up after a car crash a potential scam?
+  类别：fiqa  标注块：[12824, 12825, 23022, 23023, 23024, 23025, 23026, 23341, 79912, 79913]
+    第1名：匹配块[116139]  
+    第2名：匹配块[19874]  
+    第3名：匹配块[59540]  
+  召回率@50 = 2/4 = 50.00%
+
+[1391] How is taxation for youtube/twitch etc monetization handled in the UK?
+  类别：fiqa  标注块：[53402, 53403, 53404, 53405, 53406, 53407, 88075, 112227]
+    第1名：匹配块[29540]  
+    第2名：匹配块[53577]  
+    第3名：匹配块[68824]  
+  召回率@50 = 1/3 = 33.33%
+
+[1393] Which is better when working as a contractor, 1099 or incorporating?
+  类别：fiqa  标注块：[44094, 70779, 70780, 70781, 70826, 70827, 70828, 70829, 106567, 106568]...
+    第1名：匹配块[6373]  
+    第2名：匹配块[13748]  
+    第3名：匹配块[15539]  
+  召回率@50 = 4/6 = 66.67%
+
+[1415] I am not VAT registered. Do I need to buy from my supplier with excl VAT prices or incl VAT?
+  类别：fiqa  标注块：[13259, 13260, 61620, 61621, 61622, 77530, 78888]
+    第1名：匹配块[77530]  √命中
+    第2名：匹配块[13260]  √命中
+    第3名：匹配块[78888]  √命中
+  召回率@50 = 4/4 = 100.00%
+
+[1416] US resident with Canadian income via T4A-NR
+  类别：fiqa  标注块：[65887]
+    第1名：匹配块[86109]  
+    第2名：匹配块[4183]  
+    第3名：匹配块[17429]  
+  召回率@50 = 1/1 = 100.00%
+
+[1441] What's the difference between Market Cap and NAV?
+  类别：fiqa  标注块：[18, 19, 20, 82976, 83319, 83320, 83321, 94229, 94230]
+    第1名：匹配块[83320]  √命中
+    第2名：匹配块[94229]  √命中
+    第3名：匹配块[82976]  √命中
+  召回率@50 = 4/4 = 100.00%
+
+[1451] How do you find an ethical, honest independent insurance broker in Canada?
+  类别：fiqa  标注块：[107568, 107569]
+    第1名：匹配块[91572]  
+    第2名：匹配块[24539]  
+    第3名：匹配块[99332]  
+  召回率@50 = 0/1 = 0.00%
+
+[1469] Why do some companies report how well their EBITDA performed even if their overall net profit did equally well?
+  类别：fiqa  标注块：[88841, 88842, 88843, 88844, 88845, 88846, 88847, 88848]
+    第1名：匹配块[88847]  √命中
+    第2名：匹配块[37578]  
+    第3名：匹配块[88848]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1530] What is the proper way to report additional income for taxes (specifically, Android development)?
+  类别：fiqa  标注块：[5728, 43977, 43978, 63059, 63060, 63061]
+    第1名：匹配块[5728]  √命中
+    第2名：匹配块[19318]  
+    第3名：匹配块[61631]  
+  召回率@50 = 2/3 = 66.67%
+
+[1670] Investing in hemp producers in advance of possible legalization in Canada?
+  类别：fiqa  标注块：[58666, 58667, 78872, 78873, 98931, 98932]
+    第1名：匹配块[98932]  √命中
+    第2名：匹配块[78872]  √命中
+    第3名：匹配块[48705]  
+  召回率@50 = 3/3 = 100.00%
+
+[1676] W2 vs 1099 Employee status
+  类别：fiqa  标注块：[11672, 11673, 11674, 15537, 15538, 15539, 15540, 46894, 46895, 79057]
+    第1名：匹配块[15537]  √命中
+    第2名：匹配块[116939]  
+    第3名：匹配块[36067]  
+  召回率@50 = 4/4 = 100.00%
+
+[1736] How can people have such high credit card debts?
+  类别：fiqa  标注块：[5078, 79455, 79456, 79457, 79458, 79908, 79909, 88572, 112345, 112346]...
+    第1名：匹配块[87425]  
+    第2名：匹配块[22911]  
+    第3名：匹配块[116595]  
+  召回率@50 = 2/5 = 40.00%
+
+[1748] How high should I set my KickStarter funding goal in order to have $35,000 left over?
+  类别：fiqa  标注块：[3584, 3585, 105795, 105796, 114928, 114929]
+    第1名：匹配块[106313]  
+    第2名：匹配块[3584]  √命中
+    第3名：匹配块[105573]  
+  召回率@50 = 1/3 = 33.33%
+
+[1783] Freelancing Tax implication
+  类别：fiqa  标注块：[66920]
+    第1名：匹配块[109944]  
+    第2名：匹配块[84330]  
+    第3名：匹配块[76694]  
+  召回率@50 = 0/1 = 0.00%
+
+[1812] splitting a joint mortgage - one owner in home
+  类别：fiqa  标注块：[43940, 43941, 43942, 43943, 43944, 106128, 106129, 106130]
+    第1名：匹配块[85463]  
+    第2名：匹配块[22265]  
+    第3名：匹配块[22741]  
+  召回率@50 = 2/2 = 100.00%
+
+[1815] Rules for SEP contributions in an LLC?
+  类别：fiqa  标注块：[89388, 89389]
+    第1名：匹配块[89388]  √命中
+    第2名：匹配块[51805]  
+    第3名：匹配块[56376]  
+  召回率@50 = 1/1 = 100.00%
+
+[1819] Found an old un-cashed paycheck. How long is it good for? What to do if it's expired?
+  类别：fiqa  标注块：[13217, 42563, 42564, 44223, 44224, 50111, 53632, 53633, 75514, 75515]...
+    第1名：匹配块[35435]  
+    第2名：匹配块[50111]  √命中
+    第3名：匹配块[35433]  
+  召回率@50 = 6/6 = 100.00%
+
+[1824] Is there a way to open a U.S. bank account for my LLC remotely?
+  类别：fiqa  标注块：[49026, 49027]
+    第1名：匹配块[62462]  
+    第2名：匹配块[14640]  
+    第3名：匹配块[8758]  
+  召回率@50 = 1/1 = 100.00%
+
+[1826] Is the contribution towards Employment Insurance (EI) wasted if I never get fired, or are my premiums refunded?
+  类别：fiqa  标注块：[1607, 1608, 1609, 36606, 36607, 36608, 80383, 80384, 80385, 116426]...
+    第1名：匹配块[80383]  √命中
+    第2名：匹配块[80384]  √命中
+    第3名：匹配块[116426]  √命中
+  召回率@50 = 4/4 = 100.00%
+
+[1832] Warren Buffett and Charles Munger advice for small investors?
+  类别：fiqa  标注块：[117780, 117781, 117782]
+    第1名：匹配块[113077]  
+    第2名：匹配块[27111]  
+    第3名：匹配块[117781]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[1871] Is there any US bank that does not charge for incoming wire transfers?
+  类别：fiqa  标注块：[35317, 35318, 48887, 48888, 72969, 88730]
+    第1名：匹配块[35317]  √命中
+    第2名：匹配块[88625]  
+    第3名：匹配块[34424]  
+  召回率@50 = 4/4 = 100.00%
+
+[1877] As a Sole Proprietor, will “employer” Solo 401k contributions count towards gross income?
+  类别：fiqa  标注块：[35948, 35949, 35950, 35951, 35952]
+    第1名：匹配块[35948]  √命中
+    第2名：匹配块[38494]  
+    第3名：匹配块[39280]  
+  召回率@50 = 1/1 = 100.00%
+
+[1889] Reporting financial gains from my online store
+  类别：fiqa  标注块：[77814, 77815, 77816, 77817, 77818, 77819, 77820, 77821, 77822]
+    第1名：匹配块[83101]  
+    第2名：匹配块[110626]  
+    第3名：匹配块[93065]  
+  召回率@50 = 0/1 = 0.00%
+
+[1915] Should I pay a company who failed to collect VAT from me over 6 months ago?
+  类别：fiqa  标注块：[64054, 64055, 64056, 64057, 64058, 64059, 86669, 86670, 86671, 86672]
+    第1名：匹配块[97091]  
+    第2名：匹配块[46702]  
+    第3名：匹配块[90507]  
+  召回率@50 = 2/2 = 100.00%
+
+[1920] Clarification on student expenses - To file the tax for the next year
+  类别：fiqa  标注块：[54097, 54098]
+    第1名：匹配块[40450]  
+    第2名：匹配块[98226]  
+    第3名：匹配块[72704]  
+  召回率@50 = 0/1 = 0.00%
+
+[1933] UK sole trader who often buys products/services on behalf of clients – do I deduct from declared income or claim as allowable expenses?
+  类别：fiqa  标注块：[36895, 36896, 36897]
+    第1名：匹配块[36895]  √命中
+    第2名：匹配块[36896]  √命中
+    第3名：匹配块[88500]  
+  召回率@50 = 1/1 = 100.00%
+
+[1948] Which colors can one use to fill out a check in the US?
+  类别：fiqa  标注块：[93533, 93534]
+    第1名：匹配块[93534]  √命中
+    第2名：匹配块[15684]  
+    第3名：匹配块[38489]  
+  召回率@50 = 1/1 = 100.00%
+
+[1994] Does the IRS reprieve those who have to commute for work?
+  类别：fiqa  标注块：[10193, 10194, 31673, 31674, 48726, 48727, 86899, 86900, 86901, 112762]...
+    第1名：匹配块[10193]  √命中
+    第2名：匹配块[46390]  
+    第3名：匹配块[86901]  √命中
+  召回率@50 = 4/5 = 80.00%
+
+[2010] Paypal website donations without being a charity
+  类别：fiqa  标注块：[8866, 35021, 46786]
+    第1名：匹配块[113872]  
+    第2名：匹配块[108016]  
+    第3名：匹配块[113873]  
+  召回率@50 = 3/3 = 100.00%
+
+[2051] Where to find the 5 or 10 year returns for a mutual fund?
+  类别：fiqa  标注块：[111494]
+    第1名：匹配块[81977]  
+    第2名：匹配块[68605]  
+    第3名：匹配块[72191]  
+  召回率@50 = 0/1 = 0.00%
+
+[2070] Advantage of credit union or local community bank over larger nationwide banks such as BOA, Chase, etc.?
+  类别：fiqa  标注块：[5955, 5956, 27726, 27727, 72887]
+    第1名：匹配块[119218]  
+    第2名：匹配块[37915]  
+    第3名：匹配块[93937]  
+  召回率@50 = 2/3 = 66.67%
+
+[2075] Are stories of turning a few thousands into millions by trading stocks real?
+  类别：fiqa  标注块：[2953, 8891, 8892, 12034, 12035, 12036, 34192, 34193, 52355, 52356]...
+    第1名：匹配块[8892]  √命中
+    第2名：匹配块[104112]  √命中
+    第3名：匹配块[75378]  
+  召回率@50 = 6/9 = 66.67%
+
+[2076] Can vet / veterinary bills be considered deductions (tax-deductible) for Income Tax purposes [Canada]?
+  类别：fiqa  标注块：[37097, 56115]
+    第1名：匹配块[37097]  √命中
+    第2名：匹配块[56115]  √命中
+    第3名：匹配块[87778]  
+  召回率@50 = 2/2 = 100.00%
+
+[2088] How would I go about selling the stock of a privately held company?
+  类别：fiqa  标注块：[80007, 80008, 119580]
+    第1名：匹配块[112751]  
+    第2名：匹配块[14732]  
+    第3名：匹配块[115881]  
+  召回率@50 = 0/2 = 0.00%
+
+[2108] Can I pay taxes using bill pay from my on-line checking account?
+  类别：fiqa  标注块：[31427, 62237, 62238, 105183]
+    第1名：匹配块[38434]  
+    第2名：匹配块[100878]  
+    第3名：匹配块[111096]  
+  召回率@50 = 3/3 = 100.00%
+
+[2118] What happened in Argentina in 2001 bank sector? did the banks closed? all or some?
+  类别：fiqa  标注块：[82247]
+    第1名：匹配块[81963]  
+    第2名：匹配块[81965]  
+    第3名：匹配块[61214]  
+  召回率@50 = 0/1 = 0.00%
+
+[2154] What tax software automatically determines the best filing status, etc?
+  类别：fiqa  标注块：[95379, 95380, 95381, 95382, 95383]
+    第1名：匹配块[26924]  
+    第2名：匹配块[118217]  
+    第3名：匹配块[69140]  
+  召回率@50 = 0/1 = 0.00%
+
+[2181] What are the risks & rewards of being a self-employed independent contractor / consultant vs. being a permanent employee?
+  类别：fiqa  标注块：[75536, 75537, 79515]
+    第1名：匹配块[7482]  
+    第2名：匹配块[12569]  
+    第3名：匹配块[7483]  
+  召回率@50 = 0/2 = 0.00%
+
+[2183] Why are there many small banks and more banks in the U.S.?
+  类别：fiqa  标注块：[4844, 4845, 4846, 4847, 4848, 4982, 25269, 25270, 25271, 26914]...
+    第1名：匹配块[4846]  √命中
+    第2名：匹配块[26917]  √命中
+    第3名：匹配块[3722]  
+  召回率@50 = 3/6 = 50.00%
+
+[2204] What's an economic explanation for why greeting cards are so expensive?
+  类别：fiqa  标注块：[848, 849, 850, 851, 10091, 10092, 16910, 35092, 35093, 35094]...
+    第1名：匹配块[84892]  √命中
+    第2名：匹配块[54371]  √命中
+    第3名：匹配块[74982]  √命中
+  召回率@50 = 8/8 = 100.00%
+
+[2264] Personal Tax Return software for Linux?
+  类别：fiqa  标注块：[82563, 106838]
+    第1名：匹配块[83826]  
+    第2名：匹配块[26924]  
+    第3名：匹配块[90036]  
+  召回率@50 = 1/2 = 50.00%
+
+[2296] How does a bank make money on an interest free secured loan?
+  类别：fiqa  标注块：[16755, 21475, 21476, 24118, 24119, 24120, 26585, 26586, 50774, 50775]...
+    第1名：匹配块[80040]  √命中
+    第2名：匹配块[80965]  
+    第3名：匹配块[67805]  
+  召回率@50 = 5/9 = 55.56%
+
+[2306] To whom should I report fraud on both of my credit cards?
+  类别：fiqa  标注块：[63587, 116032, 116033, 116034]
+    第1名：匹配块[119010]  
+    第2名：匹配块[18259]  
+    第3名：匹配块[38417]  
+  召回率@50 = 1/2 = 50.00%
+
+[2316] What exchange rate does El Al use when converting final payment amount to shekels?
+  类别：fiqa  标注块：[69967, 69968, 69969, 96667, 96668]
+    第1名：匹配块[96668]  √命中
+    第2名：匹配块[96667]  √命中
+    第3名：匹配块[101461]  
+  召回率@50 = 2/2 = 100.00%
+
+[2318] F1 student and eBay selling tax
+  类别：fiqa  标注块：[85673, 85674, 85675]
+    第1名：匹配块[68947]  
+    第2名：匹配块[62029]  
+    第3名：匹配块[76515]  
+  召回率@50 = 0/1 = 0.00%
+
+[2330] How can I determine if a debt consolidation offer is real or a scam?
+  类别：fiqa  标注块：[20979, 20980, 95812, 95813, 95814]
+    第1名：匹配块[95813]  √命中
+    第2名：匹配块[4257]  
+    第3名：匹配块[35850]  
+  召回率@50 = 1/2 = 50.00%
+
+[2334] How do you determine “excess cash” for Enterprise Value calculations from a balance sheet?
+  类别：fiqa  标注块：[445, 446, 30454, 30455, 45626, 45627, 45628]
+    第1名：匹配块[45627]  √命中
+    第2名：匹配块[69591]  
+    第3名：匹配块[46324]  
+  召回率@50 = 3/3 = 100.00%
+
+[2348] Why can't you just have someone invest for you and split the profits (and losses) with him?
+  类别：fiqa  标注块：[27401, 27402, 27403, 29632, 29633, 29634, 29635, 29637, 29639, 29640]...
+    第1名：匹配块[89566]  √命中
+    第2名：匹配块[89568]  √命中
+    第3名：匹配块[90956]  
+  召回率@50 = 5/15 = 33.33%
+
+[2376] Why do gas stations charge different amounts in the same local area?
+  类别：fiqa  标注块：[12853, 12854, 12855, 12856, 18440, 18441, 18442, 23064, 23065, 49043]...
+    第1名：匹配块[12853]  √命中
+    第2名：匹配块[18442]  √命中
+    第3名：匹配块[49050]  √命中
+  召回率@50 = 8/8 = 100.00%
+
+[2383] Should I Purchase Health Insurance Through My S-Corp
+  类别：fiqa  标注块：[3409, 3410, 3411, 3412, 3413, 46422, 46423, 46424]
+    第1名：匹配块[3413]  √命中
+    第2名：匹配块[74300]  
+    第3名：匹配块[3412]  √命中
+  召回率@50 = 1/2 = 50.00%
+
+[2384] Tax: 1099 paper form
+  类别：fiqa  标注块：[87085, 87086, 87087]
+    第1名：匹配块[10258]  
+    第2名：匹配块[72323]  
+    第3名：匹配块[113081]  
+  召回率@50 = 1/1 = 100.00%
+
+[2385] As director, can I invoice my self-owned company?
+  类别：fiqa  标注块：[74775, 74776, 74777, 74778, 81642]
+    第1名：匹配块[74775]  √命中
+    第2名：匹配块[43586]  
+    第3名：匹配块[112637]  
+  召回率@50 = 1/2 = 50.00%
+
+[2388] Do financial advisors get better deals on mortgages?
+  类别：fiqa  标注块：[21162, 21163]
+    第1名：匹配块[21162]  √命中
+    第2名：匹配块[63647]  
+    第3名：匹配块[46072]  
+  召回率@50 = 1/1 = 100.00%
+
+[2395] Freelance site with lowest commission fees?
+  类别：fiqa  标注块：[36004, 36005, 36006]
+    第1名：匹配块[31947]  
+    第2名：匹配块[59356]  
+    第3名：匹配块[91303]  
+  召回率@50 = 0/1 = 0.00%
+
+[2398] Frustrated Landlord
+  类别：fiqa  标注块：[24013, 24014, 44961, 72919, 72920, 72921, 72922, 72923, 72924, 102147]...
+    第1名：匹配块[52893]  
+    第2名：匹配块[78130]  
+    第3名：匹配块[111195]  
+  召回率@50 = 0/5 = 0.00%
+
+[2399] Where do web sites get foreign exchange currency rate / quote information?
+  类别：fiqa  标注块：[68951, 68952, 68953]
+    第1名：匹配块[68951]  √命中
+    第2名：匹配块[97240]  
+    第3名：匹配块[3476]  
+  召回率@50 = 1/1 = 100.00%
+
+[2400] Will I be paid dividends if I own shares?
+  类别：fiqa  标注块：[246, 91292, 91293, 91294, 112597]
+    第1名：匹配块[246]  √命中
+    第2名：匹配块[64642]  
+    第3名：匹配块[19778]  
+  召回率@50 = 2/3 = 66.67%
+
+[2407] How long to wait after getting a mortgage to increase my credit limit?
+  类别：fiqa  标注块：[406, 407, 34990, 34991, 59322, 64344]
+    第1名：匹配块[89673]  
+    第2名：匹配块[3817]  
+    第3名：匹配块[8406]  
+  召回率@50 = 2/4 = 50.00%
+
+[2416] Why should a company go public?
+  类别：fiqa  标注块：[9719, 9720, 9721, 9722, 21181, 21182, 32795, 32796, 94259, 94260]...
+    第1名：匹配块[21181]  √命中
+    第2名：匹配块[32795]  √命中
+    第3名：匹配块[90028]  
+  召回率@50 = 4/4 = 100.00%
+
+[2423] At what age should I start or stop saving money?
+  类别：fiqa  标注块：[16309, 61587, 61588, 79302, 79303, 105923, 107575, 107576, 107577, 110337]...
+    第1名：匹配块[105923]  √命中
+    第2名：匹配块[46982]  
+    第3名：匹配块[86190]  
+  召回率@50 = 4/7 = 57.14%
+
+[2443] What are some way to transfer money from Hong Kong to India on a monthly basis?
+  类别：fiqa  标注块：[61505, 61506]
+    第1名：匹配块[13885]  
+    第2名：匹配块[104049]  
+    第3名：匹配块[36937]  
+  召回率@50 = 0/1 = 0.00%
+
+[2445] How do I notify the IRS of a new member to an LLC?
+  类别：fiqa  标注块：[86285]
+    第1名：匹配块[86285]  √命中
+    第2名：匹配块[82248]  
+    第3名：匹配块[77814]  
+  召回率@50 = 1/1 = 100.00%
+
+[2460] What are the consequences of not respecting a notice period when leaving a job?
+  类别：fiqa  标注块：[106043, 106044, 109787, 109788, 116622, 116623]
+    第1名：匹配块[106043]  √命中
+    第2名：匹配块[109787]  √命中
+    第3名：匹配块[116622]  √命中
+  召回率@50 = 3/3 = 100.00%
+
+[2465] Can capital expenses for volunteer purposes be deducted from income?
+  类别：fiqa  标注块：[16303, 109258, 109259, 113813, 113814]
+    第1名：匹配块[16421]  
+    第2名：匹配块[102414]  
+    第3名：匹配块[79774]  
+  召回率@50 = 0/3 = 0.00%
+
+[2472] How do I deal with a mistaken attempt to collect a debt from me that is owed by someone else?
+  类别：fiqa  标注块：[61891, 74263, 74264, 80270, 80271, 80272]
+    第1名：匹配块[29323]  
+    第2名：匹配块[46699]  
+    第3名：匹配块[9855]  
+  召回率@50 = 0/3 = 0.00%
+
+[2486] Is working on a W2 basis, with benefits paid to me, a good idea?
+  类别：fiqa  标注块：[97780, 97781]
+    第1名：匹配块[97781]  √命中
+    第2名：匹配块[97780]  √命中
+    第3名：匹配块[68104]  
+  召回率@50 = 1/1 = 100.00%
+
+[2498] How do I calculate tax liability on the turnover of a small vendor?
+  类别：fiqa  标注块：[73236, 73237]
+    第1名：匹配块[80327]  
+    第2名：匹配块[18179]  
+    第3名：匹配块[76199]  
+  召回率@50 = 0/1 = 0.00%
+
+[2513] How does revenue shared with someone else go into my tax return in Canada?
+  类别：fiqa  标注块：[16575, 16576]
+    第1名：匹配块[52020]  
+    第2名：匹配块[47096]  
+    第3名：匹配块[29194]  
+  召回率@50 = 1/1 = 100.00%
+
+[2516] Which banks have cash-deposit machines in Germany?
+  类别：fiqa  标注块：[39990, 89244, 101397, 101398, 113079]
+    第1名：匹配块[101397]  √命中
+    第2名：匹配块[72654]  
+    第3名：匹配块[55999]  
+  召回率@50 = 3/4 = 75.00%
+
+[2549] How to graph the market year over year? for example Dow Jones Index
+  类别：fiqa  标注块：[4207, 4208, 11561, 11562]
+    第1名：匹配块[13487]  
+    第2名：匹配块[15000]  
+    第3名：匹配块[84624]  
+  召回率@50 = 1/2 = 50.00%
+
+[2551] How to find cheaper alternatives to a traditional home telephone line?
+  类别：fiqa  标注块：[28986, 28987, 82719, 82720, 82721, 82722, 82723, 82724, 82725, 90137]...
+    第1名：匹配块[82722]  √命中
+    第2名：匹配块[82723]  √命中
+    第3名：匹配块[53623]  
+  召回率@50 = 3/3 = 100.00%
+
+[2568] How to pay with cash when car shopping?
+  类别：fiqa  标注块：[21950, 25839, 28255, 59824, 69461, 69462, 77843, 117742]
+    第1名：匹配块[21950]  √命中
+    第2名：匹配块[69461]  √命中
+    第3名：匹配块[105269]  
+  召回率@50 = 4/7 = 57.14%
+
+[2579] What to do when a job offer is made but with a salary less than what was asked for?
+  类别：fiqa  标注块：[38492, 39517, 56531, 56532, 86348, 86505, 105052, 105053]
+    第1名：匹配块[69955]  
+    第2名：匹配块[86821]  
+    第3名：匹配块[38161]  
+  召回率@50 = 3/6 = 50.00%
+
+[2580] Stock market vs. baseball card trading analogy
+  类别：fiqa  标注块：[2342, 2343, 69088, 69089, 69090, 69091, 69092, 69093, 69094, 101068]
+    第1名：匹配块[74508]  
+    第2名：匹配块[29199]  
+    第3名：匹配块[47541]  
+  召回率@50 = 1/3 = 33.33%
+
+[2587] Typically how many digits are in a cheque number?
+  类别：fiqa  标注块：[18008, 18009]
+    第1名：匹配块[18008]  √命中
+    第2名：匹配块[118669]  
+    第3名：匹配块[95010]  
+  召回率@50 = 1/1 = 100.00%
+
+[2589] How can I detect potential fraud in a company before investing in them?
+  类别：fiqa  标注块：[8802, 8803, 90104, 90105, 90106, 90107, 90108, 93683, 93684]
+    第1名：匹配块[8802]  √命中
+    第2名：匹配块[90108]  √命中
+    第3名：匹配块[43476]  
+  召回率@50 = 2/3 = 66.67%
+
+[2590] Are non-residents or foreigners permitted to buy or own shares of UK companies?
+  类别：fiqa  标注块：[41919, 41920, 59764, 117680]
+    第1名：匹配块[59764]  √命中
+    第2名：匹配块[65867]  
+    第3名：匹配块[91801]  
+  召回率@50 = 1/3 = 33.33%
+
+[2593] Am I “cheating the system” by opening up a tiny account with a credit union and then immediately applying for a huge loan?
+  类别：fiqa  标注块：[29849, 29850, 46290, 46291, 105721]
+    第1名：匹配块[29849]  √命中
+    第2名：匹配块[93937]  
+    第3名：匹配块[41011]  
+  召回率@50 = 3/3 = 100.00%
+
+[2598] Is it possible for US retail forex traders to trade exotic currencies?
+  类别：fiqa  标注块：[75430, 75431, 118373, 118374]
+    第1名：匹配块[63190]  
+    第2名：匹配块[86097]  
+    第3名：匹配块[79073]  
+  召回率@50 = 2/2 = 100.00%
+
+[2648] How does unemployment insurance work?
+  类别：fiqa  标注块：[61840, 61841, 61842, 61843, 61844, 61845, 61846, 61847, 61848, 61849]
+    第1名：匹配块[61840]  √命中
+    第2名：匹配块[61841]  √命中
+    第3名：匹配块[19096]  
+  召回率@50 = 1/1 = 100.00%
+
+[2676] Tax question about selling a car
+  类别：fiqa  标注块：[11025, 11026, 11027, 11028]
+    第1名：匹配块[11027]  √命中
+    第2名：匹配块[20464]  
+    第3名：匹配块[11028]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[2685] What ways are there for us to earn a little extra side money?
+  类别：fiqa  标注块：[7508, 7509, 7510, 31217, 61090, 61091, 74258, 76459, 76460, 76461]...
+    第1名：匹配块[76459]  √命中
+    第2名：匹配块[29466]  
+    第3名：匹配块[53959]  
+  召回率@50 = 4/8 = 50.00%
+
+[2695] Buy a parking spot and rent it out, or invest savings in an interest-bearing account?
+  类别：fiqa  标注块：[61573, 61574]
+    第1名：匹配块[61573]  √命中
+    第2名：匹配块[32970]  
+    第3名：匹配块[85038]  
+  召回率@50 = 1/1 = 100.00%
+
+[2713] Physical Checks - Mailing
+  类别：fiqa  标注块：[5811, 5812, 5813, 5814, 77710]
+    第1名：匹配块[110607]  
+    第2名：匹配块[33326]  
+    第3名：匹配块[35515]  
+  召回率@50 = 1/2 = 50.00%
+
+[2724] How do you determine the dividend payout date for Mutual Funds?
+  类别：fiqa  标注块：[6395, 6396, 6397, 6398, 98510, 98511, 98512]
+    第1名：匹配块[6395]  √命中
+    第2名：匹配块[8307]  
+    第3名：匹配块[98511]  √命中
+  召回率@50 = 2/2 = 100.00%
+
+[2737] What to do with an old building to get money
+  类别：fiqa  标注块：[85277, 85278, 85279, 85280]
+    第1名：匹配块[85277]  √命中
+    第2名：匹配块[85279]  √命中
+    第3名：匹配块[31576]  
+  召回率@50 = 1/1 = 100.00%
+
+[2747] What evidence do I need to declare tutoring income on my income tax?
+  类别：fiqa  标注块：[108104, 108105]
+    第1名：匹配块[37104]  
+    第2名：匹配块[46477]  
+    第3名：匹配块[25097]  
+  召回率@50 = 1/1 = 100.00%
+
+[2749] Is it possible to create a self-managed superannuation fund to act as a mortage offset? (Australia)
+  类别：fiqa  标注块：[41488, 41489, 117147, 117148, 117149, 117150]
+    第1名：匹配块[37]  
+    第2名：匹配块[110714]  
+    第3名：匹配块[18959]  
+  召回率@50 = 2/2 = 100.00%
+
+[2790] Should I pay more than 20% down on a home?
+  类别：fiqa  标注块：[931, 5422, 5423, 5424, 20279, 20280, 56224, 56225, 84686, 84687]...
+    第1名：匹配块[94492]  √命中
+    第2名：匹配块[10856]  
+    第3名：匹配块[80235]  
+  召回率@50 = 2/7 = 28.57%
+
+[2801] If I deposit money as cash does it count as direct deposit?
+  类别：fiqa  标注块：[79826, 79827, 95162]
+    第1名：匹配块[79826]  √命中
+    第2名：匹配块[79827]  √命中
+    第3名：匹配块[44157]  
+  召回率@50 = 2/2 = 100.00%
+
+[2856] How can I cash out a check internationally?
+  类别：fiqa  标注块：[22407, 42680, 42681, 42682, 46329, 46330, 68759, 68760]
+    第1名：匹配块[22407]  √命中
+    第2名：匹配块[46329]  √命中
+    第3名：匹配块[52780]  
+  召回率@50 = 4/4 = 100.00%
+
+[2857] I have around 60K $. Thinking about investing in Oil, how to proceed?
+  类别：fiqa  标注块：[11976, 46755, 46756, 46757, 59639, 59640, 100550, 100551]
+    第1名：匹配块[46755]  √命中
+    第2名：匹配块[15481]  
+    第3名：匹配块[83453]  
+  召回率@50 = 2/4 = 50.00%
+
+[2880] Can I transfer my investment property into a SMSF?
+  类别：fiqa  标注块：[106712, 106713]
+    第1名：匹配块[106712]  √命中
+    第2名：匹配块[41488]  
+    第3名：匹配块[25932]  
+  召回率@50 = 1/1 = 100.00%
+
+[2885] Merits of buying apartment houses and renting them
+  类别：fiqa  标注块：[17169, 17170, 17171, 17172, 17173, 17174, 72111, 72112, 72113, 72114]...
+    第1名：匹配块[86087]  
+    第2名：匹配块[37179]  
+    第3名：匹配块[31700]  
+  召回率@50 = 0/5 = 0.00%
+
+[2891] May I claim money earned but not received in 2012
+  类别：fiqa  标注块：[6188, 6189]
+    第1名：匹配块[6188]  √命中
+    第2名：匹配块[59470]  
+    第3名：匹配块[33101]  
+  召回率@50 = 1/1 = 100.00%
+
+[2895] Where should a young student put their money?
+  类别：fiqa  标注块：[66279, 66280, 104597, 104598, 104599]
+    第1名：匹配块[24992]  
+    第2名：匹配块[28060]  
+    第3名：匹配块[115631]  
+  召回率@50 = 0/2 = 0.00%
+
+[2903] How should I file my taxes as a contractor?
+  类别：fiqa  标注块：[105647, 105648]
+    第1名：匹配块[97767]  
+    第2名：匹配块[111636]  
+    第3名：匹配块[92450]  
+  召回率@50 = 1/1 = 100.00%
+
+[2923] Should I give to charity by check or credit card?
+  类别：fiqa  标注块：[9266, 9267, 16647, 16648, 16649, 16650, 32642, 32643, 32644, 53024]...
+    第1名：匹配块[32643]  √命中
+    第2名：匹配块[53024]  √命中
+    第3名：匹配块[16647]  √命中
+  召回率@50 = 4/5 = 80.00%
+
+[2964] Unmarried Couple Splitting up with Joint Ownership of Home
+  类别：fiqa  标注块：[19245, 60921, 60922]
+    第1名：匹配块[85463]  
+    第2名：匹配块[29277]  
+    第3名：匹配块[72177]  
+  召回率@50 = 1/2 = 50.00%
+
+[2968] Should I prioritize retirement savings inside of my HSA?
+  类别：fiqa  标注块：[48529, 48530, 77794, 77795, 77796, 77797, 77798]
+    第1名：匹配块[48529]  √命中
+    第2名：匹配块[77794]  √命中
+    第3名：匹配块[70813]  
+  召回率@50 = 2/2 = 100.00%
+
+[2994] Work on the side for my wife's company
+  类别：fiqa  标注块：[64099, 64100, 83840, 83841, 113511, 113512]
+    第1名：匹配块[15118]  
+    第2名：匹配块[76459]  
+    第3名：匹配块[64887]  
+  召回率@50 = 2/3 = 66.67%
+
+[3006] Strategies for putting away money for a child's future (college, etc.)?
+  类别：fiqa  标注块：[25968, 25969, 25970, 25971, 25972, 54087, 66226, 80692, 80693, 102685]...
+    第1名：匹配块[94210]  
+    第2名：匹配块[51846]  
+    第3名：匹配块[102685]  √命中
+  召回率@50 = 3/6 = 50.00%
+
+[3008] What are my chances at getting a mortgage with Terrible credit but High income
+  类别：fiqa  标注块：[36261, 36262, 36263, 36264, 46322, 65142, 65143, 81574, 81575]
+    第1名：匹配块[46322]  √命中
+    第2名：匹配块[79221]  
+    第3名：匹配块[118308]  
+  召回率@50 = 2/4 = 50.00%
+
+[3014] What investments are positively related to the housing market decline?
+  类别：fiqa  标注块：[54765, 54766, 54767, 54768, 54769, 54770, 54771, 54772, 54773, 54774]...
+    第1名：匹配块[68644]  √命中
+    第2名：匹配块[17553]  
+    第3名：匹配块[20706]  
+  召回率@50 = 1/2 = 50.00%
+
+[3033] Tax consequences of changing state residency?
+  类别：fiqa  标注块：[53349, 113965, 113966, 113967, 113968, 113969, 113970]
+    第1名：匹配块[113965]  √命中
+    第2名：匹配块[24618]  
+    第3名：匹配块[10452]  
+  召回率@50 = 1/2 = 50.00%
+
+[3039] Can increasing my tax withholding from my full-time job cover FICA taxes for my freelance work?
+  类别：fiqa  标注块：[27787, 27788, 27789, 27790, 27791, 27792]
+    第1名：匹配块[50620]  
+    第2名：匹配块[52099]  
+    第3名：匹配块[50618]  
+  召回率@50 = 1/1 = 100.00%
+
+[3049] How to calculate my estimated taxes. 1099 MISC + Self Employment
+  类别：fiqa  标注块：[17810, 17811, 17812, 17813, 17814, 25998, 25999, 26000, 26001, 90167]...
+    第1名：匹配块[17810]  √命中
+    第2名：匹配块[50888]  
+    第3名：匹配块[116221]  √命中
+  召回率@50 = 4/4 = 100.00%
+
+[3051] What items are exempt from the VAT? [U.K.]
+  类别：fiqa  标注块：[46408, 118137, 118138, 118139]
+    第1名：匹配块[118138]  √命中
+    第2名：匹配块[118137]  √命中
+    第3名：匹配块[46408]  √命中
+  召回率@50 = 2/2 = 100.00%
+
+[3067] Should I make extra payments to my under water mortgage or increase my savings?
+  类别：fiqa  标注块：[81299, 81300, 103628, 103629, 103630, 103631, 103632]
+    第1名：匹配块[11638]  
+    第2名：匹配块[112029]  
+    第3名：匹配块[81299]  √命中
+  召回率@50 = 1/2 = 50.00%
+
+[3085] How long can I convert 401(k) to Roth 401(k)?
+  类别：fiqa  标注块：[49780, 49781, 105522, 105523, 105524, 105525, 105526]
+    第1名：匹配块[31327]  
+    第2名：匹配块[14816]  
+    第3名：匹配块[14950]  
+  召回率@50 = 2/2 = 100.00%
+
+[3091] Am I considered in debt if I pay a mortgage?
+  类别：fiqa  标注块：[19361, 19362, 21857, 21858, 21859, 32317, 32318, 32319, 32320, 32321]...
+    第1名：匹配块[73438]  √命中
+    第2名：匹配块[37705]  √命中
+    第3名：匹配块[55157]  √命中
+  召回率@50 = 7/7 = 100.00%
+
+[3103] AVS Address Verification System of BOTH Credit and Debit Cards - WHERE, HOW?
+  类别：fiqa  标注块：[35559, 35560, 35561]
+    第1名：匹配块[45971]  
+    第2名：匹配块[35559]  √命中
+    第3名：匹配块[35560]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[3115] How can I live outside of the rat race of American life with 300k?
+  类别：fiqa  标注块：[26298, 26299, 26300, 26301, 26302, 36930, 36931, 36932, 36933, 46712]...
+    第1名：匹配块[46712]  √命中
+    第2名：匹配块[35055]  
+    第3名：匹配块[53722]  
+  召回率@50 = 4/6 = 66.67%
+
+[3125] Claiming mileage allowances, what are the rules/guidelines?
+  类别：fiqa  标注块：[17928, 17929]
+    第1名：匹配块[17929]  √命中
+    第2名：匹配块[6870]  
+    第3名：匹配块[69146]  
+  召回率@50 = 1/1 = 100.00%
+
+[3148] Can a car company refuse to give me a copy of my contract or balance details?
+  类别：fiqa  标注块：[18731, 18732, 18733, 18734, 18735, 18736, 34766, 34767, 35849, 35850]...
+    第1名：匹配块[34766]  √命中
+    第2名：匹配块[35316]  
+    第3名：匹配块[12998]  
+  召回率@50 = 2/5 = 40.00%
+
+[3149] Tips for insurance coverage for one-man-teams
+  类别：fiqa  标注块：[19816, 19817, 19818, 19819, 98276, 98277, 98278, 98279]
+    第1名：匹配块[100714]  
+    第2名：匹配块[44804]  
+    第3名：匹配块[10249]  
+  召回率@50 = 0/2 = 0.00%
+
+[3177] Vanguard ETF vs mutual fund
+  类别：fiqa  标注块：[3407, 3408, 53793, 53794, 53795, 107187, 107188, 107189]
+    第1名：匹配块[31139]  
+    第2名：匹配块[28120]  
+    第3名：匹配块[73102]  
+  召回率@50 = 1/3 = 33.33%
+
+[3179] Calculation, timing, and taxes related to profit distribution of an S-corp?
+  类别：fiqa  标注块：[30362, 30363, 30364, 77116, 77117, 77118]
+    第1名：匹配块[77117]  √命中
+    第2名：匹配块[25376]  
+    第3名：匹配块[77116]  √命中
+  召回率@50 = 2/2 = 100.00%
+
+[3186] United States Treasury Not Endorsing Checks
+  类别：fiqa  标注块：[109016, 109017, 109018, 109019, 109020, 109021, 110986, 110987]
+    第1名：匹配块[110986]  √命中
+    第2名：匹配块[109020]  √命中
+    第3名：匹配块[32275]  
+  召回率@50 = 2/2 = 100.00%
+
+[3189] Diversify my retirement investments with a Roth IRA
+  类别：fiqa  标注块：[45094, 45095, 45096, 54674, 54675, 54676, 54677]
+    第1名：匹配块[15324]  
+    第2名：匹配块[81025]  
+    第3名：匹配块[9391]  
+  召回率@50 = 0/2 = 0.00%
+
+[3254] Why do people buy US dollars on the black market?
+  类别：fiqa  标注块：[88583, 88584, 95240, 95241, 95242, 95243, 95244, 95245, 95246, 97206]...
+    第1名：匹配块[88583]  √命中
+    第2名：匹配块[24176]  
+    第3名：匹配块[16049]  
+  召回率@50 = 2/3 = 66.67%
+
+[3264] Pros and Cons of Interest Only Loans
+  类别：fiqa  标注块：[27382, 27383, 27384, 27385, 27386, 52216, 52217, 52218, 97533, 97534]...
+    第1名：匹配块[97534]  √命中
+    第2名：匹配块[63663]  
+    第3名：匹配块[97533]  √命中
+  召回率@50 = 2/4 = 50.00%
+
+[3357] Why big clients want the contractor to be incorporated before giving them work
+  类别：fiqa  标注块：[42035, 42036, 42037]
+    第1名：匹配块[101479]  
+    第2名：匹配块[109271]  
+    第3名：匹配块[17279]  
+  召回率@50 = 1/1 = 100.00%
+
+[3369] Why should one only contribute up to the employer's match in a 401(k)?
+  类别：fiqa  标注块：[29490, 29491, 29492, 33063, 46153, 46154, 46155, 74534, 74535, 74536]...
+    第1名：匹配块[92816]  
+    第2名：匹配块[59747]  
+    第3名：匹配块[38144]  
+  召回率@50 = 1/6 = 16.67%
+
+[3394] What is the easiest way to back-test index funds and ETFs?
+  类别：fiqa  标注块：[26264, 26265, 68761, 89169, 89170, 113806]
+    第1名：匹配块[23002]  
+    第2名：匹配块[98836]  
+    第3名：匹配块[89170]  √命中
+  召回率@50 = 2/4 = 50.00%
+
+[3404] In US, is it a good idea to hire a tax consultant for doing taxes?
+  类别：fiqa  标注块：[32404, 32405, 32406, 55813, 79182, 79183, 79184, 88349, 88350, 88351]...
+    第1名：匹配块[79182]  √命中
+    第2名：匹配块[16576]  
+    第3名：匹配块[31651]  
+  召回率@50 = 4/7 = 57.14%
+
+[3405] Non Resident aliens - Question of standard vs itemized
+  类别：fiqa  标注块：[99252, 99253, 99254]
+    第1名：匹配块[55462]  
+    第2名：匹配块[62281]  
+    第3名：匹配块[30743]  
+  召回率@50 = 0/1 = 0.00%
+
+[3446] What's the difference between Term and Whole Life insurance?
+  类别：fiqa  标注块：[42409, 42410, 42411, 47431, 47432, 65167, 65168, 73489, 73490, 73491]...
+    第1名：匹配块[6275]  
+    第2名：匹配块[65167]  √命中
+    第3名：匹配块[48773]  
+  召回率@50 = 4/5 = 80.00%
+
+[3451] Should you keep your stocks if you are too late to sell?
+  类别：fiqa  标注块：[5224, 5225, 5226, 20002, 33412, 38551, 38552, 38553, 38554, 38555]...
+    第1名：匹配块[33412]  √命中
+    第2名：匹配块[62557]  
+    第3名：匹配块[20603]  
+  召回率@50 = 2/7 = 28.57%
+
+[3453] How does spot-futures arbitrage work in the gold market?
+  类别：fiqa  标注块：[46730, 46731, 46732, 46733, 46734, 83700, 83701, 83702]
+    第1名：匹配块[83701]  √命中
+    第2名：匹配块[117134]  
+    第3名：匹配块[110540]  
+  召回率@50 = 2/2 = 100.00%
+
+[3480] Why is OkPay not allowed in the United States?
+  类别：fiqa  标注块：[10588, 10589, 10590, 10591, 10592, 10593, 10594, 10595, 15211, 15212]...
+    第1名：匹配块[10588]  √命中
+    第2名：匹配块[83663]  √命中
+    第3名：匹配块[10589]  √命中
+  召回率@50 = 3/4 = 75.00%
+
+[3490] Tax Witholding for Stock Sale
+  类别：fiqa  标注块：[84071, 84072, 84073, 84074, 84075, 84076]
+    第1名：匹配块[52800]  
+    第2名：匹配块[89575]  
+    第3名：匹配块[89574]  
+  召回率@50 = 0/1 = 0.00%
+
+[3500] Why invest in becoming a landlord?
+  类别：fiqa  标注块：[14415, 14416, 14417, 14418, 14419, 14420, 14421, 14422, 14423, 28805]...
+    第1名：匹配块[96168]  
+    第2名：匹配块[36940]  
+    第3名：匹配块[15346]  
+  召回率@50 = 4/6 = 66.67%
+
+[3503] Is there any instance where less leverage will get you a better return on a rental property?
+  类别：fiqa  标注块：[12625, 18050, 18051, 35750, 35751, 35752, 35753, 35754, 35755, 60041]...
+    第1名：匹配块[89150]  
+    第2名：匹配块[5240]  
+    第3名：匹配块[17802]  
+  召回率@50 = 5/7 = 71.43%
+
+[3512] As an employee, when is it inappropriate to request to see your young/startup company's financial statements?
+  类别：fiqa  标注块：[23201, 23202, 93389, 93390, 93391, 93392, 93393, 93394, 93395, 93396]...
+    第1名：匹配块[24541]  
+    第2名：匹配块[93393]  √命中
+    第3名：匹配块[72471]  
+  召回率@50 = 1/2 = 50.00%
+
+[3528] In the US, does getting a loan with a cosigner, help your credit rating?
+  类别：fiqa  标注块：[69382, 69383, 69384, 69385, 69386, 69387, 69388, 69389, 69390, 69391]
+    第1名：匹配块[74045]  
+    第2名：匹配块[8964]  
+    第3名：匹配块[28955]  
+  召回率@50 = 1/1 = 100.00%
+
+[3530] How to exclude stock from mutual fund
+  类别：fiqa  标注块：[37025, 37026, 37998, 37999, 38000, 48073, 48074, 48075, 48076]
+    第1名：匹配块[87508]  
+    第2名：匹配块[52534]  
+    第3名：匹配块[95360]  
+  召回率@50 = 1/3 = 33.33%
+
+[3534] Why do dishonour fees exist?
+  类别：fiqa  标注块：[68455, 68456, 68457]
+    第1名：匹配块[71355]  
+    第2名：匹配块[78537]  
+    第3名：匹配块[118363]  
+  召回率@50 = 0/1 = 0.00%
+
+[3566] Where can I buy stocks if I only want to invest a little bit at a time, and not really be involved in trading?
+  类别：fiqa  标注块：[20168, 30857, 30858, 30859, 30860, 61907, 61908, 61909]
+    第1名：匹配块[31738]  
+    第2名：匹配块[71843]  
+    第3名：匹配块[92233]  
+  召回率@50 = 2/3 = 66.67%
+
+[3569] Funds in closed bank account have gone to the government
+  类别：fiqa  标注块：[90032, 90033, 90034, 90035]
+    第1名：匹配块[3935]  
+    第2名：匹配块[37158]  
+    第3名：匹配块[109295]  
+  召回率@50 = 0/1 = 0.00%
+
+[3594] If I were to get into a life situation where I would not be able to make regular payments, do lenders typically provide options other than default?
+  类别：fiqa  标注块：[49451, 49452, 49453, 49454, 49455, 49456, 98300, 98301, 98302, 98303]...
+    第1名：匹配块[42015]  
+    第2名：匹配块[75525]  
+    第3名：匹配块[93667]  
+  召回率@50 = 2/4 = 50.00%
+
+[3612] How can I buy and sell the same stock on the same day?
+  类别：fiqa  标注块：[42561, 42562, 52027, 52028, 52029, 52030, 52031, 80603, 80604, 80605]...
+    第1名：匹配块[88803]  
+    第2名：匹配块[36476]  
+    第3名：匹配块[48101]  
+  召回率@50 = 0/4 = 0.00%
+
+[3615] My previous and current employers both use Fidelity for 401(k). Does it make sense to rollover?
+  类别：fiqa  标注块：[67599, 67600, 67601, 67602, 67603, 103843, 103844]
+    第1名：匹配块[103843]  √命中
+    第2名：匹配块[66416]  
+    第3名：匹配块[115280]  
+  召回率@50 = 2/2 = 100.00%
+
+[3625] What should I do with my paper financial documents?
+  类别：fiqa  标注块：[76933, 82820, 100417, 100418]
+    第1名：匹配块[100417]  √命中
+    第2名：匹配块[113667]  
+    第3名：匹配块[106264]  
+  召回率@50 = 1/3 = 33.33%
+
+[3682] Short selling - lender's motivation
+  类别：fiqa  标注块：[66449, 66450, 66451, 66452, 71472, 71473, 71474]
+    第1名：匹配块[81118]  
+    第2名：匹配块[15243]  
+    第3名：匹配块[7042]  
+  召回率@50 = 1/2 = 50.00%
+
+[3683] Can I trust the Motley Fool?
+  类别：fiqa  标注块：[21365, 21366, 37335, 37336, 55634, 55635, 90960, 104713, 104714, 104715]...
+    第1名：匹配块[107593]  
+    第2名：匹配块[55634]  √命中
+    第3名：匹配块[107592]  
+  召回率@50 = 2/6 = 33.33%
+
+[3694] Has anyone created a documentary about folks who fail to save enough for retirement?
+  类别：fiqa  标注块：[40936, 40937, 40938, 40939, 56849, 56850]
+    第1名：匹配块[20334]  
+    第2名：匹配块[99104]  
+    第3名：匹配块[41912]  
+  召回率@50 = 1/2 = 50.00%
+
+[3724] Should you always max out contributions to your 401k?
+  类别：fiqa  标注块：[40060, 40061, 40062, 40063, 40064, 54818, 54819, 56282, 56283, 56284]...
+    第1名：匹配块[62243]  √命中
+    第2名：匹配块[54818]  √命中
+    第3名：匹配块[79337]  
+  召回率@50 = 3/10 = 30.00%
+
+[3735] Shorting Stocks And Margin Account Minimum
+  类别：fiqa  标注块：[53543, 53544, 53545, 53546, 53547, 63339, 63340, 63341, 63342, 63343]...
+    第1名：匹配块[112936]  
+    第2名：匹配块[107408]  
+    第3名：匹配块[112937]  
+  召回率@50 = 2/3 = 66.67%
+
+[3759] Simplifying money management
+  类别：fiqa  标注块：[13480, 13481, 104650, 104651, 104652, 104653, 104654, 105683]
+    第1名：匹配块[36220]  
+    第2名：匹配块[50133]  
+    第3名：匹配块[105012]  
+  召回率@50 = 0/3 = 0.00%
+
+[3767] What should I be doing to protect myself from identity theft?
+  类别：fiqa  标注块：[31193, 64464, 64465, 64466, 73954, 73955, 73956, 73957, 73958, 78488]...
+    第1名：匹配块[86065]  
+    第2名：匹配块[11609]  
+    第3名：匹配块[106238]  
+  召回率@50 = 0/5 = 0.00%
+
+[3771] Best way to buy Japanese yen for travel?
+  类别：fiqa  标注块：[9884, 26126, 39775, 39776, 39777, 39778, 43627, 98015, 104535, 104536]
+    第1名：匹配块[104535]  √命中
+    第2名：匹配块[36089]  
+    第3名：匹配块[49201]  
+  召回率@50 = 2/6 = 33.33%
+
+[3781] What is the rough estimate of salary value for a taxpayer to pay AMT?
+  类别：fiqa  标注块：[26791, 26792, 26793, 26794, 82646]
+    第1名：匹配块[82646]  √命中
+    第2名：匹配块[89300]  
+    第3名：匹配块[26791]  √命中
+  召回率@50 = 2/2 = 100.00%
+
+[3789] How to work around the Owner Occupancy Affidavit to buy another home in less than a year?
+  类别：fiqa  标注块：[55087, 55088, 55089, 55090, 91975, 91976, 91977, 91978, 91979, 98764]...
+    第1名：匹配块[98767]  √命中
+    第2名：匹配块[55090]  √命中
+    第3名：匹配块[98768]  √命中
+  召回率@50 = 2/4 = 50.00%
+
+[3791] "When people say 'Interest rates are at all time low!"" … Which interest rate are they actually referring to?"
+  类别：fiqa  标注块：[42472, 42473, 42474, 66030, 115115, 115116, 115117, 115118, 115119, 115120]
+    第1名：匹配块[113778]  
+    第2名：匹配块[113777]  
+    第3名：匹配块[33613]  
+  召回率@50 = 2/3 = 66.67%
+
+[3801] Can a bunch of wealthy people force Facebook to go public?
+  类别：fiqa  标注块：[61996, 61997, 78147, 78148, 78149, 78150, 78151]
+    第1名：匹配块[78150]  √命中
+    第2名：匹配块[74436]  
+    第3名：匹配块[83018]  
+  召回率@50 = 1/2 = 50.00%
+
+[3822] How to change a large quantity of U.S. dollars into Euros?
+  类别：fiqa  标注块：[61576, 61577, 61578, 61579, 61580, 62184, 77134, 77135, 77136, 77137]...
+    第1名：匹配块[35108]  
+    第2名：匹配块[3899]  
+    第3名：匹配块[108274]  
+  召回率@50 = 1/4 = 25.00%
+
+[3829] Are all VISA cards connected with bank accounts?
+  类别：fiqa  标注块：[58751, 104915, 104916]
+    第1名：匹配块[59712]  
+    第2名：匹配块[42192]  
+    第3名：匹配块[49427]  
+  召回率@50 = 0/2 = 0.00%
+
+[3830] US citizen transferring money to Indian fiance to buy property
+  类别：fiqa  标注块：[10881, 10882, 10883, 10884, 10885, 10886]
+    第1名：匹配块[82926]  
+    第2名：匹配块[41167]  
+    第3名：匹配块[24336]  
+  召回率@50 = 1/1 = 100.00%
+
+[3837] Opening a Roth IRA account, what is the fee structure for Vanguard, Scottrade and TIAA-CREF
+  类别：fiqa  标注块：[69351, 69352, 69353, 69354, 69355]
+    第1名：匹配块[13617]  
+    第2名：匹配块[59947]  
+    第3名：匹配块[33221]  
+  召回率@50 = 1/1 = 100.00%
+
+[3859] Buying an investment property in Australia - what are the advantages and disadvantages of building a house vs buying an existing one?
+  类别：fiqa  标注块：[46020, 46021, 46022, 46023]
+    第1名：匹配块[92523]  
+    第2名：匹配块[80423]  
+    第3名：匹配块[82284]  
+  召回率@50 = 0/1 = 0.00%
+
+[3875] Does freedom to provide services allow me contracting in Germany without paying taxes there (but in my home EU country)?
+  类别：fiqa  标注块：[27701, 27702, 27703, 27704, 27705, 27706, 27707, 50042]
+    第1名：匹配块[50042]  √命中
+    第2名：匹配块[13680]  
+    第3名：匹配块[27703]  √命中
+  召回率@50 = 2/2 = 100.00%
+
+[3888] Why I can't view my debit card pre-authorized amounts?
+  类别：fiqa  标注块：[48014, 48015, 61817, 61818, 61819, 61820, 61821, 61822, 61823, 61824]...
+    第1名：匹配块[5579]  
+    第2名：匹配块[41679]  
+    第3名：匹配块[73484]  
+  召回率@50 = 0/3 = 0.00%
+
+[3909] How to rescue my money from negative interest?
+  类别：fiqa  标注块：[12278, 38868, 40189, 49171, 49172, 49173, 49174, 49175, 49176, 62858]...
+    第1名：匹配块[95360]  
+    第2名：匹配块[48328]  
+    第3名：匹配块[89956]  
+  召回率@50 = 3/10 = 30.00%
+
+[3932] How do historically low interest rates affect real estate prices?
+  类别：fiqa  标注块：[21731, 21732, 21733, 105581, 105582, 105583, 105584, 105585, 105586, 105587]
+    第1名：匹配块[105581]  √命中
+    第2名：匹配块[14660]  
+    第3名：匹配块[17553]  
+  召回率@50 = 2/2 = 100.00%
+
+[3934] Should market based health insurance premiums be factored into 6 months emergency fund savings?
+  类别：fiqa  标注块：[24923, 24924, 24925, 24926, 24927, 40390, 41938, 41939, 91369, 91370]...
+    第1名：匹配块[80556]  
+    第2名：匹配块[104804]  
+    第3名：匹配块[87863]  
+  召回率@50 = 3/4 = 75.00%
+
+[3995] I have more than $250,000 in a US Bank account… mistake?
+  类别：fiqa  标注块：[46015, 56104, 60060, 60061, 85354, 85355, 85356, 85357, 85358, 85359]...
+    第1名：匹配块[43637]  
+    第2名：匹配块[6756]  
+    第3名：匹配块[37863]  
+  召回率@50 = 2/5 = 40.00%
+
+[4007] What is a reasonable salary for the owner and sole member of a small S-Corp?
+  类别：fiqa  标注块：[77808, 77809, 77810, 77811, 77812, 77813, 104510, 111141, 111142, 111143]...
+    第1名：匹配块[111141]  √命中
+    第2名：匹配块[41050]  
+    第3名：匹配块[71330]  
+  召回率@50 = 2/3 = 66.67%
+
+[4011] How can I deal with a spouse who compulsively spends?
+  类别：fiqa  标注块：[71, 72, 73, 74, 13597, 13598, 27716, 27717]
+    第1名：匹配块[27716]  √命中
+    第2名：匹配块[118079]  
+    第3名：匹配块[88229]  
+  召回率@50 = 3/3 = 100.00%
+
+[4019] How and Should I Invest (As a college 18 year old with minimal living expenses)?
+  类别：fiqa  标注块：[1400, 1401, 25463, 25464, 25465, 25466, 25467, 25468, 25469, 25470]...
+    第1名：匹配块[17326]  
+    第2名：匹配块[42389]  
+    第3名：匹配块[67001]  √命中
+  召回率@50 = 2/5 = 40.00%
+
+[4031] 28 years old and just inherited large amount of money and real estate - unsure what to do with it
+  类别：fiqa  标注块：[23382, 23383, 23384, 23385, 23386, 23387, 23388, 23389, 23390, 23391]
+    第1名：匹配块[64188]  
+    第2名：匹配块[28416]  
+    第3名：匹配块[53451]  
+  召回率@50 = 0/1 = 0.00%
+
+[4037] How separate individual expenses from family expenses in Gnucash?
+  类别：fiqa  标注块：[1998, 60103, 60104, 60105]
+    第1名：匹配块[111312]  
+    第2名：匹配块[61389]  
+    第3名：匹配块[48971]  
+  召回率@50 = 1/2 = 50.00%
+
+[4047] Does doing your “research”/“homework” on stocks make any sense?
+  类别：fiqa  标注块：[15608, 65464, 65465, 65466, 83531, 83532, 83533, 90484, 90485, 90486]...
+    第1名：匹配块[90484]  √命中
+    第2名：匹配块[83531]  √命中
+    第3名：匹配块[57205]  
+  召回率@50 = 4/4 = 100.00%
+
+[4071] If our economy crashes, and cash is worthless, should i buy gold or silver
+  类别：fiqa  标注块：[26411]
+    第1名：匹配块[101290]  
+    第2名：匹配块[104996]  
+    第3名：匹配块[58856]  
+  召回率@50 = 0/1 = 0.00%
+
+[4084] What industries soar when oil prices go up?
+  类别：fiqa  标注块：[50079, 62135, 62136, 62137]
+    第1名：匹配块[62135]  √命中
+    第2名：匹配块[23619]  
+    第3名：匹配块[76292]  
+  召回率@50 = 2/2 = 100.00%
+
+[4102] How can I determine if my rate of return is “good” for the market I am in?
+  类别：fiqa  标注块：[7777, 7778, 7779, 48305, 48306, 48307, 89735, 89736, 110820, 110821]...
+    第1名：匹配块[110747]  
+    第2名：匹配块[69907]  
+    第3名：匹配块[110745]  
+  召回率@50 = 2/4 = 50.00%
+
+[4103] What causes US Treasury I bond fixed interest to increase?
+  类别：fiqa  标注块：[87971, 87972]
+    第1名：匹配块[76032]  
+    第2名：匹配块[25849]  
+    第3名：匹配块[4357]  
+  召回率@50 = 0/1 = 0.00%
+
+[4105] As an investor what are side effects of Quantitative Easing in US and in EU?
+  类别：fiqa  标注块：[5000, 5001, 33482, 33483, 33484, 33485, 33486, 33487, 33488, 33489]...
+    第1名：匹配块[87876]  
+    第2名：匹配块[46824]  
+    第3名：匹配块[27269]  
+  召回率@50 = 0/2 = 0.00%
+
+[4116] Would the effects of an anticipated default by a nation be mostly symbolic?
+  类别：fiqa  标注块：[22031, 46954, 46955]
+    第1名：匹配块[22031]  √命中
+    第2名：匹配块[50039]  
+    第3名：匹配块[53659]  
+  召回率@50 = 1/2 = 50.00%
+
+[4125] Alternative means of salary for my employees
+  类别：fiqa  标注块：[14567, 69181, 69182, 69183]
+    第1名：匹配块[29194]  
+    第2名：匹配块[29466]  
+    第3名：匹配块[90229]  
+  召回率@50 = 0/2 = 0.00%
+
+[4142] Relation between inflation rates and interest rates
+  类别：fiqa  标注块：[12231, 12232, 12233, 12234, 40790, 40791, 40792, 40793, 40794, 108736]...
+    第1名：匹配块[17621]  
+    第2名：匹配块[47169]  
+    第3名：匹配块[101216]  
+  召回率@50 = 2/4 = 50.00%
+
+[4153] How do I invest in emerging markets
+  类别：fiqa  标注块：[91946, 91947, 91948]
+    第1名：匹配块[31237]  
+    第2名：匹配块[65021]  
+    第3名：匹配块[66871]  
+  召回率@50 = 1/1 = 100.00%
+
+[4179] Why could the serious financial woes of some EU member states lead to the end of the Euro?
+  类别：fiqa  标注块：[55946, 55947]
+    第1名：匹配块[74488]  
+    第2名：匹配块[74489]  
+    第3名：匹配块[62292]  
+  召回率@50 = 1/1 = 100.00%
+
+[4188] Why is the stock market rising after Trump's attack on the TPP?
+  类别：fiqa  标注块：[93669, 93670]
+    第1名：匹配块[50779]  
+    第2名：匹配块[76469]  
+    第3名：匹配块[31046]  
+  召回率@50 = 0/1 = 0.00%
+
+[4205] How and why does the exchange rate of a currency change almost everyday?
+  类别：fiqa  标注块：[16047, 16048, 16049, 16050, 16051, 16052, 16053, 16054, 16055, 16056]...
+    第1名：匹配块[108074]  √命中
+    第2名：匹配块[21031]  
+    第3名：匹配块[4569]  
+  召回率@50 = 3/3 = 100.00%
+
+[4233] Are personal finance / money management classes taught in high school, anywhere?
+  类别：fiqa  标注块：[3220, 6246, 31341, 37560, 37561, 117897, 117898]
+    第1名：匹配块[117897]  √命中
+    第2名：匹配块[3220]  √命中
+    第3名：匹配块[37560]  √命中
+  召回率@50 = 5/5 = 100.00%
+
+[4265] Does it make any sense to directly contribute to reducing the US national debt?
+  类别：fiqa  标注块：[18978, 28608, 28609, 28610, 28611, 31831, 59080, 70120, 70121, 78498]...
+    第1名：匹配块[31831]  √命中
+    第2名：匹配块[78498]  √命中
+    第3名：匹配块[59080]  √命中
+  召回率@50 = 4/6 = 66.67%
+
+[4286] Given advice “buy term insurance and invest the rest”, how should one “invest the rest”?
+  类别：fiqa  标注块：[14186, 14187, 112960, 112961, 112962]
+    第1名：匹配块[14186]  √命中
+    第2名：匹配块[45810]  
+    第3名：匹配块[15926]  
+  召回率@50 = 1/2 = 50.00%
+
+[4289] Does the currency exchange rate contain any additional information at all?
+  类别：fiqa  标注块：[4958, 58114]
+    第1名：匹配块[58114]  √命中
+    第2名：匹配块[19549]  
+    第3名：匹配块[3476]  
+  召回率@50 = 1/2 = 50.00%
+
+[4306] How do currency markets work? What factors are behind why currencies go up or down?
+  类别：fiqa  标注块：[12330, 12331, 12332, 44398, 44399, 46750, 46751, 90125, 90126, 90127]
+    第1名：匹配块[90125]  √命中
+    第2名：匹配块[100232]  
+    第3名：匹配块[13732]  
+  召回率@50 = 3/4 = 75.00%
+
+[4312] Is it true that 90% of investors lose their money?
+  类别：fiqa  标注块：[23573, 23574, 23575, 23576, 23577, 27609, 27610, 33783, 33784, 44589]...
+    第1名：匹配块[8241]  
+    第2名：匹配块[56848]  √命中
+    第3名：匹配块[57597]  
+  召回率@50 = 5/7 = 71.43%
+
+[4335] What is the US Fair Tax?
+  类别：fiqa  标注块：[64117, 64118, 64894, 64895, 64896, 64897, 71626, 71627, 97041]
+    第1名：匹配块[64117]  √命中
+    第2名：匹配块[64895]  √命中
+    第3名：匹配块[97041]  √命中
+  召回率@50 = 3/4 = 75.00%
+
+[4339] What could happen to Detroit Municipal bonds because of Detroit's filing for bankruptcy?
+  类别：fiqa  标注块：[77405, 77406, 77407, 97933, 97934, 97935, 97936]
+    第1名：匹配块[77405]  √命中
+    第2名：匹配块[77407]  √命中
+    第3名：匹配块[97936]  √命中
+  召回率@50 = 2/2 = 100.00%
+
+[4394] Transfer $50k to another person's account (in California, USA)
+  类别：fiqa  标注块：[67626, 67627, 88279]
+    第1名：匹配块[82974]  
+    第2名：匹配块[68514]  
+    第3名：匹配块[68703]  
+  召回率@50 = 0/2 = 0.00%
+
+[4409] My friend wants to put my name down for a house he's buying. What risks would I be taking?
+  类别：fiqa  标注块：[19776, 20251, 20252, 20575, 20576, 20577, 20625, 23214, 29874, 29875]...
+    第1名：匹配块[5032]  
+    第2名：匹配块[44822]  
+    第3名：匹配块[20577]  √命中
+  召回率@50 = 3/10 = 30.00%
+
+[4411] How does the importance of a cash emergency fund change when you live in a country with nationalized healthcare?
+  类别：fiqa  标注块：[13685, 13686, 16075, 23542, 23543, 23544, 23545]
+    第1名：匹配块[15595]  
+    第2名：匹配块[2958]  
+    第3名：匹配块[32193]  
+  召回率@50 = 1/3 = 33.33%
+
+[4414] Do high interest rates lead to higher bond yields or lower?
+  类别：fiqa  标注块：[47169, 47170, 47171, 47172, 47173, 47174, 73600, 73601]
+    第1名：匹配块[112775]  
+    第2名：匹配块[112776]  
+    第3名：匹配块[74672]  
+  召回率@50 = 1/2 = 50.00%
+
+[4415] How much is inflation?
+  类别：fiqa  标注块：[13588, 13589, 13590, 13591, 13592, 13593, 13594, 13595, 29915, 29916]...
+    第1名：匹配块[32190]  
+    第2名：匹配块[23745]  
+    第3名：匹配块[100615]  
+  召回率@50 = 2/4 = 50.00%
+
+[4433] When should you use an actively managed mutual fund in a 401k?
+  类别：fiqa  标注块：[29584, 29585, 60773, 60774]
+    第1名：匹配块[104830]  
+    第2名：匹配块[83691]  
+    第3名：匹配块[68883]  
+  召回率@50 = 1/2 = 50.00%
+
+[4447] Should I always hold short term bonds till maturity?
+  类别：fiqa  标注块：[57657, 57658, 57659]
+    第1名：匹配块[57659]  √命中
+    第2名：匹配块[96413]  
+    第3名：匹配块[55133]  
+  召回率@50 = 1/1 = 100.00%
+
+[4464] Are Australian mutual fund fees large compared to US?
+  类别：fiqa  标注块：[20750, 20751, 20752]
+    第1名：匹配块[77169]  
+    第2名：匹配块[80513]  
+    第3名：匹配块[110937]  
+  召回率@50 = 1/1 = 100.00%
+
+[4465] How to donate to charity that will make a difference?
+  类别：fiqa  标注块：[60340, 69065, 69066, 69067, 69068, 69069, 69070, 69071, 69072, 69073]...
+    第1名：匹配块[93828]  
+    第2名：匹配块[23391]  
+    第3名：匹配块[9266]  
+  召回率@50 = 1/3 = 33.33%
+
+[4484] Has the likelihood of getting a lower interest rate by calling & asking been reduced by recent credit card regulations?
+  类别：fiqa  标注块：[6695, 6696, 6697]
+    第1名：匹配块[6695]  √命中
+    第2名：匹配块[6696]  √命中
+    第3名：匹配块[44226]  
+  召回率@50 = 1/1 = 100.00%
+
+[4499] Is investing exlusively in a small-cap index fund a wise investment?
+  类别：fiqa  标注块：[15479, 15480, 15481, 15482, 65131, 65132, 65133, 65134, 102955, 102956]
+    第1名：匹配块[102956]  √命中
+    第2名：匹配块[65131]  √命中
+    第3名：匹配块[108772]  
+  召回率@50 = 2/3 = 66.67%
+
+[4500] What to ask Warren Buffet at the Berkshire Hathaway shareholder meeting?
+  类别：fiqa  标注块：[32912, 32913, 32914, 106680]
+    第1名：匹配块[31132]  
+    第2名：匹配块[8345]  
+    第3名：匹配块[94016]  
+  召回率@50 = 0/2 = 0.00%
+
+[4504] what is the best way of investment which gives returns forever?
+  类别：fiqa  标注块：[589, 590, 591, 113043, 113044, 113045, 113046, 113047]
+    第1名：匹配块[589]  √命中
+    第2名：匹配块[3345]  
+    第3名：匹配块[44211]  
+  召回率@50 = 2/2 = 100.00%
+
+[4514] What intrinsic, non-monetary value does gold have as a commodity?
+  类别：fiqa  标注块：[13977, 31593, 31594, 42003, 67941, 70742, 70743, 70744, 70745, 70746]...
+    第1名：匹配块[31593]  √命中
+    第2名：匹配块[70742]  √命中
+    第3名：匹配块[85187]  √命中
+  召回率@50 = 3/6 = 50.00%
+
+[4523] What should I do with my $25k to invest as a 20 years old?
+  类别：fiqa  标注块：[13350, 13351, 13352, 13353, 24095, 24096, 24097, 24098, 26246, 26247]...
+    第1名：匹配块[78670]  √命中
+    第2名：匹配块[26248]  √命中
+    第3名：匹配块[88122]  
+  召回率@50 = 3/5 = 60.00%
+
+[4539] How should I save money if the real interest rate (after inflation) is negative?
+  类别：fiqa  标注块：[55381, 55382, 55383, 55384, 74351, 74352]
+    第1名：匹配块[89956]  
+    第2名：匹配块[73870]  
+    第3名：匹配块[116817]  
+  召回率@50 = 1/2 = 50.00%
+
+[4571] HSBC Hong Kong's “Deposit Plus” Product: What is it, and what strategies to employ?
+  类别：fiqa  标注块：[42793, 56843, 99544, 99545, 99546, 99547, 99548]
+    第1名：匹配块[42793]  √命中
+    第2名：匹配块[99546]  √命中
+    第3名：匹配块[99545]  √命中
+  召回率@50 = 2/3 = 66.67%
+
+[4600] Why government bonds fluctuate so much, even though interest rates don't change that often?
+  类别：fiqa  标注块：[96688, 96689, 96690, 96691, 96692]
+    第1名：匹配块[96688]  √命中
+    第2名：匹配块[27025]  
+    第3名：匹配块[78839]  
+  召回率@50 = 1/1 = 100.00%
+
+[4605] If the U.S. defaults on its debt, what will happen to my bank money?
+  类别：fiqa  标注块：[8228, 8229, 8230, 8231, 8232, 42197, 45833, 45834, 63048, 80208]...
+    第1名：匹配块[80210]  √命中
+    第2名：匹配块[45833]  √命中
+    第3名：匹配块[45827]  
+  召回率@50 = 4/7 = 57.14%
+
+[4615] Are solar cell panels and wind mills worth the money?
+  类别：fiqa  标注块：[13989, 13990, 13991, 13992, 52523, 52524, 52525, 52526, 52527, 52528]...
+    第1名：匹配块[52529]  √命中
+    第2名：匹配块[99470]  √命中
+    第3名：匹配块[13991]  √命中
+  召回率@50 = 5/6 = 83.33%
+
+[4640] What can my relatives do to minimize their out of pocket expenses on their fathers estate
+  类别：fiqa  标注块：[20415, 64912, 64913, 64914, 64915, 64916, 64917, 64918, 108094, 108095]...
+    第1名：匹配块[81093]  
+    第2名：匹配块[6392]  
+    第3名：匹配块[63687]  
+  召回率@50 = 1/3 = 33.33%
+
+[4641] Where should I park my rainy-day / emergency fund?
+  类别：fiqa  标注块：[8941, 8942, 8943, 8944, 8945, 8946, 8947, 8948, 8949, 8950]...
+    第1名：匹配块[8941]  √命中
+    第2名：匹配块[96448]  
+    第3名：匹配块[69331]  
+  召回率@50 = 2/5 = 40.00%
+
+[4678] Finance, Cash or Lease?
+  类别：fiqa  标注块：[61441, 61442, 61443]
+    第1名：匹配块[43106]  
+    第2名：匹配块[103498]  
+    第3名：匹配块[97762]  
+  召回率@50 = 0/1 = 0.00%
+
+[4681] How to fix Finance::Quote to pull quotes in GnuCash
+  类别：fiqa  标注块：[36631, 36632, 117306]
+    第1名：匹配块[117306]  √命中
+    第2名：匹配块[36631]  √命中
+    第3名：匹配块[42323]  
+  召回率@50 = 2/2 = 100.00%
+
+[4700] Better to get loan from finance company or bank considering the drop of credit score?
+  类别：fiqa  标注块：[69269, 69270]
+    第1名：匹配块[108955]  
+    第2名：匹配块[18476]  
+    第3名：匹配块[97540]  
+  召回率@50 = 1/1 = 100.00%
+
+[4714] Personal finance app where I can mark transactions as “reviewed”?
+  类别：fiqa  标注块：[65475, 90173, 101270, 116641]
+    第1名：匹配块[116641]  √命中
+    第2名：匹配块[101270]  √命中
+    第3名：匹配块[71017]  
+  召回率@50 = 2/4 = 50.00%
+
+[4756] What is the formula for the Tesla Finance calculation?
+  类别：fiqa  标注块：[68443]
+    第1名：匹配块[65676]  
+    第2名：匹配块[6459]  
+    第3名：匹配块[10824]  
+  召回率@50 = 1/1 = 100.00%
+
+[4767] New car: buy with cash or 0% financing
+  类别：fiqa  标注块：[4539, 25587, 25588, 25589, 44858, 56523, 56524, 56525, 56526, 56527]...
+    第1名：匹配块[85821]  
+    第2名：匹配块[61779]  
+    第3名：匹配块[94138]  
+  召回率@50 = 0/5 = 0.00%
+
+[4775] Should I finance a car to build credit for a mortgage next year?
+  类别：fiqa  标注块：[14546, 14547, 14548, 14549, 14550]
+    第1名：匹配块[53280]  
+    第2名：匹配块[87260]  
+    第3名：匹配块[29402]  
+  召回率@50 = 0/1 = 0.00%
+
+[4777] How to finance necessary repairs to our home in order to sell it?
+  类别：fiqa  标注块：[117867]
+    第1名：匹配块[73224]  
+    第2名：匹配块[54669]  
+    第3名：匹配块[91199]  
+  召回率@50 = 0/1 = 0.00%
+
+[4785] What is the difference between a structured collar and a normal collar in finance?
+  类别：fiqa  标注块：[7452]
+    第1名：匹配块[118609]  
+    第2名：匹配块[1330]  
+    第3名：匹配块[45873]  
+  召回率@50 = 0/1 = 0.00%
+
+[4804] How do financial services aimed at women differ from conventional services?
+  类别：fiqa  标注块：[21012, 116389, 116390]
+    第1名：匹配块[30110]  
+    第2名：匹配块[59078]  
+    第3名：匹配块[61121]  
+  召回率@50 = 1/2 = 50.00%
+
+[4813] Dealer Financing Fell Through on vehicle purchase: Scam?
+  类别：fiqa  标注块：[19874, 19875]
+    第1名：匹配块[57146]  
+    第2名：匹配块[97168]  
+    第3名：匹配块[36286]  
+  召回率@50 = 1/1 = 100.00%
+
+[4823] Close to retirement & we may move within 7 years. Should we re-finance our mortgage, or not?
+  类别：fiqa  标注块：[21083, 21084, 72752, 112178, 112179]
+    第1名：匹配块[112178]  √命中
+    第2名：匹配块[109887]  
+    第3名：匹配块[72752]  √命中
+  召回率@50 = 2/3 = 66.67%
+
+[4827] Are all financial advisors compensated in the same way?
+  类别：fiqa  标注块：[99330, 99331, 99332]
+    第1名：匹配块[99330]  √命中
+    第2名：匹配块[61337]  
+    第3名：匹配块[73485]  
+  召回率@50 = 1/1 = 100.00%
+
+[4837] When applying for a mortgage, can it also cover outstanding debts?
+  类别：fiqa  标注块：[4181, 106362, 106363, 106364, 106365]
+    第1名：匹配块[37705]  
+    第2名：匹配块[108246]  
+    第3名：匹配块[102000]  
+  召回率@50 = 0/2 = 0.00%
+
+[4844] How to read bond yield quotes? What do the time, coupon, price, yield, and time mean?
+  类别：fiqa  标注块：[38533, 38534, 38535, 38536, 38537, 55258]
+    第1名：匹配块[55258]  √命中
+    第2名：匹配块[25852]  
+    第3名：匹配块[79116]  
+  召回率@50 = 2/2 = 100.00%
+
+[4845] What is the difference between fund and portfolio?
+  类别：fiqa  标注块：[8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8293, 8294]...
+    第1名：匹配块[8010]  √命中
+    第2名：匹配块[8006]  √命中
+    第3名：匹配块[8007]  √命中
+  召回率@50 = 2/3 = 66.67%
+
+[4846] Is there anything comparable to/resembling CNN's Fear and Greed Index?
+  类别：fiqa  标注块：[30574, 65240, 65241, 65242, 65243]
+    第1名：匹配块[4772]  
+    第2名：匹配块[62255]  
+    第3名：匹配块[77426]  
+  召回率@50 = 0/2 = 0.00%
+
+[4863] How to calculate new price for bond if yield increases
+  类别：fiqa  标注块：[17575, 17576, 17577, 39800, 39801, 58556, 58557, 58558]
+    第1名：匹配块[39801]  √命中
+    第2名：匹配块[58558]  √命中
+    第3名：匹配块[17576]  √命中
+  召回率@50 = 3/3 = 100.00%
+
+[4865] Why are historical prices of stocks different on different websites? Which one should I believe?
+  类别：fiqa  标注块：[20281, 20282, 20283]
+    第1名：匹配块[74306]  
+    第2名：匹配块[102741]  
+    第3名：匹配块[68884]  
+  召回率@50 = 1/1 = 100.00%
+
+[4920] Does financing a portfolio on margin affect the variance of a portfolio?
+  类别：fiqa  标注块：[16569, 16570, 45612, 45613, 61775, 61776]
+    第1名：匹配块[45612]  √命中
+    第2名：匹配块[61775]  √命中
+    第3名：匹配块[68155]  
+  召回率@50 = 2/3 = 66.67%
+
+[4942] find stock composition of a publicly traded fund
+  类别：fiqa  标注块：[71763]
+    第1名：匹配块[59670]  
+    第2名：匹配块[73589]  
+    第3名：匹配块[22703]  
+  召回率@50 = 1/1 = 100.00%
+
+[4946] Something looks off about Mitsubishi financial data
+  类别：fiqa  标注块：[24652, 24653]
+    第1名：匹配块[24652]  √命中
+    第2名：匹配块[72471]  
+    第3名：匹配块[81379]  
+  召回率@50 = 1/1 = 100.00%
+
+[4955] How to calculate the value of a bond that is priced to yield X%
+  类别：fiqa  标注块：[115911, 115912]
+    第1名：匹配块[30850]  
+    第2名：匹配块[2761]  
+    第3名：匹配块[58558]  
+  召回率@50 = 1/1 = 100.00%
+
+[4962] Net Cash Flows from Selling the Bond and Investing
+  类别：fiqa  标注块：[32009, 119639, 119640]
+    第1名：匹配块[32009]  √命中
+    第2名：匹配块[117804]  
+    第3名：匹配块[54187]  
+  召回率@50 = 1/2 = 50.00%
+
+[4968] Reasons behind a large price movement of a penny stock without any recent news releases?
+  类别：fiqa  标注块：[77504, 77505, 77506]
+    第1名：匹配块[77912]  
+    第2名：匹配块[77505]  √命中
+    第3名：匹配块[10956]  
+  召回率@50 = 1/1 = 100.00%
+
+[4981] Where can I find open source portfolio management software?
+  类别：fiqa  标注块：[9088, 20716, 20717, 49666]
+    第1名：匹配块[9088]  √命中
+    第2名：匹配块[46534]  
+    第3名：匹配块[20716]  √命中
+  召回率@50 = 2/3 = 66.67%
+
+[4999] Looking for a good source for Financial Statements
+  类别：fiqa  标注块：[1934, 9243, 63418, 68160, 68161]
+    第1名：匹配块[1934]  √命中
+    第2名：匹配块[68160]  √命中
+    第3名：匹配块[2198]  
+  召回率@50 = 3/4 = 75.00%
+
+[5021] Is there a more flexible stock chart service, e.g. permitting choice of colours when comparing multiple stocks?
+  类别：fiqa  标注块：[117603]
+    第1名：匹配块[15025]  
+    第2名：匹配块[94324]  
+    第3名：匹配块[21332]  
+  召回率@50 = 0/1 = 0.00%
+
+[5030] Why pay for end-of-day historical prices?
+  类别：fiqa  标注块：[43150, 43151, 43152, 43153, 43154, 43155, 43156, 43157]
+    第1名：匹配块[75933]  
+    第2名：匹配块[35691]  
+    第3名：匹配块[100672]  
+  召回率@50 = 0/1 = 0.00%
+
+[5045] Why are we taxed on revenue and companies on profit?
+  类别：fiqa  标注块：[53078, 53079]
+    第1名：匹配块[94336]  
+    第2名：匹配块[26285]  
+    第3名：匹配块[57688]  
+  召回率@50 = 1/1 = 100.00%
+
+[5054] How to stress test an investment plan?
+  类别：fiqa  标注块：[5588, 5589, 5590, 5591]
+    第1名：匹配块[117446]  
+    第2名：匹配块[116230]  
+    第3名：匹配块[20371]  
+  召回率@50 = 0/1 = 0.00%
+
+[5061] What fiscal scrutiny can be expected from IRS in early retirement?
+  类别：fiqa  标注块：[4736, 4737]
+    第1名：匹配块[14815]  
+    第2名：匹配块[54581]  
+    第3名：匹配块[34405]  
+  召回率@50 = 0/1 = 0.00%
+
+[5064] How much should a graduate student attempt to save?
+  类别：fiqa  标注块：[375, 376, 38714, 38715, 38716, 38717, 38718]
+    第1名：匹配块[375]  √命中
+    第2名：匹配块[83357]  
+    第3名：匹配块[49622]  
+  召回率@50 = 2/2 = 100.00%
+
+[5067] LLC: Where should the funds for initial startup costs come from?
+  类别：fiqa  标注块：[109425, 109426]
+    第1名：匹配块[47653]  
+    第2名：匹配块[46514]  
+    第3名：匹配块[25900]  
+  召回率@50 = 1/1 = 100.00%
+
+[5080] Is there a standard or best practice way to handle money from an expiring UTMA account?
+  类别：fiqa  标注块：[51284, 51285]
+    第1名：匹配块[12393]  
+    第2名：匹配块[82846]  
+    第3名：匹配块[90248]  
+  召回率@50 = 0/1 = 0.00%
+
+[5083] Co-signer deceased
+  类别：fiqa  标注块：[28204, 28205, 61486, 61487, 61488]
+    第1名：匹配块[534]  
+    第2名：匹配块[5582]  
+    第3名：匹配块[28977]  
+  召回率@50 = 0/2 = 0.00%
+
+[5085] What is vested stock and yearly dividends?
+  类别：fiqa  标注块：[20655, 20656, 20657, 20658, 20659]
+    第1名：匹配块[20658]  √命中
+    第2名：匹配块[22900]  
+    第3名：匹配块[79308]  
+  召回率@50 = 1/1 = 100.00%
+
+[5086] Mortgage loan implications when tearing down existing house and building new one?
+  类别：fiqa  标注块：[19525]
+    第1名：匹配块[19525]  √命中
+    第2名：匹配块[106281]  
+    第3名：匹配块[54668]  
+  召回率@50 = 1/1 = 100.00%
+
+[5090] Should I take a student loan to pursue my undergraduate studies in France?
+  类别：fiqa  标注块：[2540, 2541, 87191]
+    第1名：匹配块[2541]  √命中
+    第2名：匹配块[16184]  
+    第3名：匹配块[37562]  
+  召回率@50 = 1/2 = 50.00%
+
+[5125] Regarding Australian CBS takeover of TEN
+  类别：fiqa  标注块：[64161, 64162, 64163]
+    第1名：匹配块[100687]  
+    第2名：匹配块[80704]  
+    第3名：匹配块[21209]  
+  召回率@50 = 0/1 = 0.00%
+
+[5134] Why does Yahoo Finance's data for a Vanguard fund's dividend per share not match the info from Vanguard?
+  类别：fiqa  标注块：[32045, 41413, 41414]
+    第1名：匹配块[41413]  √命中
+    第2名：匹配块[9342]  
+    第3名：匹配块[63934]  
+  召回率@50 = 1/2 = 50.00%
+
+[5150] What credit card information are offline US merchants allowed to collect for purposes other than the transaction?
+  类别：fiqa  标注块：[45971, 45972, 45973, 45974]
+    第1名：匹配块[45972]  √命中
+    第2名：匹配块[9675]  
+    第3名：匹配块[119620]  
+  召回率@50 = 1/1 = 100.00%
+
+[5155] For insurance, why should you refuse $4,000/year for only 10 years and prefer $500/year indefinitely?
+  类别：fiqa  标注块：[92617, 92618]
+    第1名：匹配块[92617]  √命中
+    第2名：匹配块[92618]  √命中
+    第3名：匹配块[88571]  
+  召回率@50 = 1/1 = 100.00%
+
+[5172] does interest payment on loan stay the same if I pay early
+  类别：fiqa  标注块：[105915, 105916, 105917, 107864, 107865]
+    第1名：匹配块[41103]  
+    第2名：匹配块[101020]  
+    第3名：匹配块[64721]  
+  召回率@50 = 1/2 = 50.00%
+
+[5178] Formula that predicts whether one is better off investing or paying down debt
+  类别：fiqa  标注块：[7913, 7914, 7915, 22628, 22629, 22630, 22631, 48150, 78848, 78849]...
+    第1名：匹配块[56205]  
+    第2名：匹配块[111381]  
+    第3名：匹配块[21424]  
+  召回率@50 = 2/5 = 40.00%
+
+[5185] Invest in low cost small cap index funds when saving towards retirement?
+  类别：fiqa  标注块：[42094, 42095, 63839]
+    第1名：匹配块[115709]  
+    第2名：匹配块[83691]  
+    第3名：匹配块[75508]  
+  召回率@50 = 0/2 = 0.00%
+
+[5196] I might use a credit card convenience check. What should I consider?
+  类别：fiqa  标注块：[23150, 34644, 112894, 112895, 112896]
+    第1名：匹配块[112790]  
+    第2名：匹配块[104398]  
+    第3名：匹配块[50097]  
+  召回率@50 = 0/3 = 0.00%
+
+[5206] Is it a good idea to get an unsecured loan to pay off a credit card that won't lower a high rate?
+  类别：fiqa  标注块：[5622, 5623, 40445, 57830, 57831, 60607, 112389]
+    第1名：匹配块[111314]  
+    第2名：匹配块[119558]  
+    第3名：匹配块[119557]  
+  召回率@50 = 1/5 = 20.00%
+
+[5228] How does the bank/IRS know whether a bank transfer over $14k is a gift or loan repayment?
+  类别：fiqa  标注块：[46476, 46477]
+    第1名：匹配块[69155]  
+    第2名：匹配块[118686]  
+    第3名：匹配块[6463]  
+  召回率@50 = 0/1 = 0.00%
+
+[5231] Where to find CSV or JSON data for publicly traded companies listed with their IPO date?
+  类别：fiqa  标注块：[29586]
+    第1名：匹配块[90311]  
+    第2名：匹配块[111670]  
+    第3名：匹配块[45760]  
+  召回率@50 = 0/1 = 0.00%
+
+[5241] Mortgage vs. Cash for U.S. home buy now
+  类别：fiqa  标注块：[5471, 5472, 5473, 46875, 46876, 46877, 46878, 46879, 46880, 46881]...
+    第1名：匹配块[15698]  
+    第2名：匹配块[69186]  √命中
+    第3名：匹配块[101157]  
+  召回率@50 = 2/5 = 40.00%
+
+[5254] How do I calculate the quarterly returns of a stock index?
+  类别：fiqa  标注块：[78609, 80569]
+    第1名：匹配块[80569]  √命中
+    第2名：匹配块[48643]  
+    第3名：匹配块[98189]  
+  召回率@50 = 1/2 = 50.00%
+
+[5255] Thrift Saving Plan (TSP) Share Price Charts
+  类别：fiqa  标注块：[15107, 66599, 82565]
+    第1名：匹配块[66599]  √命中
+    第2名：匹配块[82565]  √命中
+    第3名：匹配块[15107]  √命中
+  召回率@50 = 3/3 = 100.00%
+
+[5264] Does a company's stock price give any indication to or affect their revenue?
+  类别：fiqa  标注块：[10445, 74508, 74509, 74510, 74511, 86312, 86313, 101401, 114964, 114965]...
+    第1名：匹配块[10445]  √命中
+    第2名：匹配块[62642]  
+    第3名：匹配块[86133]  
+  召回率@50 = 3/5 = 60.00%
+
+[5271] Why are auto leases stubbornly strict about visa status and how to work around that?
+  类别：fiqa  标注块：[11597, 11598, 11599, 11600, 11601, 13585, 44400, 44401, 44402]
+    第1名：匹配块[44402]  √命中
+    第2名：匹配块[12602]  
+    第3名：匹配块[113943]  
+  召回率@50 = 1/3 = 33.33%
+
+[5331] Exercises of employee share options
+  类别：fiqa  标注块：[40194, 40195]
+    第1名：匹配块[44131]  
+    第2名：匹配块[39941]  
+    第3名：匹配块[52426]  
+  召回率@50 = 1/1 = 100.00%
+
+[5343] “International credit report” for French nationals?
+  类别：fiqa  标注块：[556, 557, 558, 559]
+    第1名：匹配块[51938]  
+    第2名：匹配块[23934]  
+    第3名：匹配块[37057]  
+  召回率@50 = 0/1 = 0.00%
+
+[5347] car loan life insurance
+  类别：fiqa  标注块：[70861, 70862]
+    第1名：匹配块[70861]  √命中
+    第2名：匹配块[64532]  
+    第3名：匹配块[8654]  
+  召回率@50 = 1/1 = 100.00%
+
+[5356] Historical stock prices: Where to find free / low cost data for offline analysis?
+  类别：fiqa  标注块：[14458, 56340, 56341, 62881, 76357, 76358, 112246]
+    第1名：匹配块[118994]  
+    第2名：匹配块[68973]  
+    第3名：匹配块[38034]  
+  召回率@50 = 3/5 = 60.00%
+
+[5369] Paying for things on credit and immediately paying them off: any help for credit rating?
+  类别：fiqa  标注块：[8862, 8863, 34469, 34470, 34471, 34472, 34473]
+    第1名：匹配块[51937]  
+    第2名：匹配块[117606]  
+    第3名：匹配块[34842]  
+  召回率@50 = 1/2 = 50.00%
+
+[5374] What were the main causes of the spike and drop of DRYS's stock price?
+  类别：fiqa  标注块：[30916]
+    第1名：匹配块[27055]  
+    第2名：匹配块[117642]  
+    第3名：匹配块[47958]  
+  召回率@50 = 1/1 = 100.00%
+
+[5380] Can somebody explain “leveraged debt investment positions” and “exposures” in this context for me, please?
+  类别：fiqa  标注块：[109806, 109807, 109808, 109809]
+    第1名：匹配块[109806]  √命中
+    第2名：匹配块[109808]  √命中
+    第3名：匹配块[109809]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[5402] Is it impossible to get a home loan with a poor credit history after a divorce?
+  类别：fiqa  标注块：[45470, 45471, 45472, 45473, 98499, 98500]
+    第1名：匹配块[88983]  
+    第2名：匹配块[18240]  
+    第3名：匹配块[10248]  
+  召回率@50 = 1/2 = 50.00%
+
+[5410] Dealership made me the secondary owner to my own car
+  类别：fiqa  标注块：[2749, 2750, 2751, 73992, 73993, 73994, 101827]
+    第1名：匹配块[54258]  
+    第2名：匹配块[36915]  
+    第3名：匹配块[39536]  
+  召回率@50 = 1/3 = 33.33%
+
+[5422] What are some good books for learning stocks, bonds, derivatives e.t.c for beginner with a math background?
+  类别：fiqa  标注块：[2651, 16011, 16012, 30768, 30769, 54939, 54940]
+    第1名：匹配块[34708]  
+    第2名：匹配块[38888]  
+    第3名：匹配块[30721]  
+  召回率@50 = 3/4 = 75.00%
+
+[5427] How do auto-loan payments factor into taxes for cars that are solely used by dependent(s)?
+  类别：fiqa  标注块：[40176, 40177, 40178, 40179, 65114, 65115]
+    第1名：匹配块[88534]  
+    第2名：匹配块[94440]  
+    第3名：匹配块[64531]  
+  召回率@50 = 1/2 = 50.00%
+
+[5460] Paying off a loan with a loan to get a better interest rate
+  类别：fiqa  标注块：[4223, 4224, 18834, 18835, 18836, 21900, 21901, 37040, 37041, 37042]...
+    第1名：匹配块[37043]  √命中
+    第2名：匹配块[11557]  
+    第3名：匹配块[64622]  
+  召回率@50 = 2/5 = 40.00%
+
+[5464] Resources on Buying Rental Properties
+  类别：fiqa  标注块：[17437, 59368, 59369, 70289, 70290]
+    第1名：匹配块[59368]  √命中
+    第2名：匹配块[35694]  
+    第3名：匹配块[65368]  
+  召回率@50 = 2/3 = 66.67%
+
+[5503] Tax considerations for selling a property below appraised value to family?
+  类别：fiqa  标注块：[12859, 12860, 29602, 29603, 29604, 29605, 29606, 29607, 29608, 29609]
+    第1名：匹配块[29603]  √命中
+    第2名：匹配块[29602]  √命中
+    第3名：匹配块[56494]  
+  召回率@50 = 2/2 = 100.00%
+
+[5505] Can I deduct interest and fees on a loan for qualified medical expenses?
+  类别：fiqa  标注块：[20265, 20266]
+    第1名：匹配块[99229]  
+    第2名：匹配块[20265]  √命中
+    第3名：匹配块[20266]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[5511] Pay off car loan entirely or leave $1 until the end of the loan period?
+  类别：fiqa  标注块：[2485, 10279, 10280, 21785, 21786, 21787, 21788, 21789, 21790, 21791]...
+    第1名：匹配块[37753]  
+    第2名：匹配块[31501]  
+    第3名：匹配块[67334]  
+  召回率@50 = 2/10 = 20.00%
+
+[5534] How does “taking over payments” work?
+  类别：fiqa  标注块：[84175, 84666, 84667]
+    第1名：匹配块[29876]  
+    第2名：匹配块[97509]  
+    第3名：匹配块[84175]  √命中
+  召回率@50 = 1/2 = 50.00%
+
+[5549] Pros / cons of being more involved with IRA investments [duplicate]
+  类别：fiqa  标注块：[57660, 57661, 57662, 62296]
+    第1名：匹配块[67698]  
+    第2名：匹配块[9620]  
+    第3名：匹配块[17542]  
+  召回率@50 = 0/2 = 0.00%
+
+[5585] Is there any site you can find out about the 'bonus features' of credit cards?
+  类别：fiqa  标注块：[60473, 60474, 60475, 60476]
+    第1名：匹配块[12641]  
+    第2名：匹配块[55755]  
+    第3名：匹配块[60473]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[5592] Are “hard money loans” meant only for real estate?
+  类别：fiqa  标注块：[71263, 71264, 71265]
+    第1名：匹配块[71263]  √命中
+    第2名：匹配块[71265]  √命中
+    第3名：匹配块[71264]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[5616] How and where do companies publish financial reports?
+  类别：fiqa  标注块：[78309, 78310, 78311, 78312]
+    第1名：匹配块[52925]  
+    第2名：匹配块[78312]  √命中
+    第3名：匹配块[111548]  
+  召回率@50 = 1/1 = 100.00%
+
+[5620] What's the fuss about identity theft?
+  类别：fiqa  标注块：[34517, 34518, 66430, 89755, 89756, 109710]
+    第1名：匹配块[1212]  
+    第2名：匹配块[31992]  
+    第3名：匹配块[90628]  
+  召回率@50 = 1/4 = 25.00%
+
+[5646] Do I need multiple credit monitoring services?
+  类别：fiqa  标注块：[40231, 40232, 85223, 85224, 103441]
+    第1名：匹配块[40231]  √命中
+    第2名：匹配块[85223]  √命中
+    第3名：匹配块[117276]  
+  召回率@50 = 3/3 = 100.00%
+
+[5653] Steps and timing of the SEIS investment (in the UK)
+  类别：fiqa  标注块：[117392, 117393]
+    第1名：匹配块[71844]  
+    第2名：匹配块[59756]  
+    第3名：匹配块[7979]  
+  召回率@50 = 0/1 = 0.00%
+
+[5683] What is the PEG ratio? How is the PEG ratio calculated? How is the PEG ratio useful for stock investing?
+  类别：fiqa  标注块：[34796, 89731]
+    第1名：匹配块[89731]  √命中
+    第2名：匹配块[34796]  √命中
+    第3名：匹配块[38695]  
+  召回率@50 = 2/2 = 100.00%
+
+[5710] Bucketing investments to track individual growths
+  类别：fiqa  标注块：[46448]
+    第1名：匹配块[44704]  
+    第2名：匹配块[98885]  
+    第3名：匹配块[80453]  
+  召回率@50 = 1/1 = 100.00%
+
+[5741] Learning investing and the stock market
+  类别：fiqa  标注块：[5160, 51909, 51910, 51911, 51912]
+    第1名：匹配块[75635]  
+    第2名：匹配块[51910]  √命中
+    第3名：匹配块[62887]  
+  召回率@50 = 1/2 = 50.00%
+
+[5763] What is the best way to get a “rough” home appraisal prior to starting the refinance process?
+  类别：fiqa  标注块：[18140, 18141, 18142, 92430, 103240, 103241]
+    第1名：匹配块[87931]  
+    第2名：匹配块[87930]  
+    第3名：匹配块[46030]  
+  召回率@50 = 1/3 = 33.33%
+
+[5782] Pay off credit cards in one lump sum, or spread over a few months?
+  类别：fiqa  标注块：[34637, 34638, 34639, 64352, 64353, 64354, 64355, 76093, 89712, 118882]...
+    第1名：匹配块[34637]  √命中
+    第2名：匹配块[52574]  
+    第3名：匹配块[78993]  
+  召回率@50 = 2/5 = 40.00%
+
+[5790] FX losses on non-UK mortgage for UK property - tax deductable?
+  类别：fiqa  标注块：[27392]
+    第1名：匹配块[2166]  
+    第2名：匹配块[48314]  
+    第3名：匹配块[106023]  
+  召回率@50 = 0/1 = 0.00%
+
+[5808] How do you calculate return on investment for a share of stock?
+  类别：fiqa  标注块：[50450, 50451]
+    第1名：匹配块[106597]  
+    第2名：匹配块[87658]  
+    第3名：匹配块[48643]  
+  召回率@50 = 1/1 = 100.00%
+
+[5853] Paying Off Principal of Home vs. Investing In Mutual Fund
+  类别：fiqa  标注块：[32350, 32351, 32352, 32353, 32354, 57229, 57230, 84905, 84906, 86311]...
+    第1名：匹配块[57229]  √命中
+    第2名：匹配块[76770]  
+    第3名：匹配块[36754]  
+  召回率@50 = 4/8 = 50.00%
+
+[5862] Can I get a discount on merchandise by paying with cash instead of credit?
+  类别：fiqa  标注块：[26475, 26476, 26477, 34201, 34202, 34203, 34204, 54089, 54090, 112292]
+    第1名：匹配块[4227]  
+    第2名：匹配块[83477]  
+    第3名：匹配块[106948]  
+  召回率@50 = 3/4 = 75.00%
+
+[5888] Interest charges on balance transfer when purchases are involved
+  类别：fiqa  标注块：[67785, 67786, 67787, 67788, 67789, 67790, 108144]
+    第1名：匹配块[52868]  
+    第2名：匹配块[115580]  
+    第3名：匹配块[52869]  
+  召回率@50 = 1/2 = 50.00%
+
+[5903] Fees aside, what factors could account for performance differences between U.S. large-cap index ETFs?
+  类别：fiqa  标注块：[46359, 46360, 46361]
+    第1名：匹配块[81788]  
+    第2名：匹配块[23575]  
+    第3名：匹配块[32230]  
+  召回率@50 = 0/1 = 0.00%
+
+[5906] 0% APR first 12 months on new credit card. Can I exceed that 30% rule of thumb and not hurt my credit score?
+  类别：fiqa  标注块：[3019, 3020, 3021, 3022, 3023, 82039]
+    第1名：匹配块[71024]  
+    第2名：匹配块[7740]  
+    第3名：匹配块[94821]  
+  召回率@50 = 2/2 = 100.00%
+
+[5940] How does investment into a private company work?
+  类别：fiqa  标注块：[19001, 19002, 86693, 86694, 86695, 97456, 97457, 97458, 97459]
+    第1名：匹配块[9367]  
+    第2名：匹配块[35741]  
+    第3名：匹配块[101759]  
+  召回率@50 = 0/3 = 0.00%
+
+[5951] Why can't house prices be out of tune with salaries
+  类别：fiqa  标注块：[6299, 6300, 30700, 30701, 30702, 52065, 60096, 60097, 60098, 75110]...
+    第1名：匹配块[83567]  √命中
+    第2名：匹配块[114736]  
+    第3名：匹配块[101678]  
+  召回率@50 = 7/9 = 77.78%
+
+[5970] How to calculate ownership for property with a partner
+  类别：fiqa  标注块：[33869, 33870, 33871, 36571, 36572, 36573, 36574, 109279, 109280]
+    第1名：匹配块[42842]  
+    第2名：匹配块[86762]  
+    第3名：匹配块[70083]  
+  召回率@50 = 3/3 = 100.00%
+
+[5981] Is it a good investment for a foreigner to purchase a flat/apartment in China?
+  类别：fiqa  标注块：[34510, 42135, 42136, 49163, 49164, 57651, 112661]
+    第1名：匹配块[112661]  √命中
+    第2名：匹配块[57651]  √命中
+    第3名：匹配块[34510]  √命中
+  召回率@50 = 5/5 = 100.00%
+
+[5993] Why would anyone want to pay off their debts in a way other than “highest interest” first?
+  类别：fiqa  标注块：[1198, 10925, 10926, 12688, 12734, 12735, 12736, 12737, 12738, 12739]...
+    第1名：匹配块[32393]  √命中
+    第2名：匹配块[19102]  √命中
+    第3名：匹配块[65862]  
+  召回率@50 = 4/15 = 26.67%
+
+[6002] 15 year mortgage vs 30 year paid off in 15
+  类别：fiqa  标注块：[6783, 6784, 6785, 31227, 31228, 31229, 31230, 31231, 31232, 31233]...
+    第1名：匹配块[81002]  √命中
+    第2名：匹配块[72161]  √命中
+    第3名：匹配块[91913]  
+  召回率@50 = 9/11 = 81.82%
+
+[6004] Put-Call parity - what is the difference between the two representations?
+  类别：fiqa  标注块：[30254, 30255, 30256, 30257]
+    第1名：匹配块[24393]  
+    第2名：匹配块[77642]  
+    第3名：匹配块[75217]  
+  召回率@50 = 0/1 = 0.00%
+
+[6005] Why might it be advisable to keep student debt vs. paying it off quickly?
+  类别：fiqa  标注块：[14804, 27532, 27533, 27534, 27535, 27536, 30245, 35547, 35548, 35549]...
+    第1名：匹配块[30245]  √命中
+    第2名：匹配块[82818]  √命中
+    第3名：匹配块[113906]  
+  召回率@50 = 6/13 = 46.15%
+
+[6009] Why can low volume move a stock price drastically?
+  类别：fiqa  标注块：[45729, 45730, 45731]
+    第1名：匹配块[105194]  
+    第2名：匹配块[18407]  
+    第3名：匹配块[108294]  
+  召回率@50 = 0/1 = 0.00%
+
+[6041] Most effective Fundamental Analysis indicators for market entry
+  类别：fiqa  标注块：[16429, 16430, 22466, 22467, 22468, 22469, 48352, 84963, 84964, 84965]
+    第1名：匹配块[16429]  √命中
+    第2名：匹配块[13487]  
+    第3名：匹配块[99556]  
+  召回率@50 = 2/4 = 50.00%
+
+[6080] Is ScholarShare a legitimate entity for a 529 plan in California?
+  类别：fiqa  标注块：[4554, 4555, 4556, 4557, 33221]
+    第1名：匹配块[4556]  √命中
+    第2名：匹配块[4555]  √命中
+    第3名：匹配块[4557]  √命中
+  召回率@50 = 1/2 = 50.00%
+
+[6110] Why does short selling require borrowing?
+  类别：fiqa  标注块：[19043, 19044, 19045, 23858, 23859, 37867, 37868, 37869, 37870, 37871]...
+    第1名：匹配块[45285]  √命中
+    第2名：匹配块[7042]  
+    第3名：匹配块[34680]  
+  召回率@50 = 4/8 = 50.00%
+
+[6121] What are my best options if I don't have a lot of credit lines for housing loans?
+  类别：fiqa  标注块：[58284, 58285, 58286, 58287, 78991, 78992]
+    第1名：匹配块[58284]  √命中
+    第2名：匹配块[96735]  
+    第3名：匹配块[82446]  
+  召回率@50 = 1/2 = 50.00%
+
+[6122] Better to rent condo to daughter or put her on title?
+  类别：fiqa  标注块：[8873, 34162, 34163, 34164, 99408, 99409, 99410]
+    第1名：匹配块[63747]  
+    第2名：匹配块[99408]  √命中
+    第3名：匹配块[99409]  √命中
+  召回率@50 = 1/3 = 33.33%
+
+[6131] Is it ever a good idea to close credit cards?
+  类别：fiqa  标注块：[488, 489, 34216, 43719, 43720, 43721, 47158, 50554, 51808, 51809]...
+    第1名：匹配块[78334]  
+    第2名：匹配块[73995]  √命中
+    第3名：匹配块[65755]  √命中
+  召回率@50 = 7/12 = 58.33%
+
+[6133] What happens to all of the options when they expire?
+  类别：fiqa  标注块：[1530, 83092, 83093, 83094, 83095, 83096]
+    第1名：匹配块[115992]  
+    第2名：匹配块[17897]  
+    第3名：匹配块[114748]  
+  召回率@50 = 1/2 = 50.00%
+
+[6142] How does stabilization work during an IPO?
+  类别：fiqa  标注块：[31433, 31434, 31435, 31436, 42018, 42019]
+    第1名：匹配块[31434]  √命中
+    第2名：匹配块[31433]  √命中
+    第3名：匹配块[103948]  
+  召回率@50 = 1/2 = 50.00%
+
+[6146] Lost credit card replaced with new card and new numbers. Credit score affected?
+  类别：fiqa  标注块：[1467, 32359, 32360, 32361, 32362]
+    第1名：匹配块[1467]  √命中
+    第2名：匹配块[32359]  √命中
+    第3名：匹配块[32360]  √命中
+  召回率@50 = 2/2 = 100.00%
+
+[6199] How can all these countries owe so much money?  Why & where did they borrow it from?
+  类别：fiqa  标注块：[34181, 34182, 47903, 47904, 82909, 82910, 82911, 82912, 116593, 116594]...
+    第1名：匹配块[116593]  √命中
+    第2名：匹配块[74234]  
+    第3名：匹配块[101192]  
+  召回率@50 = 2/4 = 50.00%
+
+[6219] Are there Investable Real Estate Indices which track Geographical Locations?
+  类别：fiqa  标注块：[9779, 9780, 9781, 9782, 29739, 29740]
+    第1名：匹配块[9779]  √命中
+    第2名：匹配块[31540]  
+    第3名：匹配块[80308]  
+  召回率@50 = 2/2 = 100.00%
+
+[6221] To pay off a student loan, should I save up a lump sum payoff payment or pay extra each month?
+  类别：fiqa  标注块：[15367, 15368, 15369, 23379, 23380, 26150, 26151, 26152, 34141, 51498]...
+    第1名：匹配块[23393]  
+    第2名：匹配块[82881]  
+    第3名：匹配块[100745]  
+  召回率@50 = 0/8 = 0.00%
+
+[6252] Is this mortgage advice good, or is it hooey?
+  类别：fiqa  标注块：[12549, 12550, 32514, 46643, 46644, 48707, 59165, 59166, 59167, 76031]...
+    第1名：匹配块[67404]  
+    第2名：匹配块[21162]  
+    第3名：匹配块[72996]  
+  召回率@50 = 0/7 = 0.00%
+
+[6262] Help required on estimating SSA benefit amounts
+  类别：fiqa  标注块：[5339, 5340, 5341, 5342, 5343, 6818, 6819, 6820, 6821, 6822]...
+    第1名：匹配块[6822]  √命中
+    第2名：匹配块[14789]  
+    第3名：匹配块[10966]  
+  召回率@50 = 1/3 = 33.33%
+
+[6278] What is the best way to help my dad consolidate his credit card debt at a lower rate?
+  类别：fiqa  标注块：[12742, 12743, 12744, 12745, 12746, 28145, 28146, 28147]
+    第1名：匹配块[28147]  √命中
+    第2名：匹配块[38509]  
+    第3名：匹配块[51551]  
+  召回率@50 = 2/2 = 100.00%
+
+[6395] Option settlement for calendar spreads
+  类别：fiqa  标注块：[33452, 33453]
+    第1名：匹配块[54735]  
+    第2名：匹配块[4561]  
+    第3名：匹配块[65916]  
+  召回率@50 = 0/1 = 0.00%
+
+[6410] Will an ETF immediately reflect a reconstitution of underlying index
+  类别：fiqa  标注块：[94341]
+    第1名：匹配块[29845]  
+    第2名：匹配块[48910]  
+    第3名：匹配块[96305]  
+  召回率@50 = 0/1 = 0.00%
+
+[6420] Does the bid/ask concept exist in dealer markets?
+  类别：fiqa  标注块：[25873, 112853, 112854, 112855, 112856, 112857]
+    第1名：匹配块[25873]  √命中
+    第2名：匹配块[21247]  
+    第3名：匹配块[80572]  
+  召回率@50 = 2/2 = 100.00%
+
+[6441] Trading with Settled / Unsettled Funds (T+3)
+  类别：fiqa  标注块：[50924, 50925, 50926, 50927]
+    第1名：匹配块[59113]  
+    第2名：匹配块[4656]  
+    第3名：匹配块[31554]  
+  召回率@50 = 1/1 = 100.00%
+
+[6467] Advice on strategy for when to sell
+  类别：fiqa  标注块：[4622, 4623, 13407, 13408, 13409, 13410, 69573, 73632, 73633, 90663]...
+    第1名：匹配块[26599]  
+    第2名：匹配块[17870]  
+    第3名：匹配块[40773]  
+  召回率@50 = 1/5 = 20.00%
+
+[6468] Why deep in the money options have very low liquidity
+  类别：fiqa  标注块：[66875, 66876, 109753]
+    第1名：匹配块[109753]  √命中
+    第2名：匹配块[90204]  
+    第3名：匹配块[82855]  
+  召回率@50 = 2/2 = 100.00%
+
+[6479] Trading on exchanges or via brokerage companies?
+  类别：fiqa  标注块：[54469, 54470, 54471, 54472, 80934, 80935, 80936, 80937]
+    第1名：匹配块[80937]  √命中
+    第2名：匹配块[80934]  √命中
+    第3名：匹配块[26469]  
+  召回率@50 = 2/2 = 100.00%
+
+[6525] Does it make sense to trade my GOOGL shares for GOOG and pocket the difference?
+  类别：fiqa  标注块：[19830, 19831, 19832, 19833, 19834, 19835, 19836, 19837, 19838, 19839]...
+    第1名：匹配块[19836]  √命中
+    第2名：匹配块[19835]  √命中
+    第3名：匹配块[21495]  √命中
+  召回率@50 = 2/3 = 66.67%
+
+[6554] Mutual fund value went down, shares went up, no action taken by me
+  类别：fiqa  标注块：[4482, 4483, 4484, 116296, 116297, 116298, 116299, 116300]
+    第1名：匹配块[25889]  
+    第2名：匹配块[10330]  
+    第3名：匹配块[68512]  
+  召回率@50 = 0/2 = 0.00%
+
+[6562] Cheapest way to “wire” money in an Australian bank account to a person in England, while I'm in Laos?
+  类别：fiqa  标注块：[27580, 27581, 27582, 100517, 112086, 112087, 116140, 116141]
+    第1名：匹配块[36937]  
+    第2名：匹配块[13885]  
+    第3名：匹配块[94693]  
+  召回率@50 = 2/4 = 50.00%
+
+[6611] How does Vanguard determine the optimal asset allocation for their Target Retirement Funds?
+  类别：fiqa  标注块：[39867, 39868, 39869, 59182, 59183, 59184, 59185, 59186]
+    第1名：匹配块[35899]  
+    第2名：匹配块[66770]  
+    第3名：匹配块[35896]  
+  召回率@50 = 2/2 = 100.00%
+
+[6612] If I have a lot of debt and the housing market is rising, should I rent and slowly pay off my debt or buy and roll the debt into a mortgage?
+  类别：fiqa  标注块：[41094, 41095, 41096, 41097, 41098, 41099, 41100, 41101, 50969, 50970]...
+    第1名：匹配块[99872]  
+    第2名：匹配块[42736]  
+    第3名：匹配块[38640]  
+  召回率@50 = 0/3 = 0.00%
+
+[6625] What does a high theta mean for an option position?
+  类别：fiqa  标注块：[17895, 17896, 17897]
+    第1名：匹配块[96196]  
+    第2名：匹配块[96195]  
+    第3名：匹配块[39230]  
+  召回率@50 = 1/1 = 100.00%
+
+[6629] Tax treatment of a boxed trade?
+  类别：fiqa  标注块：[88789, 88790, 88791]
+    第1名：匹配块[111773]  
+    第2名：匹配块[64642]  
+    第3名：匹配块[6030]  
+  召回率@50 = 0/1 = 0.00%
+
+[6635] Why don't share prices of a company rise every other Friday when the company buys shares for its own employees?
+  类别：fiqa  标注块：[748, 749, 20665, 31616, 31617, 117139, 117140, 117141]
+    第1名：匹配块[117139]  √命中
+    第2名：匹配块[6980]  
+    第3名：匹配块[749]  √命中
+  召回率@50 = 3/4 = 75.00%
+
+[6644] How to know precisely when a SWIFT is issued by a bank?
+  类别：fiqa  标注块：[35214]
+    第1名：匹配块[74704]  
+    第2名：匹配块[22240]  
+    第3名：匹配块[7905]  
+  召回率@50 = 0/1 = 0.00%
+
+[6647] What is meant by “priced in”?
+  类别：fiqa  标注块：[14043, 14044, 14045, 85585, 85586, 85587, 85588, 92499, 92500]
+    第1名：匹配块[85586]  √命中
+    第2名：匹配块[92499]  √命中
+    第3名：匹配块[31515]  
+  召回率@50 = 2/3 = 66.67%
+
+[6668] Approximate IT company valuation (to proximate stock options value)
+  类别：fiqa  标注块：[55377, 55378, 55379, 55380, 91438, 91439, 91440, 91441]
+    第1名：匹配块[39230]  
+    第2名：匹配块[40295]  
+    第3名：匹配块[31819]  
+  召回率@50 = 1/2 = 50.00%
+
+[6679] Specifically when do options expire?
+  类别：fiqa  标注块：[48552, 71909, 115992, 115993]
+    第1名：匹配块[115992]  √命中
+    第2名：匹配块[23531]  
+    第3名：匹配块[71909]  √命中
+  召回率@50 = 3/3 = 100.00%
+
+[6683] Who are the sellers for the new public stocks?
+  类别：fiqa  标注块：[15605, 118196, 118197]
+    第1名：匹配块[86497]  
+    第2名：匹配块[14732]  
+    第3名：匹配块[23608]  
+  召回率@50 = 2/2 = 100.00%
+
+[6713] Will my father still be eligible for SNAP if I claim him as my dependent?
+  类别：fiqa  标注块：[29955, 29956, 29957, 29958, 71745]
+    第1名：匹配块[29955]  √命中
+    第2名：匹配块[29956]  √命中
+    第3名：匹配块[29958]  √命中
+  召回率@50 = 2/2 = 100.00%
+
+[6715] What does it mean if “IPOs - normally are sold with an `underwriting discount` (a built in commission)”
+  类别：fiqa  标注块：[2706, 2707, 2708, 2709, 2710, 2711, 2712, 2713, 2714, 113398]...
+    第1名：匹配块[2709]  √命中
+    第2名：匹配块[2708]  √命中
+    第3名：匹配块[100859]  
+  召回率@50 = 2/2 = 100.00%
+
+[6746] What happens if stock purchased on margin plummets below what I have in the brokerage?
+  类别：fiqa  标注块：[42236, 67184]
+    第1名：匹配块[46205]  
+    第2名：匹配块[18831]  
+    第3名：匹配块[56193]  
+  召回率@50 = 1/2 = 50.00%
+
+[6787] Would it make sense to sell a stock, then repurchase it for tax purposes?
+  类别：fiqa  标注块：[117138]
+    第1名：匹配块[21387]  
+    第2名：匹配块[13408]  
+    第3名：匹配块[102624]  
+  召回率@50 = 0/1 = 0.00%
+
+[6792] Where to find the full book of outstanding bids/asks for a stock?
+  类别：fiqa  标注块：[97413, 97414]
+    第1名：匹配块[68511]  
+    第2名：匹配块[100619]  
+    第3名：匹配块[15690]  
+  召回率@50 = 0/1 = 0.00%
+
+[6800] I don't live in America. How can I buy IPO stock of newly listed companies in the United States?
+  类别：fiqa  标注块：[6969, 6970]
+    第1名：匹配块[6969]  √命中
+    第2名：匹配块[118025]  
+    第3名：匹配块[46356]  
+  召回率@50 = 1/1 = 100.00%
+
+[6803] What are the common moving averages used in a “Golden Cross” stock evaluation?
+  类别：fiqa  标注块：[8529, 28932, 38766, 38767, 38768, 38769, 108741, 108742, 108743]
+    第1名：匹配块[108741]  √命中
+    第2名：匹配块[5629]  
+    第3名：匹配块[5630]  
+  召回率@50 = 3/4 = 75.00%
+
+[6807] How to incorporate dividends while calculating annual return of a Stock
+  类别：fiqa  标注块：[66968]
+    第1名：匹配块[66968]  √命中
+    第2名：匹配块[48643]  
+    第3名：匹配块[112531]  
+  召回率@50 = 1/1 = 100.00%
+
+[6814] Selling Stock - All or Nothing?
+  类别：fiqa  标注块：[44716, 68437]
+    第1名：匹配块[114783]  
+    第2名：匹配块[13410]  
+    第3名：匹配块[23608]  
+  召回率@50 = 0/2 = 0.00%
+
+[6832] incorrect printed information on check stock
+  类别：fiqa  标注块：[75749, 75750, 75751, 75752, 75753, 114416, 114417, 114418, 114419]
+    第1名：匹配块[33345]  
+    第2名：匹配块[36908]  
+    第3名：匹配块[9792]  
+  召回率@50 = 2/2 = 100.00%
+
+[6835] Are bond ETF capital gains taxed similar to stock or stock funds if held for more than 1 year?
+  类别：fiqa  标注块：[20604, 30194, 30195, 30196]
+    第1名：匹配块[16958]  
+    第2名：匹配块[70265]  
+    第3名：匹配块[28117]  
+  召回率@50 = 0/2 = 0.00%
+
+[6849] What do the points in a stock market index epresent?
+  类别：fiqa  标注块：[8951, 8952]
+    第1名：匹配块[17973]  
+    第2名：匹配块[29157]  
+    第3名：匹配块[42968]  
+  召回率@50 = 1/1 = 100.00%
+
+[6862] Canada discount stock brokers: Interactive Brokers vs. Questrade?
+  类别：fiqa  标注块：[77455, 77456, 77457, 77458]
+    第1名：匹配块[77456]  √命中
+    第2名：匹配块[77455]  √命中
+    第3名：匹配块[77458]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[6867] Will there always be somebody selling/buying in every stock?
+  类别：fiqa  标注块：[158, 88627, 88628, 88992, 88993, 93232, 93233, 93234, 100837, 107771]...
+    第1名：匹配块[78548]  
+    第2名：匹配块[47178]  
+    第3名：匹配块[73451]  
+  召回率@50 = 1/7 = 14.29%
+
+[6875] Where to find free Thailand stock recommendations and research?
+  类别：fiqa  标注块：[44925, 44926]
+    第1名：匹配块[103769]  
+    第2名：匹配块[14127]  
+    第3名：匹配块[84624]  
+  召回率@50 = 0/1 = 0.00%
+
+[6890] Where does the money go when I buy stocks?
+  类别：fiqa  标注块：[48122, 48123, 111616, 111617, 111618, 111619]
+    第1名：匹配块[30054]  
+    第2名：匹配块[33685]  
+    第3名：匹配块[31353]  
+  召回率@50 = 2/2 = 100.00%
+
+[6891] What is the theory behind Rick Van Ness's risk calculation in the video about diversification?
+  类别：fiqa  标注块：[55683, 55684, 55685, 92796, 92797, 92798, 92799, 92800, 92801, 92802]...
+    第1名：匹配块[94866]  √命中
+    第2名：匹配块[69194]  
+    第3名：匹配块[118028]  
+  召回率@50 = 1/3 = 33.33%
+
+[6896] Selling high, pay capital gains, re-purchase later
+  类别：fiqa  标注块：[50430]
+    第1名：匹配块[13410]  
+    第2名：匹配块[24409]  
+    第3名：匹配块[67455]  
+  召回率@50 = 0/1 = 0.00%
+
+[6901] Rules for Broker Behavior with Covered Calls
+  类别：fiqa  标注块：[50984, 50985, 50986, 50987, 77780, 77781, 77782]
+    第1名：匹配块[72777]  
+    第2名：匹配块[56661]  
+    第3名：匹配块[6058]  
+  召回率@50 = 1/2 = 50.00%
+
+[6907] Nominal value of shares
+  类别：fiqa  标注块：[50403]
+    第1名：匹配块[58008]  
+    第2名：匹配块[87350]  
+    第3名：匹配块[5805]  
+  召回率@50 = 1/1 = 100.00%
+
+[6909] Why do stocks priced above $2.00 on the ASX sometimes move in $0.005 increments?
+  类别：fiqa  标注块：[25774, 25775, 25776]
+    第1名：匹配块[12969]  
+    第2名：匹配块[32671]  
+    第3名：匹配块[9444]  
+  召回率@50 = 0/1 = 0.00%
+
+[6959] What is the term for the quantity (high price minus low price) for a stock?
+  类别：fiqa  标注块：[40981, 41741]
+    第1名：匹配块[27489]  
+    第2名：匹配块[23234]  
+    第3名：匹配块[71852]  
+  召回率@50 = 1/2 = 50.00%
+
+[6985] Bed and Breakfast, Same Day Capital Gains UK
+  类别：fiqa  标注块：[91276, 91277, 91278, 91279, 91280, 91281, 91282]
+    第1名：匹配块[1733]  
+    第2名：匹配块[91277]  √命中
+    第3名：匹配块[18288]  
+  召回率@50 = 1/1 = 100.00%
+
+[7017] Basic Algorithmic Trading Strategy
+  类别：fiqa  标注块：[5629, 5630]
+    第1名：匹配块[50330]  
+    第2名：匹配块[89307]  
+    第3名：匹配块[17610]  
+  召回率@50 = 0/1 = 0.00%
+
+[7068] Making money through CFD
+  类别：fiqa  标注块：[2100, 2101, 2102, 12341, 12342, 12343, 12344, 12345, 12346, 12347]
+    第1名：匹配块[2100]  √命中
+    第2名：匹配块[33374]  
+    第3名：匹配块[25940]  
+  召回率@50 = 2/2 = 100.00%
+
+[7071] ESPP strategy - Sell right away or hold?
+  类别：fiqa  标注块：[25225, 25226, 25227, 25228, 47813]
+    第1名：匹配块[27147]  
+    第2名：匹配块[93863]  
+    第3名：匹配块[25934]  
+  召回率@50 = 1/2 = 50.00%
+
+[7080] Wash sale rule with dividend reinvestment
+  类别：fiqa  标注块：[103702, 119038, 119039, 119040, 119041]
+    第1名：匹配块[119040]  √命中
+    第2名：匹配块[28980]  
+    第3名：匹配块[32554]  
+  召回率@50 = 2/2 = 100.00%
+
+[7096] What's the formula for profits and losses when I delta hedge?
+  类别：fiqa  标注块：[96646, 96647]
+    第1名：匹配块[68067]  
+    第2名：匹配块[39680]  
+    第3名：匹配块[74483]  
+  召回率@50 = 1/1 = 100.00%
+
+[7098] Can another tax loss be used to offset capital gains taxes? How does it work?
+  类别：fiqa  标注块：[6722, 53539, 53540, 53541, 53542]
+    第1名：匹配块[80792]  
+    第2名：匹配块[2168]  
+    第3名：匹配块[110380]  
+  召回率@50 = 1/2 = 50.00%
+
+[7105] What is the difference between fixed-income duration and equity duration?
+  类别：fiqa  标注块：[14686, 14687]
+    第1名：匹配块[79032]  
+    第2名：匹配块[73907]  
+    第3名：匹配块[79468]  
+  召回率@50 = 1/1 = 100.00%
+
+[7109] How do I analyse moving averages?
+  类别：fiqa  标注块：[51483, 51484, 51485, 89590, 89591, 89592, 112841, 112842, 112843]
+    第1名：匹配块[98228]  
+    第2名：匹配块[44421]  
+    第3名：匹配块[79205]  
+  召回率@50 = 2/3 = 66.67%
+
+[7124] How come we can find stocks with a Price-to-Book ratio less than 1?
+  类别：fiqa  标注块：[15013, 15014, 15015, 15016, 31310, 105343, 105344, 105345, 111597, 111598]
+    第1名：匹配块[111597]  √命中
+    第2名：匹配块[24994]  
+    第3名：匹配块[47556]  
+  召回率@50 = 3/4 = 75.00%
+
+[7141] Do investors go long option contracts when they cannot cover the exercise of the options?
+  类别：fiqa  标注块：[26865, 26866, 26867, 26868, 51262, 51263]
+    第1名：匹配块[61524]  
+    第2名：匹配块[27661]  
+    第3名：匹配块[51263]  √命中
+  召回率@50 = 1/2 = 50.00%
+
+[7145] Are there “buy and hold” passively managed funds?
+  类别：fiqa  标注块：[3574, 16387, 16388, 23609, 23610, 23611]
+    第1名：匹配块[83343]  
+    第2名：匹配块[109836]  
+    第3名：匹配块[49706]  
+  召回率@50 = 2/3 = 66.67%
+
+[7178] Should an ADR that is being delisted be sold off?
+  类别：fiqa  标注块：[80331]
+    第1名：匹配块[29648]  
+    第2名：匹配块[80331]  √命中
+    第3名：匹配块[55363]  
+  召回率@50 = 1/1 = 100.00%
+
+[7188] What explains the enormous increase in gold price in the early 21st century?
+  类别：fiqa  标注块：[61467, 61468, 61469, 61470, 61471]
+    第1名：匹配块[112914]  
+    第2名：匹配块[28989]  
+    第3名：匹配块[39442]  
+  召回率@50 = 1/1 = 100.00%
+
+[7205] Is it possible to see option prices from the past?
+  类别：fiqa  标注块：[32329]
+    第1名：匹配块[32329]  √命中
+    第2名：匹配块[114615]  
+    第3名：匹配块[114612]  
+  召回率@50 = 1/1 = 100.00%
+
+[7206] Who Bought A Large Number Of Shares?
+  类别：fiqa  标注块：[88180, 88181, 106445, 106446, 110535, 110536, 110537]
+    第1名：匹配块[24409]  
+    第2名：匹配块[13130]  
+    第3名：匹配块[7325]  
+  召回率@50 = 0/3 = 0.00%
+
+[7218] What margin is required to initiate and maintain a short sale
+  类别：fiqa  标注块：[6424, 6425]
+    第1名：匹配块[107407]  
+    第2名：匹配块[19030]  
+    第3名：匹配块[107408]  
+  召回率@50 = 1/1 = 100.00%
+
+[7221] How Technical Analysts react to non-market hours effects
+  类别：fiqa  标注块：[37464]
+    第1名：匹配块[34009]  
+    第2名：匹配块[71335]  
+    第3名：匹配块[95815]  
+  召回率@50 = 0/1 = 0.00%
+
+[7269] How do I track investment performance in Quicken across rollovers?
+  类别：fiqa  标注块：[97568]
+    第1名：匹配块[30671]  
+    第2名：匹配块[68964]  
+    第3名：匹配块[53330]  
+  召回率@50 = 0/1 = 0.00%
+
+[7279] If I invest in securities denominated in a foreign currency, should I hedge my currency risk?
+  类别：fiqa  标注块：[16395, 16396, 64944, 64945, 64946, 64947, 64948, 64949, 92955, 92956]...
+    第1名：匹配块[16395]  √命中
+    第2名：匹配块[26010]  
+    第3名：匹配块[81543]  
+  召回率@50 = 4/4 = 100.00%
+
+[7295] Selling non-dividend for dividend stocks
+  类别：fiqa  标注块：[49012, 49013]
+    第1名：匹配块[52897]  
+    第2名：匹配块[59468]  
+    第3名：匹配块[12651]  
+  召回率@50 = 0/1 = 0.00%
+
+[7311] Finance, Social Capital IPOA.U
+  类别：fiqa  标注块：[65246, 65247, 65248, 65249, 65250, 65251, 65252, 65253]
+    第1名：匹配块[66216]  
+    第2名：匹配块[53124]  
+    第3名：匹配块[116083]  
+  召回率@50 = 0/1 = 0.00%
+
+[7326] Do brokers execute every trade on the exchange?
+  类别：fiqa  标注块：[116599, 116600]
+    第1名：匹配块[118821]  
+    第2名：匹配块[84082]  
+    第3名：匹配块[47723]  
+  召回率@50 = 0/1 = 0.00%
+
+[7329] Does Implied Volatilty factor in all known future events?
+  类别：fiqa  标注块：[23956, 23957, 65576, 65577]
+    第1名：匹配块[23956]  √命中
+    第2名：匹配块[113867]  
+    第3名：匹配块[89125]  
+  召回率@50 = 1/2 = 50.00%
+
+[7344] How is the Dow divisor calculated?
+  类别：fiqa  标注块：[2818, 2819, 2820, 2821, 21882]
+    第1名：匹配块[2821]  √命中
+    第2名：匹配块[2820]  √命中
+    第3名：匹配块[75940]  
+  召回率@50 = 1/2 = 50.00%
+
+[7345] What do these numbers mean? (futures)
+  类别：fiqa  标注块：[47628, 102027, 102028, 102029, 105534, 105535, 105536]
+    第1名：匹配块[1800]  
+    第2名：匹配块[92100]  
+    第3名：匹配块[74080]  
+  召回率@50 = 2/3 = 66.67%
+
+[7377] What type of returns Vanguard is quoting?
+  类别：fiqa  标注块：[115577]
+    第1名：匹配块[115577]  √命中
+    第2名：匹配块[14038]  
+    第3名：匹配块[17875]  
+  召回率@50 = 1/1 = 100.00%
+
+[7431] Pay off mortgage or invest in high value saving account
+  类别：fiqa  标注块：[74742, 74743, 74744, 74745, 74746, 74747, 74748, 74749, 74750]
+    第1名：匹配块[471]  
+    第2名：匹配块[117599]  
+    第3名：匹配块[22178]  
+  召回率@50 = 0/1 = 0.00%
+
+[7441] Since many brokers disallow investors from shorting sub-$5 stocks, why don't all companies split their stock until it is sub-$5
+  类别：fiqa  标注块：[23744, 103096, 103097, 107449, 107450, 107451, 107452, 107453]
+    第1名：匹配块[81118]  
+    第2名：匹配块[77688]  
+    第3名：匹配块[15267]  
+  召回率@50 = 2/3 = 66.67%
+
+[7445] IS it the wrong time to get into the equity market immediately after large gains?
+  类别：fiqa  标注块：[21001, 21002, 21003, 31019, 59717, 59718, 59719, 59720]
+    第1名：匹配块[91820]  
+    第2名：匹配块[62557]  
+    第3名：匹配块[18102]  
+  召回率@50 = 1/3 = 33.33%
+
+[7448] If an index goes up because an underlying company issues more shares, what happens to the ETF
+  类别：fiqa  标注块：[83621, 83622, 83623, 83624]
+    第1名：匹配块[83623]  √命中
+    第2名：匹配块[102583]  
+    第3名：匹配块[31012]  
+  召回率@50 = 1/1 = 100.00%
+
+[7456] What is market order's relation to bid ask spread?
+  类别：fiqa  标注块：[13005, 13006]
+    第1名：匹配块[101728]  
+    第2名：匹配块[3803]  
+    第3名：匹配块[13014]  
+  召回率@50 = 0/1 = 0.00%
+
+[7463] Pros/cons of borrowing money using a mortgage loan and investing it in a low-fee index fund?
+  类别：fiqa  标注块：[1042, 1043, 1044, 21310, 61458, 61459, 115294, 115295, 115296, 115297]...
+    第1名：匹配块[60501]  
+    第2名：匹配块[90769]  
+    第3名：匹配块[54071]  
+  召回率@50 = 4/5 = 80.00%
+
+[7467] Stocks are traded on secondary markets?
+  类别：fiqa  标注块：[38822]
+    第1名：匹配块[74508]  
+    第2名：匹配块[38822]  √命中
+    第3名：匹配块[103370]  
+  召回率@50 = 1/1 = 100.00%
+
+[7484] Why sometimes payable date is BEFORE the ex-dividend date?
+  类别：fiqa  标注块：[88823]
+    第1名：匹配块[88823]  √命中
+    第2名：匹配块[91294]  
+    第3名：匹配块[117082]  
+  召回率@50 = 1/1 = 100.00%
+
+[7509] Investment Portfolio Setup for beginner
+  类别：fiqa  标注块：[35871, 35872, 35873, 35874, 35875, 35876, 35877, 35878, 35879, 35880]
+    第1名：匹配块[20861]  
+    第2名：匹配块[13578]  
+    第3名：匹配块[48371]  
+  召回率@50 = 0/1 = 0.00%
+
+[7512] understanding the process/payment of short sale dividends
+  类别：fiqa  标注块：[38350, 38351]
+    第1名：匹配块[66531]  
+    第2名：匹配块[40631]  
+    第3名：匹配块[44526]  
+  召回率@50 = 0/1 = 0.00%
+
+[7513] Where are Bogleheadian World ETFs or Index funds?
+  类别：fiqa  标注块：[23278, 54930, 54931, 113199, 113200]
+    第1名：匹配块[8288]  
+    第2名：匹配块[13890]  
+    第3名：匹配块[57512]  
+  召回率@50 = 0/3 = 0.00%
+
+[7529] Does the expense ratio of a fund-of-funds include the expense ratios of its holdings?
+  类别：fiqa  标注块：[13349, 59168, 59169]
+    第1名：匹配块[18003]  
+    第2名：匹配块[22860]  
+    第3名：匹配块[59169]  √命中
+  召回率@50 = 1/2 = 50.00%
+
+[7533] Investing tax (savings)
+  类别：fiqa  标注块：[18973, 18974, 32811, 32812]
+    第1名：匹配块[64642]  
+    第2名：匹配块[63450]  
+    第3名：匹配块[107239]  
+  召回率@50 = 0/2 = 0.00%
+
+[7534] Can you explain why it's better to invest now rather than waiting for the market to dip?
+  类别：fiqa  标注块：[18099, 18100, 18101, 18102, 35376, 71834]
+    第1名：匹配块[58588]  
+    第2名：匹配块[60944]  
+    第3名：匹配块[35376]  √命中
+  召回率@50 = 1/3 = 33.33%
+
+[7590] Why are US target retirement funds weighted so heavily towards US stocks?
+  类别：fiqa  标注块：[21196, 21197, 21198, 21199, 21200, 44568]
+    第1名：匹配块[21196]  √命中
+    第2名：匹配块[110825]  
+    第3名：匹配块[80109]  
+  召回率@50 = 2/2 = 100.00%
+
+[7592] few question about debit credit and liabilities
+  类别：fiqa  标注块：[54953, 54954, 54955, 54956, 54957, 54958, 54959, 54960]
+    第1名：匹配块[5245]  
+    第2名：匹配块[53083]  
+    第3名：匹配块[16489]  
+  召回率@50 = 1/1 = 100.00%
+
+[7594] Converting annual interbank rates into monthly rates
+  类别：fiqa  标注块：[114426]
+    第1名：匹配块[10099]  
+    第2名：匹配块[41887]  
+    第3名：匹配块[29133]  
+  召回率@50 = 0/1 = 0.00%
+
+[7622] Best way to pay off debt?
+  类别：fiqa  标注块：[50711, 75886]
+    第1名：匹配块[62841]  
+    第2名：匹配块[16332]  
+    第3名：匹配块[56205]  
+  召回率@50 = 0/2 = 0.00%
+
+[7633] Can a trade happen “in between” the bid and ask price?
+  类别：fiqa  标注块：[24937, 24938, 24939, 39665, 39666, 88341, 88342, 99092, 99093, 99094]...
+    第1名：匹配块[99092]  √命中
+    第2名：匹配块[99095]  √命中
+    第3名：匹配块[80572]  
+  召回率@50 = 2/4 = 50.00%
+
+[7674] Choosing the limit when making a limit order?
+  类别：fiqa  标注块：[38838, 38839, 38840, 99022, 99023, 99024, 99025, 99026, 104067, 104068]...
+    第1名：匹配块[58240]  
+    第2名：匹配块[103169]  
+    第3名：匹配块[19168]  
+  召回率@50 = 1/3 = 33.33%
+
+[7700] Should I re-allocate my portfolio now or let it balance out over time?
+  类别：fiqa  标注块：[514, 515, 516, 517, 518, 36059, 54890, 54891, 54892, 54893]...
+    第1名：匹配块[5109]  
+    第2名：匹配块[88188]  
+    第3名：匹配块[4437]  
+  召回率@50 = 1/4 = 25.00%
+
+[7702] Bond ETFs vs actual bonds
+  类别：fiqa  标注块：[77556, 77557, 111647]
+    第1名：匹配块[28117]  
+    第2名：匹配块[27897]  
+    第3名：匹配块[58028]  
+  召回率@50 = 2/2 = 100.00%
+
+[7705] Why would I pick a specific ETF over an equivalent Mutual Fund?
+  类别：fiqa  标注块：[39188, 39189, 39190, 75682, 75683, 107873, 107874, 107875]
+    第1名：匹配块[105076]  
+    第2名：匹配块[73102]  
+    第3名：匹配块[77556]  
+  召回率@50 = 2/3 = 66.67%
+
+[7734] Can PE ratio of stocks be compared to other investments?
+  类别：fiqa  标注块：[45207, 45208, 45209, 45210, 86710, 86711]
+    第1名：匹配块[45209]  √命中
+    第2名：匹配块[45207]  √命中
+    第3名：匹配块[14312]  
+  召回率@50 = 2/2 = 100.00%
+
+[7747] What happens to bonds values when interest rates rise? [duplicate]
+  类别：fiqa  标注块：[19716, 59753, 59754]
+    第1名：匹配块[28754]  
+    第2名：匹配块[74671]  
+    第3名：匹配块[80437]  
+  召回率@50 = 1/2 = 50.00%
+
+[7754] Inverse Relationship between Volatility and Beta
+  类别：fiqa  标注块：[39616, 39617, 39618]
+    第1名：匹配块[39617]  √命中
+    第2名：匹配块[54523]  
+    第3名：匹配块[15994]  
+  召回率@50 = 1/1 = 100.00%
+
+[7758] Bid/ask spreads for index funds
+  类别：fiqa  标注块：[114502, 114503, 114504, 114505, 114506, 114507, 114508, 114509]
+    第1名：匹配块[114502]  √命中
+    第2名：匹配块[70535]  
+    第3名：匹配块[36981]  
+  召回率@50 = 1/1 = 100.00%
+
+[7801] What are some well known or well regarded arguments against investing?
+  类别：fiqa  标注块：[50561, 50562, 85483, 85484, 85485, 85486, 85487, 85488, 85489, 85490]
+    第1名：匹配块[85483]  √命中
+    第2名：匹配块[106214]  
+    第3名：匹配块[95357]  
+  召回率@50 = 2/2 = 100.00%
+
+[7803] Can the Delta be used to calculate the option premium given a certain target?
+  类别：fiqa  标注块：[31816, 31817, 31818, 31819, 31820, 31821, 112938, 112939, 112940, 112941]
+    第1名：匹配块[83214]  
+    第2名：匹配块[61535]  
+    第3名：匹配块[3227]  
+  召回率@50 = 1/2 = 50.00%
+
+[7823] Retirement Funds: Betterment vs Vanguard Life strategy vs Target Retirement
+  类别：fiqa  标注块：[21312, 21313, 21314, 21315, 21316, 21317, 21318, 90251, 90252, 116359]...
+    第1名：匹配块[90251]  √命中
+    第2名：匹配块[35399]  
+    第3名：匹配块[66770]  
+  召回率@50 = 3/3 = 100.00%
+
+[7876] Why do stocks split?
+  类别：fiqa  标注块：[106705, 106706]
+    第1名：匹配块[46349]  
+    第2名：匹配块[16094]  
+    第3名：匹配块[77688]  
+  召回率@50 = 1/1 = 100.00%
+
+[7879] Any Tips on How to Get the Highest Returns Within 4 Months by Investing in Stocks?
+  类别：fiqa  标注块：[20565, 20566, 20567, 74648, 74649, 74650, 84203]
+    第1名：匹配块[77848]  
+    第2名：匹配块[74791]  
+    第3名：匹配块[31471]  
+  召回率@50 = 0/3 = 0.00%
+
+[7880] Are there index tracking funds that avoid the “buy high - sell low” problem?
+  类别：fiqa  标注块：[17194, 54653, 54654, 54655, 54656, 54657, 54658]
+    第1名：匹配块[109836]  
+    第2名：匹配块[67778]  
+    第3名：匹配块[82088]  
+  召回率@50 = 0/2 = 0.00%
+
+[7911] What is the difference between a 'trader' and a 'stockbroker'?
+  类别：fiqa  标注块：[11421, 26799]
+    第1名：匹配块[11421]  √命中
+    第2名：匹配块[26799]  √命中
+    第3名：匹配块[81474]  
+  召回率@50 = 2/2 = 100.00%
+
+[7925] Can I sell a stock immediately?
+  类别：fiqa  标注块：[50286, 50287, 50288, 50289, 50290, 50291, 50292, 50293, 50294, 62551]...
+    第1名：匹配块[16440]  
+    第2名：匹配块[72744]  
+    第3名：匹配块[20601]  
+  召回率@50 = 1/6 = 16.67%
+
+[7928] If I believe a stock is going to fall, what options do I have to invest on this?
+  类别：fiqa  标注块：[23980, 23981, 23982, 23983, 96334, 96335, 96336, 96337, 96338, 100215]...
+    第1名：匹配块[85533]  
+    第2名：匹配块[82143]  
+    第3名：匹配块[59763]  
+  召回率@50 = 2/4 = 50.00%
+
+[7936] Why naked call writing is risky compare to Covered call?
+  类别：fiqa  标注块：[59199, 59200, 67728, 67729, 67730, 67731, 67732, 67733, 72774, 72775]...
+    第1名：匹配块[72777]  √命中
+    第2名：匹配块[56660]  
+    第3名：匹配块[1079]  
+  召回率@50 = 3/3 = 100.00%
+
+[7992] What type of pension should I get?
+  类别：fiqa  标注块：[53058, 53059, 111770, 111771]
+    第1名：匹配块[26901]  
+    第2名：匹配块[64475]  
+    第3名：匹配块[117060]  
+  召回率@50 = 2/2 = 100.00%
+
+[8002] What is the tax treatment of scrip dividends in the UK?
+  类别：fiqa  标注块：[6857, 24020, 24021, 24022, 53194, 53195]
+    第1名：匹配块[24021]  √命中
+    第2名：匹配块[24020]  √命中
+    第3名：匹配块[89435]  
+  召回率@50 = 2/3 = 66.67%
+
+[8005] Difference between Vanguard sp500 UCITS and Vanguard sp500
+  类别：fiqa  标注块：[9758]
+    第1名：匹配块[31139]  
+    第2名：匹配块[47532]  
+    第3名：匹配块[5542]  
+  召回率@50 = 0/1 = 0.00%
+
+[8013] Frequency of investments to maximise returns (and minimise fees)
+  类别：fiqa  标注块：[44893, 44894, 44895, 44896, 44897, 44898, 44899, 99400, 99401, 99402]...
+    第1名：匹配块[115612]  
+    第2名：匹配块[118031]  
+    第3名：匹配块[59063]  
+  召回率@50 = 0/2 = 0.00%
+
+[8017] Purchasing ETFs when (pretty much) everything else is maxed out
+  类别：fiqa  标注块：[19745, 19746, 19747]
+    第1名：匹配块[70283]  
+    第2名：匹配块[77788]  
+    第3名：匹配块[20352]  
+  召回率@50 = 0/1 = 0.00%
+
+[8034] What is the average cost of a portfolio on a trading site?
+  类别：fiqa  标注块：[119185, 119186]
+    第1名：匹配块[12095]  
+    第2名：匹配块[21628]  
+    第3名：匹配块[110006]  
+  召回率@50 = 1/1 = 100.00%
+
+[8040] Best way to make most of savings with ISA and Offset mortgage
+  类别：fiqa  标注块：[104797, 104798, 104799, 104800]
+    第1名：匹配块[3105]  
+    第2名：匹配块[104799]  √命中
+    第3名：匹配块[3106]  
+  召回率@50 = 1/1 = 100.00%
+
+[8072] What does it mean “sell on ask” , “sell on bid” in stocks?
+  类别：fiqa  标注块：[6256, 6257, 6258, 6259, 33998, 33999, 34000, 34001, 34002, 78965]
+    第1名：匹配块[6257]  √命中
+    第2名：匹配块[82457]  
+    第3名：匹配块[59438]  
+  召回率@50 = 2/3 = 66.67%
+
+[8079] Growth rate plus dividend yieid total?
+  类别：fiqa  标注块：[11293, 11294, 19277, 21814, 21815]
+    第1名：匹配块[19277]  √命中
+    第2名：匹配块[77362]  
+    第3名：匹配块[118668]  
+  召回率@50 = 2/3 = 66.67%
+
+[8102] When do I sell a stock that I hold as a long-term position?
+  类别：fiqa  标注块：[18200, 18201, 75806, 75807, 75808, 75809, 110466, 110467, 110468, 111472]...
+    第1名：匹配块[93864]  
+    第2名：匹配块[53131]  
+    第3名：匹配块[33412]  
+  召回率@50 = 2/4 = 50.00%
+
+[8116] A-B-C Class Shares: What's the difference?
+  类别：fiqa  标注块：[47370, 47371, 86553]
+    第1名：匹配块[50403]  
+    第2名：匹配块[19832]  
+    第3名：匹配块[117093]  
+  召回率@50 = 2/2 = 100.00%
+
+[8121] Can I calculate stock value with Williams%R if I know the last set?
+  类别：fiqa  标注块：[86440, 86441]
+    第1名：匹配块[52146]  
+    第2名：匹配块[86440]  √命中
+    第3名：匹配块[61634]  
+  召回率@50 = 1/1 = 100.00%
+
+[8202] What accounted for DXJR's huge drop in stock price?
+  类别：fiqa  标注块：[19007, 19008, 102883, 102884]
+    第1名：匹配块[14574]  
+    第2名：匹配块[71623]  
+    第3名：匹配块[76680]  
+  召回率@50 = 0/2 = 0.00%
+
+[8230] Why would this kind of penny stock increase so much in value?
+  类别：fiqa  标注块：[64322, 64323, 64324, 72822, 72823]
+    第1名：匹配块[10956]  
+    第2名：匹配块[2454]  
+    第3名：匹配块[12979]  
+  召回率@50 = 1/2 = 50.00%
+
+[8247] Tax on Stocks or ETF's
+  类别：fiqa  标注块：[8494, 8495, 8496, 8497, 8498, 64642, 93083, 95036]
+    第1名：匹配块[116933]  
+    第2名：匹配块[72313]  
+    第3名：匹配块[70265]  
+  召回率@50 = 1/4 = 25.00%
+
+[8271] Income in zero-interest environment
+  类别：fiqa  标注块：[75545, 83058]
+    第1名：匹配块[16755]  
+    第2名：匹配块[109315]  
+    第3名：匹配块[90797]  
+  召回率@50 = 0/2 = 0.00%
+
+[8275] Buy/Selling prices at the stock exchange represent someone Selling/Buying at that price?
+  类别：fiqa  标注块：[59438]
+    第1名：匹配块[101729]  
+    第2名：匹配块[30582]  
+    第3名：匹配块[103470]  
+  召回率@50 = 1/1 = 100.00%
+
+[8296] Can the beta of a stock be used as a lagging indicator for the stock w.r.t the market
+  类别：fiqa  标注块：[15839, 15840, 15841, 15842, 16086]
+    第1名：匹配块[16086]  √命中
+    第2名：匹配块[15994]  
+    第3名：匹配块[15839]  √命中
+  召回率@50 = 2/2 = 100.00%
+
+[8332] Why do put option prices go higher when the underlying stock tanks (drops)?
+  类别：fiqa  标注块：[46433, 46434, 46435, 46436, 66319, 66320, 66321, 89061, 89062]
+    第1名：匹配块[2609]  
+    第2名：匹配块[89061]  √命中
+    第3名：匹配块[39230]  
+  召回率@50 = 1/3 = 33.33%
+
+[8351] What happens when a calendar spread is assigned in a non-margin account?
+  类别：fiqa  标注块：[54734, 54735, 54736, 54737, 54738, 94500]
+    第1名：匹配块[28671]  
+    第2名：匹配块[54735]  √命中
+    第3名：匹配块[104579]  
+  召回率@50 = 1/2 = 50.00%
+
+[8378] Should I wait a few days to sell ESPP Stock?
+  类别：fiqa  标注块：[20601, 20602, 20603, 25422, 25423, 25424, 25425, 25426, 35944]
+    第1名：匹配块[36068]  
+    第2名：匹配块[35944]  √命中
+    第3名：匹配块[99273]  
+  召回率@50 = 1/3 = 33.33%
+
+[8456] What typically happens to unvested stock during an acquisition?
+  类别：fiqa  标注块：[51669, 51670, 51671, 51672, 97469, 102448]
+    第1名：匹配块[51669]  √命中
+    第2名：匹配块[106888]  
+    第3名：匹配块[35082]  
+  召回率@50 = 1/3 = 33.33%
+
+[8475] Why I cannot find a “Pure Cash” option in 401k investments?
+  类别：fiqa  标注块：[21110, 21111, 21112, 48201, 48202, 59102, 87398, 87399, 87400, 87401]...
+    第1名：匹配块[99080]  √命中
+    第2名：匹配块[96518]  √命中
+    第3名：匹配块[87398]  √命中
+  召回率@50 = 6/7 = 85.71%
+
+[8507] When to sell a stock?
+  类别：fiqa  标注块：[70549, 74369, 74370, 102225, 102226]
+    第1名：匹配块[20603]  
+    第2名：匹配块[16440]  
+    第3名：匹配块[83559]  
+  召回率@50 = 0/3 = 0.00%
+
+[8512] Is it possible to transfer stock I already own into my Roth IRA without having to sell the stock?
+  类别：fiqa  标注块：[6538]
+    第1名：匹配块[13351]  
+    第2名：匹配块[93991]  
+    第3名：匹配块[13097]  
+  召回率@50 = 1/1 = 100.00%
+
+[8513] Buy on dip when earnings fail?
+  类别：fiqa  标注块：[54189]
+    第1名：匹配块[70513]  
+    第2名：匹配块[69315]  
+    第3名：匹配块[97360]  
+  召回率@50 = 0/1 = 0.00%
+
+[8532] What do these options trading terms mean?
+  类别：fiqa  标注块：[5443, 5444, 64445, 64446, 83217, 83218]
+    第1名：匹配块[18680]  
+    第2名：匹配块[66321]  
+    第3名：匹配块[50832]  
+  召回率@50 = 1/3 = 33.33%
+
+[8537] What is an “Options Account”?
+  类别：fiqa  标注块：[1355, 1356]
+    第1名：匹配块[60616]  
+    第2名：匹配块[33546]  
+    第3名：匹配块[11109]  
+  召回率@50 = 1/1 = 100.00%
+
+[8539] Can the risk of investing in an asset be different for different investors?
+  类别：fiqa  标注块：[39373, 39374, 43827, 58975, 58976, 79284, 79285]
+    第1名：匹配块[43022]  
+    第2名：匹配块[87166]  
+    第3名：匹配块[13539]  
+  召回率@50 = 1/4 = 25.00%
+
+[8544] Strategies to recover from a bad short-term call options purchase where the underlying dropped instead?
+  类别：fiqa  标注块：[42830, 42831, 42832, 42833, 42834, 53587, 53588]
+    第1名：匹配块[57590]  
+    第2名：匹配块[94667]  
+    第3名：匹配块[42830]  √命中
+  召回率@50 = 1/2 = 50.00%
+
+[8592] Tax implications of exercising ISOs and using proceeds to exercise more ISOs
+  类别：fiqa  标注块：[52426, 52427, 68446, 68447, 88295]
+    第1名：匹配块[36826]  
+    第2名：匹配块[76525]  
+    第3名：匹配块[98670]  
+  召回率@50 = 1/3 = 33.33%
+
+[8632] Is it best to exercise options shares when they vest, or wait
+  类别：fiqa  标注块：[8702, 8703, 42823, 42824, 42825]
+    第1名：匹配块[8702]  √命中
+    第2名：匹配块[38914]  
+    第3名：匹配块[29082]  
+  召回率@50 = 1/2 = 50.00%
+
+[8635] Is there any flaw in this investment scheme?
+  类别：fiqa  标注块：[13470, 13471, 48127, 48128, 48129, 48130, 48131, 48132, 48133, 48134]...
+    第1名：匹配块[103325]  
+    第2名：匹配块[32715]  
+    第3名：匹配块[100966]  
+  召回率@50 = 0/2 = 0.00%
+
+[8702] Why is early exercise generally not recommended for an in-the-money option?
+  类别：fiqa  标注块：[27516, 27517, 31880, 31881, 69326, 69327, 69328]
+    第1名：匹配块[27516]  √命中
+    第2名：匹配块[18046]  
+    第3名：匹配块[76526]  
+  召回率@50 = 2/3 = 66.67%
+
+[8779] How does a defined contribution plan work
+  类别：fiqa  标注块：[36347, 36348, 36349, 36350, 36351, 41980]
+    第1名：匹配块[107855]  
+    第2名：匹配块[84070]  
+    第3名：匹配块[51804]  
+  召回率@50 = 2/2 = 100.00%
+
+[8789] What does “profits to the shareholders jumped to 15 cents a share” mean?
+  类别：fiqa  标注块：[8369, 8370, 8371, 14280, 14281, 17557, 17558]
+    第1名：匹配块[17557]  √命中
+    第2名：匹配块[8369]  √命中
+    第3名：匹配块[8371]  √命中
+  召回率@50 = 2/3 = 66.67%
+
+[8795] Stock exchanges using open outcry
+  类别：fiqa  标注块：[11340]
+    第1名：匹配块[11340]  √命中
+    第2名：匹配块[2357]  
+    第3名：匹配块[42763]  
+  召回率@50 = 1/1 = 100.00%
+
+[8832] Is it possible to buy commodity ETFs (e.g. silver) through Questrade?
+  类别：fiqa  标注块：[19177]
+    第1名：匹配块[19177]  √命中
+    第2名：匹配块[2735]  
+    第3名：匹配块[6011]  
+  召回率@50 = 1/1 = 100.00%
+
+[8834] Pros/Cons of Buying Discounted Company Stock
+  类别：fiqa  标注块：[2382, 2383, 2384, 2385, 27147, 27148, 39544, 40660, 104401, 104402]...
+    第1名：匹配块[40660]  √命中
+    第2名：匹配块[93861]  
+    第3名：匹配块[14492]  
+  召回率@50 = 4/6 = 66.67%
+
+[8855] How do i get into investing stocks [duplicate]
+  类别：fiqa  标注块：[41676, 41677, 62955, 62956, 62957, 62958, 62959, 62960, 94854, 94855]...
+    第1名：匹配块[80683]  
+    第2名：匹配块[62887]  
+    第3名：匹配块[63111]  
+  召回率@50 = 0/3 = 0.00%
+
+[8874] When can you adjust for (and re-allow) a disallowed year-end (December) wash-sale loss?
+  类别：fiqa  标注块：[80675]
+    第1名：匹配块[28463]  
+    第2名：匹配块[26833]  
+    第3名：匹配块[119038]  
+  召回率@50 = 1/1 = 100.00%
+
+[8934] Dividend yield for multiple years?
+  类别：fiqa  标注块：[23579, 23580, 23581, 48920, 48921]
+    第1名：匹配块[37991]  
+    第2名：匹配块[83058]  
+    第3名：匹配块[91698]  
+  召回率@50 = 1/2 = 50.00%
+
+[8937] “In-the-Money” vs “Out-of-the-Money” Call Options
+  类别：fiqa  标注块：[94009, 94010]
+    第1名：匹配块[88014]  
+    第2名：匹配块[31363]  
+    第3名：匹配块[48793]  
+  召回率@50 = 1/1 = 100.00%
+
+[8947] Can a Roth IRA be used as a savings account?
+  类别：fiqa  标注块：[91087, 91088, 92362, 92363]
+    第1名：匹配块[54220]  
+    第2名：匹配块[48327]  
+    第3名：匹配块[110526]  
+  召回率@50 = 1/2 = 50.00%
+
+[8959] How is the opening-day price of a stock decided?
+  类别：fiqa  标注块：[50094, 50095, 50096]
+    第1名：匹配块[24011]  
+    第2名：匹配块[10329]  
+    第3名：匹配块[40212]  
+  召回率@50 = 1/1 = 100.00%
+
+[8970] What's the difference, if any, between stock appreciation and compound interest?
+  类别：fiqa  标注块：[19453, 19454, 19455, 37659, 37660, 37661, 37662]
+    第1名：匹配块[37659]  √命中
+    第2名：匹配块[19453]  √命中
+    第3名：匹配块[118830]  
+  召回率@50 = 2/2 = 100.00%
+
+[8974] As a 22-year-old, how risky should I be with my 401(k) investments?
+  类别：fiqa  标注块：[2029, 2030, 2031, 2032, 27419, 27420, 28558, 28559, 28560, 28561]...
+    第1名：匹配块[2029]  √命中
+    第2名：匹配块[43320]  √命中
+    第3名：匹配块[27419]  √命中
+  召回率@50 = 5/8 = 62.50%
+
+[8982] Are Exchange-Traded Funds (ETFs) less safe than regular mutual funds?
+  类别：fiqa  标注块：[40135, 40136, 40137, 90990, 90991, 90992]
+    第1名：匹配块[64169]  
+    第2名：匹配块[62818]  
+    第3名：匹配块[105076]  
+  召回率@50 = 0/2 = 0.00%
+
+[9060] Buying puts without owning underlying
+  类别：fiqa  标注块：[8018, 8019, 102475]
+    第1名：匹配块[102475]  √命中
+    第2名：匹配块[53334]  
+    第3名：匹配块[45589]  
+  召回率@50 = 1/2 = 50.00%
+
+[9088] Brokerage account for charity
+  类别：fiqa  标注块：[112090, 112091, 112092, 113595, 113596]
+    第1名：匹配块[24355]  
+    第2名：匹配块[95261]  
+    第3名：匹配块[79684]  
+  召回率@50 = 1/2 = 50.00%
+
+[9108] Starting an investment portfolio with Rs 5,000/-
+  类别：fiqa  标注块：[54479, 54480, 54481, 94519, 94520]
+    第1名：匹配块[20861]  
+    第2名：匹配块[58608]  
+    第3名：匹配块[13578]  
+  召回率@50 = 1/2 = 50.00%
+
+[9115] Why does the calculation for percentage profit vary based on whether a position is short vs. long?
+  类别：fiqa  标注块：[32041, 32042, 32043, 32044, 41503, 84433, 84434]
+    第1名：匹配块[49080]  
+    第2名：匹配块[84433]  √命中
+    第3名：匹配块[63340]  
+  召回率@50 = 1/3 = 33.33%
+
+[9126] Short an option - random assignment?
+  类别：fiqa  标注块：[103163, 103164]
+    第1名：匹配块[54734]  
+    第2名：匹配块[115993]  
+    第3名：匹配块[45708]  
+  召回率@50 = 0/1 = 0.00%
+
+[9164] Bonds vs equities: crash theory
+  类别：fiqa  标注块：[52816, 61456, 61457, 73213]
+    第1名：匹配块[23350]  
+    第2名：匹配块[9211]  
+    第3名：匹配块[1578]  
+  召回率@50 = 1/3 = 33.33%
+
+[9174] Which U.S. online discount broker is the best value for money?
+  类别：fiqa  标注块：[32397, 32398, 81128, 86280, 106992, 108857]
+    第1名：匹配块[47437]  
+    第2名：匹配块[108857]  √命中
+    第3名：匹配块[111925]  
+  召回率@50 = 1/5 = 20.00%
+
+[9188] Selling mutual fund and buying equivalent ETF: Can I 1031 exchange?
+  类别：fiqa  标注块：[53197, 115811]
+    第1名：匹配块[115811]  √命中
+    第2名：匹配块[86869]  
+    第3名：匹配块[42070]  
+  召回率@50 = 1/2 = 50.00%
+
+[9245] Stock Options for a company bought out in cash and stock
+  类别：fiqa  标注块：[39056]
+    第1名：匹配块[26717]  
+    第2名：匹配块[35915]  
+    第3名：匹配块[39230]  
+  召回率@50 = 0/1 = 0.00%
+
+[9275] Do I have to pay a capital gains tax if I rebuy the same stock within 30 days?
+  类别：fiqa  标注块：[2817, 68154]
+    第1名：匹配块[4623]  
+    第2名：匹配块[75559]  
+    第3名：匹配块[112200]  
+  召回率@50 = 0/2 = 0.00%
+
+[9291] Are there any consequences for investing in Vanguard's Admiral Shares funds instead of ETF's in a Roth IRA?
+  类别：fiqa  标注块：[19583, 96185, 96186]
+    第1名：匹配块[47286]  
+    第2名：匹配块[35899]  
+    第3名：匹配块[107189]  
+  召回率@50 = 1/2 = 50.00%
+
+[9296] Why would Two ETFs tracking Identical Indexes Produce different Returns?
+  类别：fiqa  标注块：[41415, 87054]
+    第1名：匹配块[81788]  
+    第2名：匹配块[41415]  √命中
+    第3名：匹配块[85937]  
+  召回率@50 = 1/2 = 50.00%
+
+[9329] Interactive Brokers: IOPTS and list of structured products
+  类别：fiqa  标注块：[65939, 65940, 65941, 65942, 65943, 104929]
+    第1名：匹配块[65939]  √命中
+    第2名：匹配块[65942]  √命中
+    第3名：匹配块[67301]  
+  召回率@50 = 1/2 = 50.00%
+
+[9332] What can I do with a physical stock certificate for a now-mutual company?
+  类别：fiqa  标注块：[54427, 54428, 54429, 54430, 54431]
+    第1名：匹配块[11653]  
+    第2名：匹配块[32242]  
+    第3名：匹配块[11652]  
+  召回率@50 = 1/1 = 100.00%
+
+[9381] Trade? Buy and hold? Or both?
+  类别：fiqa  标注块：[77092, 77093, 77094, 77095, 77096, 81725, 81726, 81727, 81728]
+    第1名：匹配块[33448]  
+    第2名：匹配块[81725]  √命中
+    第3名：匹配块[105783]  
+  召回率@50 = 2/2 = 100.00%
+
+[9385] Meaning of reinvestment
+  类别：fiqa  标注块：[80825, 80826, 80827, 80828]
+    第1名：匹配块[20975]  
+    第2名：匹配块[24668]  
+    第3名：匹配块[92066]  
+  召回率@50 = 1/1 = 100.00%
+
+[9391] Should I replace bonds in a passive investment strategy
+  类别：fiqa  标注块：[27748, 27749, 27750, 27751, 27752, 49706, 57015, 57016, 57017, 57018]...
+    第1名：匹配块[49706]  √命中
+    第2名：匹配块[57016]  √命中
+    第3名：匹配块[107035]  
+  召回率@50 = 4/4 = 100.00%
+
+[9403] Abundance of Cash - What should I do?
+  类别：fiqa  标注块：[1370, 66181, 66182, 66183, 66184, 69271]
+    第1名：匹配块[93945]  
+    第2名：匹配块[88117]  
+    第3名：匹配块[32194]  
+  召回率@50 = 0/3 = 0.00%
+
+[9481] What are reasonable administrative fees for an IRA?
+  类别：fiqa  标注块：[6035, 80499, 80500]
+    第1名：匹配块[26961]  
+    第2名：匹配块[57981]  
+    第3名：匹配块[43926]  
+  召回率@50 = 2/2 = 100.00%
+
+[9487] Is a public company allowed to issue new shares below market price without consulting shareholders?
+  类别：fiqa  标注块：[33348]
+    第1名：匹配块[64525]  
+    第2名：匹配块[69505]  
+    第3名：匹配块[6980]  
+  召回率@50 = 1/1 = 100.00%
+
+[9548] How do I research, analyze, and choose the right mutual fund for a roth ira?
+  类别：fiqa  标注块：[59945, 59946, 59947]
+    第1名：匹配块[57748]  
+    第2名：匹配块[55981]  
+    第3名：匹配块[118624]  
+  召回率@50 = 1/1 = 100.00%
+
+[9556] How does pre-market trading work?
+  类别：fiqa  标注块：[7351, 7352, 7353]
+    第1名：匹配块[43812]  
+    第2名：匹配块[72622]  
+    第3名：匹配块[7353]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[9565] What are the tax benefits of dividends vs selling stock
+  类别：fiqa  标注块：[58967, 58968, 95761, 95762, 95763]
+    第1名：匹配块[95761]  √命中
+    第2名：匹配块[58967]  √命中
+    第3名：匹配块[115331]  
+  召回率@50 = 2/2 = 100.00%
+
+[9598] How do index funds actually work?
+  类别：fiqa  标注块：[75990, 75991, 75992]
+    第1名：匹配块[75991]  √命中
+    第2名：匹配块[60156]  
+    第3名：匹配块[99931]  
+  召回率@50 = 1/1 = 100.00%
+
+[9617] What differentiates index funds and ETFs?
+  类别：fiqa  标注块：[63192, 63193, 63194, 73102, 73103, 73104, 81788, 81789, 81790]
+    第1名：匹配块[32159]  
+    第2名：匹配块[34997]  
+    第3名：匹配块[87477]  
+  召回率@50 = 2/3 = 66.67%
+
+[9633] Video recommendation for stock market education
+  类别：fiqa  标注块：[106835, 106836, 116810, 116811]
+    第1名：匹配块[106835]  √命中
+    第2名：匹配块[100519]  
+    第3名：匹配块[70876]  
+  召回率@50 = 1/2 = 50.00%
+
+[9643] Is there any public data available to determine an ETF's holdings?
+  类别：fiqa  标注块：[22703, 22704, 22705]
+    第1名：匹配块[59670]  
+    第2名：匹配块[59668]  
+    第3名：匹配块[14371]  
+  召回率@50 = 1/1 = 100.00%
+
+[9644] If early exercise is a bad idea, why American option is more expensive than European [duplicate]
+  类别：fiqa  标注块：[39074, 39075, 39076, 39077]
+    第1名：匹配块[71913]  
+    第2名：匹配块[73081]  
+    第3名：匹配块[38817]  
+  召回率@50 = 1/1 = 100.00%
+
+[9646] Do common stocks and preferred stocks have any differences in terms of percentage of the company per unit they represent?
+  类别：fiqa  标注块：[54650, 54651, 111132, 111133, 111134]
+    第1名：匹配块[47134]  
+    第2名：匹配块[101032]  
+    第3名：匹配块[81226]  
+  召回率@50 = 2/2 = 100.00%
+
+[9668] Do stock option prices predicate the underlying stock's movement?
+  类别：fiqa  标注块：[2607, 2608, 2609, 2610, 8468, 8469, 8470, 8471, 8472, 8473]...
+    第1名：匹配块[39230]  
+    第2名：匹配块[18251]  
+    第3名：匹配块[84208]  
+  召回率@50 = 3/3 = 100.00%
+
+[9701] How to bet against the London housing market?
+  类别：fiqa  标注块：[71781, 77524, 77525, 77526]
+    第1名：匹配块[94753]  
+    第2名：匹配块[30450]  
+    第3名：匹配块[62185]  
+  召回率@50 = 0/2 = 0.00%
+
+[9733] Due Diligence - Dilution?
+  类别：fiqa  标注块：[7686, 7687, 22236, 105332, 105333]
+    第1名：匹配块[41478]  
+    第2名：匹配块[53581]  
+    第3名：匹配块[65411]  
+  召回率@50 = 0/3 = 0.00%
+
+[9735] What are “equity assets”?
+  类别：fiqa  标注块：[78522, 78523]
+    第1名：匹配块[20124]  
+    第2名：匹配块[8556]  
+    第3名：匹配块[78522]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[9737] Long(100%)-Short(-100%) investment explanation
+  类别：fiqa  标注块：[20000, 20001, 49080, 83943]
+    第1名：匹配块[17759]  
+    第2名：匹配块[67102]  
+    第3名：匹配块[114248]  
+  召回率@50 = 2/3 = 66.67%
+
+[9771] Is there any emprical research done on 'adding to a loser'
+  类别：fiqa  标注块：[5721, 5722, 52933, 52934]
+    第1名：匹配块[26371]  
+    第2名：匹配块[93826]  
+    第3名：匹配块[96929]  
+  召回率@50 = 0/2 = 0.00%
+
+[9808] Selling To Close
+  类别：fiqa  标注块：[8054, 86340, 86341, 111402]
+    第1名：匹配块[43955]  
+    第2名：匹配块[8151]  
+    第3名：匹配块[58110]  
+  召回率@50 = 0/3 = 0.00%
+
+[9824] Where can end-of-day data be downloaded for corporate bonds?
+  类别：fiqa  标注块：[114617, 114618]
+    第1名：匹配块[114617]  √命中
+    第2名：匹配块[118994]  
+    第3名：匹配块[96141]  
+  召回率@50 = 1/1 = 100.00%
+
+[9871] What should I do with the 50k I have sitting in a European bank?
+  类别：fiqa  标注块：[7945, 15406, 15407, 34322, 34323, 34324, 34325, 89787, 89788]
+    第1名：匹配块[73614]  
+    第2名：匹配块[96938]  
+    第3名：匹配块[50225]  
+  召回率@50 = 0/4 = 0.00%
+
+[9882] Money-market or cash-type ETFs for foreigners with U.S brokerage account
+  类别：fiqa  标注块：[13139, 13140]
+    第1名：匹配块[19135]  
+    第2名：匹配块[41759]  
+    第3名：匹配块[106997]  
+  召回率@50 = 0/1 = 0.00%
+
+[9925] What does Chapter 11 Bankruptcy mean to an investor holding shares of a Chapter 11 Company?
+  类别：fiqa  标注块：[58260, 58261, 58262, 58263, 58264, 58265, 58266, 58267, 58268, 58269]...
+    第1名：匹配块[56396]  
+    第2名：匹配块[75058]  √命中
+    第3名：匹配块[56395]  
+  召回率@50 = 2/2 = 100.00%
+
+[9929] Investing in commodities, pros and cons?
+  类别：fiqa  标注块：[53424, 53425, 53426, 53427, 113280, 113281]
+    第1名：匹配块[53424]  √命中
+    第2名：匹配块[53427]  √命中
+    第3名：匹配块[32839]  
+  召回率@50 = 2/2 = 100.00%
+
+[9961] Employer rollover from 403b to 401k?
+  类别：fiqa  标注块：[4246, 4247, 4248, 4249]
+    第1名：匹配块[12694]  
+    第2名：匹配块[45300]  
+    第3名：匹配块[105376]  
+  召回率@50 = 1/1 = 100.00%
+
+[9979] What is the best way to invest in gold as a hedge against inflation without having to hold physical gold?
+  类别：fiqa  标注块：[7012, 7013, 7014, 7015, 7016, 7067, 7068, 67866, 67867, 67868]...
+    第1名：匹配块[7012]  √命中
+    第2名：匹配块[112910]  
+    第3名：匹配块[63214]  
+  召回率@50 = 2/4 = 50.00%
+
+[10034] Tax implications of holding EWU (or other such UK ETFs) as a US citizen?
+  类别：fiqa  标注块：[36635, 36636, 96290]
+    第1名：匹配块[105840]  
+    第2名：匹配块[69008]  
+    第3名：匹配块[5855]  
+  召回率@50 = 1/2 = 50.00%
+
+[10039] Do individual investors use Google to obtain stock quotes?
+  类别：fiqa  标注块：[13627, 13628]
+    第1名：匹配块[42350]  
+    第2名：匹配块[1393]  
+    第3名：匹配块[13627]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[10109] Why does Charles Schwab have a Mandatory Settlement Period after selling stocks?
+  类别：fiqa  标注块：[5637, 5638, 18830, 18831, 31554, 81498, 81499, 81500, 81501, 100221]...
+    第1名：匹配块[66909]  
+    第2名：匹配块[5638]  √命中
+    第3名：匹配块[107422]  
+  召回率@50 = 2/7 = 28.57%
+
+[10122] Why diversify stocks/investments?
+  类别：fiqa  标注块：[28293, 28294, 51913, 51914, 54878, 113821, 113822, 113823, 113824, 113825]...
+    第1名：匹配块[17944]  
+    第2名：匹配块[29212]  
+    第3名：匹配块[6111]  
+  召回率@50 = 1/4 = 25.00%
+
+[10136] How to minimise the risk of a reduction in purchase power in case of Brexit for money held in a bank account?
+  类别：fiqa  标注块：[30863, 58669, 58670, 105347]
+    第1名：匹配块[93427]  
+    第2名：匹配块[58669]  √命中
+    第3名：匹配块[117486]  
+  召回率@50 = 2/3 = 66.67%
+
+[10137] F-1 student investing in foreign markets
+  类别：fiqa  标注块：[11297, 11298]
+    第1名：匹配块[15827]  
+    第2名：匹配块[75845]  
+    第3名：匹配块[11297]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[10152] What does a high operating margin but a small but positive ROE imply about a company?
+  类别：fiqa  标注块：[22891, 22892]
+    第1名：匹配块[22891]  √命中
+    第2名：匹配块[74475]  
+    第3名：匹配块[109791]  
+  召回率@50 = 1/1 = 100.00%
+
+[10183] How are various types of income taxed differently in the USA?
+  类别：fiqa  标注块：[13411, 13412, 13413, 13414, 13415, 63309, 63310, 63311, 63312, 63313]...
+    第1名：匹配块[11319]  
+    第2名：匹配块[111642]  
+    第3名：匹配块[43373]  
+  召回率@50 = 2/2 = 100.00%
+
+[10213] Looking for good investment vehicle for seasonal work and savings
+  类别：fiqa  标注块：[54138, 54139, 76294, 76295, 109056, 109057]
+    第1名：匹配块[60954]  
+    第2名：匹配块[47495]  
+    第3名：匹配块[92216]  
+  召回率@50 = 0/3 = 0.00%
+
+[10246] Understanding the T + 3 settlement days rule
+  类别：fiqa  标注块：[15596, 15597, 102840, 102841]
+    第1名：匹配块[31554]  
+    第2名：匹配块[74313]  
+    第3名：匹配块[5638]  
+  召回率@50 = 0/2 = 0.00%
+
+[10267] How should I prepare for the next financial crisis?
+  类别：fiqa  标注块：[3508, 66274, 66275, 84889, 84890, 84891, 91386, 91387, 92114, 92115]...
+    第1名：匹配块[35947]  
+    第2名：匹配块[17611]  
+    第3名：匹配块[113641]  
+  召回率@50 = 1/5 = 20.00%
+
+[10414] What is considered high or low when talking about volume?
+  类别：fiqa  标注块：[16059, 16060, 61093, 61094, 61095]
+    第1名：匹配块[61094]  √命中
+    第2名：匹配块[61093]  √命中
+    第3名：匹配块[52512]  
+  召回率@50 = 2/2 = 100.00%
+
+[10447] Is there an advantage to a traditional but non-deductable IRA over a taxable account? [duplicate]
+  类别：fiqa  标注块：[30815, 30816, 60633, 76503, 76504, 76505]
+    第1名：匹配块[100283]  
+    第2名：匹配块[29283]  
+    第3名：匹配块[5300]  
+  召回率@50 = 1/3 = 33.33%
+
+[10462] Is it okay to be married, 30 years old and have no retirement?
+  类别：fiqa  标注块：[1643, 1644, 1645, 2226, 7082, 7083, 7084, 7085, 7086, 40805]...
+    第1名：匹配块[57882]  
+    第2名：匹配块[59869]  
+    第3名：匹配块[103568]  
+  召回率@50 = 0/6 = 0.00%
+
+[10482] Rollover into bond fund to do dollar cost averaging [duplicate]
+  类别：fiqa  标注块：[109776, 109777]
+    第1名：匹配块[19927]  
+    第2名：匹配块[49287]  
+    第3名：匹配块[91822]  
+  召回率@50 = 0/1 = 0.00%
+
+[10497] Why would you elect to apply a refund to next year's tax bill?
+  类别：fiqa  标注块：[6264, 6265, 6915, 14518, 29933, 29934, 32305, 32306, 32307, 39410]...
+    第1名：匹配块[32306]  √命中
+    第2名：匹配块[32305]  √命中
+    第3名：匹配块[29933]  √命中
+  召回率@50 = 6/10 = 60.00%
+
+[10526] What extra information might be obtained from the next highest bids in an order book?
+  类别：fiqa  标注块：[7792, 7793, 7794, 7795, 56960, 56961]
+    第1名：匹配块[68511]  
+    第2名：匹配块[27854]  
+    第3名：匹配块[15690]  
+  召回率@50 = 1/2 = 50.00%
+
+[10547] How much do brokerages pay exchanges per trade?
+  类别：fiqa  标注块：[113944, 113945, 113946]
+    第1名：匹配块[118821]  
+    第2名：匹配块[6339]  
+    第3名：匹配块[22353]  
+  召回率@50 = 0/1 = 0.00%
+
+[10558] Investment strategy for 401k when rolling over soon
+  类别：fiqa  标注块：[44565, 44566, 96885, 96886, 96887]
+    第1名：匹配块[35251]  
+    第2名：匹配块[18755]  
+    第3名：匹配块[109965]  
+  召回率@50 = 2/2 = 100.00%
+
+[10596] Does a market maker sell (buy) at a bid or ask price?
+  类别：fiqa  标注块：[33130, 33131, 33132, 33133, 33134, 33135, 41660, 57221, 57222, 63750]...
+    第1名：匹配块[41660]  √命中
+    第2名：匹配块[21247]  
+    第3名：匹配块[57222]  √命中
+  召回率@50 = 5/5 = 100.00%
+
+[10601] Bitcoin Cost Basis Purchases
+  类别：fiqa  标注块：[113302, 113303, 113304]
+    第1名：匹配块[2770]  
+    第2名：匹配块[63043]  
+    第3名：匹配块[42769]  
+  召回率@50 = 1/1 = 100.00%
+
+[10628] What happens with the “long” buyer of a stock when somebody else's short fails (that is, unlimited loss bankrupts short seller)
+  类别：fiqa  标注块：[117338, 117339, 117340]
+    第1名：匹配块[118071]  
+    第2名：匹配块[86883]  
+    第3名：匹配块[9921]  
+  召回率@50 = 1/1 = 100.00%
+
+[10639] Short term parking of a large inheritance?
+  类别：fiqa  标注块：[32965, 32966, 32967, 32968, 32969, 32970, 32971, 32972, 37534, 37535]...
+    第1名：匹配块[47192]  
+    第2名：匹配块[85038]  
+    第3名：匹配块[104560]  
+  召回率@50 = 0/5 = 0.00%
+
+[10645] Explain the details and benefits of rebalancing a retirement portfolio?
+  类别：fiqa  标注块：[4435, 4436, 4437, 117481, 117482, 117483]
+    第1名：匹配块[30082]  
+    第2名：匹配块[112253]  
+    第3名：匹配块[88188]  
+  召回率@50 = 2/2 = 100.00%
+
+[10674] How to sell a stock in a crashing market?
+  类别：fiqa  标注块：[614, 615, 20148, 20149, 20150, 51496, 51497, 108649, 108650, 108651]...
+    第1名：匹配块[114512]  
+    第2名：匹配块[20148]  √命中
+    第3名：匹配块[20149]  √命中
+  召回率@50 = 3/4 = 75.00%
+
+[10710] Probablity of touching In the money vs expiring in the money for an american option
+  类别：fiqa  标注块：[1385, 1386, 1387, 1388, 1389, 1390]
+    第1名：匹配块[76860]  
+    第2名：匹配块[39298]  
+    第3名：匹配块[2246]  
+  召回率@50 = 1/1 = 100.00%
+
+[10734] How do you translate a per year salary into a part-time per hour job?
+  类别：fiqa  标注块：[12564, 12565, 12566, 12567, 12568, 12569, 45144, 45145, 52835, 85191]...
+    第1名：匹配块[12566]  √命中
+    第2名：匹配块[45144]  √命中
+    第3名：匹配块[52835]  √命中
+  召回率@50 = 6/6 = 100.00%
+
+[10792] How can I calculate a “running” return using XIRR in a spreadsheet?
+  类别：fiqa  标注块：[39146, 39147, 39148, 39149, 75221]
+    第1名：匹配块[96094]  
+    第2名：匹配块[75221]  √命中
+    第3名：匹配块[75986]  
+  召回率@50 = 2/2 = 100.00%
+
+[10808] What are a few sites that make it easy to invest in high interest rate mutual funds?
+  类别：fiqa  标注块：[5631, 5632, 5633, 5634, 97139, 97642]
+    第1名：匹配块[5633]  √命中
+    第2名：匹配块[5632]  √命中
+    第3名：匹配块[7968]  
+  召回率@50 = 3/3 = 100.00%
+
+[10809] Definitions of leverage and of leverage factor
+  类别：fiqa  标注块：[20811, 20812, 20813, 20814, 20815, 48590, 48591, 57641, 57642, 57643]...
+    第1名：匹配块[57641]  √命中
+    第2名：匹配块[119252]  
+    第3名：匹配块[66514]  
+  召回率@50 = 2/3 = 66.67%
+
+[10812] Is is possible to dispute IRS underpayment penalties?
+  类别：fiqa  标注块：[9325, 9326, 9327, 9328, 63338, 68829, 90442]
+    第1名：匹配块[63338]  √命中
+    第2名：匹配块[88745]  
+    第3名：匹配块[9328]  √命中
+  召回率@50 = 4/4 = 100.00%
+
+[10827] How much should I be contributing to my 401k given my employer's contribution?
+  类别：fiqa  标注块：[1533, 1534, 1535, 8433, 8434, 8435, 8436, 19278, 21709, 32483]...
+    第1名：匹配块[7640]  
+    第2名：匹配块[8433]  √命中
+    第3名：匹配块[58456]  
+  召回率@50 = 1/5 = 20.00%
+
+[10845] Rationale behind using 12, 26 and 9 to calculate MACD
+  类别：fiqa  标注块：[38424, 38425, 38426]
+    第1名：匹配块[38424]  √命中
+    第2名：匹配块[101101]  
+    第3名：匹配块[38425]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+[10912] Forex independent investments
+  类别：fiqa  标注块：[103910, 103911, 103912, 103913, 103914]
+    第1名：匹配块[108757]  
+    第2名：匹配块[39103]  
+    第3名：匹配块[20268]  
+  召回率@50 = 1/1 = 100.00%
+
+[10932] Transferring money from 403B to 401K?
+  类别：fiqa  标注块：[20950, 20951, 20952, 20953, 20954]
+    第1名：匹配块[96886]  
+    第2名：匹配块[100366]  
+    第3名：匹配块[65154]  
+  召回率@50 = 1/1 = 100.00%
+
+[10975] How to contribute to Roth IRA when income is at the maximum limit & you have employer-sponsored 401k plans?
+  类别：fiqa  标注块：[12146, 12147, 12148, 12149, 12150]
+    第1名：匹配块[33229]  
+    第2名：匹配块[79935]  
+    第3名：匹配块[87296]  
+  召回率@50 = 0/1 = 0.00%
+
+[10979] Closing a futures position
+  类别：fiqa  标注块：[24510, 24511, 24512, 24513, 30099, 30100, 33125, 33126, 33127, 33128]...
+    第1名：匹配块[24512]  √命中
+    第2名：匹配块[72714]  √命中
+    第3名：匹配块[71692]  
+  召回率@50 = 3/4 = 75.00%
+
+[10994] Net loss not distributed by mutual funds to their shareholders?
+  类别：fiqa  标注块：[42506, 42507, 42508, 42509, 42510, 99534, 99535, 99536, 99537, 99538]...
+    第1名：匹配块[80814]  
+    第2名：匹配块[22273]  
+    第3名：匹配块[97624]  
+  召回率@50 = 2/2 = 100.00%
+
+[11039] Pay off credit card debt or earn employer 401(k) match?
+  类别：fiqa  标注块：[10613, 10614, 15966, 15967, 18373, 18374, 18375, 18376, 18377, 18378]...
+    第1名：匹配块[58010]  
+    第2名：匹配块[101968]  
+    第3名：匹配块[1062]  
+  召回率@50 = 4/8 = 50.00%
+
+[11054] Short Term Capital Gains tax vs. IRA Withdrawal Tax w/o Quarterly Est. Taxes
+  类别：fiqa  标注块：[31371, 31372, 31373, 31374, 31375, 31376, 31377, 64625, 64626, 64627]
+    第1名：匹配块[31371]  √命中
+    第2名：匹配块[20466]  
+    第3名：匹配块[92410]  
+  召回率@50 = 2/2 = 100.00%
+
+[11088] Am I required to have a lawyer create / oversee creation of my will?
+  类别：fiqa  标注块：[87322, 87323, 87324, 87325, 87326, 87327, 87328, 87329, 87330]
+    第1名：匹配块[87323]  √命中
+    第2名：匹配块[87322]  √命中
+    第3名：匹配块[87325]  √命中
+  召回率@50 = 1/1 = 100.00%
+
+======================================================================
+【查询延迟统计】（每道题预热1次后重复测3次取平均，单位毫秒）
+======================================================================
+  [8] 平均 96.5 毫秒（最小 65.1 / 最大 141.5）
+  [15] 平均 16.4 毫秒（最小 15.0 / 最大 18.7）
+  [18] 平均 16.2 毫秒（最小 14.7 / 最大 18.1）
+  [26] 平均 16.5 毫秒（最小 15.8 / 最大 17.5）
+  [34] 平均 15.9 毫秒（最小 15.7 / 最大 16.2）
+  [42] 平均 19.6 毫秒（最小 19.0 / 最大 20.2）
+  [56] 平均 16.8 毫秒（最小 15.3 / 最大 19.2）
+  [68] 平均 16.2 毫秒（最小 15.2 / 最大 17.9）
+  [89] 平均 17.7 毫秒（最小 16.0 / 最大 20.7）
+  [90] 平均 16.3 毫秒（最小 15.0 / 最大 18.8）
+  [94] 平均 17.9 毫秒（最小 16.0 / 最大 21.0）
+  [98] 平均 18.3 毫秒（最小 16.6 / 最大 20.8）
+  [104] 平均 17.6 毫秒（最小 16.4 / 最大 19.6）
+  [106] 平均 16.6 毫秒（最小 15.4 / 最大 18.8）
+  [109] 平均 20.7 毫秒（最小 18.5 / 最大 22.9）
+  [475] 平均 17.6 毫秒（最小 16.2 / 最大 19.9）
+  [503] 平均 16.9 毫秒（最小 15.9 / 最大 18.8）
+  [504] 平均 17.1 毫秒（最小 15.8 / 最大 19.2）
+  [515] 平均 16.3 毫秒（最小 15.6 / 最大 17.4）
+  [529] 平均 16.5 毫秒（最小 15.9 / 最大 17.6）
+  [547] 平均 16.8 毫秒（最小 15.9 / 最大 18.6）
+  [549] 平均 18.0 毫秒（最小 16.5 / 最大 20.5）
+  [559] 平均 17.1 毫秒（最小 15.9 / 最大 19.2）
+  [570] 平均 16.6 毫秒（最小 15.6 / 最大 18.4）
+  [585] 平均 16.7 毫秒（最小 15.9 / 最大 17.8）
+  [588] 平均 16.8 毫秒（最小 15.9 / 最大 18.1）
+  [594] 平均 16.3 毫秒（最小 15.4 / 最大 17.3）
+  [603] 平均 18.9 毫秒（最小 17.1 / 最大 22.1）
+  [604] 平均 18.6 毫秒（最小 17.0 / 最大 21.0）
+  [620] 平均 19.2 毫秒（最小 18.2 / 最大 21.1）
+  [622] 平均 19.4 毫秒（最小 18.2 / 最大 21.5）
+  [659] 平均 17.1 毫秒（最小 15.7 / 最大 19.4）
+  [672] 平均 17.8 毫秒（最小 16.8 / 最大 18.9）
+  [684] 平均 18.9 毫秒（最小 17.2 / 最大 22.1）
+  [687] 平均 17.1 毫秒（最小 16.8 / 最大 17.7）
+  [689] 平均 18.6 毫秒（最小 17.1 / 最大 20.7）
+  [691] 平均 17.5 毫秒（最小 16.0 / 最大 19.9）
+  [699] 平均 17.4 毫秒（最小 16.1 / 最大 18.8）
+  [701] 平均 18.4 毫秒（最小 16.6 / 最大 22.0）
+  [715] 平均 18.0 毫秒（最小 16.3 / 最大 20.4）
+  [721] 平均 18.7 毫秒（最小 17.0 / 最大 21.7）
+  [744] 平均 18.6 毫秒（最小 17.1 / 最大 21.5）
+  [750] 平均 18.6 毫秒（最小 16.9 / 最大 21.2）
+  [753] 平均 16.9 毫秒（最小 15.5 / 最大 19.5）
+  [766] 平均 18.8 毫秒（最小 16.4 / 最大 21.8）
+  [776] 平均 19.1 毫秒（最小 17.7 / 最大 21.6）
+  [810] 平均 19.0 毫秒（最小 17.9 / 最大 20.8）
+  [813] 平均 16.9 毫秒（最小 15.6 / 最大 19.2）
+  [849] 平均 18.4 毫秒（最小 16.3 / 最大 21.9）
+  [852] 平均 16.5 毫秒（最小 16.0 / 最大 16.8）
+  [853] 平均 17.4 毫秒（最小 16.6 / 最大 18.8）
+  [858] 平均 19.2 毫秒（最小 17.3 / 最大 22.2）
+  [859] 平均 18.9 毫秒（最小 17.6 / 最大 21.5）
+  [864] 平均 18.7 毫秒（最小 17.5 / 最大 20.5）
+  [879] 平均 16.8 毫秒（最小 15.6 / 最大 19.2）
+  [885] 平均 17.6 毫秒（最小 16.6 / 最大 19.5）
+  [895] 平均 18.3 毫秒（最小 16.8 / 最大 21.1）
+  [904] 平均 17.2 毫秒（最小 16.7 / 最大 17.7）
+  [928] 平均 18.8 毫秒（最小 17.5 / 最大 21.0）
+  [929] 平均 18.0 毫秒（最小 16.4 / 最大 20.1）
+  [932] 平均 19.2 毫秒（最小 17.2 / 最大 22.4）
+  [939] 平均 17.6 毫秒（最小 16.2 / 最大 19.4）
+  [945] 平均 18.8 毫秒（最小 17.3 / 最大 21.7）
+  [957] 平均 17.4 毫秒（最小 16.0 / 最大 19.6）
+  [988] 平均 18.2 毫秒（最小 17.1 / 最大 19.7）
+  [1074] 平均 17.1 毫秒（最小 16.1 / 最大 19.1）
+  [1085] 平均 17.2 毫秒（最小 16.8 / 最大 17.7）
+  [1090] 平均 19.7 毫秒（最小 18.2 / 最大 22.4）
+  [1150] 平均 18.6 毫秒（最小 16.6 / 最大 21.5）
+  [1157] 平均 17.0 毫秒（最小 16.3 / 最大 18.4）
+  [1159] 平均 18.7 毫秒（最小 16.6 / 最大 22.2）
+  [1198] 平均 17.3 毫秒（最小 17.3 / 最大 17.5）
+  [1230] 平均 17.8 毫秒（最小 16.5 / 最大 19.9）
+  [1281] 平均 19.2 毫秒（最小 17.4 / 最大 22.2）
+  [1284] 平均 17.8 毫秒（最小 16.2 / 最大 20.6）
+  [1297] 平均 18.7 毫秒（最小 16.9 / 最大 22.2）
+  [1306] 平均 18.9 毫秒（最小 17.6 / 最大 21.3）
+  [1309] 平均 19.0 毫秒（最小 17.6 / 最大 21.1）
+  [1310] 平均 18.0 毫秒（最小 16.6 / 最大 20.4）
+  [1321] 平均 19.2 毫秒（最小 17.4 / 最大 21.7）
+  [1322] 平均 17.4 毫秒（最小 16.1 / 最大 19.9）
+  [1391] 平均 18.8 毫秒（最小 16.9 / 最大 22.4）
+  [1393] 平均 19.8 毫秒（最小 17.8 / 最大 23.3）
+  [1415] 平均 19.2 毫秒（最小 17.7 / 最大 20.9）
+  [1416] 平均 17.3 毫秒（最小 16.1 / 最大 19.6）
+  [1441] 平均 17.9 毫秒（最小 16.7 / 最大 20.0）
+  [1451] 平均 19.0 毫秒（最小 17.1 / 最大 22.3）
+  [1469] 平均 19.8 毫秒（最小 18.4 / 最大 22.5）
+  [1530] 平均 19.1 毫秒（最小 17.7 / 最大 21.6）
+  [1670] 平均 19.1 毫秒（最小 17.6 / 最大 22.0）
+  [1676] 平均 17.4 毫秒（最小 16.3 / 最大 19.6）
+  [1736] 平均 18.4 毫秒（最小 17.2 / 最大 20.6）
+  [1748] 平均 19.3 毫秒（最小 17.4 / 最大 22.3）
+  [1783] 平均 17.4 毫秒（最小 15.9 / 最大 20.1）
+  [1812] 平均 17.4 毫秒（最小 16.5 / 最大 19.2）
+  [1815] 平均 16.8 毫秒（最小 16.7 / 最大 17.0）
+  [1819] 平均 20.3 毫秒（最小 18.3 / 最大 23.4）
+  [1824] 平均 19.3 毫秒（最小 17.9 / 最大 22.0）
+  [1826] 平均 20.3 毫秒（最小 18.8 / 最大 23.0）
+  [1832] 平均 18.5 毫秒（最小 17.0 / 最大 20.2）
+  [1871] 平均 18.9 毫秒（最小 17.3 / 最大 21.7）
+  [1877] 平均 20.1 毫秒（最小 18.8 / 最大 22.6）
+  [1889] 平均 17.6 毫秒（最小 16.1 / 最大 20.2）
+  [1915] 平均 19.4 毫秒（最小 17.2 / 最大 23.4）
+  [1920] 平均 19.0 毫秒（最小 17.6 / 最大 21.6）
+  [1933] 平均 19.9 毫秒（最小 18.8 / 最大 21.7）
+  [1948] 平均 18.2 毫秒（最小 16.9 / 最大 20.0）
+  [1994] 平均 19.1 毫秒（最小 17.3 / 最大 22.1）
+  [2010] 平均 17.7 毫秒（最小 16.2 / 最大 20.0）
+  [2051] 平均 19.5 毫秒（最小 17.8 / 最大 22.6）
+  [2070] 平均 21.4 毫秒（最小 19.9 / 最大 23.6）
+  [2075] 平均 20.1 毫秒（最小 19.0 / 最大 21.9）
+  [2076] 平均 19.9 毫秒（最小 18.5 / 最大 22.5）
+  [2088] 平均 19.8 毫秒（最小 18.4 / 最大 21.5）
+  [2108] 平均 18.7 毫秒（最小 18.5 / 最大 18.9）
+  [2118] 平均 19.8 毫秒（最小 18.3 / 最大 22.8）
+  [2154] 平均 18.4 毫秒（最小 16.8 / 最大 20.1）
+  [2181] 平均 20.2 毫秒（最小 18.6 / 最大 23.4）
+  [2183] 平均 20.0 毫秒（最小 18.7 / 最大 22.6）
+  [2204] 平均 19.8 毫秒（最小 18.4 / 最大 22.6）
+  [2264] 平均 17.8 毫秒（最小 16.2 / 最大 20.6）
+  [2296] 平均 19.2 毫秒（最小 18.2 / 最大 20.7）
+  [2306] 平均 18.5 毫秒（最小 17.7 / 最大 19.7）
+  [2316] 平均 20.5 毫秒（最小 18.0 / 最大 25.3）
+  [2318] 平均 18.0 毫秒（最小 16.6 / 最大 20.1）
+  [2330] 平均 19.6 毫秒（最小 17.9 / 最大 22.8）
+  [2334] 平均 19.9 毫秒（最小 18.5 / 最大 22.1）
+  [2348] 平均 21.3 毫秒（最小 20.1 / 最大 23.6）
+  [2376] 平均 20.6 毫秒（最小 19.3 / 最大 22.6）
+  [2383] 平均 19.2 毫秒（最小 17.8 / 最大 21.9）
+  [2384] 平均 18.6 毫秒（最小 17.4 / 最大 20.4）
+  [2385] 平均 19.3 毫秒（最小 18.4 / 最大 20.3）
+  [2388] 平均 19.7 毫秒（最小 19.0 / 最大 21.0）
+  [2395] 平均 18.8 毫秒（最小 17.8 / 最大 20.8）
+  [2398] 平均 18.4 毫秒（最小 17.6 / 最大 20.0）
+  [2399] 平均 19.2 毫秒（最小 18.1 / 最大 20.7）
+  [2400] 平均 19.9 毫秒（最小 19.2 / 最大 21.1）
+  [2407] 平均 19.8 毫秒（最小 19.0 / 最大 21.2）
+  [2416] 平均 19.9 毫秒（最小 18.6 / 最大 21.7）
+  [2423] 平均 20.0 毫秒（最小 19.1 / 最大 21.5）
+  [2443] 平均 20.9 毫秒（最小 19.1 / 最大 23.8）
+  [2445] 平均 21.0 毫秒（最小 19.7 / 最大 23.1）
+  [2460] 平均 19.6 毫秒（最小 19.2 / 最大 19.9）
+  [2465] 平均 21.2 毫秒（最小 19.7 / 最大 23.5）
+  [2472] 平均 20.3 毫秒（最小 18.4 / 最大 23.8）
+  [2486] 平均 20.0 毫秒（最小 18.4 / 最大 22.7）
+  [2498] 平均 19.7 毫秒（最小 18.3 / 最大 22.2）
+  [2513] 平均 19.8 毫秒（最小 18.3 / 最大 22.4）
+  [2516] 平均 19.0 毫秒（最小 18.0 / 最大 20.7）
+  [2549] 平均 20.4 毫秒（最小 18.9 / 最大 22.8）
+  [2551] 平均 18.7 毫秒（最小 17.5 / 最大 20.7）
+  [2568] 平均 18.8 毫秒（最小 18.1 / 最大 19.8）
+  [2579] 平均 19.5 毫秒（最小 17.6 / 最大 23.1）
+  [2580] 平均 18.0 毫秒（最小 16.9 / 最大 19.9）
+  [2587] 平均 18.5 毫秒（最小 17.1 / 最大 20.6）
+  [2589] 平均 19.1 毫秒（最小 17.3 / 最大 22.3）
+  [2590] 平均 19.3 毫秒（最小 18.0 / 最大 21.3）
+  [2593] 平均 20.2 毫秒（最小 18.6 / 最大 22.2）
+  [2598] 平均 19.1 毫秒（最小 17.7 / 最大 21.7）
+  [2648] 平均 18.3 毫秒（最小 17.0 / 最大 20.7）
+  [2676] 平均 17.5 毫秒（最小 16.6 / 最大 18.8）
+  [2685] 平均 18.0 毫秒（最小 17.1 / 最大 19.7）
+  [2695] 平均 20.4 毫秒（最小 18.9 / 最大 23.3）
+  [2713] 平均 18.0 毫秒（最小 16.1 / 最大 21.2）
+  [2724] 平均 19.9 毫秒（最小 18.0 / 最大 23.5）
+  [2737] 平均 18.3 毫秒（最小 16.8 / 最大 20.9）
+  [2747] 平均 19.2 毫秒（最小 17.5 / 最大 22.2）
+  [2749] 平均 21.0 毫秒（最小 19.9 / 最大 22.7）
+  [2790] 平均 19.9 毫秒（最小 19.0 / 最大 21.7）
+  [2801] 平均 19.5 毫秒（最小 18.3 / 最大 20.8）
+  [2856] 平均 19.1 毫秒（最小 18.3 / 最大 20.8）
+  [2857] 平均 21.5 毫秒（最小 19.8 / 最大 24.8）
+  [2880] 平均 19.4 毫秒（最小 18.1 / 最大 21.9）
+  [2885] 平均 18.3 毫秒（最小 18.0 / 最大 18.5）
+  [2891] 平均 18.1 毫秒（最小 17.5 / 最大 18.6）
+  [2895] 平均 19.8 毫秒（最小 19.0 / 最大 21.3）
+  [2903] 平均 20.2 毫秒（最小 19.3 / 最大 21.5）
+  [2923] 平均 20.8 毫秒（最小 20.2 / 最大 21.6）
+  [2964] 平均 21.1 毫秒（最小 19.0 / 最大 24.4）
+  [2968] 平均 22.1 毫秒（最小 20.6 / 最大 24.1）
+  [2994] 平均 20.0 毫秒（最小 18.7 / 最大 22.1）
+  [3006] 平均 22.3 毫秒（最小 20.3 / 最大 25.1）
+  [3008] 平均 22.5 毫秒（最小 21.1 / 最大 24.8）
+  [3014] 平均 21.4 毫秒（最小 19.9 / 最大 24.1）
+  [3033] 平均 19.9 毫秒（最小 18.5 / 最大 22.3）
+  [3039] 平均 22.1 毫秒（最小 19.9 / 最大 25.7）
+  [3049] 平均 22.1 毫秒（最小 20.7 / 最大 24.5）
+  [3051] 平均 20.3 毫秒（最小 18.7 / 最大 21.9）
+  [3067] 平均 22.1 毫秒（最小 20.4 / 最大 25.3）
+  [3085] 平均 21.7 毫秒（最小 20.5 / 最大 23.4）
+  [3091] 平均 20.1 毫秒（最小 19.0 / 最大 21.8）
+  [3103] 平均 21.5 毫秒（最小 19.6 / 最大 25.1）
+  [3115] 平均 21.3 毫秒（最小 19.2 / 最大 23.4）
+  [3125] 平均 19.6 毫秒（最小 19.3 / 最大 19.8）
+  [3148] 平均 19.7 毫秒（最小 18.2 / 最大 22.5）
+  [3149] 平均 18.8 毫秒（最小 17.0 / 最大 21.0）
+  [3177] 平均 18.2 毫秒（最小 17.5 / 最大 19.7）
+  [3179] 平均 20.1 毫秒（最小 18.5 / 最大 22.8）
+  [3186] 平均 18.4 毫秒（最小 17.4 / 最大 20.3）
+  [3189] 平均 19.3 毫秒（最小 18.4 / 最大 20.6）
+  [3254] 平均 18.3 毫秒（最小 17.5 / 最大 19.7）
+  [3264] 平均 18.8 毫秒（最小 17.6 / 最大 20.3）
+  [3357] 平均 19.5 毫秒（最小 17.7 / 最大 22.6）
+  [3369] 平均 20.2 毫秒（最小 18.5 / 最大 22.8）
+  [3394] 平均 20.8 毫秒（最小 19.1 / 最大 22.8）
+  [3404] 平均 19.6 毫秒（最小 18.2 / 最大 22.2）
+  [3405] 平均 17.9 毫秒（最小 16.7 / 最大 19.7）
+  [3446] 平均 18.5 毫秒（最小 17.4 / 最大 20.2）
+  [3451] 平均 18.4 毫秒（最小 17.9 / 最大 18.9）
+  [3453] 平均 18.0 毫秒（最小 17.9 / 最大 18.0）
+  [3480] 平均 17.9 毫秒（最小 17.1 / 最大 19.5）
+  [3490] 平均 17.7 毫秒（最小 16.9 / 最大 19.2）
+  [3500] 平均 18.5 毫秒（最小 17.5 / 最大 20.4）
+  [3503] 平均 20.0 毫秒（最小 18.5 / 最大 22.8）
+  [3512] 平均 20.0 毫秒（最小 18.3 / 最大 22.8）
+  [3528] 平均 20.9 毫秒（最小 19.0 / 最大 23.0）
+  [3530] 平均 18.8 毫秒（最小 17.5 / 最大 20.2）
+  [3534] 平均 17.9 毫秒（最小 17.3 / 最大 18.8）
+  [3566] 平均 21.8 毫秒（最小 20.0 / 最大 25.0）
+  [3569] 平均 19.6 毫秒（最小 18.0 / 最大 22.1）
+  [3594] 平均 22.1 毫秒（最小 20.4 / 最大 25.2）
+  [3612] 平均 19.9 毫秒（最小 18.5 / 最大 22.3）
+  [3615] 平均 21.5 毫秒（最小 19.1 / 最大 25.9）
+  [3625] 平均 19.2 毫秒（最小 18.1 / 最大 21.2）
+  [3682] 平均 19.3 毫秒（最小 18.4 / 最大 20.8）
+  [3683] 平均 19.1 毫秒（最小 18.4 / 最大 20.5）
+  [3694] 平均 21.4 毫秒（最小 19.5 / 最大 25.2）
+  [3724] 平均 20.1 毫秒（最小 18.5 / 最大 22.3）
+  [3735] 平均 19.9 毫秒（最小 19.1 / 最大 21.3）
+  [3759] 平均 19.5 毫秒（最小 18.7 / 最大 20.3）
+  [3767] 平均 20.1 毫秒（最小 19.3 / 最大 21.7）
+  [3771] 平均 19.5 毫秒（最小 18.7 / 最大 20.5）
+  [3781] 平均 21.2 毫秒（最小 19.5 / 最大 24.3）
+  [3789] 平均 22.0 毫秒（最小 20.6 / 最大 24.7）
+  [3791] 平均 22.4 毫秒（最小 21.2 / 最大 24.7）
+  [3801] 平均 19.6 毫秒（最小 18.0 / 最大 22.4）
+  [3822] 平均 20.1 毫秒（最小 18.5 / 最大 23.2）
+  [3829] 平均 18.9 毫秒（最小 17.4 / 最大 21.1）
+  [3830] 平均 18.4 毫秒（最小 17.0 / 最大 19.8）
+  [3837] 平均 20.5 毫秒（最小 19.0 / 最大 23.5）
+  [3859] 平均 21.1 毫秒（最小 19.6 / 最大 23.4）
+  [3875] 平均 20.3 毫秒（最小 18.4 / 最大 22.1）
+  [3888] 平均 20.8 毫秒（最小 19.2 / 最大 23.7）
+  [3909] 平均 19.1 毫秒（最小 17.6 / 最大 21.8）
+  [3932] 平均 18.7 毫秒（最小 17.7 / 最大 20.3）
+  [3934] 平均 20.1 毫秒（最小 18.1 / 最大 22.8）
+  [3995] 平均 18.8 毫秒（最小 17.1 / 最大 21.9）
+  [4007] 平均 19.7 毫秒（最小 17.8 / 最大 22.6）
+  [4011] 平均 19.5 毫秒（最小 18.1 / 最大 22.2）
+  [4019] 平均 20.4 毫秒（最小 19.0 / 最大 23.2）
+  [4031] 平均 19.4 毫秒（最小 18.2 / 最大 21.7）
+  [4037] 平均 18.9 毫秒（最小 17.6 / 最大 21.3）
+  [4047] 平均 20.1 毫秒（最小 18.6 / 最大 22.5）
+  [4071] 平均 20.2 毫秒（最小 19.0 / 最大 22.4）
+  [4084] 平均 18.1 毫秒（最小 17.0 / 最大 20.2）
+  [4102] 平均 20.4 毫秒（最小 18.5 / 最大 24.2）
+  [4103] 平均 18.8 毫秒（最小 17.5 / 最大 21.3）
+  [4105] 平均 20.1 毫秒（最小 18.6 / 最大 22.9）
+  [4116] 平均 20.0 毫秒（最小 18.6 / 最大 22.1）
+  [4125] 平均 17.8 毫秒（最小 16.5 / 最大 20.2）
+  [4142] 平均 17.5 毫秒（最小 17.2 / 最大 17.6）
+  [4153] 平均 18.4 毫秒（最小 17.7 / 最大 19.7）
+  [4179] 平均 19.8 毫秒（最小 18.2 / 最大 22.9）
+  [4188] 平均 19.6 毫秒（最小 18.2 / 最大 22.0）
+  [4205] 平均 18.7 毫秒（最小 17.0 / 最大 21.0）
+  [4233] 平均 17.2 毫秒（最小 16.7 / 最大 17.7）
+  [4265] 平均 20.8 毫秒（最小 19.7 / 最大 22.8）
+  [4286] 平均 22.5 毫秒（最小 20.8 / 最大 24.5）
+  [4289] 平均 19.6 毫秒（最小 18.0 / 最大 21.2）
+  [4306] 平均 22.1 毫秒（最小 20.3 / 最大 25.7）
+  [4312] 平均 19.6 毫秒（最小 18.4 / 最大 21.9）
+  [4335] 平均 19.2 毫秒（最小 18.2 / 最大 20.9）
+  [4339] 平均 20.7 毫秒（最小 19.1 / 最大 23.8）
+  [4394] 平均 20.6 毫秒（最小 19.2 / 最大 23.0）
+  [4409] 平均 21.9 毫秒（最小 20.9 / 最大 23.6）
+  [4411] 平均 22.4 毫秒（最小 21.2 / 最大 24.8）
+  [4414] 平均 19.6 毫秒（最小 18.3 / 最大 21.6）
+  [4415] 平均 18.0 毫秒（最小 17.0 / 最大 19.6）
+  [4433] 平均 20.9 毫秒（最小 19.3 / 最大 23.8）
+  [4447] 平均 19.3 毫秒（最小 17.9 / 最大 21.8）
+  [4464] 平均 18.7 毫秒（最小 17.8 / 最大 20.6）
+  [4465] 平均 18.4 毫秒（最小 17.5 / 最大 20.0）
+  [4484] 平均 20.7 毫秒（最小 19.1 / 最大 23.6）
+  [4499] 平均 20.9 毫秒（最小 19.3 / 最大 23.1）
+  [4500] 平均 19.5 毫秒（最小 18.6 / 最大 21.3）
+  [4504] 平均 19.3 毫秒（最小 17.8 / 最大 21.8）
+  [4514] 平均 20.3 毫秒（最小 18.6 / 最大 23.4）
+  [4523] 平均 20.8 毫秒（最小 19.0 / 最大 22.4）
+  [4539] 平均 21.2 毫秒（最小 19.8 / 最大 23.5）
+  [4571] 平均 20.2 毫秒（最小 19.1 / 最大 22.0）
+  [4600] 平均 20.9 毫秒（最小 20.1 / 最大 22.6）
+  [4605] 平均 20.3 毫秒（最小 19.1 / 最大 22.8）
+  [4615] 平均 18.2 毫秒（最小 16.5 / 最大 20.3）
+  [4640] 平均 19.8 毫秒（最小 18.2 / 最大 23.0）
+  [4641] 平均 18.8 毫秒（最小 17.5 / 最大 20.9）
+  [4678] 平均 18.2 毫秒（最小 17.3 / 最大 19.7）
+  [4681] 平均 19.8 毫秒（最小 17.9 / 最大 22.9）
+  [4700] 平均 20.7 毫秒（最小 19.1 / 最大 23.6）
+  [4714] 平均 19.6 毫秒（最小 18.2 / 最大 22.3）
+  [4756] 平均 19.4 毫秒（最小 18.7 / 最大 20.8）
+  [4767] 平均 19.8 毫秒（最小 19.0 / 最大 21.1）
+  [4775] 平均 20.4 毫秒（最小 19.5 / 最大 21.5）
+  [4777] 平均 20.8 毫秒（最小 19.2 / 最大 23.8）
+  [4785] 平均 21.1 毫秒（最小 20.0 / 最大 23.2）
+  [4804] 平均 19.7 毫秒（最小 18.4 / 最大 22.1）
+  [4813] 平均 18.3 毫秒（最小 17.9 / 最大 18.6）
+  [4823] 平均 22.0 毫秒（最小 20.2 / 最大 25.4）
+  [4827] 平均 19.7 毫秒（最小 18.5 / 最大 21.9）
+  [4837] 平均 21.4 毫秒（最小 19.9 / 最大 24.3）
+  [4844] 平均 22.1 毫秒（最小 20.6 / 最大 25.1）
+  [4845] 平均 20.4 毫秒（最小 19.6 / 最大 21.9）
+  [4846] 平均 21.5 毫秒（最小 19.3 / 最大 25.3）
+  [4863] 平均 20.7 毫秒（最小 19.4 / 最大 22.5）
+  [4865] 平均 21.3 毫秒（最小 19.6 / 最大 24.7）
+  [4920] 平均 21.8 毫秒（最小 20.5 / 最大 24.1）
+  [4942] 平均 19.7 毫秒（最小 18.7 / 最大 21.6）
+  [4946] 平均 19.3 毫秒（最小 17.9 / 最大 21.5）
+  [4955] 平均 21.8 毫秒（最小 19.7 / 最大 24.9）
+  [4962] 平均 20.5 毫秒（最小 19.1 / 最大 23.2）
+  [4968] 平均 22.1 毫秒（最小 20.3 / 最大 25.0）
+  [4981] 平均 19.5 毫秒（最小 18.1 / 最大 22.0）
+  [4999] 平均 19.4 毫秒（最小 18.6 / 最大 19.9）
+  [5021] 平均 21.6 毫秒（最小 20.1 / 最大 24.5）
+  [5030] 平均 19.9 毫秒（最小 18.4 / 最大 22.7）
+  [5045] 平均 19.8 毫秒（最小 18.7 / 最大 21.2）
+  [5054] 平均 20.3 毫秒（最小 19.6 / 最大 21.5）
+  [5061] 平均 21.3 毫秒（最小 19.3 / 最大 24.8）
+  [5064] 平均 20.4 毫秒（最小 18.8 / 最大 22.8）
+  [5067] 平均 19.9 毫秒（最小 19.0 / 最大 21.6）
+  [5080] 平均 21.8 毫秒（最小 20.5 / 最大 24.5）
+  [5083] 平均 18.7 毫秒（最小 17.5 / 最大 21.0）
+  [5085] 平均 19.7 毫秒（最小 18.6 / 最大 21.2）
+  [5086] 平均 21.8 毫秒（最小 19.9 / 最大 25.2）
+  [5090] 平均 22.3 毫秒（最小 20.6 / 最大 25.5）
+  [5125] 平均 19.5 毫秒（最小 17.7 / 最大 21.2）
+  [5134] 平均 21.6 毫秒（最小 20.0 / 最大 24.7）
+  [5150] 平均 21.8 毫秒（最小 20.0 / 最大 24.4）
+  [5155] 平均 22.4 毫秒（最小 20.6 / 最大 25.6）
+  [5172] 平均 20.5 毫秒（最小 18.7 / 最大 23.5）
+  [5178] 平均 22.5 毫秒（最小 20.3 / 最大 25.2）
+  [5185] 平均 22.0 毫秒（最小 20.5 / 最大 24.6）
+  [5196] 平均 21.5 毫秒（最小 20.1 / 最大 24.0）
+  [5206] 平均 22.3 毫秒（最小 21.1 / 最大 24.7）
+  [5228] 平均 20.8 毫秒（最小 19.3 / 最大 23.8）
+  [5231] 平均 20.2 毫秒（最小 18.3 / 最大 22.9）
+  [5241] 平均 21.2 毫秒（最小 19.2 / 最大 25.0）
+  [5254] 平均 19.2 毫秒（最小 19.2 / 最大 19.3）
+  [5255] 平均 18.5 毫秒（最小 17.2 / 最大 20.9）
+  [5264] 平均 20.0 毫秒（最小 18.2 / 最大 23.3）
+  [5271] 平均 19.9 毫秒（最小 18.8 / 最大 22.1）
+  [5331] 平均 17.9 毫秒（最小 16.5 / 最大 20.4）
+  [5343] 平均 18.4 毫秒（最小 17.5 / 最大 20.1）
+  [5347] 平均 18.2 毫秒（最小 17.2 / 最大 19.5）
+  [5356] 平均 19.4 毫秒（最小 17.9 / 最大 22.4）
+  [5369] 平均 20.2 毫秒（最小 18.8 / 最大 22.9）
+  [5374] 平均 19.7 毫秒（最小 17.9 / 最大 22.5）
+  [5380] 平均 20.5 毫秒（最小 18.9 / 最大 22.9）
+  [5402] 平均 19.5 毫秒（最小 18.4 / 最大 21.6）
+  [5410] 平均 17.9 毫秒（最小 16.7 / 最大 20.4）
+  [5422] 平均 20.9 毫秒（最小 19.3 / 最大 23.7）
+  [5427] 平均 20.3 毫秒（最小 18.7 / 最大 22.6）
+  [5460] 平均 19.3 毫秒（最小 17.9 / 最大 21.8）
+  [5464] 平均 17.9 毫秒（最小 17.0 / 最大 19.4）
+  [5503] 平均 19.6 毫秒（最小 18.0 / 最大 22.7）
+  [5505] 平均 20.7 毫秒（最小 18.9 / 最大 23.6）
+  [5511] 平均 19.8 毫秒（最小 19.1 / 最大 20.3）
+  [5534] 平均 19.3 毫秒（最小 18.3 / 最大 21.4）
+  [5549] 平均 21.4 毫秒（最小 19.6 / 最大 24.0）
+  [5585] 平均 21.2 毫秒（最小 20.0 / 最大 23.2）
+  [5592] 平均 19.5 毫秒（最小 18.2 / 最大 22.2）
+  [5616] 平均 19.5 毫秒（最小 18.3 / 最大 21.4）
+  [5620] 平均 19.3 毫秒（最小 18.2 / 最大 20.7）
+  [5646] 平均 19.1 毫秒（最小 18.1 / 最大 20.7）
+  [5653] 平均 20.7 毫秒（最小 18.8 / 最大 23.4）
+  [5683] 平均 22.1 毫秒（最小 21.1 / 最大 23.9）
+  [5710] 平均 19.7 毫秒（最小 18.6 / 最大 21.5）
+  [5741] 平均 19.5 毫秒（最小 18.6 / 最大 21.2）
+  [5763] 平均 22.1 毫秒（最小 20.3 / 最大 24.9）
+  [5782] 平均 22.1 毫秒（最小 20.6 / 最大 25.0）
+  [5790] 平均 21.6 毫秒（最小 20.2 / 最大 24.2）
+  [5808] 平均 20.5 毫秒（最小 19.0 / 最大 22.5）
+  [5853] 平均 19.5 毫秒（最小 19.2 / 最大 19.8）
+  [5862] 平均 21.6 毫秒（最小 19.4 / 最大 24.7）
+  [5888] 平均 20.2 毫秒（最小 18.4 / 最大 23.2）
+  [5903] 平均 22.2 毫秒（最小 20.7 / 最大 25.3）
+  [5906] 平均 22.3 毫秒（最小 21.1 / 最大 24.8）
+  [5940] 平均 19.9 毫秒（最小 18.4 / 最大 22.6）
+  [5951] 平均 19.3 毫秒（最小 18.3 / 最大 21.0）
+  [5970] 平均 18.5 毫秒（最小 17.7 / 最大 19.7）
+  [5981] 平均 20.8 毫秒（最小 19.0 / 最大 24.0）
+  [5993] 平均 21.0 毫秒（最小 19.7 / 最大 23.5）
+  [6002] 平均 18.9 毫秒（最小 17.6 / 最大 21.4）
+  [6004] 平均 20.0 毫秒（最小 18.5 / 最大 23.1）
+  [6005] 平均 20.8 毫秒（最小 19.2 / 最大 23.4）
+  [6009] 平均 18.8 毫秒（最小 17.3 / 最大 21.5）
+  [6041] 平均 18.9 毫秒（最小 17.7 / 最大 20.9）
+  [6080] 平均 19.5 毫秒（最小 17.6 / 最大 23.4）
+  [6110] 平均 18.7 毫秒（最小 17.6 / 最大 20.1）
+  [6121] 平均 20.4 毫秒（最小 18.5 / 最大 23.0）
+  [6122] 平均 18.4 毫秒（最小 16.7 / 最大 20.8）
+  [6131] 平均 18.6 毫秒（最小 17.3 / 最大 20.4）
+  [6133] 平均 19.1 毫秒（最小 17.6 / 最大 21.4）
+  [6142] 平均 17.9 毫秒（最小 17.0 / 最大 19.5）
+  [6146] 平均 20.1 毫秒（最小 17.7 / 最大 24.4）
+  [6199] 平均 19.9 毫秒（最小 18.2 / 最大 22.6）
+  [6219] 平均 19.8 毫秒（最小 18.7 / 最大 21.9）
+  [6221] 平均 20.9 毫秒（最小 19.6 / 最大 23.2）
+  [6252] 平均 18.6 毫秒（最小 17.0 / 最大 21.5）
+  [6262] 平均 18.0 毫秒（最小 16.8 / 最大 19.7）
+  [6278] 平均 22.1 毫秒（最小 20.1 / 最大 25.0）
+  [6395] 平均 18.6 毫秒（最小 17.3 / 最大 21.0）
+  [6410] 平均 20.9 毫秒（最小 19.2 / 最大 24.1）
+  [6420] 平均 19.1 毫秒（最小 17.8 / 最大 21.5）
+  [6441] 平均 19.4 毫秒（最小 18.6 / 最大 21.0）
+  [6467] 平均 19.8 毫秒（最小 19.0 / 最大 20.7）
+  [6468] 平均 19.0 毫秒（最小 18.2 / 最大 20.3）
+  [6479] 平均 20.2 毫秒（最小 19.0 / 最大 22.3）
+  [6525] 平均 21.2 毫秒（最小 19.5 / 最大 24.3）
+  [6554] 平均 21.2 毫秒（最小 19.4 / 最大 23.8）
+  [6562] 平均 21.3 毫秒（最小 19.7 / 最大 23.2）
+  [6611] 平均 22.3 毫秒（最小 21.1 / 最大 24.8）
+  [6612] 平均 22.1 毫秒（最小 20.6 / 最大 24.8）
+  [6625] 平均 19.2 毫秒（最小 17.7 / 最大 21.3）
+  [6629] 平均 17.9 毫秒（最小 17.0 / 最大 19.4）
+  [6635] 平均 20.5 毫秒（最小 18.9 / 最大 23.7）
+  [6644] 平均 20.9 毫秒（最小 19.3 / 最大 23.4）
+  [6647] 平均 18.8 毫秒（最小 17.6 / 最大 21.1）
+  [6668] 平均 20.0 毫秒（最小 17.9 / 最大 22.9）
+  [6679] 平均 18.6 毫秒（最小 17.1 / 最大 21.1）
+  [6683] 平均 19.0 毫秒（最小 17.9 / 最大 20.9）
+  [6713] 平均 19.2 毫秒（最小 17.7 / 最大 22.2）
+  [6715] 平均 20.5 毫秒（最小 19.2 / 最大 22.8）
+  [6746] 平均 20.4 毫秒（最小 19.2 / 最大 22.2）
+  [6787] 平均 19.2 毫秒（最小 18.9 / 最大 19.6）
+  [6792] 平均 20.0 毫秒（最小 18.5 / 最大 22.1）
+  [6800] 平均 20.2 毫秒（最小 18.8 / 最大 21.9）
+  [6803] 平均 20.4 毫秒（最小 18.6 / 最大 23.2）
+  [6807] 平均 19.2 毫秒（最小 18.1 / 最大 21.4）
+  [6814] 平均 18.4 毫秒（最小 17.5 / 最大 19.8）
+  [6832] 平均 17.6 毫秒（最小 16.7 / 最大 18.9）
+  [6835] 平均 20.9 毫秒（最小 19.0 / 最大 24.3）
+  [6849] 平均 18.5 毫秒（最小 17.2 / 最大 20.9）
+  [6862] 平均 19.9 毫秒（最小 17.3 / 最大 23.4）
+  [6867] 平均 18.5 毫秒（最小 17.4 / 最大 20.8）
+  [6875] 平均 19.6 毫秒（最小 18.4 / 最大 20.6）
+  [6890] 平均 19.6 毫秒（最小 18.8 / 最大 21.1）
+  [6891] 平均 21.3 毫秒（最小 19.6 / 最大 24.6）
+  [6896] 平均 21.2 毫秒（最小 19.7 / 最大 23.3）
+  [6901] 平均 19.5 毫秒（最小 18.1 / 最大 21.7）
+  [6907] 平均 19.0 毫秒（最小 18.0 / 最大 20.6）
+  [6909] 平均 21.7 毫秒（最小 19.7 / 最大 24.4）
+  [6959] 平均 20.5 毫秒（最小 18.8 / 最大 23.8）
+  [6985] 平均 17.9 毫秒（最小 17.0 / 最大 19.6）
+  [7017] 平均 18.2 毫秒（最小 17.3 / 最大 19.9）
+  [7068] 平均 18.0 毫秒（最小 17.0 / 最大 19.2）
+  [7071] 平均 18.8 毫秒（最小 18.1 / 最大 20.0）
+  [7080] 平均 18.1 毫秒（最小 17.4 / 最大 19.4）
+  [7096] 平均 20.3 毫秒（最小 18.6 / 最大 23.2）
+  [7098] 平均 20.2 毫秒（最小 19.0 / 最大 22.4）
+  [7105] 平均 20.5 毫秒（最小 19.1 / 最大 22.4）
+  [7109] 平均 18.2 毫秒（最小 16.8 / 最大 20.8）
+  [7124] 平均 19.9 毫秒（最小 18.1 / 最大 23.3）
+  [7141] 平均 19.9 毫秒（最小 18.5 / 最大 22.4）
+  [7145] 平均 18.9 毫秒（最小 17.7 / 最大 21.4）
+  [7178] 平均 18.1 毫秒（最小 17.5 / 最大 19.3）
+  [7188] 平均 19.7 毫秒（最小 18.2 / 最大 22.6）
+  [7205] 平均 18.2 毫秒（最小 16.9 / 最大 20.5）
+  [7206] 平均 17.7 毫秒（最小 16.7 / 最大 19.2）
+  [7218] 平均 18.5 毫秒（最小 17.7 / 最大 20.2）
+  [7221] 平均 18.4 毫秒（最小 17.6 / 最大 19.8）
+  [7269] 平均 18.5 毫秒（最小 17.8 / 最大 19.8）
+  [7279] 平均 20.8 毫秒（最小 19.0 / 最大 23.3）
+  [7295] 平均 18.4 毫秒（最小 16.8 / 最大 20.6）
+  [7311] 平均 17.6 毫秒（最小 17.1 / 最大 18.4）
+  [7326] 平均 18.5 毫秒（最小 17.5 / 最大 19.6）
+  [7329] 平均 19.8 毫秒（最小 18.9 / 最大 21.0）
+  [7344] 平均 19.6 毫秒（最小 18.0 / 最大 21.9）
+  [7345] 平均 18.9 毫秒（最小 18.2 / 最大 20.2）
+  [7377] 平均 19.6 毫秒（最小 18.4 / 最大 21.5）
+  [7431] 平均 19.1 毫秒（最小 18.8 / 最大 19.2）
+  [7441] 平均 22.7 毫秒（最小 21.0 / 最大 25.7）
+  [7445] 平均 21.7 毫秒（最小 20.2 / 最大 24.3）
+  [7448] 平均 22.1 毫秒（最小 20.6 / 最大 25.1）
+  [7456] 平均 20.0 毫秒（最小 18.7 / 最大 22.6）
+  [7463] 平均 22.4 毫秒（最小 20.6 / 最大 26.0）
+  [7467] 平均 20.0 毫秒（最小 18.8 / 最大 22.2）
+  [7484] 平均 21.9 毫秒（最小 20.1 / 最大 25.2）
+  [7509] 平均 20.2 毫秒（最小 18.7 / 最大 22.6）
+  [7512] 平均 19.8 毫秒（最小 18.7 / 最大 21.4）
+  [7513] 平均 20.9 毫秒（最小 19.5 / 最大 23.6）
+  [7529] 平均 22.1 毫秒（最小 20.7 / 最大 24.7）
+  [7533] 平均 19.6 毫秒（最小 18.0 / 最大 22.2）
+  [7534] 平均 20.9 毫秒（最小 19.1 / 最大 24.2）
+  [7590] 平均 20.5 毫秒（最小 19.2 / 最大 23.3）
+  [7592] 平均 19.0 毫秒（最小 17.9 / 最大 21.2）
+  [7594] 平均 18.0 毫秒（最小 17.5 / 最大 19.0）
+  [7622] 平均 19.2 毫秒（最小 18.5 / 最大 20.4）
+  [7633] 平均 19.1 毫秒（最小 18.3 / 最大 20.3）
+  [7674] 平均 18.1 毫秒（最小 17.4 / 最大 19.4）
+  [7700] 平均 20.8 毫秒（最小 18.9 / 最大 24.3）
+  [7702] 平均 18.5 毫秒（最小 17.0 / 最大 20.8）
+  [7705] 平均 19.9 毫秒（最小 18.4 / 最大 22.7）
+  [7734] 平均 19.3 毫秒（最小 17.8 / 最大 21.7）
+  [7747] 平均 20.5 毫秒（最小 18.4 / 最大 23.9）
+  [7754] 平均 18.4 毫秒（最小 16.7 / 最大 21.1）
+  [7758] 平均 18.0 毫秒（最小 17.0 / 最大 19.7）
+  [7801] 平均 19.9 毫秒（最小 18.2 / 最大 23.2）
+  [7803] 平均 19.9 毫秒（最小 18.5 / 最大 22.1）
+  [7823] 平均 20.4 毫秒（最小 19.0 / 最大 22.7）
+  [7876] 平均 18.3 毫秒（最小 17.2 / 最大 20.3）
+  [7879] 平均 20.8 毫秒（最小 18.9 / 最大 23.7）
+  [7880] 平均 20.4 毫秒（最小 18.8 / 最大 23.2）
+  [7911] 平均 19.9 毫秒（最小 18.5 / 最大 22.3）
+  [7925] 平均 18.6 毫秒（最小 16.9 / 最大 21.2）
+  [7928] 平均 21.5 毫秒（最小 20.0 / 最大 24.3）
+  [7936] 平均 20.0 毫秒（最小 18.1 / 最大 23.0）
+  [7992] 平均 19.7 毫秒（最小 18.6 / 最大 21.5）
+  [8002] 平均 19.4 毫秒（最小 18.8 / 最大 20.7）
+  [8005] 平均 21.2 毫秒（最小 19.1 / 最大 24.0）
+  [8013] 平均 21.9 毫秒（最小 20.1 / 最大 25.1）
+  [8017] 平均 21.5 毫秒（最小 20.3 / 最大 23.8）
+  [8034] 平均 20.1 毫秒（最小 18.6 / 最大 22.1）
+  [8040] 平均 21.8 毫秒（最小 19.7 / 最大 24.5）
+  [8072] 平均 23.0 毫秒（最小 21.6 / 最大 25.6）
+  [8079] 平均 20.0 毫秒（最小 18.5 / 最大 22.2）
+  [8102] 平均 22.0 毫秒（最小 19.5 / 最大 25.8）
+  [8116] 平均 21.3 毫秒（最小 20.1 / 最大 23.7）
+  [8121] 平均 22.5 毫秒（最小 20.6 / 最大 25.5）
+  [8202] 平均 21.1 毫秒（最小 19.8 / 最大 23.5）
+  [8230] 平均 19.9 毫秒（最小 18.6 / 最大 22.0）
+  [8247] 平均 20.0 毫秒（最小 19.2 / 最大 21.4）
+  [8271] 平均 20.0 毫秒（最小 19.2 / 最大 21.4）
+  [8275] 平均 21.5 毫秒（最小 19.5 / 最大 25.1）
+  [8296] 平均 21.9 毫秒（最小 20.4 / 最大 23.8）
+  [8332] 平均 21.6 毫秒（最小 20.4 / 最大 23.4）
+  [8351] 平均 20.0 毫秒（最小 18.4 / 最大 22.7）
+  [8378] 平均 19.3 毫秒（最小 17.5 / 最大 21.7）
+  [8456] 平均 18.6 毫秒（最小 17.6 / 最大 20.1）
+  [8475] 平均 20.5 毫秒（最小 18.7 / 最大 24.0）
+  [8507] 平均 18.3 毫秒（最小 16.9 / 最大 20.5）
+  [8512] 平均 20.8 毫秒（最小 18.9 / 最大 24.4）
+  [8513] 平均 19.4 毫秒（最小 18.0 / 最大 21.3）
+  [8532] 平均 18.3 毫秒（最小 17.2 / 最大 20.0）
+  [8537] 平均 17.4 毫秒（最小 17.2 / 最大 18.0）
+  [8539] 平均 20.7 毫秒（最小 19.1 / 最大 23.3）
+  [8544] 平均 21.3 毫秒（最小 19.8 / 最大 23.3）
+  [8592] 平均 20.7 毫秒（最小 18.7 / 最大 22.8）
+  [8632] 平均 20.7 毫秒（最小 19.1 / 最大 22.9）
+  [8635] 平均 19.1 毫秒（最小 18.4 / 最大 20.3）
+  [8702] 平均 20.7 毫秒（最小 18.7 / 最大 23.8）
+  [8779] 平均 19.1 毫秒（最小 17.6 / 最大 21.6）
+  [8789] 平均 20.9 毫秒（最小 18.6 / 最大 25.1）
+  [8795] 平均 18.8 毫秒（最小 17.3 / 最大 21.1）
+  [8832] 平均 21.2 毫秒（最小 19.2 / 最大 25.3）
+  [8834] 平均 19.3 毫秒（最小 17.9 / 最大 21.9）
+  [8855] 平均 19.6 毫秒（最小 18.8 / 最大 20.9）
+  [8874] 平均 20.3 毫秒（最小 18.6 / 最大 23.6）
+  [8934] 平均 19.8 毫秒（最小 18.5 / 最大 22.2）
+  [8937] 平均 21.3 毫秒（最小 19.6 / 最大 24.6）
+  [8947] 平均 20.2 毫秒（最小 18.8 / 最大 22.2）
+  [8959] 平均 19.9 毫秒（最小 18.7 / 最大 21.9）
+  [8970] 平均 21.4 毫秒（最小 19.6 / 最大 24.8）
+  [8974] 平均 22.3 毫秒（最小 20.8 / 最大 25.1）
+  [8982] 平均 21.6 毫秒（最小 20.3 / 最大 23.9）
+  [9060] 平均 19.6 毫秒（最小 18.1 / 最大 22.0）
+  [9088] 平均 18.8 毫秒（最小 17.7 / 最大 20.9）
+  [9108] 平均 19.9 毫秒（最小 18.9 / 最大 21.5）
+  [9115] 平均 21.6 毫秒（最小 19.8 / 最大 24.8）
+  [9126] 平均 19.4 毫秒（最小 18.2 / 最大 21.6）
+  [9164] 平均 18.9 毫秒（最小 18.4 / 最大 19.3）
+  [9174] 平均 20.9 毫秒（最小 19.0 / 最大 24.8）
+  [9188] 平均 21.4 毫秒（最小 19.7 / 最大 23.8）
+  [9245] 平均 20.0 毫秒（最小 18.4 / 最大 23.0）
+  [9275] 平均 21.8 毫秒（最小 20.4 / 最大 24.6）
+  [9291] 平均 22.8 毫秒（最小 20.9 / 最大 25.8）
+  [9296] 平均 22.2 毫秒（最小 20.8 / 最大 24.1）
+  [9329] 平均 20.0 毫秒（最小 18.7 / 最大 22.5）
+  [9332] 平均 21.3 毫秒（最小 19.5 / 最大 24.3）
+  [9381] 平均 20.1 毫秒（最小 18.9 / 最大 22.5）
+  [9385] 平均 20.7 毫秒（最小 19.7 / 最大 22.3）
+  [9391] 平均 20.4 毫秒（最小 19.6 / 最大 22.0）
+  [9403] 平均 19.4 毫秒（最小 19.1 / 最大 20.0）
+  [9481] 平均 19.6 毫秒（最小 19.1 / 最大 20.6）
+  [9487] 平均 21.1 毫秒（最小 19.4 / 最大 24.1）
+  [9548] 平均 22.4 毫秒（最小 21.0 / 最大 24.2）
+  [9556] 平均 20.0 毫秒（最小 18.6 / 最大 22.1）
+  [9565] 平均 19.9 毫秒（最小 19.1 / 最大 20.7）
+  [9598] 平均 20.1 毫秒（最小 18.9 / 最大 21.6）
+  [9617] 平均 20.5 毫秒（最小 19.2 / 最大 22.6）
+  [9633] 平均 19.9 毫秒（最小 19.2 / 最大 20.9）
+  [9643] 平均 20.8 毫秒（最小 19.2 / 最大 24.0）
+  [9644] 平均 21.6 毫秒（最小 20.2 / 最大 24.2）
+  [9646] 平均 21.6 毫秒（最小 19.7 / 最大 24.6）
+  [9668] 平均 20.2 毫秒（最小 18.8 / 最大 22.5）
+  [9701] 平均 19.3 毫秒（最小 18.0 / 最大 21.4）
+  [9733] 平均 18.0 毫秒（最小 17.2 / 最大 19.5）
+  [9735] 平均 18.6 毫秒（最小 17.2 / 最大 20.1）
+  [9737] 平均 19.1 毫秒（最小 18.3 / 最大 20.4）
+  [9771] 平均 20.0 毫秒（最小 17.9 / 最大 23.0）
+  [9808] 平均 18.0 毫秒（最小 16.7 / 最大 20.2）
+  [9824] 平均 19.4 毫秒（最小 17.6 / 最大 22.9）
+  [9871] 平均 18.9 毫秒（最小 18.8 / 最大 19.2）
+  [9882] 平均 19.9 毫秒（最小 18.8 / 最大 21.9）
+  [9925] 平均 20.2 毫秒（最小 19.1 / 最大 22.3）
+  [9929] 平均 18.9 毫秒（最小 17.5 / 最大 21.4）
+  [9961] 平均 18.4 毫秒（最小 17.2 / 最大 20.4）
+  [9979] 平均 20.6 毫秒（最小 18.7 / 最大 23.7）
+  [10034] 平均 19.9 毫秒（最小 18.6 / 最大 22.2）
+  [10039] 平均 18.6 毫秒（最小 17.4 / 最大 20.7）
+  [10109] 平均 20.0 毫秒（最小 18.1 / 最大 23.2）
+  [10122] 平均 18.9 毫秒（最小 17.3 / 最大 21.5）
+  [10136] 平均 20.8 毫秒（最小 19.2 / 最大 24.0）
+  [10137] 平均 18.3 毫秒（最小 17.0 / 最大 20.8）
+  [10152] 平均 20.5 毫秒（最小 18.6 / 最大 24.0）
+  [10183] 平均 18.2 毫秒（最小 16.9 / 最大 20.6）
+  [10213] 平均 19.5 毫秒（最小 18.4 / 最大 21.1）
+  [10246] 平均 19.6 毫秒（最小 18.4 / 最大 21.1）
+  [10267] 平均 19.3 毫秒（最小 19.0 / 最大 19.6）
+  [10414] 平均 19.5 毫秒（最小 18.0 / 最大 21.4）
+  [10447] 平均 21.3 毫秒（最小 19.5 / 最大 24.3）
+  [10462] 平均 21.1 毫秒（最小 19.6 / 最大 24.2）
+  [10482] 平均 19.9 毫秒（最小 19.6 / 最大 20.1）
+  [10497] 平均 21.2 毫秒（最小 20.0 / 最大 23.0）
+  [10526] 平均 20.9 毫秒（最小 19.8 / 最大 22.8）
+  [10547] 平均 19.8 毫秒（最小 18.3 / 最大 22.4）
+  [10558] 平均 18.7 毫秒（最小 18.0 / 最大 19.5）
+  [10596] 平均 20.3 毫秒（最小 18.4 / 最大 23.9）
+  [10601] 平均 18.3 毫秒（最小 16.5 / 最大 21.3）
+  [10628] 平均 21.0 毫秒（最小 19.4 / 最大 24.0）
+  [10639] 平均 18.3 毫秒（最小 17.0 / 最大 20.8）
+  [10645] 平均 21.1 毫秒（最小 18.7 / 最大 23.4）
+  [10674] 平均 19.0 毫秒（最小 17.7 / 最大 21.1）
+  [10710] 平均 20.9 毫秒（最小 18.9 / 最大 24.7）
+  [10734] 平均 20.3 毫秒（最小 19.0 / 最大 22.5）
+  [10792] 平均 20.0 毫秒（最小 18.7 / 最大 22.4）
+  [10808] 平均 20.4 毫秒（最小 18.9 / 最大 23.1）
+  [10809] 平均 18.5 毫秒（最小 17.2 / 最大 20.6）
+  [10812] 平均 18.5 毫秒（最小 17.4 / 最大 19.7）
+  [10827] 平均 20.2 毫秒（最小 18.3 / 最大 23.0）
+  [10845] 平均 20.0 毫秒（最小 18.8 / 最大 21.9）
+  [10912] 平均 18.4 毫秒（最小 17.1 / 最大 20.7）
+  [10932] 平均 19.1 毫秒（最小 17.7 / 最大 21.1）
+  [10975] 平均 20.4 毫秒（最小 18.8 / 最大 23.4）
+  [10979] 平均 17.8 毫秒（最小 16.2 / 最大 20.6）
+  [10994] 平均 19.7 毫秒（最小 18.0 / 最大 23.0）
+  [11039] 平均 19.0 毫秒（最小 18.8 / 最大 19.2）
+  [11054] 平均 20.7 毫秒（最小 19.1 / 最大 22.7）
+  [11088] 平均 19.9 毫秒（最小 18.3 / 最大 22.2）
+  总体：平均 19.7 毫秒，最慢单题 96.5 毫秒
+  说明：延迟包含问题向量化的耗时，即端到端查询延迟；不含Ollama服务的进程启动时间（首次已预热）
+
+======================================================================
+全部有标注题汇总（648题，不含拒答题）
+======================================================================
+  Top-1（共648题）：平均召回率=18.50%  平均精确率=38.12%  F1=22.94%  题目命中率=38.12%
+  Top-5（共648题）：平均召回率=33.04%  平均精确率=18.73%  F1=21.48%  题目命中率=53.55%
+  Top-10（共648题）：平均召回率=41.41%  平均精确率=12.89%  F1=17.86%  题目命中率=62.35%
+  Top-20（共648题）：平均召回率=48.23%  平均精确率=8.12%  F1=12.92%  题目命中率=68.98%
+  Top-50（共648题）：平均召回率=58.61%  平均精确率=4.44%  F1=7.91%  题目命中率=77.78%
+
+======================================================================
+类别【fiqa】汇总（648题）
+======================================================================
+  Top-1（共648题）：平均召回率=18.50%  平均精确率=38.12%  F1=22.94%  题目命中率=38.12%
+  Top-5（共648题）：平均召回率=33.04%  平均精确率=18.73%  F1=21.48%  题目命中率=53.55%
+  Top-10（共648题）：平均召回率=41.41%  平均精确率=12.89%  F1=17.86%  题目命中率=62.35%
+  Top-20（共648题）：平均召回率=48.23%  平均精确率=8.12%  F1=12.92%  题目命中率=68.98%
+  Top-50（共648题）：平均召回率=58.61%  平均精确率=4.44%  F1=7.91%  题目命中率=77.78%
+
+======================================================================
+召回率摘要（跨方案对比，全部有标注题）
+======================================================================
+  Recall@5=33.04%   Recall@10=41.41%   Recall@20=48.23%   Recall@50=58.61%
+  Hit@5=53.55%   Hit@10=62.35%   Hit@20=68.98%   Hit@50=77.78%
+  说明：Hit（题目命中率）= 至少召回一个相关文档的题目占比，衡量检索的兜底能力；
+        它不依赖每题相关文档数量与标注密度，口径比 Recall 更稳健。
+
+======================================================================
+拒答题说明
+======================================================================
+拒答题在数据集中本就没有相关块，不参与召回率/精确率统计。
+判断标准：若拒答题检索到的片段与标注块完全无关（匹配块编号与正常题重叠少），
+说明系统没有强行召回不相关内容，拒答表现良好；反之可能误导大模型编造答案。
