@@ -17,6 +17,7 @@
 
 import json
 import os
+import time
 
 import faiss
 import numpy as np
@@ -39,15 +40,27 @@ def build_index(chunks: list, config: dict) -> None:
     print(f"[dense] 正在生成向量并存入FAISS索引...")
 
     # 1. 分批向量化（避免一次请求过大），收集全部向量
+    #    Ollama 内部 tokenizer 服务在连续批量负载下偶发崩溃（400 连接拒绝，2026-10-12
+    #    实测约 1/3 概率），失败退避重试（最多3次）绕开瞬时崩溃
     all_embeddings = []
     batch_size = 256
     for i in range(0, len(texts), batch_size):
         end = min(i + batch_size, len(texts))
         batch = texts[i:end]
-        response = config["ollama_client"].embeddings.create(
-            model=config["embedding_model"],
-            input=batch
-        )
+        response = None
+        for attempt in range(3):
+            try:
+                response = config["ollama_client"].embeddings.create(
+                    model=config["embedding_model"],
+                    input=batch
+                )
+                break
+            except Exception as e:
+                if attempt == 2:
+                    raise   # 重试3次仍失败则终止，避免静默产出残缺索引
+                wait = 3 * (attempt + 1)
+                print(f"[dense] 第{i}~{end}批向量化失败（{e}），{wait}秒后重试...")
+                time.sleep(wait)
         all_embeddings.extend(item.embedding for item in response.data)
         print(f"[dense] 向量化进度：{end}/{len(texts)}")
 

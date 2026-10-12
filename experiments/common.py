@@ -16,6 +16,7 @@
 import json
 import os
 import sys
+import time
 
 import faiss
 import numpy as np
@@ -141,7 +142,8 @@ def load_qrels():
 def embed_batch(texts, label=""):
     """分批向量化文本（OpenAI 兼容接口），返回 float32 矩阵 (len(texts), dim)
 
-    单批失败自动重试一次（Ollama 偶发超时）；label 用于进度打印。
+    Ollama 内部 tokenizer 服务在连续批量负载下偶发崩溃（2026-10-12 实测约 1/3 概率），
+    单批失败退避重试（最多3次）；label 用于进度打印。
     """
     all_vecs = []
     n = len(texts)
@@ -149,16 +151,16 @@ def embed_batch(texts, label=""):
         end = min(i + EMBED_BATCH, n)
         batch = texts[i:end]
         response = None
-        for attempt in range(2):   # 失败重试一次
+        for attempt in range(3):   # 失败退避重试，最多3次
             try:
                 response = OLLAMA_CLIENT.embeddings.create(
                     model=EMBEDDING_MODEL, input=batch)
                 break
             except Exception as e:
-                if attempt == 0:
-                    print(f"  [向量化] 第{i}~{end}批失败（{e}），重试中...")
-                else:
+                if attempt == 2:
                     raise
+                print(f"  [向量化] 第{i}~{end}批失败（{e}），3秒后重试...")
+                time.sleep(3)
         all_vecs.extend(item.embedding for item in response.data)
         print(f"  [向量化{label}] 进度：{end}/{n}")
     return np.array(all_vecs, dtype=np.float32)
