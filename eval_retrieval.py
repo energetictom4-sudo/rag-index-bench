@@ -132,12 +132,44 @@ def format_size(n_bytes: int) -> str:
     return f"{n_bytes / (1024 * 1024):.2f} MB"
 
 
-def find_block_ids(retrieved_text: str, chunk_texts: list[str]) -> set[int]:
-    """通过文本内容反查检索片段覆盖的块编号集合
-    支持两种情况：
-      - 片段就是某个块本身（稠密向量索引返回的就是块原文）
-      - 片段包含多个块（父文档索引返回的是合并后的大段文本）
+def build_block_lookup(chunk_texts: list[str], chunk_doc_ids: list[str] | None) -> tuple:
+    """预建两级查找表，把"文本反查块编号"从 O(块数) 全量子串扫描优化为 O(1) 字典命中：
+
+      block_lookup  块文本 → 块编号列表（块级方案返回整块文本时精确命中）
+      doc_lookup    文档拼接文本（"\\n".join(该文档全部块)）→ 块编号列表
+                    （文档级方案 doc_dense/parent_doc 返回的正是这种拼接）
+
+    两级表覆盖了全部检索结果的正常形态；个别截断/异常文本由 find_block_ids 的
+    兜底分支按旧的全量子串逻辑处理，结果与旧算法完全等价。
     """
+    block_lookup = {}
+    for i, ct in enumerate(chunk_texts):
+        if ct:
+            block_lookup.setdefault(ct, []).append(i)
+    doc_lookup = {}
+    if chunk_doc_ids:
+        doc_blocks = {}
+        for i, (ct, did) in enumerate(zip(chunk_texts, chunk_doc_ids)):
+            if ct:
+                doc_blocks.setdefault(did, []).append(i)
+        for ids in doc_blocks.values():
+            key = "\n".join(chunk_texts[j] for j in ids)
+            doc_lookup.setdefault(key, []).extend(ids)
+    return block_lookup, doc_lookup
+
+
+def find_block_ids(retrieved_text: str, block_lookup: dict,
+                   doc_lookup: dict, chunk_texts: list[str]) -> set[int]:
+    """通过文本内容反查检索片段覆盖的块编号集合（两级查找表 + 旧逻辑兜底）"""
+    if not retrieved_text:
+        return set()
+    ids = block_lookup.get(retrieved_text)
+    if ids:
+        return set(ids)
+    ids = doc_lookup.get(retrieved_text)
+    if ids:
+        return set(ids)
+    # 兜底：旧的全量子串逻辑，处理截断/部分拼接等罕见情形
     matched = set()
     for i, ct in enumerate(chunk_texts):
         if ct and (ct in retrieved_text or retrieved_text in ct):
@@ -161,6 +193,10 @@ def evaluate(questions: list[dict], index_module, config: dict,
 
     records = []           # 指标记录：dict(题id, 类别, Top-K, 召回率, 精确率, F1, 命中数)
     latency_records = []   # 延迟记录：tuple(题id, 平均毫秒, 最小毫秒, 最大毫秒)
+
+    # 预建"文本→块编号"两级查找表：大语料（如 fiqa 12万块）下全量子串扫描
+    # 是评测的主要耗时，两级表把每次反查从 O(块数) 降到 O(1)
+    block_lookup, doc_lookup = build_block_lookup(chunk_texts, chunk_doc_ids)
 
     for q in questions:
         question = q["问题"]
@@ -188,7 +224,7 @@ def evaluate(questions: list[dict], index_module, config: dict,
             log(f"\n[{q['id']}] {q['问题']}")
             log(f"  类别：{q['类别']}（无标注相关块，仅展示检索结果，供人工判断）")
             for i, text in enumerate(retrieved, 1):
-                ids = find_block_ids(text, chunk_texts)
+                ids = find_block_ids(text, block_lookup, doc_lookup, chunk_texts)
                 show = sorted(ids) if ids else "无"
                 log(f"    第{i}名：匹配块{show}  开头：{text[:40].replace(chr(10), ' ')}...")
             continue
@@ -202,7 +238,7 @@ def evaluate(questions: list[dict], index_module, config: dict,
         log(f"\n[{q['id']}] {q['问题']}")
         log(f"  类别：{q['类别']}  标注块：{gold_show}{'...' if len(gold) > 10 else ''}")
         for i, text in enumerate(retrieved[:3], 1):
-            ids = find_block_ids(text, chunk_texts)
+            ids = find_block_ids(text, block_lookup, doc_lookup, chunk_texts)
             hit_docs = blocks_to_docs(ids, chunk_doc_ids) & gold_docs
             mark = "√命中" if hit_docs else ""
             show = sorted(ids) if ids else "无"
@@ -212,7 +248,7 @@ def evaluate(questions: list[dict], index_module, config: dict,
         for k in TOP_K_LIST:
             covered = set()
             for text in retrieved[:k]:
-                covered |= find_block_ids(text, chunk_texts)
+                covered |= find_block_ids(text, block_lookup, doc_lookup, chunk_texts)
             # 文档级评测（BEIR标准）：
             #   召回率 = 命中的相关文档数 / 该题相关文档总数
             #   精确率 = 命中的相关片段数 / 检索返回片段数k
@@ -221,7 +257,7 @@ def evaluate(questions: list[dict], index_module, config: dict,
             recall = hit / len(gold_docs)
             hit_frags = sum(
                 1 for text in retrieved[:k]
-                if blocks_to_docs(find_block_ids(text, chunk_texts),
+                if blocks_to_docs(find_block_ids(text, block_lookup, doc_lookup, chunk_texts),
                                   chunk_doc_ids) & gold_docs
             )
             precision = hit_frags / k
@@ -235,7 +271,7 @@ def evaluate(questions: list[dict], index_module, config: dict,
 
         covered_all = set()
         for text in retrieved:
-            covered_all |= find_block_ids(text, chunk_texts)
+            covered_all |= find_block_ids(text, block_lookup, doc_lookup, chunk_texts)
         hit_all = len(blocks_to_docs(covered_all, chunk_doc_ids) & gold_docs)
         total = len(gold_docs)
         log(f"  召回率@{len(retrieved)} = {hit_all}/{total} = {hit_all / total:.2%}")
