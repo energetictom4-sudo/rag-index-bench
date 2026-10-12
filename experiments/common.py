@@ -37,6 +37,14 @@ QRELS_FILE = os.path.join(DATA_ROOT, "beir_data", DATASET, "qrels", "test.tsv") 
 CHUNKS_FILE = os.path.join(DATA_ROOT, "beir_chunks.json")     # prepare_beir.py 生成的块文件（含doc_id）
 BLOCK_INDEX_FILE = os.path.join(DATA_ROOT, "vector_store", "faiss_dense", "index.faiss")  # 现有块向量索引
 
+
+def chunks_file_for(config: dict | None = None) -> str:
+    """当前评测数据集的块文件路径：优先取 config["chunks_file"]（eval_retrieval.py 多数据集
+    评测时传入），缺省回退默认路径（nfcorpus，保持实验脚本与方案自检的既有行为）"""
+    if config and config.get("chunks_file"):
+        return config["chunks_file"]
+    return CHUNKS_FILE
+
 # 实验产物目录（都在 experiments/ 下，不碰主程序任何文件）
 CACHE_DIR = os.path.join(PROJECT_DIR, "experiments", "cache")
 RESULTS_DIR = os.path.join(PROJECT_DIR, "experiments", "results")

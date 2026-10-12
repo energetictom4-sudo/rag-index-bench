@@ -33,6 +33,14 @@ OLLAMA_BASE_URL = "http://localhost:11434/v1"   # Ollama本地接口地址
 OLLAMA_API_KEY = "ollama"     # Ollama本地服务不需要真实密钥，随便填一个
 EMBEDDING_MODEL = "bge-m3"    # Ollama中已拉取的嵌入模型名（中文效果较好）
 
+# 本地 Ollama 请求必须直连：openai 客户端默认信任环境/系统代理，若本机开着 Clash/FlyCat
+# 且系统代理未排除 localhost，本地嵌入请求会被劫持到代理返回 502（2026-10-12 定位）。
+# 在此强制把本地地址加入 NO_PROXY（httpx 读取该环境变量），保留其他地址走代理的行为。
+_no_proxy = os.environ.get("NO_PROXY") or os.environ.get("no_proxy") or ""
+if "localhost" not in _no_proxy or "127.0.0.1" not in _no_proxy:
+    os.environ["NO_PROXY"] = ",".join(
+        p for p in (_no_proxy, "localhost", "127.0.0.1", "::1") if p)
+
 # --- 数据根目录（路径配置，先于下面的参数定义）---
 # 数据（beir_chunks.json、beir_题库.json、vector_store、beir_data）都在项目目录的
 # 上一级，与 experiments/common.py 的 DATA_ROOT 一致。用基于脚本位置的绝对路径，

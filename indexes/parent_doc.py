@@ -28,13 +28,13 @@ import os
 import sys
 
 # experiments 目录加入搜索路径：本方案复用 experiments/common.py 的路径常量
-# （CHUNKS_FILE、BLOCK_INDEX_FILE），与 doc_dense.py 的导入方式一致
+# （BLOCK_INDEX_FILE、chunks_file_for），与 doc_dense.py 的导入方式一致
 _EXPERIMENTS_DIR = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "experiments")
 if _EXPERIMENTS_DIR not in sys.path:
     sys.path.insert(0, _EXPERIMENTS_DIR)
 
-from common import BLOCK_INDEX_FILE, CHUNKS_FILE   # noqa: E402
+from common import BLOCK_INDEX_FILE, chunks_file_for   # noqa: E402
 
 import faiss   # noqa: E402
 import numpy as np   # noqa: E402
@@ -47,7 +47,7 @@ STORE_DIR_NAME = "faiss_parent_doc"
 
 # 块向量索引与"块→文档"映射：进程内只读一次
 _block_index_cache = None
-_doc_chunks_cache = None
+_doc_chunks_cache = None   # (块文件路径, (doc_chunks, chunk_doc_ids))：数据文件切换时缓存自动失效
 
 
 def _load_block_index():
@@ -58,25 +58,26 @@ def _load_block_index():
     return _block_index_cache
 
 
-def _load_doc_chunks():
-    """加载"文档→块"映射与"块编号→文档id"列表（来自 beir_chunks.json，只读一次）
+def _load_doc_chunks(config: dict):
+    """加载"文档→块"映射与"块编号→文档id"列表（来自当前数据集的块文件，按路径缓存）
 
     返回 (doc_chunks, chunk_doc_ids)：
       doc_chunks      {doc_id: [块文本列表（按原顺序）]}
       chunk_doc_ids   下标即块编号，值为来源文档id（块编号与块向量行号一致）
     """
     global _doc_chunks_cache
-    if _doc_chunks_cache is not None:
-        return _doc_chunks_cache
-    with open(CHUNKS_FILE, encoding="utf-8") as f:
+    path = chunks_file_for(config)
+    if _doc_chunks_cache is not None and _doc_chunks_cache[0] == path:
+        return _doc_chunks_cache[1]
+    with open(path, encoding="utf-8") as f:
         chunk_items = json.load(f)
     doc_chunks = {}
     chunk_doc_ids = []
     for item in chunk_items:
         doc_chunks.setdefault(item["doc_id"], []).append(item["text"])
         chunk_doc_ids.append(item["doc_id"])
-    _doc_chunks_cache = (doc_chunks, chunk_doc_ids)
-    return _doc_chunks_cache
+    _doc_chunks_cache = (path, (doc_chunks, chunk_doc_ids))
+    return _doc_chunks_cache[1]
 
 
 def _store_dir(config: dict) -> str:
@@ -92,9 +93,9 @@ def build_index(chunks: list, config: dict) -> None:
     """
     print("[parent_doc] 构建父文档索引（子块向量复用 faiss_dense）...")
 
-    # 1. 校验子块向量索引与当前块数据一致（块数对不上说明 beir_chunks.json
+    # 1. 校验子块向量索引与当前块数据一致（块数对不上说明块文件
     #    被重新生成过，需要先重建 dense 索引，避免"张冠李戴"的静默错误）
-    _, chunk_doc_ids = _load_doc_chunks()
+    _, chunk_doc_ids = _load_doc_chunks(config)
     block_index = _load_block_index()
     if block_index.ntotal != len(chunk_doc_ids):
         raise RuntimeError(
@@ -135,7 +136,7 @@ def search(question: str, config: dict) -> list[str]:
 
     # 2. 块级检索：取 Top-SUB_TOP 个最相似子块
     block_index = _load_block_index()
-    doc_chunks, chunk_doc_ids = _load_doc_chunks()
+    doc_chunks, chunk_doc_ids = _load_doc_chunks(config)
     k = min(SUB_TOP, block_index.ntotal)
     _, ids = block_index.search(query, k)
 
@@ -172,7 +173,7 @@ if __name__ == "__main__":
         print("已指定 --skip-build，跳过建库，直接检索现有索引")
     else:
         # 加载 BEIR 块文件（与主程序一致）
-        with open(CHUNKS_FILE, encoding="utf-8") as f:
+        with open(chunks_file_for(config), encoding="utf-8") as f:
             items = json.load(f)
         chunks = [Document(page_content=item["text"], metadata={"chunk": item["id"]})
                   for item in items]

@@ -32,27 +32,28 @@ _EXPERIMENTS_DIR = os.path.join(
 if _EXPERIMENTS_DIR not in sys.path:
     sys.path.insert(0, _EXPERIMENTS_DIR)
 
-from common import (BLOCK_INDEX_FILE, CACHE_DIR, CHUNKS_FILE, CORPUS_FILE,  # noqa: E402
-                    cached_embed, load_corpus_fulltexts)
+from common import (BLOCK_INDEX_FILE, CACHE_DIR, CORPUS_FILE,  # noqa: E402
+                    cached_embed, chunks_file_for, load_corpus_fulltexts)
 
 MODE = "pool"            # "pool"=块向量池化（推荐） / "full"=整文档向量化
 STORE_DIR_NAME = "faiss_doc_pool" if MODE == "pool" else "faiss_doc_full"
 
-# 文档→块映射与块文本：取块环节用（块文本来自 beir_chunks.json，顺序即块编号）
-_doc_chunks_cache = None
+# 文档→块映射与块文本：取块环节用（块文本来自当前数据集的块文件，顺序即块编号）
+_doc_chunks_cache = None   # (块文件路径, 映射) 二元组：数据文件切换时缓存自动失效
 
 
-def _load_doc_chunks() -> dict:
-    """加载"文档→块"映射：{doc_id: [块文本列表（按原顺序）]}，进程内只读一次"""
+def _load_doc_chunks(config: dict) -> dict:
+    """加载"文档→块"映射：{doc_id: [块文本列表（按原顺序）]}，按数据文件路径进程内缓存"""
     global _doc_chunks_cache
-    if _doc_chunks_cache is not None:
-        return _doc_chunks_cache
-    with open(CHUNKS_FILE, encoding="utf-8") as f:
+    path = chunks_file_for(config)
+    if _doc_chunks_cache is not None and _doc_chunks_cache[0] == path:
+        return _doc_chunks_cache[1]
+    with open(path, encoding="utf-8") as f:
         chunk_items = json.load(f)
     mapping = {}
     for item in chunk_items:
         mapping.setdefault(item["doc_id"], []).append(item["text"])
-    _doc_chunks_cache = mapping
+    _doc_chunks_cache = (path, mapping)
     return mapping
 
 
@@ -72,10 +73,12 @@ def build_index(chunks: list, config: dict) -> None:
         # 方案B：复用现有块向量按 doc_id 平均池化（零向量化成本）
         block_index = faiss.read_index(BLOCK_INDEX_FILE)
         block_vecs = block_index.reconstruct_n(0, block_index.ntotal)
-        with open(CHUNKS_FILE, encoding="utf-8") as f:
+        with open(chunks_file_for(config), encoding="utf-8") as f:
             chunk_doc_ids = [item["doc_id"] for item in json.load(f)]
         if len(chunk_doc_ids) != block_index.ntotal:
-            raise RuntimeError("块文件与块向量数量不一致，请重新生成（见 doc_retrieval_pool.py）")
+            raise RuntimeError(
+                "块文件与块向量数量不一致：faiss_dense 索引还是旧数据集的，"
+                "请先把 INDEX_METHOD 切回 dense 重跑建库，再回来建 doc_dense")
         doc_ids = sorted(set(chunk_doc_ids))
         matrix = np.zeros((len(doc_ids), block_vecs.shape[1]), dtype=np.float32)
         for i, did in enumerate(doc_ids):
@@ -125,7 +128,7 @@ def search(question: str, config: dict) -> list[str]:
     _, ids = index.search(query, k)
 
     # 3. 取块：命中文档的全部块按原顺序拼成上下文
-    doc_chunks = _load_doc_chunks()
+    doc_chunks = _load_doc_chunks(config)
     contexts = []
     for i in ids[0]:
         did = doc_ids[i]

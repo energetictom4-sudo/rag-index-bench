@@ -342,6 +342,9 @@ def main() -> None:
     index_module = rag_demo.load_index_module()
     config = dict(rag_demo.INDEX_CONFIG)   # 复制主程序公共配置，避免互相影响
     config["n_results"] = QUERY_TOP_K      # 评测统一取前QUERY_TOP_K个片段
+    # 当前数据集的块文件路径：doc_dense/parent_doc 等方案经 experiments/common.py 的
+    # chunks_file_for() 读取，多数据集评测时索引与题库必须同源（否则数据错位）
+    config["chunks_file"] = BEIR_CHUNKS_FILE
 
     # 每个方案一份报告；nfcorpus 用既有文件名（仓库已有 8 份），其他数据集报告带数据集名后缀
     if DATASET == "nfcorpus":
