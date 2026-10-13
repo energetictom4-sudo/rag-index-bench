@@ -187,6 +187,21 @@ python rag_demo.py
 
 基线数字来自 BEIR 原论文（Thakur et al. 2021）的 nfcorpus nDCG@10；对标细节（参数/词干化/标题各对照）见 [experiments/eval_doc_level.py](experiments/eval_doc_level.py) 的 bm25_* 方法。
 
+**三数据集官方口径总表**（NDCG@10，文档级、全量 qrels；[experiments/eval_doc_level.py](experiments/eval_doc_level.py) 统一评测）：
+
+| 方案 | nfcorpus（323题） | scifact（300题） | fiqa（648题） |
+|---|---:|---:|---:|
+| hybrid（RRF 融合） | **0.3343** | 0.6762 | 0.3335 |
+| dense（bge-m3 文档级） | 0.3142 | 0.6447 | **0.4127** |
+| parent_doc | 0.3043 | 0.6415 | 0.3720 |
+| ivf（nprobe=32） | 待补 | 0.6178 | 0.3613 |
+| hnsw（ef_search=64） | 待补 | 0.6334 | 0.3613 |
+| doc_dense | 0.2992 | 0.6361 | 0.3363 |
+| bm25（Okapi 1.5/0.75） | 0.3100 | 0.6644 | 0.2337 |
+| pq（M=32/nprobe=32） | 待补 | 0.4457 | 0.2239 |
+
+**官方 NDCG 与块级 Recall 的排序差异（指标敏感性发现）**：scifact 上官方 NDCG 排序是 bm25（0.6787）> hybrid（0.6762）> dense（0.6447），而块级 Recall@50 排序是 hybrid > doc_dense > dense > bm25——**NDCG 看重头部排序质量（词面精确命中的 bm25 排得更准），Recall@50 看重长尾覆盖（语义检索覆盖更广）**。两个指标回答不同问题：评测报告应双口径并排呈现，单口径会误判方案优劣。
+
 ### 题目命中率对比（第二展示指标）
 
 题目命中率（Hit）= 至少召回一个强相关文档的题目占比。它与 Recall 的差别：Recall 被"每题相关文档数量与标注密度"牵着走，而命中率只看"是否捞到"，2026-10-03 评测口径修正前后命中率几乎不变（对比旧口径报告即可验证），是稳定性最强的指标，适合作为召回率之外的第二展示指标。数据取自各方案报告的"全部有标注题汇总"块：
