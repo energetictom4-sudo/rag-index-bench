@@ -163,20 +163,29 @@ python rag_demo.py
 > - **索引文件大小**：`vector_store/<方案目录>/` 实际磁盘占用（2026-09-26 实测）；hybrid 复用 bm25 与 dense 两个子索引（15 + 73 MB），parent_doc 复用 dense 块向量索引、自身仅落盘 0.04 MB 元信息。
 > - 完整档位数据（含精确率、F1、题目命中率）见各方案报告：[评测报告_parent_doc_beir.txt](评测报告_parent_doc_beir.txt)（2026-10-03）、[评测报告_hybrid_beir.txt](评测报告_hybrid_beir.txt)（2026-10-03）、[评测报告_doc_dense_beir.txt](评测报告_doc_dense_beir.txt)（2026-10-03）、[评测报告_dense_beir.txt](评测报告_dense_beir.txt)（2026-10-11）、[评测报告_bm25_beir.txt](评测报告_bm25_beir.txt)（2026-10-03）、[评测报告_ivf_beir.txt](评测报告_ivf_beir.txt)（2026-10-03）、[评测报告_hnsw_beir.txt](评测报告_hnsw_beir.txt)（2026-10-04）、[评测报告_pq_beir.txt](评测报告_pq_beir.txt)（2026-10-07）。
 
-### 与 BEIR 官方基线的对照（外部基线）
+### 与 BEIR 官方基线的对照（外部基线，含一次评测 bug 的诚实修正）
 
-本项目的块级评测指标是 Recall@K（针对"相关块"的召回）；BEIR 论文的核心指标是文档级 NDCG@10（全量 qrels、文档级检索、不截断）。为回答"我的实现在文献里是什么水平"，用官方口径复测（[experiments/doc_retrieval_full.py](experiments/doc_retrieval_full.py)，nfcorpus，全量 qrels）：
+本项目的块级评测指标是 Recall@K（针对"相关块"的召回）；BEIR 论文的核心指标是文档级 NDCG@10（全量 qrels、文档级检索、不截断）。为回答"我的实现在文献里是什么水平"，用官方口径复测全部方案（[experiments/eval_doc_level.py](experiments/eval_doc_level.py)，nfcorpus 323 题、全量 qrels）：
 
 | 系统 | NDCG@10（nfcorpus，官方口径） |
 |---|---:|
-| **本项目：bge-m3 + 文档级全文检索** | **0.3867** |
-| BGE-large-v1.5（BEIR 论文基线） | 0.380 |
-| SPLADE++（BEIR 论文基线） | 0.347 |
-| BM25 Lucene（BEIR 论文基线） | 0.325 |
-| TAS-B / GenQ（BEIR 论文基线） | 0.319 |
+| **hybrid（BM25+dense，RRF 融合）** | **0.3343** |
+| **bm25（自实现，Anserini 参数+Porter，对标用）** | **0.3217** |
+| BM25 Lucene（BEIR 论文基线，Anserini k1=0.9/b=0.4） | 0.325 |
+| dense（bge-m3 文档级全文检索） | 0.3142 |
+| bm25（本项目 Okapi 1.5/0.75） | 0.3100 |
+| parent_doc | 0.3043 |
+| bm25_anserini（无词干化对照） | 0.3045 |
+| doc_dense | 0.2992 |
 | SBERT-msmarco（BEIR 论文基线） | 0.272 |
 
-结论：裸 bge-m3 + 文档级检索即达到 BEIR 论文中 BGE-large-v1.5 的水平（0.3867 vs 0.380），显著超过经典稀疏基线 BM25（+6.2pp）——嵌入管线无实质损伤、检索实现与官方口径可比。基线数字来自 BEIR 原论文（Thakur et al. 2021）的 nfcorpus nDCG@10，复测数据见 `experiments/reports/实验总结报告.txt`（方案 A 全文行）。
+**结论与诚实修正**：
+
+1. **BM25 自实现对标通过**：同参数同词干化下（k1=0.9/b=0.4 + Porter）本项目 BM25 得 0.3217，与 BEIR 官方基线 0.325 及他人复现（Groundwork 报告 0.3224）一致——自实现无系统性偏差，hybrid/RRF 相关结论可信。
+2. **NDCG 计算 bug 修正**：早期实验（2026-09，含本小节旧版 0.3867 数字）的 NDCG 理想折损（IDCG）误在"检索结果内部"计算而非"该题全部相关文档"——漏检越多数字越高，全部 NDCG 虚高约 0.08~0.10。2026-10-13 修复（experiments/common.py 的 ndcg_at_k 增加理想分参数）。修正后 dense=0.3142，处于 SBERT（0.272）与 BM25（0.325）之间，与 bge-m3 在 nfcorpus 上的合理水平一致（BGE-large-v1.5 的 0.380 需要更强的模型）。
+3. **官方口径下的结论与块级口径呼应**：hybrid 在官方 NDCG 口径下是 nfcorpus 冠军（0.3343 > bm25 0.3217 > dense 0.3142），RRF 融合在官方指标上的价值得到独立验证。
+
+基线数字来自 BEIR 原论文（Thakur et al. 2021）的 nfcorpus nDCG@10；对标细节（参数/词干化/标题各对照）见 [experiments/eval_doc_level.py](experiments/eval_doc_level.py) 的 bm25_* 方法。
 
 ### 题目命中率对比（第二展示指标）
 

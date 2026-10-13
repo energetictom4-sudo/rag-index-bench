@@ -231,16 +231,21 @@ def search_top_k(index, query_vectors, k):
 
 # ================ 文档级评测指标（BEIR 官方口径） ================
 
-def ndcg_at_k(ranked_scores, k):
+def ndcg_at_k(ranked_scores, k, ideal_scores=None):
     """单题 NDCG@k：ranked_scores 按检索顺序给出每个位置的文档相关度（0=不相关）
 
     BEIR 官方口径：收益=相关度等级（nfcorpus 为 1/2），折损=1/log2(rank+1)，rank 从 1 起。
-    理想排序为该题全部相关度降序（只看前 k 位）。
+    理想折损（IDCG）= 该题**全部相关文档**（qrels 全集）的相关度降序前 k 位——
+    必须由调用方传 ideal_scores；不传时退回旧行为（在检索结果内取理想，数字系统性
+    偏高，仅向后兼容 2026-09 旧实验脚本）。
     """
     top = ranked_scores[:k]
     dcg = sum(gain / np.log2(rank + 1) for rank, gain in enumerate(top, start=1))
-    ideal = sorted(ranked_scores, reverse=True)[:k]
-    idcg = sum(gain / np.log2(rank + 1) for rank, gain in enumerate(ideal, start=1))
+    if ideal_scores is None:
+        ideal_scores = sorted(ranked_scores, reverse=True)[:k]
+    else:
+        ideal_scores = sorted(ideal_scores, reverse=True)[:k]
+    idcg = sum(gain / np.log2(rank + 1) for rank, gain in enumerate(ideal_scores, start=1))
     return dcg / idcg if idcg > 0 else 0.0
 
 
