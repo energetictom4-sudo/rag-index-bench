@@ -1,0 +1,120 @@
+﻿题id,查询,dense召回50,hybrid召回50,差异pp,词数,字符数,数字个数,含括号
+PLAIN-2910,Optimal Phytosterol Dose,100.0,50.0,-50.0,3,24,0,0
+PLAIN-165,Breast Cancer & Alcohol: How Much is Safe?,66.67,33.33,-33.34,8,42,0,0
+PLAIN-123,How Citrus Might Help Keep Your Hands Warm,50.0,16.67,-33.33,8,42,0,0
+PLAIN-2750,Preventing the Common Cold with Probiotics?,62.5,37.5,-25.0,6,43,0,0
+PLAIN-133,Starving Tumors of Their Blood Supply,40.0,20.0,-20.0,6,37,0,0
+PLAIN-344,Dioxins Stored in Our Own Fat May Increase Diabetes Risk,80.0,60.0,-20.0,10,56,0,0
+PLAIN-2460,Diabetes as a Disease of Fat Toxicity,60.0,40.0,-20.0,7,37,0,0
+PLAIN-2740,Cancer Risk From CT Scan Radiation,80.0,60.0,-20.0,6,34,0,0
+PLAIN-2620,Phytates for the Treatment of Cancer,33.33,16.67,-16.66,6,36,0,0
+PLAIN-2,Do Cholesterol Statin Drugs Cause Breast Cancer?,71.43,57.14,-14.29,7,48,0,0
+PLAIN-2520,Caloric Restriction vs. Plant-Based Diets,14.29,0.0,-14.29,5,41,0,0
+PLAIN-12,Exploiting Autophagy to Live Longer,28.57,14.29,-14.28,5,35,0,0
+PLAIN-2570,Diabetics Should Take Their Pulses,28.57,14.29,-14.28,5,34,0,0
+PLAIN-2780,Do Fruit & Nut Bars Cause Weight Gain?,25.0,12.5,-12.5,8,38,0,0
+PLAIN-2720,Keeping Your Hands Warm With Citrus,23.08,15.38,-7.7,6,35,0,0
+PLAIN-2510,Coffee and Artery Function,75.0,68.75,-6.25,4,26,0,0
+PLAIN-23,How to Reduce Exposure to Alkylphenols Through Your Diet,20.0,20.0,0.0,9,56,0,0
+PLAIN-33,What’s Driving America’s Obesity Problem?,66.67,66.67,0.0,5,41,0,0
+PLAIN-44,Who Should be Careful About Curcumin?,50.0,50.0,0.0,6,37,0,0
+PLAIN-56,Foods for Glaucoma,75.0,75.0,0.0,3,18,0,0
+PLAIN-68,What is Actually in Chicken Nuggets?,100.0,100.0,0.0,6,36,0,0
+PLAIN-78,What Do Meat Purge and Cola Have in Common?,0.0,0.0,0.0,9,43,0,0
+PLAIN-91,Chronic Headaches and Pork Parasites,25.0,25.0,0.0,5,36,0,0
+PLAIN-112,Food Dyes and ADHD,75.0,75.0,0.0,4,18,0,0
+PLAIN-143,Are Dental X-Rays Safe?,100.0,100.0,0.0,4,23,0,0
+PLAIN-153,How Should I Take Probiotics?,100.0,100.0,0.0,5,29,0,0
+PLAIN-307,Vitamin D: Shedding some light on the new recommendations,100.0,100.0,0.0,9,57,0,0
+PLAIN-332,Can antioxidant-rich spices counteract the effects of a high-fat meal?,50.0,50.0,0.0,10,70,0,0
+PLAIN-371,Any update on the scary in vitro avocado data?,0.0,0.0,0.0,9,46,0,0
+PLAIN-395,What about pepper plus turmeric in V8 juice?,0.0,0.0,0.0,8,44,1,0
+PLAIN-407,Is annatto food coloring safe?,100.0,100.0,0.0,5,30,0,0
+PLAIN-418,Fresh fruit versus frozen--which is better?,100.0,100.0,0.0,6,43,0,0
+PLAIN-430,Are krill oil supplements better than fish oil capsules?,60.0,60.0,0.0,9,56,0,0
+PLAIN-457,How can you believe in any scientific study?,0.0,0.0,0.0,8,44,0,0
+PLAIN-468,Is vitamin D3 (cholecalciferol) preferable to D2 (ergocalciferol)?,100.0,100.0,0.0,8,66,2,1
+PLAIN-2430,Preventing Brain Loss with B Vitamins?,40.0,40.0,0.0,6,38,0,0
+PLAIN-2450,Are Organic Foods Safer?,33.33,33.33,0.0,4,24,0,0
+PLAIN-2470,Is Milk Good for Our Bones?,60.0,60.0,0.0,6,27,0,0
+PLAIN-2500,The Saturated Fat Studies: Buttering Up the Public,50.0,50.0,0.0,8,50,0,0
+PLAIN-2540,Does Cholesterol Size Matter?,44.44,44.44,0.0,4,29,0,0
+PLAIN-2550,Barriers to Heart Disease Prevention,16.67,16.67,0.0,5,36,0,0
+PLAIN-2560,Childhood Constipation and Cow’s Milk,90.91,90.91,0.0,5,37,0,0
+PLAIN-2580,Academy of Nutrition and Dietetics Conflicts of Interest,33.33,33.33,0.0,8,56,0,0
+PLAIN-2600,Eggs and Arterial Function,75.0,75.0,0.0,4,26,0,0
+PLAIN-2630,Alkylphenol Endocrine Disruptors and Allergies,45.0,45.0,0.0,5,46,0,0
+PLAIN-2640,Chicken Salmonella Thanks to Meat Industry Lawsuit,33.33,33.33,0.0,7,50,0,0
+PLAIN-2660,How Long to Detox From Fish Before Pregnancy?,26.32,26.32,0.0,8,45,0,0
+PLAIN-2670,Is Caramel Color Carcinogenic?,66.67,66.67,0.0,4,30,0,0
+PLAIN-2690,Chronic Headaches and Pork Tapeworms,28.57,28.57,0.0,5,36,0,0
+PLAIN-2700,Heart Disease Starts in Childhood,66.67,66.67,0.0,5,33,0,0
+PLAIN-2710,Artificial Food Colors and ADHD,60.0,60.0,0.0,5,31,0,0
+PLAIN-2760,Eating Healthy on a Budget,100.0,100.0,0.0,5,26,0,0
+PLAIN-2800,Prolonged Liver Function Enhancement From Broccoli,0.0,0.0,0.0,6,50,0,0
+PLAIN-2810,Apple Juice May Be Worse Than Sugar Water,0.0,0.0,0.0,8,41,0,0
+PLAIN-2820,Preventing Strokes with Diet,100.0,100.0,0.0,4,28,0,0
+PLAIN-2830,Neurobiology of Artificial Sweeteners,100.0,100.0,0.0,4,37,0,0
+PLAIN-2850,More Antibiotics In White Meat or Dark Meat?,100.0,100.0,0.0,8,44,0,0
+PLAIN-2860,BPA Plastic and Male Sexual Dysfunction,100.0,100.0,0.0,6,39,0,0
+PLAIN-2870,Filled Full of Lead,0.0,0.0,0.0,4,19,0,0
+PLAIN-2880,The Answer to the Pritikin Puzzle,0.0,0.0,0.0,6,33,0,0
+PLAIN-2890,To Snack or Not to Snack?,100.0,100.0,0.0,6,25,0,0
+PLAIN-2930,Kiwifruit for Irritable Bowel Syndrome,100.0,100.0,0.0,5,38,0,0
+PLAIN-2940,Dietary Treatment of Crohn's Disease,0.0,0.0,0.0,5,36,0,0
+PLAIN-2950,Unsafe at Any Feed,0.0,0.0,0.0,4,18,0,0
+PLAIN-2960,Pharmacists Versus Health Food Store Employees: Who Gives Better Advice?,100.0,100.0,0.0,10,72,0,0
+PLAIN-2970,Preventing Cataracts with Diet,100.0,100.0,0.0,4,30,0,0
+PLAIN-2981,Cheese Mites and Maggots,100.0,100.0,0.0,4,24,0,0
+PLAIN-2991,Cholesterol and Lower Back Pain,50.0,50.0,0.0,5,31,0,0
+PLAIN-3014,Sometimes the Enzyme Myth Is True,0.0,0.0,0.0,6,33,0,0
+PLAIN-3037,Out of the Lab Onto the Track,25.0,25.0,0.0,7,29,0,0
+PLAIN-3053,Dragon's Blood,66.67,66.67,0.0,2,14,0,0
+PLAIN-3074,How to Help Prevent Abdominal Aortic Aneurysms,100.0,100.0,0.0,7,46,0,0
+PLAIN-3085,The Difficulty of Arriving at a Vitamin D Recommendation,100.0,100.0,0.0,9,56,0,0
+PLAIN-3116,Dietary Guidelines: From Dairies to Berries,0.0,0.0,0.0,6,43,0,0
+PLAIN-3131,Are Avocados Good for You?,66.67,66.67,0.0,5,26,0,0
+PLAIN-3141,Relieving Yourself of Excess Estrogen,66.67,66.67,0.0,5,37,0,0
+PLAIN-3151,Too Much Iodine Can Be as Bad as Too Little,80.0,80.0,0.0,10,43,0,0
+PLAIN-3161,Is Milk and Mucus a Myth?,100.0,100.0,0.0,6,25,0,0
+PLAIN-3171,Convergence of Evidence,0.0,0.0,0.0,3,23,0,0
+PLAIN-3191,Is Distilled Fish Oil Toxin-Free?,50.0,50.0,0.0,5,33,0,0
+PLAIN-3201,Acne & Cancer Connection,100.0,100.0,0.0,4,24,0,0
+PLAIN-3231,Meat & Multiple Myeloma,50.0,50.0,0.0,4,23,0,0
+PLAIN-3241,Apthous Ulcer Mystery Solved,100.0,100.0,0.0,4,28,0,0
+PLAIN-3251,EPIC Study,100.0,100.0,0.0,2,10,0,0
+PLAIN-3261,Update on Herbalife®,0.0,0.0,0.0,3,20,0,0
+PLAIN-3281,Aluminum in Vaccines vs. Food,100.0,100.0,0.0,5,29,0,0
+PLAIN-3292,Are Multivitamins Good For You?,100.0,100.0,0.0,5,31,0,0
+PLAIN-3302,Fish Fog,0.0,0.0,0.0,2,8,0,0
+PLAIN-3332,Alcohol Risks vs. Benefits,100.0,100.0,0.0,4,26,0,0
+PLAIN-3342,Is Coconut Milk Good For You?,100.0,100.0,0.0,6,29,0,0
+PLAIN-3352,Boosting Heart Nerve Control,0.0,0.0,0.0,4,28,0,0
+PLAIN-3372,The Healthiest Sweetener,100.0,100.0,0.0,3,24,0,0
+PLAIN-3382,Are Artificial Colors Bad for You?,50.0,50.0,0.0,6,34,0,0
+PLAIN-3412,Plant vs. Cow Calcium,0.0,0.0,0.0,4,21,0,0
+PLAIN-3422,Vitamin Supplements Worth Taking,12.5,12.5,0.0,4,32,0,0
+PLAIN-3442,The Healthiest Vegetables,0.0,0.0,0.0,3,25,0,0
+PLAIN-3452,Bowel Movement Frequency,50.0,50.0,0.0,3,24,0,0
+PLAIN-3472,How Doctors Responded to Being Named a Leading Killer,40.0,40.0,0.0,9,53,0,0
+PLAIN-2530,Infectobesity: Adenovirus 36 and Childhood Obesity,66.67,73.33,6.66,6,50,2,0
+PLAIN-3462,Olive Oil and Artery Function,53.33,60.0,6.67,5,29,0,0
+PLAIN-2650,Turmeric Curcumin and Osteoarthritis,63.64,72.73,9.09,4,36,0,0
+PLAIN-2610,Treating Asthma With Plants vs. Supplements?,40.0,50.0,10.0,6,44,0,0
+PLAIN-2590,Do Vegetarians Get Enough Protein?,11.11,22.22,11.11,5,34,0,0
+PLAIN-3312,Sexually Transmitted Fish Toxin,14.29,28.57,14.28,4,31,0,0
+PLAIN-2790,Titanium Dioxide & Inflammatory Bowel Disease,27.27,45.45,18.18,6,45,0,0
+PLAIN-2490,The Actual Benefit of Diet vs. Drugs,20.0,40.0,20.0,7,36,0,0
+PLAIN-2480,Preventing Ulcerative Colitis with Diet,11.11,33.33,22.22,5,39,0,0
+PLAIN-2770,Flaxseeds & Breast Cancer Survival: Clinical Evidence,33.33,55.56,22.23,7,53,0,0
+PLAIN-2730,Anti-Angiogenesis: Cutting Off Tumor Supply Lines,37.5,62.5,25.0,6,49,0,0
+PLAIN-2900,Boosting Good Bacteria in the Colon Without Probiotics,0.0,25.0,25.0,8,54,0,0
+PLAIN-2680,Counteracting the Effects of Dioxins Through Diet,16.67,50.0,33.33,7,49,0,0
+PLAIN-175,Diet and Cellulite,0.0,40.0,40.0,3,18,0,0
+PLAIN-102,Stopping Heart Disease in Childhood,0.0,50.0,50.0,5,35,0,0
+PLAIN-441,Is apple cider vinegar good for you?,50.0,100.0,50.0,7,36,0,0
+PLAIN-3001,EPIC Findings on Lymphoma,0.0,50.0,50.0,4,25,0,0
+PLAIN-3097,Amyloid and Apple Juice,50.0,100.0,50.0,4,23,0,0
+PLAIN-3362,Kuna Indian Secret,50.0,100.0,50.0,3,18,0,0
+PLAIN-3026,Vitamin C-Enriched Bacon,0.0,100.0,100.0,3,24,0,0
+PLAIN-3221,Dietary Theory of Alzheimer's,0.0,100.0,100.0,4,29,0,0
