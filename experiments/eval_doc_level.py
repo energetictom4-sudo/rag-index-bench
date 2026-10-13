@@ -321,9 +321,7 @@ def main():
     block2doc = make_block_to_doc_searcher(block_index, chunk_doc_ids)
 
     approx = {}
-    for m, fname, kw in (("ivf", "faiss_ivf", {"nprobe": NPROBE}),
-                         ("hnsw", "faiss_hnsw", {"efSearch": EF_SEARCH}),
-                         ("pq", "faiss_pq", {"nprobe": NPROBE})):
+    for m, fname in (("ivf", "faiss_ivf"), ("hnsw", "faiss_hnsw"), ("pq", "faiss_pq")):
         path = os.path.join(DATA_ROOT, "vector_store", fname, "index.faiss")
         if not os.path.exists(path):
             continue
@@ -332,8 +330,10 @@ def main():
             print(f"  [跳过 {m}] 索引块数 {idx.ntotal} 与块文件 {len(chunk_texts)} 不一致"
                   f"（当前 vector_store 不是 {ds} 数据）")
             continue
-        for k, v in kw.items():
-            setattr(idx, k, v)
+        if m == "hnsw":
+            idx.hnsw.efSearch = EF_SEARCH        # HNSW 的搜索宽度在 hnsw 子结构上
+        else:
+            idx.nprobe = NPROBE                  # IVF / IVFPQ 的簇探测数
         approx[m] = make_block_to_doc_searcher(idx, chunk_doc_ids)
 
     bm25_anserini = make_bm25_doc_searcher(doc_ids_all, full_texts, k1=0.9, b=0.4)
