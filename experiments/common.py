@@ -137,71 +137,110 @@ def load_qrels():
     return qrels
 
 
-# ================ 向量化（带断点续跑缓存，失败自动重试） ================
+# ================ 向量化（断点续跑缓存：每批落盘，失败退避重试并重建连接） ================
+
+_embed_client = None
+
+
+def _get_embed_client():
+    """可重建的嵌入客户端。Ollama 的 tokenizer 子服务崩溃后 keep-alive 死连接
+    导致后续请求全 400——失败必须 close 销毁连接池、重建客户端（2026-10-13 定位，
+    详见交接文档踩坑第 12 条）"""
+    global _embed_client
+    if _embed_client is None:
+        from openai import OpenAI
+        _embed_client = OpenAI(api_key="ollama", base_url=rag_demo.OLLAMA_BASE_URL)
+    return _embed_client
+
+
+def _reset_embed_client():
+    global _embed_client
+    if _embed_client is not None:
+        try:
+            _embed_client.close()
+        except Exception:
+            pass
+        _embed_client = None
+
+
+def _embed_one_batch(batch, label=""):
+    """单批向量化：失败退避重试（最多3次），每次失败先重建连接再等待"""
+    for attempt in range(3):
+        try:
+            return _get_embed_client().embeddings.create(
+                model=EMBEDDING_MODEL, input=batch)
+        except Exception as e:
+            _reset_embed_client()   # 死连接必须换新，干等无效
+            if attempt == 2:
+                raise
+            wait = 5 * (attempt + 1)
+            print(f"  [向量化{label}] 批量失败（{e}），重建连接后 {wait} 秒重试...")
+            time.sleep(wait)
+
 
 def embed_batch(texts, label=""):
-    """分批向量化文本（OpenAI 兼容接口），返回 float32 矩阵 (len(texts), dim)
-
-    Ollama 内部 tokenizer 服务在连续批量负载下偶发崩溃（2026-10-12 实测约 1/3 概率），
-    单批失败退避重试（最多3次）；label 用于进度打印。
-    """
+    """分批向量化文本（OpenAI 兼容接口），返回 float32 矩阵 (len(texts), dim)"""
     all_vecs = []
     n = len(texts)
     for i in range(0, n, EMBED_BATCH):
         end = min(i + EMBED_BATCH, n)
-        batch = texts[i:end]
-        response = None
-        for attempt in range(3):   # 失败退避重试，最多3次
-            try:
-                response = OLLAMA_CLIENT.embeddings.create(
-                    model=EMBEDDING_MODEL, input=batch)
-                break
-            except Exception as e:
-                if attempt == 2:
-                    raise
-                print(f"  [向量化] 第{i}~{end}批失败（{e}），3秒后重试...")
-                time.sleep(3)
+        response = _embed_one_batch(texts[i:end], label)
         all_vecs.extend(item.embedding for item in response.data)
         print(f"  [向量化{label}] 进度：{end}/{n}")
     return np.array(all_vecs, dtype=np.float32)
 
 
-def cached_embed(texts, ids, cache_prefix, label):
+def cached_embed(texts, ids, cache_prefix, label, dim=1024):
     """断点续跑的向量化：已缓存的 id 直接读回，未缓存的补向量化后落盘
 
-    texts/ids 一一对应；缓存为 npy（完整矩阵）+ 文本文件（每行一个 id）。
-    每批向量化完成后立即覆盖写盘完整矩阵，中断后重跑可续跑、不重复计算。
-    返回与传入 texts 顺序一致的向量矩阵。
+    texts/ids 一一对应；缓存为追加式二进制（每批后 flush 落盘，中断重跑自动续跑）
+    + 每行一个 id 的文本文件。返回与传入 ids 顺序一致的向量矩阵。
     """
-    vec_path = os.path.join(CACHE_DIR, f"{cache_prefix}_vectors.npy")
+    vec_path = os.path.join(CACHE_DIR, f"{cache_prefix}_vectors.bin")
     id_path = os.path.join(CACHE_DIR, f"{cache_prefix}_ids.txt")
 
-    # 1. 读取已有缓存（文件缺失或长度对不上则视为无缓存）
-    cached_vecs, cached_ids = None, []
-    if os.path.exists(vec_path) and os.path.exists(id_path):
-        old_vecs = np.load(vec_path)
+    # 0. 旧格式缓存（.npy）一次性迁移为追加式 .bin，避免已算缓存重算
+    old_npy = os.path.join(CACHE_DIR, f"{cache_prefix}_vectors.npy")
+    if not os.path.exists(vec_path) and os.path.exists(old_npy) and os.path.exists(id_path):
+        old_vecs = np.load(old_npy)
         with open(id_path, encoding="utf-8") as f:
             old_ids = [line.strip() for line in f if line.strip()]
         if len(old_vecs) == len(old_ids):
-            cached_vecs, cached_ids = old_vecs, old_ids
-            print(f"  [缓存] {label} 已有 {len(cached_ids)} 条，检查待补...")
-        else:
-            print(f"  [缓存] {cache_prefix} 缓存长度不一致，忽略缓存重新向量化")
+            old_vecs.tofile(vec_path)
+            print(f"  [缓存] {label} 旧 npy 缓存已迁移为追加式 bin（{len(old_ids)} 条）")
 
-    # 2. 找出未缓存的 id 并向量化（分批进行，每批完成后立即覆盖写盘实现断点续跑）
+    # 1. 读取已有缓存
+    cached_ids = []
+    if os.path.exists(id_path):
+        with open(id_path, encoding="utf-8") as f:
+            cached_ids = [line.strip() for line in f if line.strip()]
+    if cached_ids:
+        print(f"  [缓存] {label} 已有 {len(cached_ids)} 条，检查待补...")
+
+    # 2. 找出未缓存的 id 并逐批向量化（每批后立即 flush 落盘，断电不丢）
     cached_set = set(cached_ids)
     todo_idx = [i for i, did in enumerate(ids) if did not in cached_set]
     if todo_idx:
-        new_vecs = embed_batch([texts[i] for i in todo_idx], label)
-        merged_vecs = new_vecs if cached_vecs is None else np.vstack([cached_vecs, new_vecs])
-        merged_ids = cached_ids + [ids[i] for i in todo_idx]
-        np.save(vec_path, merged_vecs)
-        with open(id_path, "w", encoding="utf-8") as f:
-            f.write("\n".join(merged_ids) + "\n")
-        print(f"  [缓存] {label} 本次新增 {len(todo_idx)} 条，累计 {len(merged_ids)} 条已落盘")
+        with open(vec_path, "ab") as vf, open(id_path, "a", encoding="utf-8") as idf:
+            for i in range(0, len(todo_idx), EMBED_BATCH):
+                batch_idx = todo_idx[i:i + EMBED_BATCH]
+                response = _embed_one_batch([texts[j] for j in batch_idx], label)
+                for item, j in zip(response.data, batch_idx):
+                    vf.write(np.asarray(item.embedding, dtype=np.float32).tobytes())
+                    idf.write(ids[j] + "\n")
+                vf.flush()
+                idf.flush()
+                print(f"  [缓存] {label} 进度：{len(cached_ids) + i + len(batch_idx)}"
+                      f"/{len(ids)}（每批已落盘，可断点续跑）")
+        print(f"  [缓存] {label} 本次新增 {len(todo_idx)} 条，累计 {len(ids)} 条已落盘")
     else:
-        merged_vecs, merged_ids = cached_vecs, cached_ids
         print(f"  [缓存] {label} 全部命中缓存（{len(ids)} 条），无需重新向量化")
+
+    # 3. 读取并按传入 ids 顺序组装
+    all_vecs = np.fromfile(vec_path, dtype=np.float32).reshape(-1, dim)
+    all_ids = [line.strip() for line in open(id_path, encoding="utf-8") if line.strip()]
+    vec_map = dict(zip(all_ids, all_vecs))
+    return np.vstack([vec_map[did] for did in ids])
 
     # 3. 按传入 ids 的顺序组装返回
     vec_map = dict(zip(merged_ids, merged_vecs))
