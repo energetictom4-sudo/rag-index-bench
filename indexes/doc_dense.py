@@ -89,7 +89,8 @@ def build_index(chunks: list, config: dict) -> None:
             i = doc_index[did]
             sums[i] += block_vecs[j]
             counts[i] += 1
-        matrix = sums / counts[:, None]
+        # counts 转 float32 再除：float32/int32 在旧 numpy 会提升为 float64，faiss 拒绝
+        matrix = (sums / counts.astype(np.float32)[:, None]).astype(np.float32)
     else:
         # 方案A：整文档向量化（优先复用实验缓存，缺失部分自动补算）
         doc_ids, full_texts = load_corpus_fulltexts()

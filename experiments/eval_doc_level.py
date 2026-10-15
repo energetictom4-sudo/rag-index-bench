@@ -165,7 +165,8 @@ def make_pool_searcher(block_vecs, chunk_doc_ids):
         i = doc_index[did]
         sums[i] += block_vecs[j]
         counts[i] += 1
-    matrix = sums / counts[:, None]
+    # counts 转 float32 再除：float32/int32 在旧 numpy 会提升为 float64，faiss 拒绝
+    matrix = (sums / counts.astype(np.float32)[:, None]).astype(np.float32)
     faiss.normalize_L2(matrix)
     index = faiss.IndexFlatIP(matrix.shape[1])
     index.add(matrix)
