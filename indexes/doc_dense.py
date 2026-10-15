@@ -71,6 +71,8 @@ def build_index(chunks: list, config: dict) -> None:
 
     if MODE == "pool":
         # 方案B：复用现有块向量按 doc_id 平均池化（零向量化成本）
+        # 池化用一趟分组累加实现 O(块数)：旧实现按"每文档扫描全部块"是 O(文档数×块数)，
+        # trec-covid（17万文档×60万块≈1020亿次比较）会卡数小时（2026-10-15 定位修复）
         block_index = faiss.read_index(BLOCK_INDEX_FILE)
         block_vecs = block_index.reconstruct_n(0, block_index.ntotal)
         with open(chunks_file_for(config), encoding="utf-8") as f:
@@ -80,10 +82,14 @@ def build_index(chunks: list, config: dict) -> None:
                 "块文件与块向量数量不一致：faiss_dense 索引还是旧数据集的，"
                 "请先把 INDEX_METHOD 切回 dense 重跑建库，再回来建 doc_dense")
         doc_ids = sorted(set(chunk_doc_ids))
-        matrix = np.zeros((len(doc_ids), block_vecs.shape[1]), dtype=np.float32)
-        for i, did in enumerate(doc_ids):
-            mask = [d == did for d in chunk_doc_ids]
-            matrix[i] = block_vecs[mask].mean(axis=0)
+        doc_index = {did: i for i, did in enumerate(doc_ids)}
+        sums = np.zeros((len(doc_ids), block_vecs.shape[1]), dtype=np.float32)
+        counts = np.zeros(len(doc_ids), dtype=np.int32)
+        for j, did in enumerate(chunk_doc_ids):
+            i = doc_index[did]
+            sums[i] += block_vecs[j]
+            counts[i] += 1
+        matrix = sums / counts[:, None]
     else:
         # 方案A：整文档向量化（优先复用实验缓存，缺失部分自动补算）
         doc_ids, full_texts = load_corpus_fulltexts()

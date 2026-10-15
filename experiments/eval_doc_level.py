@@ -156,11 +156,16 @@ def make_dense_searcher(doc_ids, full_texts, ds):
 
 
 def make_pool_searcher(block_vecs, chunk_doc_ids):
+    # 一趟分组累加 O(块数)：旧实现按"每文档扫描全部块"是 O(文档数×块数)（2026-10-15 修复）
     doc_ids = sorted(set(chunk_doc_ids))
-    matrix = np.zeros((len(doc_ids), block_vecs.shape[1]), dtype=np.float32)
-    for i, did in enumerate(doc_ids):
-        mask = [d == did for d in chunk_doc_ids]
-        matrix[i] = block_vecs[mask].mean(axis=0)
+    doc_index = {did: i for i, did in enumerate(doc_ids)}
+    sums = np.zeros((len(doc_ids), block_vecs.shape[1]), dtype=np.float32)
+    counts = np.zeros(len(doc_ids), dtype=np.int32)
+    for j, did in enumerate(chunk_doc_ids):
+        i = doc_index[did]
+        sums[i] += block_vecs[j]
+        counts[i] += 1
+    matrix = sums / counts[:, None]
     faiss.normalize_L2(matrix)
     index = faiss.IndexFlatIP(matrix.shape[1])
     index.add(matrix)
